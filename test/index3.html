@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ecoPRISM is a platform that allows seamless aggregation and reporting against ESG indicators to empower a sustainable future." />
+    <meta name="keywords" content="ESG Journey, ecoPRISM, Sustainable Solutions, Data-Driven Insights, Software Solutions, Expert Consulting, Training Programs, Cutting-Edge Technology, Global Reach" />
+    <meta name="author" content="ecoPRISM" />
+    <title>Sustainability Simplified | ecoPRISM</title>
+    <link rel="shortcut icon" href="assets/img/favicon.webp" />
+    <link rel="stylesheet" href="assets/css/plugins.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/eco.css" />
+    <link rel="stylesheet" href="./assets/css/colors/leaf.css" />
+    <style>
+      .bg-banner {
+        background-image: linear-gradient(to right top, #407775, #588885, #6f9995, #86aba6, #9dbdb8);
+      }
+
+      .shadow-lg {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      .card-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .card-row .card {
+        flex: 0 0 calc(20% - 20px);
+        max-width: calc(20% - 20px);
+        height: 200px;
+        perspective: 1000px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        /*box-sizing: border-box;*/
+        background-color: transparent;
+        border-radius: 0.4rem;
+      }
+
+      .card-inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+      }
+
+      .card-row .card:hover .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backface-visibility: hidden;
+        border-radius: 0.4rem;
+      }
+
+      .card-front {
+        background-color: #ebf1f1;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .card-back {
+        background-image: linear-gradient(to right top, #407775, #588885, #6f9995, #86aba6, #9dbdb8);
+        color: #fff;
+        font-size: 14px;
+        transform: rotateY(180deg);
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Media Queries for Responsiveness */
+
+      @media screen and (max-width: 1200px) {
+        .card-row .card {
+          flex: 0 0 calc(40% - 20px);
+          max-width: calc(40% - 20px);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .card-row .card {
+          flex: 0 0 calc(100% - 20px);
+          max-width: calc(100% - 20px);
+        }
+
+        .card-row {
+          justify-content: flex-start;
+        }
+      }
+
+      .eco-adv .icon-svg.icon-svg-md {
+        width: 3rem;
+      }
+
+      @media only screen and (max-width: 1300px) {
+        .custom-col .third-card .front .card-body {
+          padding: 20px 10px;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .custom-col {
+          width: 20%;
+        }
+      }
+
+      @media only screen and (min-width: 456px) {
+        .partners .card-body {
+          height: 302.56px;
+        }
+      }
+
+      .btn-close:before {
+        background: rgba(255, 255, 255, 0.9);
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JTG1Q17RB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6JTG1Q17RB");
+    </script>
+  </head>
+  <body>
+    <div class="content-wrapper home">
+      <header class="wrapper bg-soft-primary">
+        <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-dark">
+          <div class="container flex-lg-row flex-nowrap align-items-center">
+            <div class="navbar-brand w-100">
+              <a href="/">
+                <img class="logo-dark" src="../../assets/img/logo.webp" height="45px" alt="" />
+                <img class="logo-light" src="../../assets/img/logo-light.webp" height="45px" alt="" />
+              </a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <a href="/">
+                  <img class="logo-dark" src="../../assets/img/logo.webp" height="45px" alt="" />
+                  <img class="logo-light" src="../../assets/img/logo-light.webp" height="45px" alt="" />
+                </a>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/about-us">About Us</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/our-team">Our Team</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="/ecoprism">ecoPRISM</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/ecoprism-ai">ecoPRISM AI</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/services/esg-advisory">ESG Advisory</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/services/training-capacity-building">Training and Capacity Building</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/insights">Insights</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/whitepapers">Whitepapers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/glossary">ESG Glossary</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/maturity-assessment">ESG Maturity Assessment</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/esrs-adoption">ESRS Adoption</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">News</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/news/news-media/">News & Media</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/news/company-news">Company News</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/events">Events</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="/careers">Careers</a></li>
+                  <li class="nav-item d-block d-md-none"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+                </ul>
+                <!-- /.navbar-nav -->
+                <div class="offcanvas-footer d-lg-none">
+                  <div>
+                    <a href="mailto:info@ecoprism.com" class="link-inverse"><span class="__cf_email__">info@ecoprism.com</span></a>
+                    <nav class="nav social social-white mt-4">
+                      <a href="https://www.linkedin.com/company/ecoprism/"><i class="uil uil-linkedin"></i></a>
+                      <a href="https://www.youtube.com/@Ecoprism-kz4yb"><i class="uil uil-youtube"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                  </div>
+                </div>
+                <!-- /.offcanvas-footer -->
+              </div>
+              <!-- /.offcanvas-body -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="navbar-other ms-lg-4">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item d-none d-md-block">
+                  <a href="/contact-us" class="btn btn-sm btn-white rounded-pill">Contact Us</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                  <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </header>
+      <!-- /header -->
+      <!-- <div class="modal fade modal-popup" id="modal-02" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content text-center bg-transparent">
+          <div class="modal-body">
+            <button class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="row">
+              <div class="col">
+                <figure><a href="/ecoprismxgartner/" target="_blank"><img src="./assets/img/banner/gartner-popup.jpg" alt="" /></a></figure>
+              </div>
+          
+            </div>
+        
+          </div>
+       
+        </div>
+   
+      </div>
+     
+    </div>-->
+
+      <section class="wrapper bg-leaf">
+        <div class="container pt-18 pt-md-17 pb-15 pb-md-12">
+          <div class="row gx-0 gy-10 align-items-center">
+            <div class="col-lg-6" data-cues="slideInDown" data-group="page-title" data-delay="600">
+              <h1 class="display-2 text-white mb-4">Driving Sustainability Excellence through <br /><span class="text-yellow">Innovative ESG Solutions</span><span class="cursor text-primary" data-owner="typer"></span></h1>
+              <p class="lead fs-24 lh-sm text-white mb-7 pe-md-18 pe-lg-0 pe-xxl-15">Subtly Guiding Your Sustainability Journey for a Prosperous Tomorrow</p>
+            </div>
+            <!-- /column -->
+            <div class="col-lg-5 offset-lg-1" data-cues="slideInDown">
+              <div class="position-relative">
+                <a href="./assets/media/home.mp4" class="btn btn-circle btn-yellow btn-play ripple mx-auto mb-6 position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 3" data-glightbox><i class="uil uil-caret-right" style="font-size: 30px"></i></a>
+                <figure class="rounded shadow-lg"><img src="./assets/img/photos/new/home01.webp" alt="" /></figure>
+              </div>
+              <!-- /div -->
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light">
+        <div class="container pt-14 pt-md-10">
+          <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+              <p class="lead fs-md mb-10 text-center px-lg-16 px-xl-13">Sustainability leaders and teams confront multifaceted challenges in today's dynamic business landscape</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!-- /row -->
+          <div class="card-row text-center">
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front d-flex flex-column align-items-center shadow-lg card-border-bottom border-soft-yellow">
+                  <img src="./assets/img/icons/new/home-01.webp" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+                  <h6>Complex ESG Data Management</h6>
+                </div>
+                <div class="card-back">
+                  <p class="mb-0">Managing a diverse array of ESG data sources poses complexities, demanding a streamlined approach for cohesive analysis.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front d-flex flex-column align-items-center shadow-lg card-border-bottom border-soft-yellow">
+                  <img src="./assets/img/icons/new/home-02.webp" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+                  <h6>Navigating Evolving Regulations</h6>
+                </div>
+                <div class="card-back">
+                  <p class="mb-0">Staying compliant with rapidly changing global regulations requires vigilance and adaptation.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front d-flex flex-column align-items-center shadow-lg card-border-bottom border-soft-yellow">
+                  <img src="./assets/img/icons/new/home-03.webp" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+                  <h6>Stakeholder Expectations Alignment</h6>
+                </div>
+                <div class="card-back">
+                  <p class="mb-0">Aligning with varied stakeholder expectations, from investors to customers, while maintaining transparency is an intricate task.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front d-flex flex-column align-items-center shadow-lg card-border-bottom border-soft-yellow">
+                  <img src="./assets/img/icons/new/home-04.webp" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+                  <h6>Strategic Decision-making</h6>
+                </div>
+                <div class="card-back">
+                  <p class="mb-0">Businesses seek data-driven insights for strategic decision-making, but gleaning actionable intelligence from raw data can be intricate.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front d-flex flex-column align-items-center shadow-lg card-border-bottom border-soft-yellow">
+                  <img src="./assets/img/icons/new/home-05.webp" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+                  <h6>Effective Communication</h6>
+                </div>
+                <div class="card-back">
+                  <p class="mb-0">Transparently communicating sustainability efforts and achievements to stakeholders in a compelling manner is a persistent challenge.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-10">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+              <h3 class="display-4 mb-3 px-xl-10">Our Offerings</h3>
+              <p class="lead fs-md mb-10 text-center px-lg-16 px-xl-13">At ecoPRISM, we understand the intricate challenges that businesses face today. We are dedicated to being your steadfast ally in overcoming them.</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!-- /row -->
+          <div class="position-relative pb-10">
+            <div class="shape rounded-circle bg-soft-blue rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.2rem; z-index: 0"></div>
+            <div class="shape bg-dot yellow rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
+            <div class="row gx-md-5 gy-5 text-center">
+              <div class="col-md-6 col-xl-3">
+                <div class="card shadow-lg bg-leaf">
+                  <div class="card-body">
+                    <h4 class="text-white">Comprehensive Software Solutions</h4>
+                    <a href="/ecoprism/" class="more hover link-yellow">Learn More</a>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card shadow-lg bg-leaf">
+                  <div class="card-body px-lg-10 px-xxl-14">
+                    <h4 class="text-white">ESG Advisory Services</h4>
+                    <a href="/services/esg-advisory" class="more hover link-yellow">Learn More</a>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card shadow-lg bg-leaf">
+                  <div class="card-body">
+                    <h4 class="text-white">Specialized Training Programs</h4>
+                    <a href="/services/training-capacity-building/" class="more hover link-yellow">Learn More</a>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card shadow-lg bg-leaf">
+                  <div class="card-body px-xl-10 px-xl-12">
+                    <h4 class="text-white">Maturity Assessment</h4>
+                    <a href="/resources/maturity-assessment/" class="more hover link-yellow">Learn More</a>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /.position-relative -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+
+      <section class="wrapper bg-image image-wrapper bg-full" data-image-src="/assets/img/photos/new/case-study-bg.webp">
+        <div class="container pt-14 pb-13 pt-md-12 pb-md-17 text-center">
+          <div class="row">
+            <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto">
+              <h3 class="display-4 mb-3 px-lg-10" style="color: #104845">Case Studies</h3>
+              <p class="lead fs-md mb-10 text-center px-lg-16 px-xl-13" style="color: #104845">Unveiling Our Success Stories in Sustainable Transformation</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light">
+        <div class="container pt-14 pt-md-16 pb-10">
+          <div class="swiper-container grid-view mb-6 mt-n19 mt-md-n21" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure class="overlay overlay-1 hover-scale rounded mb-5">
+                    <a href="/resources/case-studies/tailored-training-global-air-filter-manufacturer/"> <img src="./assets/img/case-studies/cs-01.jpg" alt="" /></a>
+                    <figcaption>
+                      <h5 class="from-top mb-0">Read More</h5>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!--/.swiper-slide -->
+                <div class="swiper-slide">
+                  <figure class="overlay overlay-1 hover-scale rounded mb-5">
+                    <a href="/resources/case-studies/esg-transformation/"> <img src="./assets/img/case-studies/cs-02.jpg" alt="" /></a>
+                    <figcaption>
+                      <h5 class="from-top mb-0">Read More</h5>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!--/.swiper-slide -->
+                <div class="swiper-slide">
+                  <figure class="overlay overlay-1 hover-scale rounded mb-5">
+                    <a href="/resources/case-studies/streamlining-decommissioning-end-life-processes/"> <img src="./assets/img/case-studies/cs-03.jpg" alt="" /></a>
+                    <figcaption>
+                      <h5 class="from-top mb-0">Read More</h5>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!--/.swiper-slide -->
+              </div>
+              <!--/.swiper-wrapper -->
+            </div>
+            <!--/.swiper -->
+          </div>
+          <!--/.swiper-container -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <!--    <section class="wrapper bg-light">-->
+      <!--  <div class="container pt-10 pb-6">-->
+      <!--    <div class="row">-->
+      <!--      <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto text-center">-->
+      <!--        <h2 class="fs-15 text-uppercase text-muted mb-3">Latest Case Studies</h2>-->
+      <!--        <h3 class="display-4 mb-10">Our Case Studies</h3>-->
+      <!--      </div>-->
+      <!--/column -->
+      <!--    </div>-->
+      <!--/.row -->
+      <!--    <div class="swiper-container grid-view mb-6" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">-->
+      <!--      <div class="swiper">-->
+      <!--        <div class="swiper-wrapper">-->
+      <!--          <div class="swiper-slide">-->
+      <!--            <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="/resources/case-studies/tailored-training-global-air-filter-manufacturer/"> <img src="./assets/img/case-studies/cs-01.jpg" alt="" /></a>-->
+      <!--                <figcaption>-->
+      <!--                  <h5 class="from-top mb-0">Read More</h5>-->
+      <!--                </figcaption>-->
+      <!--              </figure>-->
+      <!--            <div class="project-details d-flex justify-content-center flex-column">-->
+      <!--              <div class="post-header">-->
+      <!--                <h2 class="post-title h6"><a href="/resources/case-studies/tailored-training-global-air-filter-manufacturer/" class="link-dark">Tailored Training for a Global Air Filter Manufacturer's Project Team</a></h2>-->
+      <!--                <div class="post-category text-ash">Case Study</div>-->
+      <!--              </div>-->
+      <!--/.post-header -->
+      <!--            </div>-->
+      <!--/.project-details -->
+      <!--          </div>-->
+      <!--/.swiper-slide -->
+      <!--          <div class="swiper-slide">-->
+      <!--            <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="/resources/case-studies/esg-transformation/"> <img src="./assets/img/case-studies/cs-02.jpg" alt="" /></a>-->
+      <!--                <figcaption>-->
+      <!--                  <h5 class="from-top mb-0">Read More</h5>-->
+      <!--                </figcaption>-->
+      <!--              </figure>-->
+      <!--            <div class="project-details d-flex justify-content-center flex-column">-->
+      <!--              <div class="post-header">-->
+      <!--                <h2 class="post-title h6"><a href="/resources/case-studies/esg-transformation/" class="link-dark">Empowering ESG Transformation: Driving the change with ecoPRISM</a></h2>-->
+      <!--                <div class="post-category text-ash">Magazine, Book</div>-->
+      <!--              </div>-->
+      <!--/.post-header -->
+      <!--            </div>-->
+      <!--/.project-details -->
+      <!--          </div>-->
+      <!--/.swiper-slide -->
+      <!--          <div class="swiper-slide">-->
+      <!--            <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="/resources/case-studies/streamlining-decommissioning-end-life-processes/"> <img src="./assets/img/case-studies/cs-03.jpg" alt="" /></a>-->
+      <!--                <figcaption>-->
+      <!--                  <h5 class="from-top mb-0">Read More</h5>-->
+      <!--                </figcaption>-->
+      <!--              </figure>-->
+      <!--            <div class="project-details d-flex justify-content-center flex-column">-->
+      <!--              <div class="post-header">-->
+      <!--                <h2 class="post-title h6"><a href="/resources/case-studies/streamlining-decommissioning-end-life-processes/" class="link-dark">Streamlining Decommissioning and End-of-Life Processes</a></h2>-->
+      <!--                <div class="post-category text-ash">Packaging</div>-->
+      <!--              </div>-->
+      <!--/.post-header -->
+      <!--            </div>-->
+      <!--/.project-details -->
+      <!--          </div>-->
+      <!--/.swiper-slide -->
+      <!--        </div>-->
+      <!--/.swiper-wrapper -->
+      <!--      </div>-->
+      <!--/.swiper -->
+      <!--    </div>-->
+      <!--/.swiper-container -->
+      <!--  </div>-->
+      <!--/.container -->
+      <!--</section>-->
+      <!-- /section -->
+
+      <section class="wrapper bg-light">
+        <div class="container pb-10 pb-md-12">
+          <div class="card shadow-lg">
+            <div class="row gx-0">
+              <div class="col-lg-6 image-wrapper bg-image bg-cover rounded-top rounded-lg-start d-none d-md-block" data-image-src="./assets/img/photos/new/home02.webp"></div>
+              <!--/column -->
+              <div class="col-lg-6">
+                <div class="p-10 p-md-11 px-lg-13 py-lg-10 bg-banner rounded-end rounded-lg-bottom">
+                  <p class="lead fs-md text-white">Step into a future where sustainability is not just a checkbox, but an integral part of your business strategy.</p>
+                  <p class="lead fs-md text-white">Join us at ecoPRISM and discover how our comprehensive ESG solutions can catalyse your journey towards a more sustainable, and responsible future.</p>
+                  <h2 class="lead fs-lg text-white mb-4">Together, let's drive change and lead the way towards a <span class="underline-3 style-2 yellow">brighter tomorrow</span>.</h2>
+                  <a href="/contact-us" class="btn btn-light rounded-pill mt-2 text-leaf">Book a Demo</a>
+                </div>
+                <!--/div -->
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <!--ECOPRISM ADVANTAGE-->
+      <section class="wrapper bg-leaf">
+        <div class="container py-10 py-md-10">
+          <div class="row text-center">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <h3 class="display-4 mb-9 px-xxl-11 text-white">The ecoPRISM Advantage</h3>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="row gx-lg-8 gx-xl-12 gy-8 eco-adv" data-cues="slideInUp" data-group="services">
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="./assets/img/icons/new/home-06.webp" class="svg-inject icon-svg icon-svg-lg text-aqua me-2" alt="" />
+                </div>
+                <div>
+                  <h4 class="mb-1 text-white">Expertise in Sustainability Excellence</h4>
+                  <p class="mb-0 text-white">Benefit from our specialized knowledge in driving businesses towards sustainability excellence.</p>
+                </div>
+              </div>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="./assets/img/icons/new/home-07.webp" class="svg-inject icon-svg icon-svg-lg text-yellow me-2" alt="" />
+                </div>
+                <div>
+                  <h4 class="mb-1 text-white">Holistic Solutions Tailored to You</h4>
+                  <p class="mb-0 text-white">Receive comprehensive solutions designed to fit your company's specific sustainability needs.</p>
+                </div>
+              </div>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="./assets/img/icons/new/home-08.webp" class="svg-inject icon-svg icon-svg-lg text-red me-2" alt="" />
+                </div>
+                <div>
+                  <h4 class="mb-1 text-white">Efficiency and Cost Savings</h4>
+                  <p class="mb-0 text-white">Streamline your sustainability efforts for greater efficiency, saving both time and resources.</p>
+                </div>
+              </div>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="./assets/img/icons/new/home-09.webp" class="svg-inject icon-svg icon-svg-lg text-pink me-2" alt="" />
+                </div>
+                <div>
+                  <h4 class="mb-1 text-white">Competitive Advantage</h4>
+                  <p class="mb-0 text-soft-leaf">Gain an edge by showcasing your commitment to sustainability, attracting conscious customers and investors.</p>
+                </div>
+              </div>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="./assets/img/icons/new/home-10.webp" class="svg-inject icon-svg icon-svg-lg text-green me-2" alt="" />
+                </div>
+                <div>
+                  <h4 class="mb-1 text-white">Data Security</h4>
+                  <p class="mb-0 text-white">Rest assured with our robust security measures that protect your sensitive ESG data.</p>
+                </div>
+              </div>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="./assets/img/icons/new/home-11.webp" class="svg-inject icon-svg icon-svg-lg text-purple me-2" alt="" />
+                </div>
+                <div>
+                  <h4 class="mb-1 text-white">End-to-End Solution</h4>
+                  <p class="mb-0 text-white">Experience a seamless journey from assessment to implementation to ongoing progress tracking, all in one place.</p>
+                </div>
+              </div>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <!--ECOPRISM ADVANTAGE END-->
+      <section class="wrapper bg-light">
+        <div class="container py-10 py-md-11 text-center">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <h3 class="display-4 mb-3 px-xl-10">Our Partners</h3>
+              <p class="lead fs-md mb-10 text-center px-lg-19 px-xl-18">We understand the power of collaboration in driving sustainable change.</p>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 gx-lg-6 gy-6 justify-content-center">
+            <div class="col">
+              <a href="https://www.microsoft.com/en-in" target="_blank">
+                <div class="card shadow-lg h-100 align-items-center">
+                  <div class="card-body align-items-center d-flex px-3 py-6 p-md-8">
+                    <figure class="px-md-3 mb-0"><img src="../assets/img/photos/home/partner-01.webp" alt="" /></figure>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </a>
+            </div>
+            <!--/column -->
+            <div class="col">
+              <a href="https://synerleap.com/" target="_blank">
+                <div class="card shadow-lg h-100 align-items-center">
+                  <div class="card-body align-items-center d-flex px-3 py-6 p-md-4">
+                    <figure class="px-md-3 mb-0"><img src="../assets/img/photos/home/partner-02.webp" alt="" /></figure>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </a>
+            </div>
+            <!--/column -->
+            <div class="col">
+              <a href="https://www.gartner.com/en" target="_blank">
+                <div class="card shadow-lg h-100 align-items-center">
+                  <div class="card-body align-items-center d-flex px-3 py-6 p-md-4">
+                    <figure class="px-md-3 mb-0"><img src="../assets/img/photos/home/partner-03.webp" alt="" /></figure>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </a>
+            </div>
+            <!--/column -->
+            <div class="col">
+              <a href="https://www.carbonaccountingalliance.com/" target="_blank">
+                <div class="card shadow-lg h-100 align-items-center">
+                  <div class="card-body align-items-center d-flex px-3 py-6 p-md-4">
+                    <figure class="px-md-3 mb-0"><img src="../assets/img/photos/home/partner-04.webp" alt="" /></figure>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </a>
+            </div>
+            <!--/column -->
+            <div class="col">
+              <a href="https://greenview.sg/" target="_blank">
+                <div class="card shadow-lg h-100 align-items-center">
+                  <div class="card-body align-items-center d-flex px-3 py-6 p-md-4">
+                    <figure class="px-md-3 mb-0"><img src="../assets/img/photos/home/partner-05.webp" alt="" /></figure>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </a>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+          <!--<div class="position-relative partners">-->
+          <!--  <div class="shape rounded-circle bg-soft-leaf rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.2rem; z-index: 0;"></div>-->
+          <!--  <div class="shape bg-dot yellow rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0;"></div>-->
+          <!--  <div class="row gx-md-5 gy-5 d-flex justify-content-center text-center">-->
+          <!--    <div class="col-md-6 col-xl-4">-->
+          <!--      <div class="card shadow-lg">-->
+          <!--        <div class="card-body">-->
+          <!--          <a href="https://www.microsoft.com/en-in"><img src="../assets/img/photos/home/partner-01.webp" width="50%" class="mb-5" alt="" /></a>-->
+          <!--          <p>Helping us radically accelerate innovation by providing access to industry-leading AI services, expert guidance, and the essential technology needed to build a future-proofed startup.</p>-->
+          <!--        </div>-->
+          <!--/.card-body -->
+          <!--      </div>-->
+          <!--/.card -->
+          <!--    </div>-->
+          <!--/column -->
+          <!--    <div class="col-md-6 col-xl-4">-->
+          <!--      <div class="card shadow-lg">-->
+          <!--        <div class="card-body">-->
+          <!--          <a href="https://synerleap.com/"><img src="../assets/img/photos/home/partner-02.webp" width="50%" class="mb-5" alt="" /></a>-->
+          <!--          <p class="px-xl-2">Through SynerLeap's support and network, we amplify our ability to drive positive change, accelerating the adoption of groundbreaking solutions that contribute to a more sustainable world.</p>-->
+          <!--        </div>-->
+          <!--/.card-body -->
+          <!--      </div>-->
+          <!--/.card -->
+          <!--    </div>-->
+          <!--/column -->
+          <!--    <div class="col-md-6 col-xl-4">-->
+          <!--      <div class="card shadow-lg">-->
+          <!--        <div class="card-body">-->
+          <!--          <a href="https://www.gartner.com/en"><img src="../assets/img/photos/home/partner-03.webp" width="50%" class="mb-5" alt="" /></a>-->
+          <!--          <p class="px-xl-4">Insights delivered to us one-on-one by Gartner’s experienced advisors and informed by a combination of expert-led, practitioner-sourced, and data-driven research.</p>-->
+          <!--        </div>-->
+          <!--/.card-body -->
+          <!--      </div>-->
+          <!--/.card -->
+          <!--    </div>-->
+          <!--/column -->
+          <!--  </div>-->
+          <!--/.row -->
+          <!--</div>-->
+          <!-- /.position-relative -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+    </div>
+    <!-- /.content-wrapper -->
+    <div id="footer"></div>
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

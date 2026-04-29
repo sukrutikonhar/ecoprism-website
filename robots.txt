@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Disallow: /microsoft-partners/index2
+Disallow: /resources/case-studies/tailored-training-global-air-filter-manufacturer/case-studies
+Disallow: /careers/esg-solutions-specialist
+Disallow: /careers/esg-trainee
+Disallow: /careers/senior-esg-solutions-specialist
+Disallow: /resources/case-studies/esg-transformation/
+Disallow: /resources/case-studies/streamlining-decommissioning-end-life-processes/
+Disallow: /resources/case-studies/tailored-training-global-air-filter-manufacturer/
+# Disallow URLs with tracking parameters
+Disallow: /*?trk=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+# Note: Subdomain tracking parameters (e.g., csrdbot.ecoprism.com/?trk=...) 
+# need to be handled at the subdomain level with its own .htaccess file
+Sitemap: https://ecoprism.com/sitemap.xml

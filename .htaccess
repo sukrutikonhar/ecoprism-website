@@ -1,0 +1,240 @@
+RewriteEngine On
+
+# Redirect www to non-www with https
+RewriteCond %{HTTP_HOST} ^www\.ecoprism\.com [NC]
+RewriteRule ^(.*)$ https://ecoprism.com/$1 [L,R=301]
+
+# Redirect http to https (non-www check)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force non-www and https for all traffic
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+# ===== Remove .html extension from all URLs site-wide =====
+# Redirect .html URLs to extensionless URLs (301 permanent redirect)
+# This rule catches requests with .html and redirects them to clean URLs
+RewriteCond %{THE_REQUEST} \s/+[^\s?]*\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} !^/v3/ [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# Internally add .html extension if file exists (only for requests without .html)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/v3/ [NC]
+RewriteCond %{REQUEST_URI} !\.html$ [NC]
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+# ===== End of HTML removal rules =====
+
+# ===== Normalize double slashes =====
+# Redirect URLs with double slashes (//) to single slash
+# This handles cases like /ecobot// -> /ecobot/ -> /ecobot (after trailing slash removal)
+# Must come before trailing slash removal to properly handle double trailing slashes
+# This will normalize multiple slashes anywhere in the URL
+RewriteCond %{REQUEST_URI} ^(.*)//+(.*)$
+RewriteRule . %1/%2 [R=301,L]
+# ===== End of double slash normalization =====
+
+# ===== Remove tracking query parameters (trk, utm, ref) =====
+# Redirect URLs with tracking parameters to clean URLs (without query string)
+RewriteCond %{QUERY_STRING} ^.*(trk|utm_source|utm_medium|utm_campaign|utm_id|utm_term|utm_content|ref)=.* [NC]
+RewriteRule ^(.*)$ https://ecoprism.com%{REQUEST_URI}? [R=301,L]
+# ===== End of tracking parameter removal =====
+
+# ===== Remove trailing slashes (301 permanent redirect) =====
+# Redirect URLs with trailing slashes to non-slash versions
+# Exclude root, v3, and folders that should keep trailing slashes
+# Also exclude directory index pages (insights, whitepapers, events, careers)
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/v3/
+RewriteCond %{REQUEST_URI} !^/csrd-reporting
+RewriteCond %{REQUEST_URI} !^/microsoft-partners
+RewriteCond %{REQUEST_URI} !^/resources/case-studies
+# Exclude /resources/ directory (redirected separately)
+RewriteCond %{REQUEST_URI} !^/resources/?$
+RewriteCond %{REQUEST_URI} !^/resources/insights/?$
+RewriteCond %{REQUEST_URI} !^/resources/whitepapers/?$
+RewriteCond %{REQUEST_URI} !^/events/?$
+RewriteCond %{REQUEST_URI} !^/news/?$
+RewriteCond %{REQUEST_URI} !^/careers/?$
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+# ===== End of trailing slash removal =====
+
+# ===== Directory index serving =====
+# Apache's DirectoryIndex directive automatically serves index.html for directories
+# The trailing slash exclusion rules above ensure /resources/insights/ and /resources/whitepapers/
+# keep their trailing slashes and are handled correctly by DirectoryIndex
+# No rewrite rule needed here - Apache handles it natively
+# ===== End of directory index serving =====
+
+# Your existing 301 redirects
+Redirect 301 /resources/ecobot https://ecoprism.com/ecobot
+Redirect 301 /csrd.html https://ecoprism.com/resources/whitepapers/decoding-csrd-faqs-for-sustainable-business-practices
+Redirect 301 /esg-platfrom/ https://ecoprism.com/esg-platform
+Redirect 301 /ecoprism/ https://ecoprism.com/esg-platform
+Redirect 301 /resources/california-climate-laws https://ecoprism.com/resources/california-climate-laws-explained
+Redirect 301 /resources/california-climate-laws/ https://ecoprism.com/resources/california-climate-laws-explained
+Redirect 301 /resources/whitepapers/california-climate-laws-explained/ https://ecoprism.com/resources/whitepapers/california-climate-laws-download
+Redirect 301 /ecoprism https://ecoprism.com/esg-platform
+Redirect 301 /redefining-sustainable-racing.html https://ecoprism.com/news/redefining-sustainable-racing
+Redirect 301 /sustainable-supply-chains-are-fostering-business-transformation.html https://ecoprism.com/resources/insights/from-linear-to-circular-data-driving-sustainability-supply-chains
+Redirect 301 /resources/insightseu-corporate-sustainability-due-diligence-directive/ https://ecoprism.com/resources/insights/eu-corporate-sustainability-due-diligence-directive
+Redirect 301 /ifrs-esrs-interoperability-a-potential-gamechanger-in-revolutionizing-sustainability-reporting.html https://ecoprism.com/resources/insights/ifrs-esrs-interoperability-potential-gamechanger-sustainability-reporting
+Redirect 301 /resources/assets/img/logo-light.webp https://ecoprism.com/assets/img/logo-light.webp
+Redirect 301 /resources/assets/img/avatars/t14.webp https://ecoprism.com/assets/img/avatars/t14.webp
+Redirect 301 /resources/assets/img/blog/blog-30.jpg https://ecoprism.com/assets/img/blog/blog-30.jpg
+Redirect 301 /resources/assets/img/logo.webp https://ecoprism.com/assets/img/logo.webp
+# Note: Tracking parameter redirects are now handled by RewriteRule above
+# These specific redirects are kept for immediate cleanup but the RewriteRule will catch all variations
+Redirect 301 /?utm_source=di.se&utm_medium=site&utm_campaign=digitalisering&utm_id=framtidsmedia&utm_term=ecoprism https://ecoprism.com
+Redirect 301 /?trk=organization_guest_main-feed-card-text https://ecoprism.com
+Redirect 301 /?trk=public_post_main-feed-card-text https://ecoprism.com
+Redirect 301 /?trk=public_post-text https://ecoprism.com
+# Note: /privacy-policy.html redirect is handled by RewriteRule on line 20
+
+# Redirect old ABB customer story URL to new URL
+Redirect 301 /resources/case-studies/abb-customer-story.html https://ecoprism.com/resources/case-studies/abb-ecoquote-sustainability-reporting
+Redirect 301 /resources/case-studies/abb-customer-story https://ecoprism.com/resources/case-studies/abb-ecoquote-sustainability-reporting
+Redirect 301 /resources/case-studies/abb-ecoquote-sustainability-reporting/ https://ecoprism.com/resources/case-studies/abb-ecoquote-sustainability-reporting
+
+#redirect old events pages
+Redirect 301 /news/events/cfo-outlook/ https://ecoprism.com/news/events/cfo-outlook
+Redirect 301 /news/events/esg-sustainability-strategy-india-summit-2025/ https://ecoprism.com/news/events/esg-sustainability-strategy-india-summit-2025
+
+# ===== Explicit redirects for URLs changed from trailing slash to no trailing slash =====
+# Insight Articles (57 pages)
+Redirect 301 /resources/insights/ai-esg-compliance/ https://ecoprism.com/resources/insights/ai-esg-compliance
+Redirect 301 /resources/insights/california-carb-sb253-sb261-compliance-update-2025/ https://ecoprism.com/resources/insights/california-carb-sb253-sb261-compliance-update-2025
+Redirect 301 /resources/insights/california-sb261-climate-risk-disclosure-guide/ https://ecoprism.com/resources/insights/california-sb261-climate-risk-disclosure-guide
+Redirect 301 /resources/insights/carb-draft-sb253-climate-reporting-template/ https://ecoprism.com/resources/insights/carb-draft-sb253-climate-reporting-template
+Redirect 301 /resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM/ https://ecoprism.com/resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM
+Redirect 301 /resources/insights/cfos-finance-leaders-esg-implementation/ https://ecoprism.com/resources/insights/cfos-finance-leaders-esg-implementation
+Redirect 301 /resources/insights/cios-shaping-sustainable-future/ https://ecoprism.com/resources/insights/cios-shaping-sustainable-future
+Redirect 301 /resources/insights/climate-crisis-2023-unprecedented-records-global-catastrophes/ https://ecoprism.com/resources/insights/climate-crisis-2023-unprecedented-records-global-catastrophes
+Redirect 301 /resources/insights/cop28-preview-key-themes/ https://ecoprism.com/resources/insights/cop28-preview-key-themes
+Redirect 301 /resources/insights/csrd-impact-2024/ https://ecoprism.com/resources/insights/csrd-impact-2024
+Redirect 301 /resources/insights/csrd-impact-uk-companies/ https://ecoprism.com/resources/insights/csrd-impact-uk-companies
+Redirect 301 /resources/insights/csrd-reporting-simplified/ https://ecoprism.com/resources/insights/csrd-reporting-simplified
+Redirect 301 /resources/insights/csrd-supply-chain-impact-strategies/ https://ecoprism.com/resources/insights/csrd-supply-chain-impact-strategies
+Redirect 301 /resources/insights/csrd-value-chain-requirements-sustainability-reporting/ https://ecoprism.com/resources/insights/csrd-value-chain-requirements-sustainability-reporting
+Redirect 301 /resources/insights/data-matters-ensuring-quality-esg-reporting/ https://ecoprism.com/resources/insights/data-matters-ensuring-quality-esg-reporting
+Redirect 301 /resources/insights/decarbonizing-supply-chains-for-competitive-advantage/ https://ecoprism.com/resources/insights/decarbonizing-supply-chains-for-competitive-advantage
+Redirect 301 /resources/insights/diversity-drives-success-business-case-diversity/ https://ecoprism.com/resources/insights/diversity-drives-success-business-case-diversity
+Redirect 301 /resources/insights/esg-assurance-data-confidence-compliance-sustainability-reporting/ https://ecoprism.com/resources/insights/esg-assurance-data-confidence-compliance-sustainability-reporting
+Redirect 301 /resources/insights/esg-reporting-investor-trust/ https://ecoprism.com/resources/insights/esg-reporting-investor-trust
+Redirect 301 /resources/insights/esg-reporting-trust-roadmap/ https://ecoprism.com/resources/insights/esg-reporting-trust-roadmap
+Redirect 301 /resources/insights/esg-software-omnibus-2025/ https://ecoprism.com/resources/insights/esg-software-omnibus-2025
+Redirect 301 /resources/insights/esg-training-for-organizations/ https://ecoprism.com/resources/insights/esg-training-for-organizations
+Redirect 301 /resources/insights/esrs-e1-csrd-climate-disclosures/ https://ecoprism.com/resources/insights/esrs-e1-csrd-climate-disclosures
+Redirect 301 /resources/insights/eu-corporate-sustainability-due-diligence-directive/ https://ecoprism.com/resources/insights/eu-corporate-sustainability-due-diligence-directive
+Redirect 301 /resources/insights/eu-simplifies-sustainability-reporting/ https://ecoprism.com/resources/insights/eu-simplifies-sustainability-reporting
+Redirect 301 /resources/insights/eu-sustainability-reporting-extension/ https://ecoprism.com/resources/insights/eu-sustainability-reporting-extension
+Redirect 301 /resources/insights/europe-experiencing-shift-esg-reporting/ https://ecoprism.com/resources/insights/europe-experiencing-shift-esg-reporting
+Redirect 301 /resources/insights/exploring-key-differences-net-zero-vs-carbon-neutrality/ https://ecoprism.com/resources/insights/exploring-key-differences-net-zero-vs-carbon-neutrality
+Redirect 301 /resources/insights/exploring-potential-green-hydrogen-advancing-industrial-decarbonisation/ https://ecoprism.com/resources/insights/exploring-potential-green-hydrogen-advancing-industrial-decarbonisation
+Redirect 301 /resources/insights/from-linear-to-circular-data-driving-sustainability-supply-chains/ https://ecoprism.com/resources/insights/from-linear-to-circular-data-driving-sustainability-supply-chains
+Redirect 301 /resources/insights/future-of-esg-reporting-automated-csrd-brsr-compliance-tool/ https://ecoprism.com/resources/insights/future-of-esg-reporting-automated-csrd-brsr-compliance-tool
+Redirect 301 /resources/insights/ifrs-esrs-interoperability-potential-gamechanger-sustainability-reporting/ https://ecoprism.com/resources/insights/ifrs-esrs-interoperability-potential-gamechanger-sustainability-reporting
+Redirect 301 /resources/insights/implementing-double-materiality-csrd-reporting/ https://ecoprism.com/resources/insights/implementing-double-materiality-csrd-reporting
+Redirect 301 /resources/insights/mandatory-emissions-reporting-evolution-compliance/ https://ecoprism.com/resources/insights/mandatory-emissions-reporting-evolution-compliance
+Redirect 301 /resources/insights/mastering-sustainability-reporting-guide/ https://ecoprism.com/resources/insights/mastering-sustainability-reporting-guide
+Redirect 301 /resources/insights/mastering-your-first-csrd-report-practical-guide/ https://ecoprism.com/resources/insights/mastering-your-first-csrd-report-practical-guide
+Redirect 301 /resources/insights/microsoft-sustainability-manager-overview/ https://ecoprism.com/resources/insights/microsoft-sustainability-manager-overview
+Redirect 301 /resources/insights/navigating-challenges-managing-reporting-scope-3-emissions/ https://ecoprism.com/resources/insights/navigating-challenges-managing-reporting-scope-3-emissions
+Redirect 301 /resources/insights/navigating-revised-esrs-draft-crucial-changes-impact/ https://ecoprism.com/resources/insights/navigating-revised-esrs-draft-crucial-changes-impact
+Redirect 301 /resources/insights/one-earth-one-voice-activating-worldwide-environmental-action/ https://ecoprism.com/resources/insights/one-earth-one-voice-activating-worldwide-environmental-action
+Redirect 301 /resources/insights/real-time-esg-data-in-sales-proposals/ https://ecoprism.com/resources/insights/real-time-esg-data-in-sales-proposals
+Redirect 301 /resources/insights/SB-253-&-SB-261-Compliance-Guide/ https://ecoprism.com/resources/insights/SB-253-&-SB-261-Compliance-Guide
+Redirect 301 /resources/insights/scope-3-emissions-accurate-measurement/ https://ecoprism.com/resources/insights/scope-3-emissions-accurate-measurement
+Redirect 301 /resources/insights/significance-of-biodiversity-for-business/ https://ecoprism.com/resources/insights/significance-of-biodiversity-for-business
+Redirect 301 /resources/insights/simplifying-sustainability-dashboards/ https://ecoprism.com/resources/insights/simplifying-sustainability-dashboards
+Redirect 301 /resources/insights/solving-scope-3-data-challenge/ https://ecoprism.com/resources/insights/solving-scope-3-data-challenge
+Redirect 301 /resources/insights/streamline-esg-reporting-with-technology/ https://ecoprism.com/resources/insights/streamline-esg-reporting-with-technology
+Redirect 301 /resources/insights/sustainability-in-every-customer-touchpoint/ https://ecoprism.com/resources/insights/sustainability-in-every-customer-touchpoint
+Redirect 301 /resources/insights/sustainability-meets-ai-future-of-industry/ https://ecoprism.com/resources/insights/sustainability-meets-ai-future-of-industry
+Redirect 301 /resources/insights/tech-driven-corporate-sustainability-navigating-future-it-innovation/ https://ecoprism.com/resources/insights/tech-driven-corporate-sustainability-navigating-future-it-innovation
+Redirect 301 /resources/insights/tnfd-recommendations-reporting-nature-risks-opportunities/ https://ecoprism.com/resources/insights/tnfd-recommendations-reporting-nature-risks-opportunities
+Redirect 301 /resources/insights/transparency-against-greenwashing/ https://ecoprism.com/resources/insights/transparency-against-greenwashing
+Redirect 301 /resources/insights/transparency-in-esg-reporting/ https://ecoprism.com/resources/insights/transparency-in-esg-reporting
+Redirect 301 /resources/insights/uk-sustainability-disclosure-requirements-sdr/ https://ecoprism.com/resources/insights/uk-sustainability-disclosure-requirements-sdr
+Redirect 301 /resources/insights/understanding-esrs-1-and-esrs-2-cross-cutting-standards-for-sustainability-reporting/ https://ecoprism.com/resources/insights/understanding-esrs-1-and-esrs-2-cross-cutting-standards-for-sustainability-reporting
+Redirect 301 /resources/insights/understanding-esrs-standards/ https://ecoprism.com/resources/insights/understanding-esrs-standards
+Redirect 301 /resources/insights/vsme-sme-sustainability-reporting/ https://ecoprism.com/resources/insights/vsme-sme-sustainability-reporting
+
+# Whitepapers (7 pages)
+Redirect 301 /resources/whitepapers/california-climate-laws/ https://ecoprism.com/resources/whitepapers/california-climate-laws-download
+Redirect 301 /resources/whitepapers/california-climate-laws-download/ https://ecoprism.com/resources/whitepapers/california-climate-laws-download
+Redirect 301 /resources/whitepapers/decoding-csrd-faqs-for-sustainable-business-practices/ https://ecoprism.com/resources/whitepapers/decoding-csrd-faqs-for-sustainable-business-practices
+Redirect 301 /resources/whitepapers/eu-green-deal-guide/ https://ecoprism.com/resources/whitepapers/eu-green-deal-guide
+Redirect 301 /resources/whitepapers/global-esg-reporting-landscape/ https://ecoprism.com/resources/whitepapers/global-esg-reporting-landscape
+Redirect 301 /resources/whitepapers/guide-to-esrs-aligned-sustainability-reporting/ https://ecoprism.com/resources/whitepapers/guide-to-esrs-aligned-sustainability-reporting
+Redirect 301 /resources/whitepapers/navigating-scope-3-emissions-through-supplier-engagement/ https://ecoprism.com/resources/whitepapers/navigating-scope-3-emissions-through-supplier-engagement
+Redirect 301 /resources/whitepapers/omnibus-eu-sustainability-reform/ https://ecoprism.com/resources/whitepapers/omnibus-eu-sustainability-reform
+
+# News Articles (6 pages - events excluded as it keeps trailing slash)
+Redirect 301 /news/company-news/ https://ecoprism.com/news/company-news
+Redirect 301 /news/ecoprism-synerleap-partnership/ https://ecoprism.com/news/ecoprism-synerleap-partnership
+Redirect 301 /news/gartner-it-symposium-xpo-2023/ https://ecoprism.com/news/gartner-it-symposium-xpo-2023
+Redirect 301 /news/meeting-eu-csrd-demands/ https://ecoprism.com/news/meeting-eu-csrd-demands
+Redirect 301 /news/news-media/ https://ecoprism.com/news/news-media
+Redirect 301 /news/redefining-sustainable-racing/ https://ecoprism.com/news/redefining-sustainable-racing
+Redirect 301 /news/reuters-impact-2023/ https://ecoprism.com/news/reuters-impact-2023
+
+# News Events (4 pages)
+Redirect 301 /news/events/cfo-outlook/ https://ecoprism.com/news/events/cfo-outlook
+Redirect 301 /news/events/esg-sustainability-strategy-india-summit-2025/ https://ecoprism.com/news/events/esg-sustainability-strategy-india-summit-2025
+Redirect 301 /news/events/navigating-csrd-best-practices-2024/ https://ecoprism.com/news/events/navigating-csrd-best-practices-2024
+Redirect 301 /news/events/reuters-2024/ https://ecoprism.com/news/events/reuters-2024
+
+# Resource Pages - Trailing slash redirects (these are .html files, handled by general trailing slash removal rule above)
+# Keeping these explicit redirects for SEO and consistency, but they're also handled by the general rule
+Redirect 301 /resources/esrs-adoption/ https://ecoprism.com/resources/esrs-adoption
+Redirect 301 /resources/maturity-assessment/ https://ecoprism.com/resources/maturity-assessment
+Redirect 301 /resources/california-climate-laws-explained/ https://ecoprism.com/resources/california-climate-laws-explained
+Redirect 301 /resources/csrd-adoption/ https://ecoprism.com/resources/csrd-adoption
+Redirect 301 /resources/glossary/ https://ecoprism.com/resources/glossary
+Redirect 301 /resources/brsr-reporting/ https://ecoprism.com/resources/brsr-reporting
+
+# Product Pages (5 pages)
+Redirect 301 /esg-platform/ https://ecoprism.com/esg-platform
+Redirect 301 /ecoquote/ https://ecoprism.com/ecoquote
+Redirect 301 /esg-benchmarking/ https://ecoprism.com/esg-benchmarking
+Redirect 301 /ecobot/ https://ecoprism.com/ecobot
+# Handle double trailing slash for ecobot
+Redirect 301 /ecobot// https://ecoprism.com/ecobot
+Redirect 301 /ecoprismxgartner/ https://ecoprism.com/ecoprismxgartner
+
+# Service Pages (2 pages)
+Redirect 301 /services/esg-advisory/ https://ecoprism.com/services/esg-advisory
+Redirect 301 /services/training-capacity-building/ https://ecoprism.com/services/training-capacity-building
+
+# Career Pages (4 pages)
+Redirect 301 /careers/backend-developer/ https://ecoprism.com/careers/backend-developer
+Redirect 301 /careers/esg-solutions-specialist/ https://ecoprism.com/careers/esg-solutions-specialist
+Redirect 301 /careers/esg-trainee/ https://ecoprism.com/careers/esg-trainee
+Redirect 301 /careers/senior-esg-solutions-specialist/ https://ecoprism.com/careers/senior-esg-solutions-specialist
+# Redirect non-existent career pages to careers index
+Redirect 301 /careers/dot-net-developer/ https://ecoprism.com/careers/
+# Handle URL variant with period instead of "dot"
+Redirect 301 /careers/.net-developer/ https://ecoprism.com/careers/
+
+# Other Pages - Remove trailing slashes
+# Note: Trailing slash removal is handled by RewriteRule above (line 62)
+# These explicit redirects are kept for SEO but should not conflict
+Redirect 301 /about-us/ https://ecoprism.com/about-us
+Redirect 301 /our-team/ https://ecoprism.com/our-team
+Redirect 301 /contact-us/ https://ecoprism.com/contact-us
+Redirect 301 /esg-platform/ https://ecoprism.com/esg-platform
+
+# New Pages Added (December 2025)
+Redirect 301 /resources/whitepapers/2026-sustainability-reality-check/ https://ecoprism.com/resources/whitepapers/2026-sustainability-reality-check
+Redirect 301 /resources/insights/eu-omnibus-csrd-csddd-changes-explained/ https://ecoprism.com/resources/insights/eu-omnibus-csrd-csddd-changes-explained
+# ===== End of explicit trailing slash redirects =====
+
+<IfModule mod_php.c>
+  AddHandler application/x-httpd-php .php
+</IfModule>
+AddHandler application/x-httpd-php82 .php .php5 .php4 .php3

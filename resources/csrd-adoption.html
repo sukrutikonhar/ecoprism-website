@@ -1,0 +1,1225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <meta property="og:image" content="https://ecoprism.com/resources/esrs-adoption/esrsVo3.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Simplify CSRD compliance with ecoPRISM. Discover how our comprehensive solution saves time, ensures accuracy, and keeps you ahead of regulatory requirements." />
+    <meta name="keywords" content="ESRS compliance, European Sustainability Reporting Standards, sustainability reporting, ecoPRISM, corporate reporting, sustainability practices" />
+    <meta name="author" content="ecoPRISM" />
+    <title>CSRD Compliance Simplified | ecoPRISM</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.webp" />
+    <link rel="stylesheet" href="../assets/css/plugins.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/eco.css" />
+    <link rel="stylesheet" href="../assets/css/colors/leaf.css" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://ecoprism.com/resources/csrd-adoption" />
+
+    <!-- Alternate language links -->
+    <link rel="alternate" hreflang="en" href="https://ecoprism.com/resources/csrd-adoption" />
+    <link rel="alternate" hreflang="x-default" href="https://ecoprism.com/resources/csrd-adoption" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ecoprism.com/resources/csrd-adoption" />
+    <meta property="og:title" content="CSRD Compliance Simplified | ecoPRISM" />
+    <meta property="og:description" content="Simplify CSRD compliance with ecoPRISM. Discover how our comprehensive solution saves time, ensures accuracy, and keeps you ahead of regulatory requirements." />
+    <meta property="og:image" content="https://ecoprism.com/assets/img/og-image/csrd-adoption.webp" />
+    <meta property="og:site_name" content="ecoPRISM" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ecoprism.com/resources/csrd-adoption" />
+    <meta name="twitter:title" content="CSRD Compliance Simplified | ecoPRISM" />
+    <meta name="twitter:description" content="Simplify CSRD compliance with ecoPRISM. Discover how our comprehensive solution saves time, ensures accuracy, and keeps you ahead of regulatory requirements." />
+    <meta name="twitter:image" content="https://ecoprism.com/assets/img/og-image/csrd-adoption.webp" />
+
+    <style>
+      /* Global Styles */
+      .icon-svg,
+      .icon-svg.icon-svg-lg {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .esg-maturity .icon-svg.icon-svg-md {
+        width: 2.6rem;
+        height: 2.6rem;
+      }
+
+      /* Background Utilities */
+      .bg-leafy {
+        background-image: linear-gradient(to right bottom, #494949, #4e5055, #4e5861, #4a616c, #446a73, #39777a, #35847a, #419072, #5ea062, #89ad4c, #beb435, #fab430);
+      }
+
+      .bg-banner {
+        background-image: linear-gradient(to right top, #407775, #588885, #6f9995, #86aba6, #9dbdb8);
+      }
+
+      .bg-gradient-leaf {
+        background: linear-gradient(180deg, #407775, rgba(255, 255, 255, 0) 100%);
+      }
+
+      .bg-card {
+        background: linear-gradient(0deg, rgba(56, 124, 121, 1) 0%, rgba(218, 180, 50, 1) 100%);
+      }
+
+      .timeline-wrapper {
+        position: relative;
+        padding: 2rem 1rem;
+        margin: 0 auto;
+      }
+      .timeline-wrapper::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background-color: rgba(64, 119, 117, 0.2);
+      }
+      .timeline-item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 14px;
+        background-color: #407775;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+      }
+
+      .item-content--left,
+      .item-content--center,
+      .item-content--right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .item-content--left,
+      .item-content--right {
+        width: 40%;
+      }
+      .item-content--center {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      .date-box {
+        width: 143px;
+        text-align: center;
+        background: #fff;
+        padding: 0.25rem 0;
+        border: 2px solid #407775;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2f3e55;
+        z-index: 3;
+        position: relative;
+        margin: 0 auto;
+      }
+      .item-content--center .date-box::before,
+      .item-content--center .date-box::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 2px;
+        background-color: #407775;
+        width: calc(34% + 0px);
+        z-index: 1;
+      }
+      .item-content--center .date-box::before {
+        left: -34%;
+      }
+      .item-content--center .date-box::after {
+        right: -34%;
+      }
+      .timeline-item:nth-child(even) .item-content--right,
+      .timeline-item:nth-child(odd) .item-content--left {
+        margin-top: -40px;
+      }
+
+      .timeline-item:nth-child(odd) .date-box::after {
+        display: none;
+      }
+
+      .timeline-item:nth-child(even) .date-box::before {
+        display: none;
+      }
+
+      .event-box {
+        width: 100%;
+        background: #fff;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        position: relative;
+      }
+      .event-box h4 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+        color: #2f3e55;
+      }
+      .event-box p {
+        margin: 0;
+        color: #333333;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      .timeline-item:nth-child(odd) .event-box {
+        background: linear-gradient(180deg, #b6d8d7 0%, #62a09d 100%);
+      }
+      .timeline-item:nth-child(even) .event-box {
+        background: linear-gradient(180deg, #fcde8b 0%, #fab430 100%);
+      }
+
+      @media (max-width: 768px) {
+        .item-content--center {
+          order: 0;
+          margin-bottom: 0.75rem;
+        }
+        .item-content--left,
+        .item-content--right {
+          order: 1;
+        }
+        .timeline-item:nth-child(even) .item-content--right,
+        .timeline-item:nth-child(odd) .item-content--left {
+          margin-top: 0 !important;
+        }
+        .timeline-wrapper::before {
+          left: 20px;
+        }
+
+        .timeline-item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 2rem;
+          padding-left: 2rem;
+        }
+        .timeline-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+          left: 10px;
+          top: 2.5rem;
+          transform: none;
+        }
+        .timeline-item:nth-child(even) .item-content--right,
+        .timeline-item:nth-child(odd) .item-content--left {
+          margin-top: 0 !important;
+        }
+        .item-content--left,
+        .item-content--center,
+        .item-content--right {
+          width: 100%;
+          padding-left: 0;
+          margin-top: 0.75rem;
+          text-align: left;
+        }
+        .item-content--center {
+          margin-bottom: 0.75rem;
+          display: flex;
+          justify-content: flex-start;
+        }
+        .item-content--center .date-box {
+          margin-left: 0;
+        }
+        .item-content--center .date-box::before,
+        .item-content--center .date-box::after {
+          display: none;
+        }
+        .event-box {
+          margin-top: 0;
+          border: 1px solid #ddd;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .event-box h4 {
+          font-size: 1rem;
+        }
+        .event-box p {
+          font-size: 0.9rem;
+        }
+      }
+      .benefits .card-body {
+        height: 348px;
+      }
+      @media (max-width: 767px) {
+        .image-wrapper.bg-cover {
+          min-height: 0rem;
+        }
+      }
+
+      @media only screen and (min-width: 500px) {
+        .did-you-know {
+          border-right: 2px solid #fff;
+        }
+      }
+
+      @media (min-width: 767px) {
+        .modal-content {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .process-wrapper.arrow [class*="col-"]:before {
+          top: 2rem !important;
+          opacity: 0.8;
+        }
+      }
+
+      @media only screen and (min-width: 1200px) {
+        .esrs-points .card-body {
+          height: 349.73px;
+        }
+      }
+
+      @media only screen and (min-width: 1400px) {
+        .esg-maturity .grid-view article .card-body {
+          height: 387.13px;
+        }
+      }
+
+      @media only screen and (max-width: 1400px) and (min-width: 1024px) {
+        .esg-maturity .grid-view article .card-body {
+          height: 441.52px;
+        }
+      }
+    </style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JTG1Q17RB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6JTG1Q17RB");
+    </script>
+
+    <!-- Lead5beat Tracking Code -->
+    <script type="text/javascript" src="https://secure.lead5beat.com/js/221793.js"></script>
+    <noscript><img src="https://secure.lead5beat.com/221793.png" style="display: none" / loading="lazy"></noscript>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "CSRD Compliance Simplified",
+        "description": "Simplify CSRD compliance with ecoPRISM. Discover how our comprehensive solution saves time, ensures accuracy, and keeps you ahead of regulatory requirements.",
+        "url": "https://ecoprism.com/resources/csrd-adoption",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ecoPRISM",
+          "url": "https://ecoprism.com"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="content-wrapper esg-maturity">
+      <header class="wrapper bg-soft-primary">
+        <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-dark">
+          <div class="container flex-lg-row flex-nowrap align-items-center">
+            <div class="navbar-brand w-100">
+              <a href="/">
+                <img class="logo-dark" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
+                <img class="logo-light" src="../assets/img/logo-light.webp" height="45px" alt="ecoPRISM Logo" />
+              </a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <a href="/">
+                  <img class="logo-dark" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
+                  <img class="logo-light" src="../assets/img/logo-light.webp" height="45px" alt="ecoPRISM Logo" />
+                </a>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/about-us">About Us</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/our-team">Our Team</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/careers">Careers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/news">News</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/events">Events</a></li>
+                    </ul>
+                  </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu dropdown-lg">
+                      <div class="dropdown-lg-content">
+                        <div>
+                          <ul class="list-unstyled">
+                            <li><a class="dropdown-item" href="/esg-platform">ESG Platform</a></li>
+                            <li><a class="dropdown-item" href="/csrd-reporting">CSRD Reporting</a></li>
+                            <li><a class="dropdown-item" href="/ecoquote">ecoQUOTE</a></li>
+                          </ul>
+                        </div>
+                        <!-- /.column -->
+                        <div>
+                          <ul class="list-unstyled">
+                            <li><a class="dropdown-item" href="/esg-benchmarking">ESG Benchmarking</a></li>
+                            <li><a class="dropdown-item" href="/ecobot">CSRD ecobot</a></li>
+                            <li><a class="dropdown-item" href="/ecogrid">ecoGRID</a></li>
+                          </ul>
+                        </div>
+                        <!-- /.column -->
+                      </div>
+                      <!-- /auto-column -->
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/ecoprism-ai">ecoPRISM AI</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/services/esg-advisory">ESG Advisory</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/services/training-capacity-building">Training and Capacity Building</a></li>
+                    </ul>
+                  </li>
+<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Case Studies</a>
+
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/abb-ecoquote-sustainability-reporting">Sustainability in Proposals</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/unisys-climate-risk">Climate Risk Intelligence</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/acumant-ecovadis">EcoVadis Readiness</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/camfil-esg-training">ESG Capacity Building</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/double-materiality-assessment">Double Materiality Assessment</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/insights">Insights</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/whitepapers">Whitepapers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/glossary">ESG Glossary</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/csrd-adoption">CSRD Adoption</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/california-climate-laws-explained">California Climate Disclosure Laws</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/brsr-reporting">BRSR Reporting</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item d-block d-md-none"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+                </ul>
+                <!-- /.navbar-nav -->
+                <div class="offcanvas-footer d-lg-none">
+                  <div>
+                    <a href="mailto:info@ecoprism.com" class="link-inverse"><span class="__cf_email__">info@ecoprism.com</span></a>
+                    <nav class="nav social social-white mt-4">
+                      <a href="https://www.linkedin.com/company/ecoprism/"><i class="uil uil-linkedin"></i></a>
+                      <a href="https://www.youtube.com/@Ecoprism-kz4yb"><i class="uil uil-youtube"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                  </div>
+                </div>
+                <!-- /.offcanvas-footer -->
+              </div>
+              <!-- /.offcanvas-body -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="navbar-other ms-lg-4">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item d-none d-md-block">
+                  <a href="/contact-us" class="btn btn-sm btn-white rounded-pill">Contact Us</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                  <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </header>
+      <!-- /header -->
+      <section class="wrapper image-wrapper bg-image bg-overlay bg-cover text-white" data-image-src="../../assets/img/banner/csrd-banner1.webp">
+        <div class="container pt-17 pt-md-20 pt-lg-16 pb-5 pb-md-10">
+          <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+              <div class="d-flex justify-content-end text-end"></div>
+              <h1 class="display-2 text-white mb-3">CSRD Compliance Simplified</h1>
+              <p class="lead fs-lg pe-md-18 pe-lg-14 pe-xl-16 pe-xxl-18 mb-0 text-yellow">Turn complexity to clarity with ecoPRISM</p>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light">
+        <div class="container pt-12">
+          <div class="row">
+            <div class="col-md-12 offset-md-1 col-lg-8 offset-lg-2 text-center">
+              <h3 class="display-4 mb-10 px-xl-10">What is CSRD?</h3>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+            <div class="col-md-8 col-lg-6 order-lg-2 position-relative">
+              <div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem"></div>
+              <figure class="rounded shadow-lg"><img src="../../assets/img/photos/new/csrd-scope.webp" alt="Image" / loading="lazy"></figure>
+            </div>
+            <!--/column -->
+            <div class="col-lg-6">
+              <p>The Corporate Sustainability Reporting Directive (CSRD) is reshaping how companies communicate their impact on the world. Introduced by the EU to replace the NFRD, the CSRD brings sustainability reporting to the forefront of corporate accountability.</p>
+              <p>Effective since January 2023, it requires large, listed companies to disclose detailed environmental, social, and governance (ESG) data starting with the 2024 financial year. The goal is to equip investors, consumers, and stakeholders with clear, reliable information and to push businesses toward long-term, sustainable value creation.</p>
+              <p>Whether you're preparing to comply or looking to lead in ESG, the CSRD sets a new standard for transparency.</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+          <div class="row mt-10">
+            <div class="card shadow-none bg-soft-leaf col-md-10 mx-auto">
+              <div class="card-body">
+                <h4 class="h4 text-leaf">EU Introduces Omnibus Directive to Ease CSRD Burden</h4>
+                <p class="mb-0">In 2025, the EU responded to mounting implementation challenges and business concerns by introducing a reform package known as the Omnibus Directive. This initiative came in response to growing feedback from Member States, industry leaders, and SMEs highlighting the complexity, cost, and resource burden of complying with the Corporate Sustainability Reporting Directive (CSRD).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <hr style="margin: 2.5rem 0" />
+      <section>
+        <div class="container mb-10">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <h3 class="display-4 mb-10 px-xl-10">From CSRD Rollout to Omnibus Reform</h3>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="row text-center" data-cue="slideInUp">
+            <div class="col-lg-10 mx-auto">
+              <div class="position-relative">
+                <div class="shape bg-dot leaf rellax w-16 h-18" data-rellax-speed="1" style="top: 1rem; left: -3.9rem"></div>
+                <div class="shape rounded-circle bg-line yellow rellax w-18 h-18" data-rellax-speed="1" style="bottom: 2rem; right: -3rem"></div>
+                <figure class="rounded shadow-lg"><img src="../../assets/img/photos/csrd/csrd-omnibus2.webp" alt="Image" / loading="lazy"></figure>
+              </div>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+          <!-- <div class="timeline-wrapper">
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box">
+                  <p>
+                    <strong>CSRD Proposed:</strong>
+                    European Commission publishes proposal to replace the Non-Financial Reporting Directive (NFRD), broadening scope and detail of ESG disclosures.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item-content--center">
+                <div class="date-box">Apr 2021</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Jan 2023</div>
+              </div>
+
+              <div class="item-content--right">
+                <div class="event-box">
+                  <p>
+                    <strong>CSRD Enters into Force:</strong>
+                    EU Member States begin transposing the directive into national law.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box">
+                  <p>
+                    <strong>Reporting Begins for First Companies:</strong>
+                    Large public‐interest entities already under NFRD begin reporting for financial year 2024.
+                  </p>
+                </div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Jan 2024</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Sep 2024</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box">
+                  <p>
+                    <strong>Draghi Report Published:</strong>
+                    “The Future of European Competitiveness” calls for regulatory simplification, prompting CSRD simplification.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box">
+                  <p>
+                    <strong>EU Announces Omnibus Review:</strong>
+                    Commission signals intent to consolidate and simplify sustainability rules (CSRD, CSDDD, Taxonomy).
+                  </p>
+                </div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Nov 2024</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Mar 2025</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box">
+                  <p>
+                    <strong>‘Stop-the-Clock’ Directive Proposed:</strong>
+                    EU proposes legislative delay to CSRD and CSDDD rollout as part of Omnibus I.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box">
+                  <p>
+                    <strong>Omnibus Directive Approved:</strong>
+                    European Parliament formally delays CSRD timelines and mandates simplified ESRS.
+                  </p>
+                </div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Apr 2025</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">Oct 2025</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box">
+                  <p>
+                    <strong>Simplified ESRS Expected:</strong>
+                    EFRAG to publish a streamlined set of sustainability reporting standards for broader company use.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem">
+              <div class="item-content--left">
+                <div class="event-box">
+                  <p>
+                    <strong>Staggered Implementation:</strong>
+                    Using simplified ESRS requirements.
+                  </p>
+                </div>
+              </div>
+              <div class="item-content--center">
+                <div class="date-box">2026–2029</div>
+              </div>
+              <div class="item-content--right">
+                <div class="event-box" style="visibility: hidden; height: 0; padding: 0; margin: 0"></div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="row mt-10">
+            <p>The Omnibus Directive proposes a phased delay in sustainability reporting obligations for EU companies and instructs the simplification of the European Sustainability Reporting Standards (ESRS) to make compliance more practical. The ESRS framework will be revised to reduce unnecessary disclosures and focus on materiality-driven reporting. The number of required data points will significantly reduce by prioritizing quantitative indicators over narrative reporting.</p>
+            <p>This initiative reflects a broader shift in EU sustainability policy: one that aims to <strong>balance ambitious ESG goals with economic competitiveness, innovation capacity, and regulatory clarity.</strong></p>
+            <div class="table-responsive mt-5">
+              <table class="table table-hover table-bordered">
+                <thead class="bg-leaf text-light">
+                  <tr>
+                    <th scope="col">Wave</th>
+                    <th scope="col" style="width: 20%">Entities Affected</th>
+                    <th scope="col">Reporting Start Date</th>
+                    <th scope="col" style="width: 20%">Proposed Reporting timelines</th>
+                    <th scope="col">Scope</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white">
+                  <tr>
+                    <th scope="row" class="text-nowrap">Wave 1</th>
+                    <td>Large, listed companies (>1,000 employees)</td>
+                    <td>2025</td>
+                    <td>No change under <strong>"stop-the-clock"</strong></td>
+                    <td>Simplified ESRS reporting; Smaller listed companies out of scope; Value chain responses under VSME</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">Wave 2</th>
+                    <td>Large companies (>1,000 employees)</td>
+                    <td>2026</td>
+                    <td><strong>Postponed to 2028 </strong></td>
+                    <td>Simplified ESRS reporting; Smaller companies out of scope; Value chain responses under VSME</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">Wave 3</th>
+                    <td>Pre-Omnibus listed SMEs & small financial entities</td>
+                    <td>2027</td>
+                    <td><strong>Postponed to 2029 </strong></td>
+                    <td>Out of scope under the revised directive; Value chain responses under VSME</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">Wave 4</th>
+                    <td>Non-EU companies with significant EU activity</td>
+                    <td>2029</td>
+                    <td><strong>No change</strong> under Omnibus package</td>
+                    <td>No change for ultimate parents with at least one large subsidiary or branch (revenue > EUR 50m, total revenue > EUR 450m); Ultimate parents below proposed threshold out of scope after transposition </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /section -->
+
+      <section class="wrapper bg-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 mx-auto">
+              <div class="card bg-transparent">
+                <div class="card-body p-6 p-md-11 d-lg-flex flex-row align-items-lg-center justify-content-md-between text-center text-lg-start">
+                  <h3 class="display-5 mb-6 mb-lg-0 pe-lg-10 pe-xl-16 pe-xxl-18 text-white">Are you struggling to comply with the large number of requirements for effective CSRD reporting?</h3>
+                  <a href="/contact-us" class="btn btn-yellow btn-lg mb-0 text-nowrap text-dark">Talk to us</a>
+                </div>
+                <!--/.card-body -->
+              </div>
+              <!--/.card -->
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+
+      <!-- ESRS Simplification Section -->
+      <section class="wrapper bg-light">
+        <div class="container py-14 py-md-16">
+          <!-- Section Header -->
+          <div class="row text-center mb-10">
+            <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-2 mx-auto">
+              <!-- Main Heading -->
+              <h2 class="display-4 mb-5">Revised ESRS: Simpler, Clearer, More Practical</h2>
+
+              <!-- Sub Heading -->
+              <p class="lead fs-lg mb-0">To implement the simplification goals set out under the Omnibus Directive, EFRAG released the revised and simplified Exposure Drafts of the European Sustainability Reporting Standards (ESRS) on 31st July 2025.</p>
+            </div>
+          </div>
+
+          <!-- Key Simplifications -->
+          <div class="row gx-md-5 gy-5 mb-12">
+            <div class="col-md-10 offset-md-1">
+              <div class="card shadow-lg">
+                <div class="card-body p-6 p-md-8" style="background-color: #f3f8f2">
+                  <h3 class="h3 mb-5 text-primary">Key Simplifications:</h3>
+
+                  <div class="row g-4">
+                    <!-- Simplification 1 -->
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3">
+                          <i class="uil uil-chart-pie"></i>
+                        </div>
+                        <p class="mb-0">57% reduction in mandatory datapoints and 68% reduction overall</p>
+                      </div>
+                    </div>
+
+                    <!-- Simplification 2 -->
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3">
+                          <i class="uil uil-balance-scale"></i>
+                        </div>
+                        <p class="mb-0">Streamlined double materiality assessment</p>
+                      </div>
+                    </div>
+
+                    <!-- Simplification 3 -->
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3">
+                          <i class="uil uil-file-alt"></i>
+                        </div>
+                        <p class="mb-0">Clearer structure and language</p>
+                      </div>
+                    </div>
+
+                    <!-- Simplification 4 -->
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3">
+                          <i class="uil uil-times-circle"></i>
+                        </div>
+                        <p class="mb-0">Removal of all voluntary disclosures</p>
+                      </div>
+                    </div>
+
+                    <!-- Simplification 5 -->
+                    <div class="col-md-12">
+                      <div class="d-flex align-items-center">
+                        <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3">
+                          <i class="uil uil-shield-check"></i>
+                        </div>
+                        <p class="mb-0">New relief mechanisms for disproportionate cost or effort</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Dates Section -->
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div class="card shadow-lg border-0">
+                <div class="card-body p-0">
+                  <!-- Title Section -->
+                  <div class="p-6 p-md-8" style="background: linear-gradient(135deg, #407775 0%, #588885 100%)">
+                    <h3 class="h3 mb-2 text-white text-center">
+                      <i class="uil uil-calendar-alt me-2"></i>
+                      Key Dates (Simplified ESRS)
+                    </h3>
+                    <p class="text-white text-center mb-0 opacity-90">Timeline for the revised reporting standards</p>
+                  </div>
+
+                  <!-- Timeline Image -->
+                  <div class="p-4 p-md-6" style="background-color: #ffffff"><img src="../assets/img/photos/new/simplified-esrs.webp" alt="Simplified ESRS Timeline" class="w-100 rounded-lg shadow-sm" / loading="lazy"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /section -->
+
+      <section class="wrapper bg-light">
+        <div class="container py-12">
+          <div class="row text-center">
+            <div class="col-md-10 offset-md-1">
+              <h3 class="display-4 mb-10 px-xl-10">Key Strategies for Navigating CSRD Post-Omnibus</h3>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="position-relative benefits">
+            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
+            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
+            <div class="row gx-md-5 gy-5 text-center">
+              <div class="col-md-6 col-xl-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3"><img src="../../assets/img/icons/new/csrd-adoption-01.svg" class="svg-inject icon-svg icon-svg-xs" / loading="lazy"></div>
+                    <h4>Stay Ahead of Regulation</h4>
+                    <p>Monitor CSRD and ESRS updates proactively to ensure timely compliance.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3"><img src="../../assets/img/icons/new/csrd-adoption-02.svg" class="svg-inject icon-svg icon-svg-xs" / loading="lazy"></div>
+                    <h4>Focus on Double Materiality</h4>
+                    <p>Strengthen double materiality assessments to assess sustainability impacts and risks effectively.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3"><img src="../../assets/img/icons/new/csrd-adoption-03.svg" class="svg-inject icon-svg icon-svg-xs" / loading="lazy"></div>
+                    <h4>Leverage Phased Implementation</h4>
+                    <p>Use the transition period to refine reporting, engage value chain partners, and build governance.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3"><img src="../../assets/img/icons/new/csrd-adoption-04.svg" class="svg-inject icon-svg icon-svg-xs" / loading="lazy"></div>
+                    <h4>Automate with ecoPRISM</h4>
+                    <p>Streamline ESG data collection and reporting using ecoPRISM’s CSRD platform.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /.position-relative -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light">
+        <div class="container py-12">
+          <div class="position-relative">
+            <div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.2rem; z-index: 0"></div>
+            <div class="shape bg-dot yellow rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
+            <div class="row gx-md-5 gy-5 text-center">
+              <div class="col-md-10 col-lg-10 mx-auto text-center">
+                <div class="card bg-soft-yellow card-border-bottom border-soft-yellow">
+                  <div class="card-body">
+                    <blockquote class="border-0 fs-lg">
+                      <p>“CSRD reporting is essential for enhancing transparency and accountability in companies' ESG performance. However, challenges like standardization, data reliability, and stakeholder engagement persist. At ecoPRISM, we are dedicated to help you navigate these challenges while driving tangible impact.”</p>
+                      <div class="blockquote-details justify-content-center">
+                        <img class="rounded-circle border-primary w-12" src="../../assets/img/avatars/t2.webp" alt="Team member" / loading="lazy">
+                        <div class="info">
+                          <h5 class="mb-1">Vishakha Goel</h5>
+                          <p class="mb-0">Sustainability Head</p>
+                        </div>
+                      </div>
+                    </blockquote>
+                  </div>
+                </div>
+                <!-- /.item -->
+              </div>
+              <!--/.column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /.position-relative -->
+        </div>
+        <!-- /.container -->
+        <div class="container">
+          <div class="row gy-10 gy-sm-13 gx-lg-3 mt-1">
+            <div class="col-md-8 col-lg-6 position-relative">
+              <div class="swiper-container grid-view nav-bottom nav-color mb-14" data-margin="30" data-dots="false" data-nav="true" data-items-md="1" data-items-xs="1">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide d-flex justify-content-center align-items-center"><img src=".././../assets/img/photos/csrd/reports.webp" class="rounded" alt="Image" style="max-height: 374px; max-width: 100%; width: auto; height: auto" / loading="lazy"></div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide d-flex justify-content-center align-items-center"><img src=".././../assets/img/photos/csrd/dashboard.webp" class="rounded" alt="Image" style="max-height: 374px; max-width: 100%; width: auto; height: auto" / loading="lazy"></div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide d-flex justify-content-center align-items-center"><img src=".././../assets/img/photos/csrd/targets.webp" class="rounded" alt="Image" style="max-height: 374px; max-width: 100%; width: auto; height: auto" / loading="lazy"></div>
+                    <!--/.swiper-slide -->
+                  </div>
+                  <!--/.swiper-wrapper -->
+                </div>
+                <!-- /.swiper -->
+              </div>
+              <!-- /.swiper-container -->
+            </div>
+            <!--/column -->
+            <div class="col-lg-6">
+              <h3 class="display-4 mb-5 pt-2">ecoPRISM is your trusted partner in CSRD Compliance</h3>
+              <p>A comprehensive solution that accelerates your compliance, saves time and effort while helping you make real progress and stay ahead of the curve.</p>
+              <p><strong>Take a peek into our intelligent platform</strong></p>
+              <a href="/contact-us" class="btn btn-leaf rounded-pill mt-6 mb-10 mb-md-0">Request a Discovery Call</a>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!--/.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light">
+        <div class="container py-10">
+          <div class="row gx-xl-12 gy-10">
+            <div class="col-xl-4">
+              <h2 class="display-4 mb-3">Important Resources</h2>
+              <p class="lead fs-lg">Explore our resources curated to help you understand and navigate the challenges of CSRD adoption.</p>
+            </div>
+            <!-- /column -->
+            <div class="col-xl-8">
+              <div class="position-relative">
+                <div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="top: -0.7rem; right: -1.7rem"></div>
+                <div class="shape rounded-circle bg-line leaf rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; left: -1.4rem"></div>
+                <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-md="2" data-items-xs="1" data-autoplay="true">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="item-inner">
+                          <figure class="lift rounded mb-6">
+                            <a href="/resources/insights/eu-sustainability-reporting-extension/"> <img src="../../assets/img/blog/blog-22.jpg" alt="Article illustration" / loading="lazy"></a>
+                          </figure>
+                        </div>
+                        <!-- /.item-inner -->
+                      </div>
+                      <!--/.swiper-slide -->
+                      <div class="swiper-slide">
+                        <div class="item-inner">
+                          <figure class="lift rounded mb-6">
+                            <a href="/resources/insights/navigating-revised-esrs-draft-crucial-changes-impact/"> <img src="../../assets/img/blog/blog-08.jpg" alt="Article illustration" / loading="lazy"></a>
+                          </figure>
+                        </div>
+                        <!-- /.item-inner -->
+                      </div>
+                      <!--/.swiper-slide -->
+                      <div class="swiper-slide">
+                        <div class="item-inner">
+                          <figure class="lift rounded mb-6">
+                            <a href="/resources/whitepapers/decoding-csrd-faqs-for-sustainable-business-practices"> <img src="../assets/img/whitepapers/csrd-thumbnail.webp" alt="Whitepaper thumbnail" / loading="lazy"></a>
+                          </figure>
+                        </div>
+                        <!-- /.item-inner -->
+                      </div>
+                      <!--/.swiper-slide -->
+                      <div class="swiper-slide">
+                        <div class="item-inner">
+                          <figure class="lift rounded mb-6">
+                            <a href="/resources/insights/csrd-impact-2024/"> <img src="../../assets/img/blog/blog-18.jpg" alt="Article illustration" / loading="lazy"></a>
+                          </figure>
+                        </div>
+                        <!-- /.item-inner -->
+                      </div>
+                      <!--/.swiper-slide -->
+                      <div class="swiper-slide">
+                        <div class="item-inner">
+                          <figure class="lift rounded mb-6">
+                            <a href="/resources/insights/ifrs-esrs-interoperability-potential-gamechanger-sustainability-reporting/"> <img src="../../assets/img/blog/blog-09.webp" alt="Article illustration" / loading="lazy"></a>
+                          </figure>
+                        </div>
+                        <!-- /.item-inner -->
+                      </div>
+                      <!--/.swiper-slide -->
+                    </div>
+                    <!--/.swiper-wrapper -->
+                  </div>
+                  <!-- /.swiper -->
+                </div>
+                <!-- /.swiper-container -->
+              </div>
+              <!-- /.position-relative -->
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-soft-primary">
+        <div class="container py-10">
+          <div class="rounded-4">
+            <div class="card-body">
+              <div class="row gx-lg-8 gx-xl-12 gy-10">
+                <div class="col-lg-4">
+                  <h3 class="display-4 mb-4">Frequently Asked Questions</h3>
+                  <p class="lead fs-lg mb-0">If you don't see an answer to your question, you can send us an email from our contact form.</p>
+                  <a href="/contact-us" class="btn btn-primary rounded-pill mt-6">Ask us</a>
+                </div>
+                <!--/column -->
+                <div class="col-lg-8">
+                  <div class="accordion accordion-wrapper" id="accordionExample">
+                    <div class="card plain accordion-item">
+                      <div class="card-header" id="headingOne">
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What does CSRD mean for the companies using GRI standards in Europe?</button>
+                      </div>
+                      <!--/.card-header -->
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="card-body">
+                          <p>As per EFRAG confirmation, the ESRS are aligned as closely as possible with the GRI Standards. This reassures established GRI reporters that they are well-equipped for the ESRS and can utilize their current reporting methods effectively</p>
+                        </div>
+                        <!--/.card-body -->
+                      </div>
+                      <!--/.accordion-collapse -->
+                    </div>
+                    <!--/.accordion-item -->
+                    <div class="card plain accordion-item">
+                      <div class="card-header" id="headingTwo">
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">My organization is not based in the EU. Does the CSRD even affect me?</button>
+                      </div>
+                      <!--/.card-header -->
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="card-body">
+                          <p>The disclosure requirements under the CSRD will apply to an estimated 50,000 companies, from January 2024. All large companies governed by the law of or established in an EU member state, and all European stock exchange-listed companies (except micro-companies), as well as SMEs, are within the scope. Companies not in the EU but have securities on EU-regulated markets are also in scope.</p>
+                          <p>From January 2028, the CSRD will also apply to non-EU undertakings that generate a net turnover of over €150,000,000 in the EU and have an EU branch office with a net turnover of at least €40 million in the EU, or a large or listed EU subsidiary. However, these companies will only have to supply impact-related information, for which a special standard will be developed.</p>
+                        </div>
+                        <!--/.card-body -->
+                      </div>
+                      <!--/.accordion-collapse -->
+                    </div>
+                    <!--/.accordion-item -->
+                    <div class="card plain accordion-item">
+                      <div class="card-header" id="headingThree">
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">What should be reported under CSRD?</button>
+                      </div>
+                      <!--/.card-header -->
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="card-body">
+                          <p>The CSRD is significantly more comprehensive in scope than the NFRD. Companies have to report in detail the material sustainability impacts associated with its entire value chain. Companies also must disclose on their policies and targets. The ESRS include twelve standards: two cross-cutting standards, covering General Requirements and General Disclosures; and ten topical standards, as depicted in the diagram above.</p>
+                          <p>Companies need to disclose their sustainability information in their annual reports – as a part of the management section. This means that one report will give an overview of both the financial and sustainability information for the company.</p>
+                          <p>The data needs to also be reported in a standardized digital format, to ensure comparability and alignment in the European single access point database.</p>
+                          <p>The reports are required to be assured as per limited assurance requirements.</p>
+                        </div>
+                        <!--/.card-body -->
+                      </div>
+                      <!--/.accordion-collapse -->
+                    </div>
+                    <!--/.accordion-item -->
+                    <div class="card plain accordion-item">
+                      <div class="card-header" id="headingFour">
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">What does Double materiality refers to in CSRD?</button>
+                      </div>
+                      <!--/.card-header -->
+                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="card-body">
+                          <p>
+                            Filers must conduct a “double materiality” assessment, considering both their impact on society and the environment and how external sustainability factors affect their organization. Double materiality is the union (in mathematical terms, i.e. union of two sets, not intersection) of impact materiality and financial materiality. A sustainability topic or information meets therefore the criteria of double materiality if it is material from the impact perspective or from
+                            the financial perspective or from both perspectives.
+                          </p>
+                          <p>This assessment involves stakeholders evaluating risks and opportunities across CSRD topics, using qualitative and quantitative measures. The outcomes determine which CSRD components companies must report, ensuring alignment with issues significant to both the organization and society.</p>
+                        </div>
+                        <!--/.card-body -->
+                      </div>
+                      <!--/.accordion-collapse -->
+                    </div>
+                    <!--/.accordion-item -->
+                    <div class="card plain accordion-item">
+                      <div class="card-header" id="headingFive">
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">What is the current status of CSRD?</button>
+                      </div>
+                      <!--/.card-header -->
+                      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="card-body">
+                          <p>
+                            The Corporate Sustainability Reporting Directive (CSRD) came into force on 5 January 2023, replacing the NFRD to strengthen sustainability reporting across the EU. Companies began reporting under the CSRD framework starting in 2024. However, in early 2025, the European Commission introduced the Omnibus Simplification Package to ease compliance burdens. It proposes raising the reporting threshold to 1,000 employees, delaying reporting deadlines by two years, and
+                            simplifying the European Sustainability Reporting Standards (ESRS). These revisions aim to reduce complexity and administrative costs for companies. The proposed changes are currently under legislative review and are expected to significantly reduce the number of companies required to report.
+                          </p>
+                        </div>
+                        <!--/.card-body -->
+                      </div>
+                      <!--/.accordion-collapse -->
+                    </div>
+                    <!--/.accordion-item -->
+                  </div>
+                  <!--/.accordion -->
+                </div>
+                <!--/column -->
+              </div>
+              <!--/.row -->
+            </div>
+            <!--/.card-body -->
+          </div>
+          <!--/.card -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!--<div class="modal-header">-->
+          <!--  <h5 class="modal-title" id="downloadModalLabel">Download Guide</h5>-->
+          <!--</div>-->
+          <div class="modal-body">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+                region: "na1",
+                portalId: "40029313",
+                formId: "96201a49-4636-4a8a-8317-3d264a66a590",
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal /.-->
+    <div id="footer"></div>
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+      // Function to show the modal when the ".pdf" buttons are clicked
+      const pdfButtons = document.querySelectorAll(".pdf");
+      pdfButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          $("#downloadModal").modal("show");
+        });
+      });
+    </script>
+  </body>
+</html>

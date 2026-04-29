@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ecoGRID | ecoPRISM</title>
+    <meta name="description" content="AI broke the grid. Don't expand into it blind. ecoGRID helps enterprises assess grid risk, compare expansion sites, and auto-sync outputs into ESG reporting." />
+    <script src="/v3/assets/js/cache-buster.js"></script>
+    <link rel="shortcut icon" href="/assets/img/favicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ecoprism: {
+                primary: "#407775",
+                secondary: "#588885",
+                yellow: "#fab430",
+                text: "#575757",
+                dark: "#1d312c",
+                title: "#343f52",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "Helvetica Neue", "Arial", "sans-serif"],
+              poppins: ["Poppins", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Font Awesome (shared footer uses fab icons for LinkedIn / YouTube) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+      .hero-bg {
+        background: linear-gradient(148deg, rgba(249, 212, 35, 0.1) 21.64%, rgba(249, 212, 35, 0.5) 57.84%, rgba(111, 134, 100, 0.8) 87.68%, #407775 115.33%);
+      }
+      .cta-bg {
+        background: linear-gradient(196deg, #2f6f64 11.12%, #000 168.84%);
+      }
+      .recognition-bg {
+        background: linear-gradient(103deg, #2f6f64 46.88%, #000 117.57%);
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(6px);
+      }
+      /* THE ECOPRISM DIFFERENCE — section backdrop */
+      .ecoprism-difference-section {
+        background: linear-gradient(180deg, #2f6b66 0%, #010303 165.37%, #000 165.37%);
+      }
+      /* THE ECOPRISM DIFFERENCE — glass cards + sync strip */
+      .difference-glass-card {
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
+        box-shadow:
+          0 1px 0 1px rgba(255, 255, 255, 0.16) inset,
+          0 18px 40px 0 rgba(11, 46, 38, 0.14);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .difference-row {
+        border-radius: 12px;
+        background: #eaf5f1;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+      }
+      /* Stacked label + tag on narrow viewports; single row from sm — avoids inconsistent wrap */
+      .difference-row-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-content: center;
+        gap: 0.5rem;
+      }
+      @media (min-width: 640px) {
+        .difference-row-layout {
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 0.75rem;
+        }
+      }
+      .difference-row-layout > span:first-child {
+        min-width: 0;
+      }
+      .difference-row-layout .difference-tag {
+        width: max-content;
+        max-width: 100%;
+        justify-self: start;
+        align-self: start;
+      }
+      @media (min-width: 640px) {
+        .difference-row-layout .difference-tag {
+          justify-self: end;
+          align-self: center;
+        }
+      }
+      /* Problem section — stat + copy */
+      .problem-metric-inner {
+        display: grid;
+        grid-template-columns: 8.2ch minmax(0, 1fr);
+        align-items: center;
+        gap: 2rem;
+      }
+      .problem-metric-value {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        text-align: center;
+        white-space: nowrap;
+      }
+      @media (min-width: 640px) {
+        .problem-metric-inner {
+          gap: 1rem;
+        }
+      }
+      .difference-tag {
+        border-radius: 10px;
+        background: #407775;
+        color: #fff;
+      }
+      .difference-sync-grid {
+        display: grid;
+        row-gap: 24px;
+        column-gap: 24px;
+        align-items: stretch;
+        background: transparent;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 1024px) {
+        .difference-sync-grid {
+          display: inline-grid;
+          width: 100%;
+          grid-template-columns: minmax(0, 1fr) 110px minmax(0, 1fr);
+          grid-template-rows: minmax(403.59px, auto);
+          align-self: stretch;
+        }
+      }
+      /* Center “bridge”: gold line interrupted around label + button */
+      .difference-sync-line {
+        width: 2px;
+        flex: 1 1 0;
+        min-height: 2.5rem;
+        border-radius: 9999px;
+        background: linear-gradient(180deg, #fcd977 0%, #fab430 40%, #c99220 100%);
+        box-shadow:
+          0 0 10px rgba(250, 180, 48, 0.75),
+          0 0 20px rgba(250, 180, 48, 0.35);
+      }
+      .difference-sync-bridge {
+        width: 100%;
+        max-width: 110px;
+      }
+      .difference-sync-bridge__core {
+        background: transparent;
+      }
+      /* Global Coverage — market cards */
+      .global-coverage-card {
+        border-radius: 12px;
+        border: 1px solid #e2e8e6;
+        background: #fff;
+        box-shadow: 0 8px 30px 0 rgba(47, 111, 100, 0.05);
+        transition:
+          transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .global-coverage-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(47, 111, 100, 0.22);
+        box-shadow: 0 14px 40px 0 rgba(47, 111, 100, 0.1);
+      }
+      .global-coverage-tag {
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: #f4b940;
+      }
+      /* Hero — Sandbox-style staggered entrance (image → title → subtitle → CTAs → stats) */
+      @keyframes ecoprism-hero-in {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 28px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .hero-reveal {
+        opacity: 0;
+        animation: ecoprism-hero-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      .hero-reveal-delay-img {
+        animation-delay: 0.05s;
+      }
+      .hero-reveal-delay-h1 {
+        animation-delay: 0.45s;
+      }
+      .hero-reveal-delay-lead {
+        animation-delay: 0.7s;
+      }
+      .hero-reveal-delay-cta {
+        animation-delay: 0.95s;
+      }
+      .hero-reveal-delay-stat1 {
+        animation-delay: 1.2s;
+      }
+      .hero-reveal-delay-stat2 {
+        animation-delay: 1.4s;
+      }
+      .hero-reveal-delay-stat3 {
+        animation-delay: 1.6s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-reveal {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+      /* Scroll reveal (sections below fold) */
+      .js-reveal {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .js-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+      .js-reveal-delay-1 {
+        transition-delay: 0.06s;
+      }
+      .js-reveal-delay-2 {
+        transition-delay: 0.12s;
+      }
+      .js-reveal-delay-3 {
+        transition-delay: 0.18s;
+      }
+      .js-reveal-delay-4 {
+        transition-delay: 0.24s;
+      }
+      /* ecoGRID page — buttons & interactive links */
+      .ecogrid-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          filter 0.2s ease;
+      }
+      .ecogrid-btn:hover {
+        transform: translateY(-2px);
+      }
+      .ecogrid-btn:active {
+        transform: translateY(0) scale(0.98);
+      }
+      .ecogrid-btn:focus-visible {
+        outline: 2px solid #fab430;
+        outline-offset: 3px;
+      }
+      .ecogrid-btn-outline {
+        background: rgba(255, 255, 255, 0.65);
+        border: 2px solid #2f6f64;
+        color: #2f6f64;
+        box-shadow: 0 2px 8px rgba(47, 111, 100, 0.08);
+      }
+      .ecogrid-btn-outline:hover {
+        background: rgba(47, 111, 100, 0.1);
+        border-color: #245548;
+        color: #1a3d36;
+        box-shadow: 0 6px 18px rgba(47, 111, 100, 0.16);
+      }
+      .ecogrid-btn-cta-ghost {
+        border: 2px solid rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+      }
+      .ecogrid-btn-cta-ghost:hover {
+        border-color: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+      .ecogrid-sync-btn {
+        transition:
+          transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.28s ease,
+          background-color 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .ecogrid-sync-btn:hover {
+        transform: scale(1.08);
+        background-color: #3d7a70 !important;
+        border-color: #fcd977 !important;
+        box-shadow:
+          0 0 0 3px rgba(250, 180, 48, 0.35),
+          0 8px 22px rgba(0, 0, 0, 0.35);
+      }
+      .ecogrid-sync-btn:focus-visible {
+        outline: 2px solid #fab430;
+        outline-offset: 3px;
+      }
+      .ecogrid-nav-cta {
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .ecogrid-nav-cta:hover {
+        background-color: rgba(64, 119, 117, 0.1);
+        color: #2f6f64;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ecogrid-btn:hover,
+        .ecogrid-btn:active,
+        .ecogrid-sync-btn:hover {
+          transform: none;
+        }
+        .ecogrid-btn,
+        .ecogrid-sync-btn {
+          transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+        }
+        .global-coverage-card:hover,
+        .ecogrid-cap-card:hover {
+          transform: none;
+        }
+      }
+      /* Desktop nav dropdown links — brand-tint hover */
+      header div.absolute.left-0.bg-white.rounded-md.shadow-lg a.block {
+        transition:
+          background-color 0.18s ease,
+          color 0.18s ease;
+      }
+      header div.absolute.left-0.bg-white.rounded-md.shadow-lg a.block:hover {
+        background-color: #eaf5f1;
+        color: #2f6f64;
+      }
+      .ecogrid-cap-card {
+        transition:
+          transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .ecogrid-cap-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(47, 111, 100, 0.2);
+        box-shadow: 0 12px 32px 0 rgba(47, 111, 100, 0.1);
+      }
+    </style>
+    <link rel="stylesheet" href="/v3/assets/css/main.css" />
+    <link rel="stylesheet" href="/v3/assets/css/components.css" />
+    <!-- CTA fills inlined after external CSS: green/gold buttons still work if main.css 404s, is blocked, or CDN serves a stale copy -->
+    <style>
+      .ecogrid-btn-primary {
+        background: #2f7f75;
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(47, 119, 117, 0.28);
+      }
+      .ecogrid-btn-primary:hover {
+        background: linear-gradient(165deg, #3a7d6e 0%, #2f6f64 55%, #285a50 100%);
+        box-shadow: 0 10px 28px rgba(47, 111, 100, 0.42);
+      }
+      .ecogrid-btn-header {
+        background: #407775;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(32, 90, 84, 0.32);
+      }
+      .ecogrid-btn-header:hover {
+        background: linear-gradient(165deg, #4d8f82 0%, #407775 50%, #356963 100%);
+        box-shadow: 0 8px 22px rgba(32, 90, 84, 0.48);
+      }
+      .ecogrid-btn-cta-gold {
+        background: #f4b940;
+        color: #0b2e26;
+        box-shadow: 0 6px 18px rgba(244, 185, 64, 0.32);
+      }
+      .ecogrid-btn-cta-gold:hover {
+        background: linear-gradient(165deg, #fce089 0%, #f4b940 45%, #e0a32a 100%);
+        box-shadow: 0 12px 34px rgba(244, 185, 64, 0.5);
+      }
+    </style>
+  </head>
+  <body class="font-sans overflow-x-hidden bg-white text-ecoprism-text">
+    <header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: window.scrollY > 0 }" x-init="const update = () => { isScrolled = window.scrollY > 0; }; update(); requestAnimationFrame(update); window.addEventListener('scroll', update, { passive: true });" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-cloak>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-9 w-auto" />
+            </a>
+          </div>
+
+          <div class="hidden lg:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  About
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/about-us" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
+                  <a href="/our-team" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
+                  <a href="/careers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+                  <a href="/news" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News</a>
+                  <a href="/events" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Products
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 z-50 flex w-max max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-gray-200 bg-white py-3 shadow-lg">
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-platform" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Platform</a>
+                    <a href="/csrd-reporting" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD Reporting</a>
+                    <a href="/ecoquote" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoQUOTE</a>
+                  </div>
+                  <div class="w-px shrink-0 self-stretch bg-gray-200" aria-hidden="true"></div>
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-benchmarking" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Benchmarking</a>
+                    <a href="/ecobot" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD ecobot</a>
+                    <a href="/ecogrid" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoGRID</a>
+                  </div>
+                </div>
+              </div>
+              <a href="/ecoprism-ai" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium py-4">ecoPRISM AI</a>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Services
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
+                  <a href="/services/training-capacity-building" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Case Studies
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Sustainability in Proposals</a>
+                  <a href="/resources/case-studies/unisys-climate-risk" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Climate Risk Intelligence</a>
+                  <a href="/resources/case-studies/acumant-ecovadis" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">EcoVadis Readiness</a>
+                  <a href="/resources/case-studies/camfil-esg-training" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Capacity Building</a>
+                  <a href="/resources/case-studies/double-materiality-assessment" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Double Materiality Assessment</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Resources
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
+                  <a href="/resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
+                  <a href="/resources/glossary" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
+                  <a href="/resources/csrd-adoption" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
+                  <a href="/resources/california-climate-laws-explained" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+                  <a href="/resources/brsr-reporting" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">BRSR Reporting</a>
+                </div>
+              </div>
+
+              <a href="/contact-us" class="ecogrid-btn ecogrid-btn-header rounded-full px-6 py-2 text-sm font-semibold">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="lg:hidden">
+            <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" class="rounded-md p-2 text-ecoprism-text transition hover:bg-black/5 hover:text-ecoprism-primary active:scale-95" aria-label="Toggle mobile menu" :aria-expanded="mobileMenuOpen">
+              <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 lg:hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50" @click="mobileMenuOpen = false"></div>
+        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="mobile-nav-drawer relative flex h-full min-h-0 w-full max-w-xs flex-col bg-white shadow-xl">
+          <div class="flex shrink-0 items-center justify-between border-b p-4">
+            <div class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+            </div>
+            <button type="button" @click="mobileMenuOpen = false" class="rounded-md p-2 text-ecoprism-text hover:bg-gray-100 hover:text-ecoprism-primary">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-4">
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                About
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'about'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/about-us" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
+                <a href="/our-team" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
+                <a href="/careers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
+                <a href="/news" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">News</a>
+                <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Products
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'products'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/esg-platform" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Platform</a>
+                <a href="/csrd-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Reporting</a>
+                <a href="/ecoquote" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
+                <a href="/esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
+                <a href="/ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
+                <a href="/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
+              </div>
+            </div>
+            <a href="/ecoprism-ai" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">ecoPRISM AI</a>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Services
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'services'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/services/esg-advisory" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Advisory</a>
+                <a href="/services/training-capacity-building" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Training and Capacity Building</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'casestudies' ? null : 'casestudies'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Case Studies
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'casestudies' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'casestudies'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Sustainability in Proposals</a>
+                <a href="/resources/case-studies/unisys-climate-risk" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Climate Risk Intelligence</a>
+                <a href="/resources/case-studies/acumant-ecovadis" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">EcoVadis Readiness</a>
+                <a href="/resources/case-studies/camfil-esg-training" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Capacity Building</a>
+                <a href="/resources/case-studies/double-materiality-assessment" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Double Materiality Assessment</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Resources
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/insights/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
+                <a href="/resources/whitepapers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
+                <a href="/resources/glossary" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
+                <a href="/resources/csrd-adoption" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
+                <a href="/resources/california-climate-laws-explained" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+                <a href="/resources/brsr-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">BRSR Reporting</a>
+              </div>
+            </div>
+            <a href="/contact-us" class="ecogrid-nav-cta block rounded-full px-3 py-2 text-base font-semibold text-ecoprism-text">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-bg -mt-16 flex min-h-[calc(100dvh-64px)] min-h-[calc(100vh-64px)] items-center pt-20 pb-10 sm:pb-12 lg:pt-24">
+        <div class="container mx-auto w-full max-w-full px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <div class="order-2 min-w-0 lg:order-1">
+              <h1 class="hero-reveal hero-reveal-delay-h1 font-poppins text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl lg:leading-[1.1]">
+                <span class="text-[#2f6f64]">AI broke the grid.</span><br />
+                <span class="text-[#343f52]">Don't expand<br class="hidden sm:block" />into it blind.</span>
+              </h1>
+              <p class="hero-reveal hero-reveal-delay-lead mt-5 max-w-2xl text-base font-normal leading-relaxed text-ecoprism-text sm:text-lg lg:text-xl lg:max-w-[500px]">Ensure grid stability and evaluate integration risks before scaling operations. ecoPRISM brings deep intelligence to ESG infrastructure.</p>
+              <div class="hero-reveal hero-reveal-delay-cta mt-7 flex flex-wrap gap-3 sm:gap-4">
+                <a href="/contact-us" class="ecogrid-btn ecogrid-btn-primary inline-flex min-h-[44px] min-w-[44px] rounded-lg px-6 py-3 text-center text-sm font-semibold sm:px-7 sm:text-base">Book a Demo</a>
+                <a href="/contact-us" class="ecogrid-btn ecogrid-btn-outline inline-flex min-h-[44px] min-w-[44px] rounded-lg px-6 py-3 text-center text-sm font-semibold sm:px-7 sm:text-base">Request a Pilot</a>
+              </div>
+              <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div class="hero-reveal hero-reveal-delay-stat1 glass rounded-lg p-4">
+                  <p class="font-poppins text-3xl font-semibold text-[#2f6f64] mb-2">30x</p>
+                  <p class="text-sm font-normal leading-snug text-ecoprism-text">US AI power demand growth by 2035</p>
+                </div>
+                <div class="hero-reveal hero-reveal-delay-stat2 glass rounded-lg p-4">
+                  <p class="font-poppins text-3xl font-semibold text-[#2f6f64] mb-2">7yr+</p>
+                  <p class="text-sm font-normal leading-snug text-ecoprism-text">Grid connection queues globally</p>
+                </div>
+                <div class="hero-reveal hero-reveal-delay-stat3 glass rounded-lg p-4">
+                  <p class="font-poppins text-3xl font-semibold text-[#2f6f64] mb-2">20%</p>
+                  <p class="text-sm font-normal leading-snug text-ecoprism-text">Expansion projects delayed by grid</p>
+                </div>
+              </div>
+            </div>
+            <div class="order-1 min-w-0 lg:order-2">
+              <div class="hero-reveal hero-reveal-delay-img overflow-hidden">
+                <img src="/v3/assets/img/products/ecogrid-dashboard.webp" alt="ecoGRID dashboard preview" class="h-auto w-full max-h-[min(52vh,520px)] object-contain object-center lg:max-h-none" width="1200" height="800" decoding="async" fetchpriority="high" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="recognition-bg py-20">
+        <div class="container mx-auto px-4 lg:px-12">
+          <div class="js-reveal rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur sm:p-8">
+            <div class="inline-flex rounded-full bg-white/20 px-4 py-2 text-xs tracking-[0.14em] font-semibold text-white">RECOGNITION</div>
+            <p class="mt-6 font-poppins text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-[40px] lg:leading-[1.25]">🏆 Top 70 Finalist - Energy Tech<br />Challengers 2026 · AI for Energy track</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f7f8f6] py-20">
+        <div class="container mx-auto grid grid-cols-1 gap-10 px-4 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:px-12">
+          <div class="js-reveal order-2 min-w-0 lg:order-1">
+            <span class="inline-flex rounded-full bg-white px-4 py-2 text-xs font-semibold tracking-[0.1em] text-[#105447]">THE PROBLEM</span>
+            <h2 class="mt-4 font-poppins text-2xl font-bold leading-tight text-ecoprism-title sm:text-3xl lg:text-4xl">The energy crisis hiding in your expansion plan</h2>
+            <p class="mt-5 text-base font-normal leading-[1.8] text-ecoprism-text sm:text-lg">AI has triggered a power demand surge the grid wasn’t built for. Unlike past growth - gradual and dispersed - today’s demand is rapid, massive, and highly localized. Substations are maxed out, connection queues stretch years, and tariffs are increasingly volatile.</p>
+            <p class="mt-4 text-base font-normal leading-[1.8] text-ecoprism-text sm:text-lg">Enterprises optimise for real estate, demographics, and logistics, but have almost no visibility into the electrical infrastructure underneath. Capital decisions are made assuming power will be there.<br /><span class="font-semibold text-ecoprism-primary">ecoGRID changes that.</span></p>
+          </div>
+          <div class="js-reveal order-1 min-w-0 space-y-4 lg:order-2">
+            <div class="relative overflow-hidden rounded-[8px] border border-[#E2E8E6] bg-white p-4 pl-5 shadow-[0_8px_30px_0_rgba(47,111,100,0.05)] sm:p-5 sm:pl-6">
+              <span class="absolute left-0 top-0 h-full w-[4px] bg-[#FAB430]" aria-hidden="true"></span>
+              <div class="problem-metric-inner">
+                <p class="problem-metric-value font-poppins text-[clamp(1.5rem,5vw,1.875rem)] font-semibold tabular-nums leading-none text-[#407775]">30x</p>
+                <div class="min-w-0">
+                  <p class="mb-1.5 font-poppins text-base font-semibold leading-snug text-[#343f52] sm:mb-2">Projected US AI power demand growth by 2035</p>
+                  <p class="text-sm leading-snug text-[#5b6b66]">Deloitte 2025 · 72% of power executives rate grid capacity as extremely challenging</p>
+                </div>
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-[8px] border border-[#E2E8E6] bg-white p-4 pl-5 shadow-[0_8px_30px_0_rgba(47,111,100,0.05)] sm:p-5 sm:pl-6">
+              <span class="absolute left-0 top-0 h-full w-[4px] bg-[#FAB430]" aria-hidden="true"></span>
+              <div class="problem-metric-inner">
+                <p class="problem-metric-value font-poppins text-[clamp(1.5rem,5vw,1.875rem)] font-semibold tabular-nums leading-none text-[#407775]">7yr+</p>
+                <div class="min-w-0">
+                  <p class="mb-1.5 font-poppins text-base font-semibold leading-snug text-[#343f52] sm:mb-2">Grid connection wait times in congested regions globally</p>
+                  <p class="text-sm leading-snug text-[#5b6b66]">Belfer Center Harvard · Brown Advisory · Deloitte - across US, Europe, Asia</p>
+                </div>
+              </div>
+            </div>
+            <div class="relative overflow-hidden rounded-[8px] border border-[#E2E8E6] bg-white p-4 pl-5 shadow-[0_8px_30px_0_rgba(47,111,100,0.05)] sm:p-5 sm:pl-6">
+              <span class="absolute left-0 top-0 h-full w-[4px] bg-[#FAB430]" aria-hidden="true"></span>
+              <div class="problem-metric-inner">
+                <p class="problem-metric-value font-poppins text-[clamp(1.5rem,5vw,1.875rem)] font-semibold tabular-nums leading-none text-[#407775]">€4.3B</p>
+                <div class="min-w-0">
+                  <p class="mb-1.5 font-poppins text-base font-semibold leading-snug text-[#343f52] sm:mb-2">Direct grid congestion costs in Europe alone in 2024</p>
+                  <p class="text-sm leading-snug text-[#5b6b66]">ENTSO-E · EU data centre demand projected at 150 TWh by 2030</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20">
+        <div class="container mx-auto px-4 lg:px-12">
+          <div class="js-reveal mb-12 text-center sm:mb-16">
+            <span class="inline-flex rounded-full bg-[#E6F2EF] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#2F6F64]">WHAT ECOGRID DOES</span>
+            <h2 class="mt-4 font-poppins text-2xl font-bold leading-tight text-ecoprism-title sm:text-3xl lg:text-4xl">Four capabilities. One platform.</h2>
+            <p class="mx-auto mt-3 max-w-4xl text-base font-normal leading-relaxed text-ecoprism-text sm:text-lg">Built on ecoPRISM&rsquo;s AI infrastructure &ndash; so every grid insight connects directly to the sustainability metrics you already report on.</p>
+          </div>
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <article class="ecogrid-cap-card js-reveal js-reveal-delay-1 flex flex-col rounded-[16px] border border-[#E2E8E6] bg-[#F9FAF8] p-6 shadow-[0_8px_24px_0_rgba(47,111,100,0.05)] sm:p-7">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-[#407775] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path
+                      d="M12.106 3.317C12.6688 3.59824 13.3312 3.59824 13.894 3.317L17.553 1.487C17.8632 1.33198 18.2316 1.34876 18.5265 1.53133C18.8213 1.7139 19.0005 2.0362 19 2.383V15.147C18.9998 15.5257 18.7857 15.8717 18.447 16.041L13.894 18.318C13.3312 18.5992 12.6688 18.5992 12.106 18.318L7.894 16.212C7.33118 15.9308 6.66882 15.9308 6.106 16.212L2.447 18.042C2.13662 18.1971 1.76803 18.1802 1.47312 17.9974C1.17821 17.8146 0.999147 17.492 1 17.145V4.382C1.00021 4.00333 1.21427 3.65726 1.553 3.488L6.106 1.211C6.66882 0.929757 7.33118 0.929757 7.894 1.211L12.106 3.317M13 3.528V18.528M7 1V16"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span class="inline-flex rounded-full border border-[rgba(255,255,255,0.15)] bg-[#EAF5F1] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#2F6F64] sm:text-[11px]">01 - ANALYSE</span>
+              </div>
+              <h3 class="mt-6 font-poppins text-lg font-bold leading-tight text-[#343f52]">Grid Vulnerability Scoring</h3>
+              <p class="mt-2 text-sm font-normal leading-relaxed text-ecoprism-text">Instantly quantify grid risk for any location.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">AI-POWERED</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">REAL-TIME</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">LOCATION-LEVEL</span>
+              </div>
+            </article>
+            <article class="ecogrid-cap-card js-reveal js-reveal-delay-2 flex flex-col rounded-[16px] border border-[#E2E8E6] bg-[#F9FAF8] p-6 shadow-[0_8px_24px_0_rgba(47,111,100,0.05)] sm:p-7">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-[#407775] leading-[1.2] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 13C20 18 16.5 20.5 12.34 21.95C12.1222 22.0238 11.8855 22.0202 11.67 21.94C7.5 20.5 4 18 4 13V5.99996C4 5.44805 4.44808 4.99996 5 4.99996C7 4.99996 9.5 3.79996 11.24 2.27996C11.6777 1.90603 12.3223 1.90603 12.76 2.27996C14.51 3.80996 17 4.99996 19 4.99996C19.5523 4.99996 20 5.44768 20 5.99996V13M12 7.99996V12M12 16H12.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="inline-flex rounded-full border border-[rgba(255,255,255,0.15)] bg-[#EAF5F1] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#2F6F64] sm:text-[11px]">02 - VISUALISE</span>
+              </div>
+              <h3 class="mt-6 font-poppins text-lg font-bold leading-snug text-[#343f52]">Spatial Map + AI Copilot</h3>
+              <p class="mt-2 text-sm font-normal leading-relaxed text-ecoprism-text">Explore the grid and chat with AI to get answers on demand</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">SPATIAL DATA</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">CONVERSATIONAL AI</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">ACTION-ORIENTED</span>
+              </div>
+            </article>
+            <article class="ecogrid-cap-card js-reveal js-reveal-delay-3 flex flex-col rounded-[16px] border border-[#E2E8E6] bg-[#F9FAF8] p-6 shadow-[0_8px_24px_0_rgba(47,111,100,0.05)] sm:p-7">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-[#407775] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11 20C7.3593 20.011 4.31793 17.2294 4.00478 13.6021C3.69164 9.97484 6.21128 6.7131 9.80005 6.1C15.5 5 17 4.48 19 2C20 4 21 6.18 21 10C21 15.5 16.22 20 11 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2 21C2 18 3.85 15.64 7.08 15C9.5 14.52 12 13 13 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="inline-flex rounded-full border border-[rgba(255,255,255,0.15)] bg-[#EAF5F1] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#2F6F64] sm:text-[11px]">03 - COMPARE</span>
+              </div>
+              <h3 class="mt-6 font-poppins text-lg font-bold leading-snug text-[#343f52]">Portfolio &amp; Site Comparison</h3>
+              <p class="mt-2 text-sm font-normal leading-relaxed text-ecoprism-text">Compare sites with cost, risk, and ESG impact.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">PORTFOLIO-SCALE</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">MULTI-COUNTRY</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">EXPORTABLE</span>
+              </div>
+            </article>
+            <article class="ecogrid-cap-card js-reveal js-reveal-delay-4 flex flex-col rounded-[16px] border border-[#E2E8E6] bg-[#F9FAF8] p-6 shadow-[0_8px_24px_0_rgba(47,111,100,0.05)] sm:p-7">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-[#407775] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 22C4.89617 22 4 21.1038 4 20V4C4 2.89617 4.89617 2 6 2H14C14.6394 1.99897 15.2527 2.25309 15.704 2.706L19.292 6.294C19.7461 6.74545 20.001 7.35966 20 8V20C20 21.1038 19.1038 22 18 22H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 2V7C14 7.55192 14.4481 8 15 8H20M9 15L11 17L15 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="inline-flex rounded-full border border-[rgba(255,255,255,0.15)] bg-[#EAF5F1] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#2F6F64] sm:text-[11px]">04 - REPORT</span>
+              </div>
+              <h3 class="mt-6 font-poppins text-lg font-bold leading-snug text-[#343f52]">ESG &amp; CSRD Auto-Sync</h3>
+              <p class="mt-2 text-sm font-normal leading-relaxed text-ecoprism-text">Turn grid insights into audit-ready ESG metrics.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">CSRD ART. 29A</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">ESRS E1</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">GRI 302-1</span>
+                <span class="inline-flex rounded-full bg-[rgba(250,180,48,0.18)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#105447]">BRSR</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ecoprism-difference-section py-20">
+        <div class="container mx-auto px-4 lg:px-12 text-center">
+          <div class="js-reveal">
+            <span class="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.1em] text-[#f9d423]">THE ECOPRISM DIFFERENCE</span>
+            <h2 class="mt-4 font-poppins text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">Grid risk that feeds your ESG reporting</h2>
+            <p class="mx-auto mt-4 max-w-4xl text-base font-normal leading-relaxed text-white/80 sm:text-lg">No other grid intelligence tool has an ESG platform underneath it. ecoGRID&rsquo;s analysis flows directly into the metrics your team already reports &ndash; automatically.</p>
+          </div>
+
+          <div class="js-reveal mt-10 lg:mt-12">
+            <div class="difference-sync-grid mx-auto max-w-6xl text-left">
+              <article class="difference-glass-card flex flex-col gap-3 p-5 sm:p-6 lg:p-8">
+                <h3 class="flex items-center gap-2.5 font-poppins text-lg font-semibold leading-tight text-white sm:text-xl mb-3">
+                  <span class="inline-flex shrink-0" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <g clip-path="url(#clip-diff-bolt)">
+                        <path
+                          d="M3.00012 10.5C2.71044 10.501 2.44608 10.3351 2.32104 10.0738C2.19599 9.81245 2.23262 9.50249 2.41512 9.27752L9.84012 1.62752C9.95484 1.49511 10.1459 1.45977 10.3004 1.5424C10.4549 1.62502 10.5316 1.8036 10.4851 1.97252L9.04512 6.48752C8.95893 6.7182 8.99147 6.97649 9.13219 7.17859C9.27291 7.38068 9.50387 7.50082 9.75012 7.50002H15.0001C15.2898 7.49903 15.5542 7.66496 15.6792 7.92627C15.8043 8.18759 15.7676 8.49755 15.5851 8.72252L8.16012 16.3725C8.04541 16.5049 7.85431 16.5403 7.69983 16.4576C7.54535 16.375 7.46866 16.1964 7.51512 16.0275L8.95512 11.5125C9.04131 11.2818 9.00877 11.0235 8.86806 10.8214C8.72734 10.6194 8.49638 10.4992 8.25012 10.5H3.00012"
+                          stroke="#F9D423"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip-diff-bolt">
+                          <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                  ecoGRID Output
+                </h3>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Grid vulnerability score (0-100)</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">AI model</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Substation capacity &amp; load data</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">Live grid</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Tariff trajectory &amp; cost exposure</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">Utility data</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Carbon intensity · gCO<sub>2</sub>e/kWh</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">ENTSO-E</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Grid connection queue timeline</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">TSO/DSO</span>
+                </div>
+              </article>
+
+              <div class="difference-sync-bridge mx-auto flex min-h-[200px] flex-col items-stretch self-center py-6 lg:min-h-0 lg:h-full lg:py-0" role="presentation">
+                <!-- Top segment: glowing line (interrupted below by core block) -->
+                <div class="flex min-h-0 flex-1 flex-col items-center lg:min-h-0">
+                  <div class="difference-sync-line flex-1" aria-hidden="true"></div>
+                </div>
+                <!-- Middle: gap in line — label + circular arrow -->
+                <div class="difference-sync-bridge__core z-10 flex shrink-0 flex-col items-center gap-5 px-2 py-3">
+                  <p class="text-center font-poppins text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-[#F9D423] sm:text-[11px]">
+                    AUTO-SYNCS<br />
+                    INSTANTLY
+                  </p>
+                  <button type="button" class="ecogrid-sync-btn flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#F9D423] bg-[#2f5c54] text-[#F9D423] shadow-[0_2px_8px_rgba(0,0,0,0.25)]" aria-label="Data syncs to platform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M5 12h14M13 8l6 4-6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+                <!-- Bottom segment: glowing line continues -->
+                <div class="flex min-h-0 flex-1 flex-col items-center lg:min-h-0">
+                  <div class="difference-sync-line flex-1" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <article class="difference-glass-card flex flex-col gap-3 p-5 sm:p-6 lg:p-8">
+                <h3 class="flex items-center gap-2.5 font-poppins text-lg font-semibold leading-tight text-white sm:text-xl mb-3">
+                  <span class="inline-flex shrink-0" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <g clip-path="url(#clip0_1173_506)">
+                        <path d="M6.75 1.5H11.25C11.6639 1.5 12 1.83606 12 2.25V3.75C12 4.16394 11.6639 4.5 11.25 4.5H6.75C6.33606 4.5 6 4.16394 6 3.75V2.25C6 1.83606 6.33606 1.5 6.75 1.5V1.5" stroke="#F9D423" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 3H13.5C14.3279 3 15 3.67213 15 4.5V15C15 15.8279 14.3279 16.5 13.5 16.5H4.5C3.67213 16.5 3 15.8279 3 15V4.5C3 3.67213 3.67213 3 4.5 3H6M9 8.25H12M9 12H12M6 8.25H6.0075M6 12H6.0075" stroke="#F9D423" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1173_506">
+                          <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                  ecoPRISM ESG Platform
+                </h3>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Scope 2 emissions updated</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">CSRD ESRS E1</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Climate risk register flagged</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">Art. 29a</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Energy cost target tracking</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">GRI 302-1</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">Renewable procurement gap</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">RE100</span>
+                </div>
+                <div class="difference-row difference-row-layout min-h-[44px] px-3 py-2.5 sm:px-4">
+                  <span class="text-left text-xs font-medium leading-snug text-[#575757] sm:text-sm">SBTi target alignment</span>
+                  <span class="difference-tag shrink-0 px-2.5 py-1.5 text-[10px] font-semibold tracking-wide sm:text-xs text-[#F9D423]">SBTi</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f7f8f6] py-20">
+        <div class="container mx-auto px-4 lg:px-12 text-center">
+          <div class="js-reveal mb-12 sm:mb-16">
+            <span class="inline-flex rounded-full bg-[#fff] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#105447]">GLOBAL COVERAGE</span>
+            <h2 class="mt-4 font-poppins text-2xl font-bold leading-tight text-ecoprism-title sm:text-3xl lg:text-4xl">One problem. Every market.</h2>
+            <p class="mx-auto mt-3 max-w-4xl text-base font-normal leading-relaxed text-ecoprism-text sm:text-lg">Grid congestion is not a regional story. ecoGRID is built for the markets where it matters most right now.</p>
+          </div>
+          <div class="grid gap-6 text-left md:grid-cols-3 md:gap-8">
+            <article class="js-reveal js-reveal-delay-1 global-coverage-card p-6 sm:p-8">
+              <div class="flex items-center gap-3">
+                <img src="/v3/assets/img/flags/eu-circle.svg" alt="European Union" width="40" height="40" class="h-10 w-10 shrink-0 rounded-full object-cover" />
+                <h3 class="font-poppins text-xl font-bold leading-tight text-[#575757]">EU</h3>
+              </div>
+              <p class="global-coverage-tag mt-4 inline-flex px-3 py-1.5 text-sm font-bold text-black">€4.3B</p>
+              <p class="mt-4 font-poppins font-semibold leading-snug text-[#575757]">Grid congestion costs in 2024</p>
+              <p class="mt-3 text-sm font-normal leading-relaxed text-ecoprism-text sm:text-[15px]">7 to 10 year connection queues in Frankfurt, Amsterdam, Dublin and Paris</p>
+            </article>
+            <article class="js-reveal js-reveal-delay-2 global-coverage-card p-6 sm:p-8">
+              <div class="flex items-center gap-3">
+                <img src="/v3/assets/img/flags/us-circle.svg" alt="United States" width="40" height="40" class="h-10 w-10 shrink-0 rounded-full object-cover" />
+                <h3 class="font-poppins text-xl font-bold leading-tight text-[#575757]">US</h3>
+              </div>
+              <p class="global-coverage-tag mt-4 inline-flex px-3 py-1.5 text-sm font-bold text-black">30 X</p>
+              <p class="mt-4 font-poppins font-semibold leading-snug text-[#575757]">AI power demand growth by 2035</p>
+              <p class="mt-3 text-sm font-normal leading-relaxed text-ecoprism-text sm:text-[15px]">7-year waits in Virginia and Texas</p>
+            </article>
+            <article class="js-reveal js-reveal-delay-3 global-coverage-card p-6 sm:p-8">
+              <div class="flex items-center gap-3">
+                <img src="/v3/assets/img/flags/in-circle.svg" alt="India" width="40" height="40" class="h-10 w-10 shrink-0 rounded-full object-cover" />
+                <h3 class="font-poppins text-xl font-bold leading-tight text-[#575757]">INDIA</h3>
+              </div>
+              <p class="global-coverage-tag mt-4 inline-flex px-3 py-1.5 text-sm font-bold text-black">9 GW</p>
+              <p class="mt-4 font-poppins font-semibold leading-snug text-base text-[#575757]">Data centre capacity target by 2030</p>
+              <p class="mt-3 text-sm font-normal leading-relaxed text-ecoprism-text sm:text-[15px]">Up from 1.4 GW today. Energy costs are 65% of data centre opex.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-bg relative overflow-hidden px-4 py-16 text-center sm:py-20 md:py-24 lg:py-[100px]">
+        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(230, 211, 122, 0.2) 0%, rgba(230, 211, 122, 0) 65%)"></div>
+        <div class="js-reveal relative mx-auto max-w-4xl lg:max-w-2xl">
+          <h2 class="font-poppins text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">See it on your sites.<br />In 30 minutes.</h2>
+          <p class="mt-4 text-base font-normal leading-[1.8] text-white/85 sm:text-lg">We'll run a live ecoGRID analysis for locations you choose - with ESG metrics updating in real time.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="/contact-us" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex min-h-[48px] items-center gap-2 rounded-lg px-8 py-3 text-base font-semibold">Get Started Today</a>
+            <a href="/contact-us" class="ecogrid-btn ecogrid-btn-cta-ghost inline-flex min-h-[48px] items-center justify-center rounded-lg px-8 py-3 text-base font-semibold">Request a Pilot</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="/v3/assets/js/components.js"></script>
+    <script src="/v3/assets/js/utils.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadFooter = () => {
+          if (typeof getVersionedUrl === "function") {
+            fetch(getVersionedUrl("/v3/components/footer.html"))
+              .then((r) => r.text())
+              .then((d) => {
+                document.getElementById("footer-container").innerHTML = d;
+              });
+          } else {
+            const cv = new Date().getFullYear() + String(new Date().getMonth() + 1).padStart(2, "0") + String(new Date().getDate()).padStart(2, "0");
+            fetch("/v3/components/footer.html?v=" + cv)
+              .then((r) => r.text())
+              .then((d) => {
+                document.getElementById("footer-container").innerHTML = d;
+              });
+          }
+        };
+        setTimeout(loadFooter, 100);
+
+        function initScrollReveals() {
+          var nodes = document.querySelectorAll(".js-reveal");
+          if (!nodes.length) return;
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            nodes.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          if (!("IntersectionObserver" in window)) {
+            nodes.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.06 },
+          );
+          nodes.forEach(function (el) {
+            io.observe(el);
+          });
+        }
+        initScrollReveals();
+      });
+    </script>
+    <script>
+      const originalWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && args[0].includes && args[0].includes("cdn.tailwindcss.com should not be used in production")) return;
+        originalWarn.apply(console, args);
+      };
+    </script>
+  </body>
+</html>

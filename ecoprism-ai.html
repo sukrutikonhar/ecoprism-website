@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ecoPRISM AI - Intelligent ESG Platform</title>
+    <meta name="description" content="ecoPRISM AI is built from your documents, your data, and the regulations you actually report against." />
+    <link rel="canonical" href="https://ecoprism.com/ecoprism-ai" />
+    <script src="/v3/assets/js/cache-buster.js"></script>
+    <link rel="shortcut icon" href="/assets/img/favicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ecoprism: {
+                primary: "#407775",
+                secondary: "#588885",
+                accent: "#9dbdb8",
+                yellow: "#fbbf24",
+                dark: "#1f2937",
+                title: "#343f52",
+                text: "#575757",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+              poppins: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+
+      /* ── HERO: full-viewport nature + AI image background ── */
+      .hero-bg {
+        background: linear-gradient(164deg, #407775 -2.8%, #203c3b 58.51%, #101e1d 89.17%, #080f0f 104.5%, #040707 112.16%, #020404 115.99%, #000 119.83%);
+      }
+
+      /* AI dot-grid pattern overlay on hero */
+      .hero-grid {
+        background-image: linear-gradient(rgba(64, 119, 117, 0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(64, 119, 117, 0.13) 1px, transparent 1px);
+        background-size: 68px 68px;
+      }
+
+      /* Glowing orbs */
+      .hero-orb-a {
+        background: radial-gradient(circle, rgba(244, 185, 64, 0.28) 0%, transparent 70%);
+      }
+      .hero-orb-b {
+        background: radial-gradient(circle, rgba(61, 220, 151, 0.22) 0%, transparent 70%);
+      }
+      .hero-orb-c {
+        background: radial-gradient(circle, rgba(64, 119, 117, 0.3) 0%, transparent 70%);
+      }
+      header:not(.bg-white) .site-header-bar .nav-link {
+        color: rgba(255, 255, 255, 0.88) !important;
+      }
+      header:not(.bg-white) .site-header-bar .nav-link:hover {
+        color: #ffffff !important;
+      }
+      header:not(.bg-white) .site-header-bar .mobile-toggle {
+        color: #ffffff !important;
+      }
+      header .mobile-nav-drawer {
+        color: #111827;
+      }
+      header .mobile-nav-drawer a,
+      header .mobile-nav-drawer button {
+        color: #111827 !important;
+      }
+      header .mobile-nav-drawer a:hover,
+      header .mobile-nav-drawer button:hover {
+        color: #407775 !important;
+      }
+      header .mobile-nav-drawer svg {
+        color: #111827;
+      }
+
+      /* CTA primary – yellow glow */
+      .btn-green {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 54px;
+        padding: 0.9rem 2.5rem;
+        border-radius: 0.625rem;
+        background: #2f7f75;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: none;
+        transition:
+          transform 0.25s ease,
+          background-color 0.25s ease;
+      }
+      .btn-green:hover {
+        transform: translateY(-3px);
+        background: #2f6f64;
+      }
+
+      /* CTA ghost – white border */
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 54px;
+        padding: 0 2.5rem;
+        border-radius: 0.625rem;
+        border: 1.5px solid rgba(255, 255, 255, 0.32);
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        backdrop-filter: blur(4px);
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .btn-ghost:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow:
+          0 0 22px rgba(255, 255, 255, 0.13),
+          0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Wave divider bottom of hero → #f5f7f6 */
+      .hero-wave {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        line-height: 0;
+        pointer-events: none;
+      }
+
+      /* -- SECTION 2 - "what that means" -- */
+      .what-section {
+        /* Richer eco gradient - continuation of hero palette */
+        background: linear-gradient(160deg, #edf4f1 0%, #f6faf8 40%, #eaf1ee 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      /* Dot-grid layer */
+      .what-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(64, 119, 117, 0.08) 1.5px, transparent 1.5px);
+        background-size: 28px 28px;
+        pointer-events: none;
+      }
+      /* Large ambient glow on the right - mirrors hero orb */
+      .what-section::after {
+        content: "";
+        position: absolute;
+        top: -10%;
+        right: -15%;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(64, 119, 117, 0.1) 0%, transparent 65%);
+        pointer-events: none;
+        filter: blur(40px);
+      }
+
+      /* ── PRACTICE CARDS (Section 2 glass cards) ── */
+      .practice-card {
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(255, 255, 255, 0.92);
+        border-radius: 20px;
+        box-shadow:
+          0 8px 28px rgba(11, 46, 38, 0.07),
+          0 2px 8px rgba(11, 46, 38, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1.6rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 0.25s ease;
+      }
+      /* Top gradient accent line - slides in on hover */
+      .practice-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2.5px;
+        background: linear-gradient(90deg, #407775, #3ddc97);
+        opacity: 0;
+        transition: opacity 0.28s ease;
+      }
+      /* Decorative bottom-right orb inside card */
+      .practice-card::after {
+        content: "";
+        position: absolute;
+        bottom: -24px;
+        right: -24px;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(64, 119, 117, 0.09) 0%, transparent 70%);
+        pointer-events: none;
+        transition: transform 0.4s ease;
+      }
+      .practice-card:hover {
+        transform: translateY(-7px);
+        box-shadow:
+          0 28px 60px rgba(11, 46, 38, 0.14),
+          0 8px 20px rgba(11, 46, 38, 0.07),
+          0 0 0 1.5px rgba(64, 119, 117, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        border-color: rgba(64, 119, 117, 0.22);
+      }
+      .practice-card:hover::before {
+        opacity: 1;
+      }
+      .practice-card:hover::after {
+        transform: scale(1.6);
+      }
+
+      /* Card icon badge */
+      .practice-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(64, 119, 117, 0.13) 0%, rgba(61, 220, 151, 0.08) 100%);
+        border: 1px solid rgba(64, 119, 117, 0.18);
+        color: #407775;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        transition:
+          background 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .practice-card:hover .practice-icon {
+        background: #2f7f75;
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(47, 127, 117, 0.44);
+        transform: scale(1.1) rotate(-4deg);
+      }
+      .practice-icon.gold {
+        background: linear-gradient(135deg, rgba(244, 185, 64, 0.16) 0%, rgba(244, 185, 64, 0.06) 100%);
+        border-color: rgba(244, 185, 64, 0.25);
+        color: #a87200;
+      }
+      .practice-card:hover .practice-icon.gold {
+        background: #2f7f75;
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(47, 127, 117, 0.44);
+      }
+      .mini-line-icon {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* feature-card kept for backward compat - not used in section 2 anymore */
+      .feature-card {
+        border: 1px solid rgba(226, 232, 230, 0.9);
+        border-radius: 16px;
+        background: #ffffff;
+        box-shadow:
+          0 4px 18px rgba(11, 46, 38, 0.05),
+          0 1px 4px rgba(11, 46, 38, 0.04);
+        transition:
+          transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 0.25s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow:
+          0 18px 44px rgba(11, 46, 38, 0.13),
+          0 4px 12px rgba(11, 46, 38, 0.06);
+        border-color: rgba(64, 119, 117, 0.28);
+      }
+
+      /* ── FEATURES STORYTELLING SECTION ── */
+      .features-section {
+        background: linear-gradient(180deg, #f8fbfa 0%, #ffffff 30%, #f4f9f7 70%, #f8fbfa 100%);
+        position: relative;
+      }
+      .features-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(64, 119, 117, 0.055) 1px, transparent 1px);
+        background-size: 32px 32px;
+        pointer-events: none;
+      }
+
+      /* Chapter: each feature is a full chapter */
+      .chapter {
+        padding: 5rem 0 5.5rem;
+        position: relative;
+      }
+      /* Chapter separator - inset gradient rule via ::before */
+      .chapter + .chapter {
+        position: relative;
+      }
+      .chapter + .chapter::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(64, 119, 117, 0.2) 25%, rgba(64, 119, 117, 0.2) 75%, transparent 100%);
+      }
+      /* Large watermark number behind heading */
+      .chapter-num {
+        display: none;
+      }
+
+      /* "Most distinctive" - glowing pill badge */
+      .badge-distinctive {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 13px;
+        border-radius: 9999px;
+        background: #f4b940;
+        border: 1px solid rgba(244, 185, 64, 0.85);
+        color: #0b2e26;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        box-shadow: 0 6px 14px rgba(244, 185, 64, 0.25);
+      }
+      .badge-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #0b2e26;
+        box-shadow: none;
+        flex-shrink: 0;
+      }
+
+      /* Chapter step label */
+      .chip {
+        border-radius: 999px;
+      }
+
+      /* Quote callout - enhanced */
+      .quote-callout {
+        margin-top: 1.5rem;
+        padding: 1rem 1.25rem;
+        border-left: 3px solid #407775;
+        border-radius: 0 12px 12px 0;
+        background: linear-gradient(135deg, #eaf5f1 0%, #f0f8f5 100%);
+        font-style: italic;
+        font-size: 0.925rem;
+        color: #356e6c;
+        line-height: 1.65;
+      }
+      .feature-points {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.55rem;
+      }
+      .feature-points li {
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      .feature-points li::before {
+        content: "✓";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.05rem;
+        height: 1.05rem;
+        margin-top: 0.18rem;
+        flex-shrink: 0;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, rgba(47, 127, 117, 0.18) 0%, rgba(61, 220, 151, 0.14) 100%);
+        color: #2f7f75;
+        font-size: 0.72rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      /* Viz panel - rich dark product preview */
+      .viz-panel {
+        border-radius: 20px;
+        background: linear-gradient(150deg, #0f3530 0%, #0b2e26 60%, #071f1a 100%);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        box-shadow:
+          0 24px 64px rgba(11, 46, 38, 0.26),
+          0 4px 16px rgba(11, 46, 38, 0.14),
+          inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        overflow: hidden;
+        min-height: 380px;
+        position: relative;
+        transition:
+          transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .viz-panel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 25% 20%, rgba(61, 220, 151, 0.065) 0%, transparent 55%);
+        pointer-events: none;
+      }
+      .viz-panel:hover {
+        transform: translateY(-8px) scale(1.012);
+        box-shadow:
+          0 44px 96px rgba(11, 46, 38, 0.33),
+          0 10px 30px rgba(11, 46, 38, 0.18),
+          0 0 56px rgba(64, 119, 117, 0.1);
+      }
+      .viz-panel.image-panel {
+        background: transparent;
+        border: 1px solid rgba(226, 232, 230, 0.9);
+        box-shadow:
+          0 10px 26px rgba(11, 46, 38, 0.12),
+          0 2px 8px rgba(11, 46, 38, 0.08);
+        min-height: auto;
+      }
+      .viz-panel.image-panel::after {
+        display: none;
+      }
+      .viz-panel.image-panel img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* Panel chrome / window title bar */
+      .panel-chrome {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 11px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(0, 0, 0, 0.18);
+      }
+      .c-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .panel-label {
+        margin-left: 8px;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.32);
+        letter-spacing: 0.05em;
+      }
+
+      /* ── OVERVIEW GRID (dark section) ── */
+      .overview-card {
+        background: linear-gradient(160deg, #245a53 0%, #1d4d47 100%);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition:
+          background 0.28s ease,
+          transform 0.28s ease,
+          box-shadow 0.28s ease;
+      }
+      .overview-card:hover {
+        background: linear-gradient(160deg, #2d6e65 0%, #245a53 100%);
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      }
+      .overview-card-link {
+        display: block;
+        background: #ffffff;
+        border: 0;
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          background 0.28s ease;
+      }
+      .overview-card-link:hover {
+        transform: translateY(-4px);
+        background: #f8fcfb;
+        box-shadow: 0 16px 36px rgba(11, 46, 38, 0.14);
+      }
+      .overview-num {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.15rem;
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(64, 119, 117, 0.45);
+      }
+
+      /* ── CTA SECTION ── */
+      .cta-bg {
+        background: linear-gradient(135deg, #071a17 0%, #0b2e26 45%, #407775 100%);
+        position: relative;
+      }
+
+      /* ── HERO ENTRY ANIMATIONS ── */
+      @keyframes heroIn {
+        from {
+          opacity: 0;
+          transform: translateY(26px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-reveal {
+        opacity: 0;
+        animation: heroIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      .hero-reveal-1 {
+        animation-delay: 0.08s;
+      }
+      .hero-reveal-2 {
+        animation-delay: 0.24s;
+      }
+      .hero-reveal-3 {
+        animation-delay: 0.42s;
+      }
+      .hero-reveal-4 {
+        animation-delay: 0.6s;
+      }
+
+      /* ── SCROLL REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-d1 {
+        transition-delay: 0.08s;
+      }
+      .reveal-d2 {
+        transition-delay: 0.18s;
+      }
+      .reveal-d3 {
+        transition-delay: 0.28s;
+      }
+      .reveal-d4 {
+        transition-delay: 0.38s;
+      }
+
+      /* ── RESPONSIVE TUNING: tablet + mobile ── */
+      @media (max-width: 1024px) {
+        .chapter {
+          padding: 3.5rem 0 4rem;
+        }
+        .chapter-num {
+          top: 2.5rem;
+          font-size: 5.5rem;
+        }
+        .viz-panel {
+          min-height: 340px;
+        }
+        .viz-panel > .relative.z-10 {
+          min-height: auto !important;
+        }
+        .panel-label {
+          max-width: 76%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .btn-green,
+        .btn-ghost {
+          min-height: 50px;
+          padding: 0 1.35rem;
+          font-size: 0.94rem;
+          width: 100%;
+        }
+        .hero-bg .relative.flex.items-center.justify-center.text-center {
+          min-height: 92vh !important;
+          padding: 6.5rem 0 7rem !important;
+        }
+        .hero-grid {
+          background-size: 42px 42px;
+        }
+        .what-section::before {
+          background-size: 22px 22px;
+        }
+        .what-section::after {
+          width: 380px;
+          height: 380px;
+          right: -25%;
+        }
+        .practice-card {
+          padding: 1.15rem;
+          border-radius: 16px;
+        }
+        .practice-icon {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 0.8rem;
+        }
+        .mini-line-icon {
+          width: 20px;
+          height: 20px;
+        }
+        .chapter {
+          padding: 2.75rem 0 3.2rem;
+        }
+        .chapter-num {
+          font-size: 3.8rem;
+          top: 2.25rem;
+          opacity: 0.6;
+        }
+        .feature-points {
+          gap: 0.48rem;
+        }
+        .feature-points li::before {
+          margin-top: 0.14rem;
+        }
+        .viz-panel {
+          border-radius: 16px;
+          min-height: 300px;
+        }
+        .viz-panel > .relative.z-10 {
+          min-height: auto !important;
+          padding: 1rem !important;
+        }
+        .panel-chrome {
+          padding: 10px 12px;
+        }
+        .panel-label {
+          max-width: 72%;
+          font-size: 0.64rem;
+        }
+        .benchmark-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.45rem;
+        }
+        .benchmark-meta-text {
+          font-size: 0.7rem;
+          line-height: 1.25;
+        }
+        .benchmark-badge {
+          font-size: 0.72rem;
+        }
+        .benchmark-chart {
+          margin-top: 0.25rem;
+        }
+        .benchmark-pill-wrap {
+          gap: 0.35rem;
+        }
+        .benchmark-pill-wrap span {
+          font-size: 0.68rem !important;
+          padding: 0.2rem 0.42rem !important;
+        }
+        .data-status-text {
+          font-size: 0.76rem;
+          line-height: 1.3;
+        }
+        .data-source-grid {
+          gap: 0.55rem;
+        }
+        .data-source-card {
+          padding: 0.55rem !important;
+          border-radius: 0.75rem;
+        }
+        .data-source-title span {
+          font-size: 0.68rem !important;
+          line-height: 1.2;
+        }
+        .data-source-stat span {
+          font-size: 0.64rem !important;
+          line-height: 1.2;
+        }
+        .data-flow-row {
+          gap: 0.5rem;
+        }
+        .data-hub-chip {
+          padding: 0.45rem 0.7rem !important;
+          min-width: 7.25rem;
+        }
+        .data-total-row {
+          margin-top: 0.6rem;
+          padding: 0.6rem 0.7rem !important;
+        }
+        .overview-num {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-bg .relative.flex.items-center.justify-center.text-center {
+          padding: 6rem 0 6.25rem !important;
+        }
+        .chapter-num {
+          font-size: 3.15rem;
+          top: 2.1rem;
+        }
+        .practice-card {
+          padding: 1rem;
+        }
+        .panel-label {
+          max-width: 68%;
+        }
+        .panel-chrome {
+          gap: 5px;
+        }
+        .benchmark-meta-text {
+          font-size: 0.66rem;
+        }
+        .benchmark-badge {
+          font-size: 0.64rem;
+          padding: 0.18rem 0.45rem !important;
+        }
+        .benchmark-pill-wrap span {
+          font-size: 0.62rem !important;
+        }
+        .data-source-title span {
+          font-size: 0.62rem !important;
+        }
+        .data-source-stat span {
+          font-size: 0.6rem !important;
+        }
+        .data-hub-chip {
+          min-width: 6.6rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .feature-card:hover,
+        .feature-visual:hover,
+        .overview-card:hover,
+        .btn-green:hover,
+        .btn-ghost:hover {
+          transform: none;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/v3/assets/css/main.css" />
+    <link rel="stylesheet" href="/v3/assets/css/components.css" />
+  </head>
+  <body class="font-sans overflow-x-hidden bg-white text-ecoprism-text">
+    <header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: window.scrollY > 0 }" x-init="const update = () => { isScrolled = window.scrollY > 0; }; update(); requestAnimationFrame(update); window.addEventListener('scroll', update, { passive: true });" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-cloak>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="site-header-bar flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center">
+              <img x-show="!isScrolled" x-cloak src="/v3/assets/img/logos/logo-light.webp" alt="ecoPRISM" class="h-9 w-auto" />
+              <img x-show="isScrolled" x-cloak src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-9 w-auto" />
+            </a>
+          </div>
+          <div class="hidden lg:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  About
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="open" x-transition class="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/about-us" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
+                  <a href="/our-team" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
+                  <a href="/careers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+                  <a href="/news" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News</a>
+                  <a href="/events" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
+                </div>
+              </div>
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Products
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="open" x-transition class="absolute left-0 z-50 flex w-max max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-gray-200 bg-white py-3 shadow-lg">
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-platform" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ESG Platform</a>
+                    <a href="/csrd-reporting" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">CSRD Reporting</a>
+                    <a href="/ecoquote" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ecoQUOTE</a>
+                  </div>
+                  <div class="w-px shrink-0 self-stretch bg-gray-200"></div>
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-benchmarking" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ESG Benchmarking</a>
+                    <a href="/ecobot" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">CSRD ecobot</a>
+                    <a href="/ecogrid" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ecoGRID</a>
+                  </div>
+                </div>
+              </div>
+
+              <a href="/ecoprism-ai" class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium py-4">ecoPRISM AI</a>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Services
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="open" x-transition class="absolute left-0 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
+                  <a href="/services/training-capacity-building" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
+                </div>
+              </div>
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Case Studies
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="open" x-transition class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Sustainability in Proposals</a>
+                  <a href="/resources/case-studies/unisys-climate-risk" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Climate Risk Intelligence</a>
+                  <a href="/resources/case-studies/acumant-ecovadis" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">EcoVadis Readiness</a>
+                  <a href="/resources/case-studies/camfil-esg-training" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Capacity Building</a>
+                  <a href="/resources/case-studies/double-materiality-assessment" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Double Materiality Assessment</a>
+                </div>
+              </div>
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Resources
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="open" x-transition class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
+                  <a href="/resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
+                  <a href="/resources/glossary" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
+                  <a href="/resources/csrd-adoption" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
+                  <a href="/resources/california-climate-laws-explained" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+                  <a href="/resources/brsr-reporting" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">BRSR Reporting</a>
+                </div>
+              </div>
+              <a href="/contact-us" class="px-6 py-2 rounded-full font-medium transition-colors duration-200 border" :class="isScrolled ? 'bg-ecoprism-primary text-white border-ecoprism-primary hover:bg-ecoprism-secondary' : 'bg-white text-ecoprism-primary border-white/30 hover:bg-white/90'">Contact Us</a>
+            </div>
+          </div>
+          <div class="lg:hidden">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="mobile-toggle text-ecoprism-text p-2 rounded-md">
+              <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+              <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="lg:hidden fixed inset-0 z-50">
+        <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="mobile-nav-drawer relative flex h-full min-h-0 w-full max-w-xs flex-col bg-white shadow-xl">
+          <div class="flex shrink-0 items-center justify-between border-b p-4">
+            <div class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+            </div>
+            <button @click="mobileMenuOpen = false" class="p-2 rounded-md text-ecoprism-text hover:text-ecoprism-primary hover:bg-gray-100">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-4">
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                About
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'about'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/about-us" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
+                <a href="/our-team" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
+                <a href="/careers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
+                <a href="/news" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">News</a>
+                <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Products
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'products'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/esg-platform" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Platform</a>
+                <a href="/csrd-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Reporting</a>
+                <a href="/ecoquote" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
+                <a href="/esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
+                <a href="/ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
+                <a href="/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
+              </div>
+            </div>
+            <a href="/ecoprism-ai" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">ecoPRISM AI</a>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Services
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'services'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/services/esg-advisory" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Advisory</a>
+                <a href="/services/training-capacity-building" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Training and Capacity Building</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'casestudies' ? null : 'casestudies'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Case Studies
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'casestudies' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'casestudies'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Sustainability in Proposals</a>
+                <a href="/resources/case-studies/unisys-climate-risk" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Climate Risk Intelligence</a>
+                <a href="/resources/case-studies/acumant-ecovadis" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">EcoVadis Readiness</a>
+                <a href="/resources/case-studies/camfil-esg-training" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Capacity Building</a>
+                <a href="/resources/case-studies/double-materiality-assessment" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Double Materiality Assessment</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Resources
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/insights/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
+                <a href="/resources/whitepapers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
+                <a href="/resources/glossary" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
+                <a href="/resources/csrd-adoption" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
+                <a href="/resources/california-climate-laws-explained" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+                <a href="/resources/brsr-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">BRSR Reporting</a>
+              </div>
+            </div>
+            <a href="/contact-us" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ════════════════════════════════════════════════════
+          HERO - Full viewport, nature+AI immersive background
+      ════════════════════════════════════════════════════ -->
+      <section class="hero-bg relative z-0 -mt-20 overflow-hidden" style="min-height: 100vh">
+        <!-- Layer 1: AI grid pattern -->
+        <div class="pointer-events-none absolute inset-0 hero-grid opacity-60"></div>
+
+        <!-- Layer 2: AI network connection lines (abstract intelligence) -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden" style="opacity: 0.35">
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="140" y1="200" x2="380" y2="340" stroke="rgba(61,220,151,0.6)" stroke-width="0.9" />
+            <line x1="380" y1="340" x2="620" y2="260" stroke="rgba(61,220,151,0.5)" stroke-width="0.9" />
+            <line x1="620" y1="260" x2="870" y2="390" stroke="rgba(61,220,151,0.4)" stroke-width="0.9" />
+            <line x1="870" y1="390" x2="1140" y2="300" stroke="rgba(61,220,151,0.35)" stroke-width="0.9" />
+            <line x1="1140" y1="300" x2="1360" y2="430" stroke="rgba(61,220,151,0.3)" stroke-width="0.9" />
+            <line x1="140" y1="200" x2="290" y2="460" stroke="rgba(244,185,64,0.35)" stroke-width="0.7" />
+            <line x1="620" y1="260" x2="550" y2="510" stroke="rgba(244,185,64,0.28)" stroke-width="0.7" />
+            <line x1="870" y1="390" x2="800" y2="590" stroke="rgba(61,220,151,0.28)" stroke-width="0.7" />
+            <line x1="1360" y1="430" x2="1300" y2="640" stroke="rgba(61,220,151,0.22)" stroke-width="0.7" />
+            <line x1="380" y1="340" x2="290" y2="460" stroke="rgba(64,119,117,0.35)" stroke-width="0.6" />
+            <line x1="550" y1="510" x2="800" y2="590" stroke="rgba(64,119,117,0.25)" stroke-width="0.6" />
+            <!-- Glow nodes -->
+            <circle cx="140" cy="200" r="4.5" fill="rgba(61,220,151,0.85)" />
+            <circle cx="380" cy="340" r="3.5" fill="rgba(61,220,151,0.70)" />
+            <circle cx="620" cy="260" r="5.5" fill="rgba(244,185,64,0.95)" />
+            <circle cx="870" cy="390" r="4" fill="rgba(61,220,151,0.75)" />
+            <circle cx="1140" cy="300" r="3.5" fill="rgba(61,220,151,0.60)" />
+            <circle cx="1360" cy="430" r="3" fill="rgba(61,220,151,0.50)" />
+            <circle cx="290" cy="460" r="3" fill="rgba(244,185,64,0.65)" />
+            <circle cx="550" cy="510" r="3" fill="rgba(244,185,64,0.55)" />
+            <circle cx="800" cy="590" r="3" fill="rgba(61,220,151,0.45)" />
+            <circle cx="1300" cy="640" r="2.5" fill="rgba(61,220,151,0.40)" />
+          </svg>
+        </div>
+
+        <!-- Layer 4: Subtle center radial highlight -->
+        <div class="pointer-events-none absolute inset-0" style="background: radial-gradient(55% 55% at 50% 42%, rgba(64, 119, 117, 0.16) 0%, transparent 70%)"></div>
+
+        <!-- Hero content - vertically centered -->
+        <div class="relative flex items-center justify-center text-center" style="min-height: 100vh; padding: 8rem 0 10rem">
+          <div class="container mx-auto px-4 lg:px-12">
+            <!-- Badge -->
+            <span class="hero-reveal hero-reveal-1 inline-flex rounded-full border border-[#f4b940]/50 bg-[#f4b940]/20 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#f4b940]">ecoPRISM AI</span>
+
+            <!-- Headline - larger, more impact -->
+            <h1 class="hero-reveal hero-reveal-2 mx-auto mt-7 max-w-5xl font-poppins font-bold leading-[1.08] text-white" style="font-size: clamp(2.1rem, 5.2vw, 3rem)">
+              Every ESG platform has AI. <br />
+              Not every platform has <span class="text-[#f4b940]">yours.</span>
+            </h1>
+
+            <!-- Sub-headline -->
+            <p class="hero-reveal hero-reveal-3 mx-auto mt-7 max-w-2xl leading-relaxed text-white/80" style="font-size: clamp(1.05rem, 2vw, 1.25rem)">ecoPRISM AI is built from your documents, your data, and the regulations you actually report against.</p>
+
+            <!-- CTAs -->
+            <div class="hero-reveal hero-reveal-4 mt-11 flex flex-wrap justify-center gap-5">
+              <a href="/contact-us" class="btn-green mb-0">Book a demo</a>
+              <a href="/esg-platform" class="btn-ghost">Explore the platform</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wave SVG divider: hero dark → section 2 #f5f7f6 -->
+        <div class="hero-wave">
+          <svg viewBox="0 0 1440 88" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: 88px; display: block">
+            <path d="M0,44 C180,88 420,8 720,48 C1020,88 1260,20 1440,52 L1440,88 L0,88 Z" fill="#f5f7f6" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+          SECTION 2 - "Here is what that means in practice"
+           REDESIGNED: premium glass cards + AI network visual
+      ════════════════════════════════════════════════════ -->
+      <section class="what-section py-20 sm:py-24 lg:py-32">
+        <div class="container relative mx-auto px-4 lg:px-12">
+          <div class="grid items-center gap-14 lg:grid-cols-5 lg:gap-16">
+            <!-- ══ LEFT: heading + abstract data network visual (2 of 5 cols) ══ -->
+            <div class="lg:col-span-2">
+              <!-- Heading (text unchanged) -->
+              <div class="reveal">
+                <h2 class="font-poppins text-3xl font-bold leading-tight text-ecoprism-title lg:text-4xl">Here is what that means in practice.</h2>
+              </div>
+
+              <!-- Abstract AI + sustainability network visualization -->
+              <!-- Shows 4 data sources (Docs, Benchmarks, Regulation, Data) flowing into ecoPRISM hub -->
+              <div class="reveal reveal-d1 relative mx-auto mt-10 hidden lg:block" style="max-width: 300px">
+                <!-- Ambient glow behind the SVG -->
+                <div class="pointer-events-none absolute inset-0 rounded-full" style="background: radial-gradient(circle, rgba(64, 119, 117, 0.14) 0%, transparent 65%); filter: blur(24px)"></div>
+
+                <svg viewBox="0 0 300 300" class="relative w-full overflow-visible" xmlns="http://www.w3.org/2000/svg" style="overflow: visible">
+                  <defs>
+                    <!-- Hub gradient -->
+                    <radialGradient id="hubG" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#3ddc97" stop-opacity="0.50" />
+                      <stop offset="100%" stop-color="#407775" stop-opacity="0.18" />
+                    </radialGradient>
+                    <!-- Teal node fill -->
+                    <radialGradient id="nodeT" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#407775" stop-opacity="0.22" />
+                      <stop offset="100%" stop-color="#407775" stop-opacity="0.04" />
+                    </radialGradient>
+                    <!-- Gold node fill (Data) -->
+                    <radialGradient id="nodeG" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#f4b940" stop-opacity="0.28" />
+                      <stop offset="100%" stop-color="#f4b940" stop-opacity="0.04" />
+                    </radialGradient>
+                    <!-- Line gradients: each flows teal → transparent toward hub -->
+                    <linearGradient id="lgTop" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(61,220,151,0.55)" />
+                      <stop offset="100%" stop-color="rgba(61,220,151,0.06)" />
+                    </linearGradient>
+                    <linearGradient id="lgRight" x1="1" y1="0" x2="0" y2="0">
+                      <stop offset="0%" stop-color="rgba(61,220,151,0.55)" />
+                      <stop offset="100%" stop-color="rgba(61,220,151,0.06)" />
+                    </linearGradient>
+                    <linearGradient id="lgBottom" x1="0" y1="1" x2="0" y2="0">
+                      <stop offset="0%" stop-color="rgba(244,185,64,0.55)" />
+                      <stop offset="100%" stop-color="rgba(244,185,64,0.06)" />
+                    </linearGradient>
+                    <linearGradient id="lgLeft" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="rgba(61,220,151,0.55)" />
+                      <stop offset="100%" stop-color="rgba(61,220,151,0.06)" />
+                    </linearGradient>
+                    <clipPath id="hubClip">
+                      <circle cx="150" cy="150" r="19" />
+                    </clipPath>
+                  </defs>
+
+                  <!-- Concentric dashed rings -->
+                  <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(64,119,117,0.10)" stroke-width="1" stroke-dasharray="5,8" />
+                  <circle cx="150" cy="150" r="102" fill="none" stroke="rgba(64,119,117,0.10)" stroke-width="1" stroke-dasharray="3,6" />
+                  <circle cx="150" cy="150" r="66" fill="none" stroke="rgba(64,119,117,0.12)" stroke-width="1" stroke-dasharray="2,5" />
+
+                  <!-- Connection lines: satellite edge → hub edge -->
+                  <line x1="150" y1="22" x2="150" y2="114" stroke="url(#lgTop)" stroke-width="1.5" />
+                  <line x1="278" y1="150" x2="186" y2="150" stroke="url(#lgRight)" stroke-width="1.5" />
+                  <line x1="150" y1="278" x2="150" y2="186" stroke="url(#lgBottom)" stroke-width="1.5" />
+                  <line x1="22" y1="150" x2="114" y2="150" stroke="url(#lgLeft)" stroke-width="1.5" />
+
+                  <!-- Satellite nodes - positioned at cardinal edges -->
+                  <!-- Top: Documents -->
+                  <circle cx="150" cy="22" r="22" fill="url(#nodeT)" stroke="rgba(64,119,117,0.38)" stroke-width="1.5" />
+                  <circle cx="150" cy="22" r="10" fill="rgba(64,119,117,0.38)" />
+
+                  <!-- Right: Benchmarks -->
+                  <circle cx="278" cy="150" r="22" fill="url(#nodeT)" stroke="rgba(64,119,117,0.38)" stroke-width="1.5" />
+                  <circle cx="278" cy="150" r="10" fill="rgba(64,119,117,0.38)" />
+
+                  <!-- Bottom: Data (gold) -->
+                  <circle cx="150" cy="278" r="22" fill="url(#nodeG)" stroke="rgba(244,185,64,0.42)" stroke-width="1.5" />
+                  <circle cx="150" cy="278" r="10" fill="rgba(244,185,64,0.45)" />
+
+                  <!-- Left: Regulation -->
+                  <circle cx="22" cy="150" r="22" fill="url(#nodeT)" stroke="rgba(64,119,117,0.38)" stroke-width="1.5" />
+                  <circle cx="22" cy="150" r="10" fill="rgba(64,119,117,0.38)" />
+
+                  <!-- Central ecoPRISM hub -->
+                  <circle cx="150" cy="150" r="36" fill="url(#hubG)" stroke="rgba(61,220,151,0.38)" stroke-width="1.5" />
+                  <circle cx="150" cy="150" r="26" fill="rgba(64,119,117,0.28)" />
+                  <circle cx="150" cy="150" r="20" fill="rgba(255,255,255,0.92)" />
+                  <image href="assets/img/favicon.webp" x="136" y="136" width="28" height="28" preserveAspectRatio="xMidYMid meet" clip-path="url(#hubClip)" />
+
+                  <!-- Animated data particles flowing in along each line -->
+                  <circle r="3.5" fill="rgba(61,220,151,0.85)">
+                    <animateMotion dur="2.4s" repeatCount="indefinite" begin="0s">
+                      <mpath href="#pTop" />
+                    </animateMotion>
+                  </circle>
+                  <circle r="3.5" fill="rgba(61,220,151,0.80)">
+                    <animateMotion dur="2.9s" repeatCount="indefinite" begin="0.7s">
+                      <mpath href="#pRight" />
+                    </animateMotion>
+                  </circle>
+                  <circle r="3.5" fill="rgba(244,185,64,0.85)">
+                    <animateMotion dur="3.1s" repeatCount="indefinite" begin="1.3s">
+                      <mpath href="#pBottom" />
+                    </animateMotion>
+                  </circle>
+                  <circle r="3.5" fill="rgba(61,220,151,0.80)">
+                    <animateMotion dur="2.6s" repeatCount="indefinite" begin="0.4s">
+                      <mpath href="#pLeft" />
+                    </animateMotion>
+                  </circle>
+                  <!-- Motion paths (invisible) -->
+                  <path id="pTop" d="M 150,22  L 150,114" fill="none" stroke="none" />
+                  <path id="pRight" d="M 278,150 L 186,150" fill="none" stroke="none" />
+                  <path id="pBottom" d="M 150,278 L 150,186" fill="none" stroke="none" />
+                  <path id="pLeft" d="M 22,150  L 114,150" fill="none" stroke="none" />
+
+                  <!-- Node labels (outside the rings) -->
+                  <text x="150" y="316" text-anchor="middle" fill="rgba(64,119,117,0.76)" font-size="8.5" font-weight="600" font-family="Inter,sans-serif">YOUR DATA</text>
+                  <text x="150" y="-10" text-anchor="middle" fill="rgba(64,119,117,0.76)" font-size="8.5" font-weight="600" font-family="Inter,sans-serif">YOUR DOCUMENTS</text>
+                  <text x="278" y="186" text-anchor="middle" fill="rgba(64,119,117,0.84)" font-size="8.2" font-weight="600" font-family="Inter,sans-serif">REAL BENCHMARKS</text>
+                  <text x="22" y="186" text-anchor="middle" fill="rgba(64,119,117,0.84)" font-size="8.2" font-weight="600" font-family="Inter,sans-serif">YOUR REGULATION</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- ══ RIGHT: 2×2 premium glass card grid (3 of 5 cols) ══ -->
+            <div class="lg:col-span-3">
+              <div class="grid gap-5 sm:grid-cols-2">
+                <!-- Card 1: Your documents -->
+                <div class="practice-card reveal reveal-d1">
+                  <div class="practice-icon">
+                    <svg class="mini-line-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 3h6l5 5v13H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path>
+                      <path d="M14 3v6h6"></path>
+                      <path d="M10 14h7M10 18h7"></path>
+                    </svg>
+                  </div>
+                  <p class="text-base leading-relaxed text-ecoprism-text"><span class="font-semibold text-ecoprism-primary">Your documents</span> - Qualitative disclosures drafted from your own policies and reports.</p>
+                </div>
+
+                <!-- Card 2: Real benchmarks -->
+                <div class="practice-card reveal reveal-d2">
+                  <div class="practice-icon">
+                    <svg class="mini-line-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M3.5 12h17"></path>
+                      <path d="M12 3c2.5 2.5 2.5 15.5 0 18"></path>
+                      <path d="M12 3c-2.5 2.5-2.5 15.5 0 18"></path>
+                    </svg>
+                  </div>
+                  <p class="text-base leading-relaxed text-ecoprism-text"><span class="font-semibold text-ecoprism-primary">Real benchmarks</span> - Intelligence extracted from public disclosures globally, not self-reported averages.</p>
+                </div>
+
+                <!-- Card 3: Your regulation -->
+                <div class="practice-card reveal reveal-d3">
+                  <div class="practice-icon">
+                    <svg class="mini-line-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 4v16M6 8h12"></path>
+                      <path d="M8 8l-3 5h6l-3-5zM16 8l-3 5h6l-3-5z"></path>
+                      <path d="M10 20h4"></path>
+                    </svg>
+                  </div>
+                  <p class="text-base leading-relaxed text-ecoprism-text"><span class="font-semibold text-ecoprism-primary">Your regulation</span> - Built specifically for CSRD, ESRS, BRSR and SB 253. Not a generic framework.</p>
+                </div>
+
+                <!-- Card 4: Your data -->
+                <div class="practice-card reveal reveal-d4">
+                  <div class="practice-icon">
+                    <svg class="mini-line-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <ellipse cx="12" cy="6" rx="7" ry="3"></ellipse>
+                      <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path>
+                      <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path>
+                    </svg>
+                  </div>
+                  <p class="text-base leading-relaxed text-ecoprism-text"><span class="font-semibold text-ecoprism-primary">Your data</span> - ERP, HSE, BMS, PDFs, manual uploads. All of it, as it is.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+          SECTION 4 - Six AI capabilities. One platform. (overview grid)
+      ════════════════════════════════════════════════════ -->
+      <section class="py-16 lg:py-20" style="background: linear-gradient(183deg, #0b2e26 -9.17%, #407775 97.12%)">
+        <div class="container mx-auto px-4 lg:px-12">
+          <div class="reveal">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#f4b940]">At a glance</p>
+            <h2 class="mt-3 font-poppins text-3xl font-bold text-white lg:text-4xl">Six AI capabilities. One platform.</h2>
+          </div>
+
+          <div class="mt-10 grid gap-[1px] overflow-hidden rounded-2xl md:grid-cols-3" style="background: rgba(157, 189, 184, 0.45)">
+            <a href="#cap-1" class="overview-card-link reveal reveal-d1 p-7">
+              <p class="overview-num">01</p>
+              <h3 class="mt-3 font-poppins text-xl font-semibold leading-snug text-ecoprism-title">ESG Benchmarking</h3>
+              <p class="mt-2 text-base leading-relaxed text-ecoprism-text">Global peer intelligence extracted from public disclosures - not self-reported averages.</p>
+            </a>
+            <a href="#cap-2" class="overview-card-link reveal reveal-d2 p-7">
+              <p class="overview-num">02</p>
+              <h3 class="mt-3 font-poppins text-xl font-semibold leading-snug text-ecoprism-title">Report Generation</h3>
+              <p class="mt-2 text-base leading-relaxed text-ecoprism-text">Qualitative disclosures drafted from your own document repository.</p>
+            </a>
+            <a href="#cap-3" class="overview-card-link reveal reveal-d3 p-7">
+              <p class="overview-num">03</p>
+              <h3 class="mt-3 font-poppins text-xl font-semibold leading-snug text-ecoprism-title">CSRD ecobot</h3>
+              <p class="mt-2 text-base leading-relaxed text-ecoprism-text">CSRD and ESRS expertise available instantly via chat.</p>
+            </a>
+            <a href="#cap-4" class="overview-card-link reveal reveal-d1 p-7">
+              <p class="overview-num">04</p>
+              <h3 class="mt-3 font-poppins text-xl font-semibold leading-snug text-ecoprism-title">Data Collection</h3>
+              <p class="mt-2 text-base leading-relaxed text-ecoprism-text">Direct connections to ERP, HSE, BMS - plus AI that reads PDFs.</p>
+            </a>
+            <a href="#cap-5" class="overview-card-link reveal reveal-d2 p-7">
+              <p class="overview-num">05</p>
+              <h3 class="mt-3 font-poppins text-xl font-semibold leading-snug text-ecoprism-title">Anomaly Detection</h3>
+              <p class="mt-2 text-base leading-relaxed text-ecoprism-text">Flags data issues based on your historical patterns before assurance review.</p>
+            </a>
+            <a href="#cap-6" class="overview-card-link reveal reveal-d3 p-7">
+              <p class="overview-num">06</p>
+              <h3 class="mt-3 font-poppins text-xl font-semibold leading-snug text-ecoprism-title">Recommendations</h3>
+              <p class="mt-2 text-base leading-relaxed text-ecoprism-text">Prioritised actions tailored to your performance, targets, and industry.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+          SECTION 3 - Six ways ecoPRISM AI works
+           REDESIGNED: premium chapter-based storytelling
+      ════════════════════════════════════════════════════ -->
+      <section class="features-section relative overflow-hidden">
+        <!-- Centered section header -->
+        <div class="container mx-auto px-4 lg:px-16 pt-20 pb-4 text-center reveal">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-ecoprism-primary">AI capabilities</p>
+          <h2 class="mt-4 mx-auto max-w-4xl font-poppins text-3xl font-bold text-ecoprism-title lg:text-4xl leading-tight">Six ways ecoPRISM AI works for your team</h2>
+          <!-- Decorative divider line -->
+          <div class="mx-auto mt-8 h-px w-24" style="background: linear-gradient(90deg, transparent, #407775, transparent)"></div>
+        </div>
+
+        <!-- -- CHAPTER 01 - ESG Benchmarking -- -->
+        <div class="chapter" id="cap-1">
+          <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <!-- Text: LEFT -->
+              <div class="reveal" style="position: relative">
+                <span class="chapter-num" style="right: -0.25rem; left: auto">01</span>
+                <span class="badge-distinctive"><span class="badge-dot"></span>Most distinctive</span>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-ecoprism-primary">01 · AI-assisted ESG benchmarking</p>
+                <h3 class="mt-2 font-poppins text-2xl font-bold text-ecoprism-title leading-snug lg:text-3xl">Know exactly where you stand -<br />globally.</h3>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">Most benchmarking relies on self-reported data from a limited peer set. ecoPRISM's AI extracts and analyses publicly available ESG data from companies across the world - covering emissions, reporting frameworks, targets, materiality topics, and CSRD and BRSR disclosures.</p>
+                <ul class="feature-points text-base leading-relaxed text-ecoprism-text">
+                  <li>Emissions data extracted from public disclosures</li>
+                  <li>Framework coverage: CSRD, BRSR, GRI, TCFD</li>
+                  <li>Targets set and progress tracked</li>
+                  <li>Material topics by sector and region</li>
+                  <li>Updated as new reports are published</li>
+                </ul>
+              </div>
+
+              <!-- Visual panel: RIGHT - peer comparison bar chart -->
+              <div class="reveal reveal-d1 viz-panel image-panel benchmark-panel">
+                <img src="/assets/img/photos/new/esg-benchmarking/csrd-mock.webp" alt="ESG Benchmarking preview" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- -- CHAPTER 02 - Report Generation -- -->
+        <div class="chapter" id="cap-2">
+          <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <!-- Visual panel: LEFT - AI document editor -->
+              <div class="order-2 lg:order-1 reveal viz-panel image-panel data-connections-panel">
+                <img src="/v3/assets/img/dashboard/ai-feature.webp" alt="Report generation dashboard" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+
+              <!-- Text: RIGHT -->
+              <div class="order-1 lg:order-2 reveal reveal-d1" style="position: relative">
+                <span class="chapter-num" style="right: -0.25rem; left: auto">02</span>
+                <span class="badge-distinctive"><span class="badge-dot"></span>Most distinctive</span>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-ecoprism-primary">02 · AI-assisted report generation</p>
+                <h3 class="mt-2 font-poppins text-2xl font-bold text-ecoprism-title leading-snug lg:text-3xl">Qualitative reporting -<br />without the manual ordeal.</h3>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">The quantitative sections of an ESG report can be automated. The qualitative sections - governance narratives, policy descriptions, strategy explanations - are where ESG teams spend weeks.</p>
+                <ul class="feature-points text-base leading-relaxed text-ecoprism-text">
+                  <li>Ingests your policies, reports, and data books</li>
+                  <li>Prepares qualitative CSRD and GRI responses</li>
+                  <li>Framework-aligned drafts ready for review</li>
+                  <li>Reduces weeks of manual writing to hours</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- -- CHAPTER 03 - CSRD ecobot -- -->
+        <div class="chapter" id="cap-3">
+          <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <!-- Text: LEFT -->
+              <div class="reveal" style="position: relative">
+                <span class="chapter-num" style="right: -0.25rem; left: auto">03</span>
+                <span class="badge-distinctive"><span class="badge-dot"></span>Most distinctive</span>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-ecoprism-primary">03 · CSRD ecobot</p>
+                <h3 class="mt-2 font-poppins text-2xl font-bold text-ecoprism-title leading-snug lg:text-3xl">Your CSRD expert -<br />available instantly.</h3>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">CSRD and ESRS are complex. The nuances between disclosure requirements, materiality thresholds, and reporting boundaries take months to understand - and the regulation keeps evolving.</p>
+                <ul class="feature-points text-base leading-relaxed text-ecoprism-text">
+                  <li>Trained on full CSRD regulation and all ESRS standards</li>
+                  <li>Answers nuanced disclosure questions instantly</li>
+                  <li>Available to your whole team via chat</li>
+                  <li>Updated as regulation evolves</li>
+                </ul>
+              </div>
+
+              <!-- Visual panel: RIGHT - chat interface -->
+              <div class="reveal reveal-d1 viz-panel image-panel">
+                <img src="/assets/img/photos/new/ecobot-06.webp" alt="CSRD ecobot interface" class="w-full h-auto object-contain" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- -- CHAPTER 04 - Automated Data Collection -- -->
+        <div class="chapter" id="cap-4">
+          <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <!-- Visual panel: LEFT - data flow diagram -->
+              <div class="order-2 lg:order-1 reveal viz-panel image-panel">
+                <img src="/v3/assets/img/dashboard/connector.webp" alt="Automated data collection dashboard" class="w-full h-auto object-contain" loading="lazy" />
+              </div>
+
+              <!-- Text: RIGHT -->
+              <div class="order-1 lg:order-2 reveal reveal-d1" style="position: relative">
+                <span class="chapter-num" style="right: -0.25rem; left: auto">04</span>
+                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-ecoprism-primary">04 · Automated data collection</p>
+                <h3 class="mt-2 font-poppins text-2xl font-bold text-ecoprism-title leading-snug lg:text-3xl">Your data, connected -<br />not manually uploaded.</h3>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">ecoPRISM connects directly to the systems where your sustainability data already lives - ERP, HSE, BMS, and more - pulling structured data automatically without manual intervention.</p>
+                <ul class="feature-points text-base leading-relaxed text-ecoprism-text">
+                  <li>Direct integrations with ERP systems</li>
+                  <li>HSE and BMS data pulled automatically</li>
+                  <li>AI reads and extracts data from PDFs</li>
+                  <li>Real-time data flow with no manual uploads</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- -- CHAPTER 05 - Anomaly Detection -- -->
+        <div class="chapter" id="cap-5">
+          <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <!-- Text: LEFT -->
+              <div class="reveal" style="position: relative">
+                <span class="chapter-num" style="right: -0.25rem; left: auto">05</span>
+                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-ecoprism-primary">05 · AI-based anomaly detection</p>
+                <h3 class="mt-2 font-poppins text-2xl font-bold text-ecoprism-title leading-snug lg:text-3xl">Catch data issues before your auditor does.</h3>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">ESG data errors are common - and in a world of mandatory third-party assurance, they are costly. ecoPRISM's anomaly detection learns from your historical emissions and ESG data patterns, and flags anything that deviates unexpectedly.</p>
+                <ul class="feature-points text-base leading-relaxed text-ecoprism-text">
+                  <li>Learns from your historical data patterns</li>
+                  <li>Flags unexpected spikes or inconsistencies</li>
+                  <li>Catches errors before assurance review</li>
+                  <li>Improves audit readiness automatically</li>
+                </ul>
+              </div>
+
+              <!-- Visual panel: RIGHT - time-series chart with spike -->
+              <div class="reveal reveal-d1 viz-panel image-panel">
+                <img src="/v3/assets/img/products/anamoly.webp" alt="Anomaly detection dashboard" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- -- CHAPTER 06 - AI Recommendations -- -->
+        <div class="chapter" id="cap-6">
+          <div class="container mx-auto px-4 lg:px-16">
+            <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+              <!-- Visual panel: LEFT - priority action list -->
+              <div class="order-2 lg:order-1 reveal viz-panel image-panel">
+                <img src="/v3/assets/img/products/recommendation.webp" alt="AI recommendations dashboard" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+
+              <!-- Text: RIGHT -->
+              <div class="order-1 lg:order-2 reveal reveal-d1" style="position: relative">
+                <span class="chapter-num" style="right: -0.25rem; left: auto">06</span>
+                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-ecoprism-primary">06 · AI-powered recommendations</p>
+                <h3 class="mt-2 font-poppins text-2xl font-bold text-ecoprism-title leading-snug lg:text-3xl">From data to action -<br />automatically.</h3>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">Knowing your ESG performance is one thing. Knowing what to do about it is another. ecoPRISM's recommendation engine analyses your current performance data and surfaces specific, prioritised actions to improve your sustainability outcomes.</p>
+                <ul class="feature-points text-base leading-relaxed text-ecoprism-text">
+                  <li>Based on your actual ESG performance data</li>
+                  <li>Prioritised by impact and feasibility</li>
+                  <li>Aligned to your targets and reporting frameworks</li>
+                  <li>Updated as your data changes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+          SECTION 5 - CTA
+      ════════════════════════════════════════════════════ -->
+      <section class="cta-bg relative overflow-hidden px-4 py-16 text-center sm:py-20 md:py-24 lg:py-[100px]">
+        <div class="pointer-events-none absolute inset-0" style="background: radial-gradient(50% 50% at 50% 50%, rgba(61, 220, 151, 0.14) 0%, rgba(61, 220, 151, 0) 36%)"></div>
+        <div class="relative mx-auto max-w-4xl reveal lg:max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#f4b940]">Get Started</p>
+          <h2 class="mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">See ecoPRISM AI in action.</h2>
+          <p class="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg md:text-xl">Talk to our team about how AI can reduce your reporting burden and improve the quality of your ESG data.</p>
+          <a href="/contact-us" class="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#f4b940] px-8 py-4 text-base font-semibold text-[#0b2e26] shadow-[0_10px_24px_rgba(244,185,64,0.22)] transition hover:-translate-y-0.5"> Book a demo </a>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/v3/assets/js/components.js"></script>
+    <script src="/v3/assets/js/utils.js"></script>
+
+    <!-- Scroll reveal: IntersectionObserver -->
+    <script>
+      (function () {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      })();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadFooter = () => {
+          if (typeof getVersionedUrl === "function") {
+            fetch(getVersionedUrl("/v3/components/footer.html"))
+              .then((r) => r.text())
+              .then((d) => {
+                document.getElementById("footer-container").innerHTML = d;
+              })
+              .catch((e) => console.error("Error loading footer:", e));
+          } else {
+            const cv = new Date().getFullYear() + String(new Date().getMonth() + 1).padStart(2, "0") + String(new Date().getDate()).padStart(2, "0");
+            fetch("/v3/components/footer.html?v=" + cv)
+              .then((r) => r.text())
+              .then((d) => {
+                document.getElementById("footer-container").innerHTML = d;
+              })
+              .catch((e) => console.error("Error loading footer:", e));
+          }
+        };
+        setTimeout(loadFooter, 100);
+      });
+    </script>
+    <script>
+      const originalWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && args[0].includes && args[0].includes("cdn.tailwindcss.com should not be used in production")) return;
+        originalWarn.apply(console, args);
+      };
+    </script>
+  </body>
+</html>

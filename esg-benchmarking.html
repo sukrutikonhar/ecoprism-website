@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Leverage ESG benchmarking to uncover risks, compare with peers, and drive performance using AI-powered insights. Stay compliant and investor-ready." />
+    <meta name="keywords" content="ESG benchmarking, ESG performance analytics, ESG peer comparison, emissions benchmarking, CSRD benchmarking, ESG data insights, sustainability analytics, ESG compliance" />
+    <meta name="author" content="ecopRISM" />
+    <title>ESG Benchmarking Platform for Compliance & Performance | ecoPRISM</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.webp" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/plugins.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/colors/leaf.css" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://ecoprism.com/esg-benchmarking" />
+
+    <!-- Alternate language links -->
+    <link rel="alternate" hreflang="en" href="https://ecoprism.com/esg-benchmarking" />
+    <link rel="alternate" hreflang="x-default" href="https://ecoprism.com/esg-benchmarking" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ecoprism.com/esg-benchmarking" />
+    <meta property="og:title" content="ESG Benchmarking Platform for Compliance & Performance | ecoPRISM" />
+    <meta property="og:description" content="Leverage ESG benchmarking to uncover risks, compare with peers, and drive performance using AI-powered insights. Stay compliant and investor-ready." />
+    <meta property="og:image" content="https://ecoprism.com/assets/img/og-image/esg-benchmarking.webp" />
+    <meta property="og:site_name" content="ecoPRISM" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ecoprism.com/esg-benchmarking" />
+    <meta name="twitter:title" content="ESG Benchmarking Platform for Compliance & Performance | ecoPRISM" />
+    <meta name="twitter:description" content="Leverage ESG benchmarking to uncover risks, compare with peers, and drive performance using AI-powered insights. Stay compliant and investor-ready." />
+    <meta name="twitter:image" content="https://ecoprism.com/assets/img/og-image/esg-benchmarking.webp" />
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "ecoPRISM ESG Benchmarking Platform",
+        "description": "AI-powered ESG benchmarking platform to compare ESG performance, uncover risks, and ensure regulatory compliance.",
+        "brand": {
+          "@type": "Brand",
+          "name": "ecoPRISM"
+        },
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "ecoPRISM",
+          "url": "https://ecoprism.com"
+        },
+        "url": "https://ecoprism.com/esg-benchmarking"
+      }
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JTG1Q17RB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6JTG1Q17RB");
+    </script>
+
+    <!-- Lead5beat Tracking Code -->
+    <script type="text/javascript" src="https://secure.lead5beat.com/js/221793.js"></script>
+    <noscript><img src="https://secure.lead5beat.com/221793.png" style="display: none" / loading="lazy"></noscript>
+
+    <!-- Inline Styles -->
+    <style>
+      figure .banner-img {
+        /* width: 40%; */
+      }
+      .eco-card {
+        height: 511px;
+      }
+      .card.image-wrapper {
+        background-image: linear-gradient(to right top, #494949, #4e5055, #4e5861, #4a616c, #446a73, #39777a, #35847a, #419072, #5ea062, #89ad4c, #beb435, #fab430) !important;
+      }
+
+      .csrd-icons .icon-svg {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 12px;
+      }
+
+      .bg-banner {
+        background-image: linear-gradient(to right top, #407775, #588885, #6f9995, #86aba6, #9dbdb8);
+      }
+
+      .benefits .card-body {
+        height: 348px;
+      }
+
+      .offerings .card-body {
+        height: 330px;
+      }
+
+      .shadow-green {
+        box-shadow: 0 12px 20px rgba(22, 81, 51, 0.1);
+      }
+
+      .essential .card-body {
+        height: 270px;
+      }
+
+      /* Floating left to right and back infinitely */
+      @keyframes floatLeftRight {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(15px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .floating-horizontal {
+        animation: floatLeftRight 6s ease-in-out infinite;
+      }
+
+      @media (min-width: 767px) {
+        .modal-content {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <div class="content-wrapper about">
+      <header class="wrapper bg-soft-primary">
+        <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-light">
+          <div class="container flex-lg-row flex-nowrap align-items-center">
+            <div class="navbar-brand w-100">
+              <a href="/">
+                <img class="logo-dark" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
+                <img class="logo-light" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
+              </a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <a href="/">
+                  <img class="logo-dark" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
+                  <img class="logo-light" src="../assets/img/logo-light.webp" height="45px" alt="ecoPRISM Logo" />
+                </a>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/about-us">About Us</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/our-team">Our Team</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/careers">Careers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/news">News</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/events">Events</a></li>
+                    </ul>
+                  </li>
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu dropdown-lg">
+                      <div class="dropdown-lg-content">
+                        <div>
+                          <ul class="list-unstyled">
+                            <li>
+                              <a class="dropdown-item" href="/esg-platform">ESG Platform</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="/csrd-reporting">CSRD Reporting</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="/ecoquote">ecoQUOTE</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- /.column -->
+                        <div>
+                          <ul class="list-unstyled">
+                            <li>
+                              <a class="dropdown-item" href="/esg-benchmarking">ESG Benchmarking</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="/ecobot">CSRD ecobot</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="/ecogrid">ecoGRID</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- /.column -->
+                      </div>
+                      <!-- /auto-column -->
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/ecoprism-ai">ecoPRISM AI</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/services/esg-advisory">ESG Advisory</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/services/training-capacity-building">Training and Capacity Building</a></li>
+                    </ul>
+                  </li>
+<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Case Studies</a>
+
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/abb-ecoquote-sustainability-reporting">Sustainability in Proposals</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/unisys-climate-risk">Climate Risk Intelligence</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/acumant-ecovadis">EcoVadis Readiness</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/camfil-esg-training">ESG Capacity Building</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/double-materiality-assessment">Double Materiality Assessment</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/insights">Insights</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/whitepapers">Whitepapers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/glossary">ESG Glossary</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/csrd-adoption">CSRD Adoption</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/california-climate-laws-explained">California Climate Disclosure Laws</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/brsr-reporting">BRSR Reporting</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item d-block d-md-none"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+                </ul>
+                <!-- /.navbar-nav -->
+                <div class="offcanvas-footer d-lg-none">
+                  <div>
+                    <a href="mailto:info@ecoprism.com" class="link-inverse"><span class="__cf_email__">info@ecoprism.com</span></a>
+                    <nav class="nav social social-white mt-4">
+                      <a href="https://www.linkedin.com/company/ecoprism/"><i class="uil uil-linkedin"></i></a>
+                      <a href="https://www.youtube.com/@Ecoprism-kz4yb"><i class="uil uil-youtube"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                  </div>
+                </div>
+                <!-- /.offcanvas-footer -->
+              </div>
+              <!-- /.offcanvas-body -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="navbar-other ms-lg-4">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item d-none d-md-block">
+                  <a href="/contact-us" class="btn btn-sm btn-primary rounded-pill">Contact Us</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                  <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </header>
+      <!-- /header -->
+      <section class="wrapper image-wrapper bg-cover bg-image pt-15 pb-12" data-image-src="../assets/img/banner/esg-benchmarking-banner.webp">
+        <div class="container text-center">
+          <div class="row align-items-center">
+            <div class="col-lg-6" data-cue="slideInDown">
+              <figure><img class="w-auto" src="../assets/img/photos/new/esg-benchmarking/benchmarking-front.webp" alt="ESG Benchmarking Tool" loading="lazy" /></figure>
+            </div>
+            <!-- /column -->
+            <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 text-center text-lg-start order-2 order-lg-0 pe-5" data-cues="slideInDown" data-group="page-title" data-delay="600">
+              <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">Elevate Your ESG Performance with Data-Driven Benchmarking</h1>
+              <p class="lead fs-lg mb-7">Enhance your ESG performance with data analytics, AI-powered insights, and peer comparisons. Uncover risks, seize opportunities, and ensure compliance with evolving regulations.</p>
+              <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+                <span><a class="btn btn-primary rounded-pill me-2 pdf">Get Started</a></span>
+              </div>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-primary essential">
+        <div class="container py-12">
+          <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+            <div class="col-lg-8 order-lg-2">
+              <div class="row gx-md-5 gy-5">
+                <div class="col-md-4 align-self-end">
+                  <div class="card bg-pale-white">
+                    <div class="card-body">
+                      <img src="../assets/img/icons/new/benchmarking-01.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="Icon" / loading="lazy">
+                      <h4>Enhances Transparency</h4>
+                      <p class="mb-0">Clear metrics on ESG performance</p>
+                    </div>
+                    <!--/.card-body -->
+                  </div>
+                  <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-4 align-self-end">
+                  <div class="card bg-soft-primary">
+                    <div class="card-body">
+                      <img src="../assets/img/icons/new/benchmarking-02.svg" class="svg-inject icon-svg icon-svg-md text-red mb-3" alt="Icon" / loading="lazy">
+                      <h4>Identifies Risks & Opportunities</h4>
+                      <p class="mb-0">Spot gaps and areas for improvement</p>
+                    </div>
+                    <!--/.card-body -->
+                  </div>
+                  <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-4 align-self-end">
+                  <div class="card bg-soft-white">
+                    <div class="card-body">
+                      <img src="../assets/img/icons/new/benchmarking-13.svg" class="svg-inject icon-svg icon-svg-md text-red mb-3" alt="Icon" / loading="lazy">
+                      <h4>Drives Investor Confidence</h4>
+                      <p class="mb-0">ESG transparency attracts investment</p>
+                    </div>
+                    <!--/.card-body -->
+                  </div>
+                  <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 align-self-end">
+                  <div class="card bg-soft-primary">
+                    <div class="card-body">
+                      <img src="../assets/img/icons/new/benchmarking-03.svg" class="svg-inject icon-svg icon-svg-md text-leaf mb-3" alt="Icon" / loading="lazy">
+                      <h4>Ensures Regulatory Compliance</h4>
+                      <p class="mb-0">Aligns with global sustainability regulations</p>
+                    </div>
+                    <!--/.card-body -->
+                  </div>
+                  <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 align-self-end">
+                  <div class="card bg-soft-white">
+                    <div class="card-body">
+                      <img src="../assets/img/icons/new/benchmarking-04.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="Icon" / loading="lazy">
+                      <h4>Improves Competitive Positioning</h4>
+                      <p class="mb-0">Companies with strong ESG performance outperforms peers</p>
+                    </div>
+                    <!--/.card-body -->
+                  </div>
+                  <!--/.card -->
+                </div>
+                <!--/column -->
+              </div>
+              <!--/.row -->
+            </div>
+            <!--/column -->
+            <div class="col-lg-4">
+              <!-- <h2 class="fs-15 text-uppercase text-muted mb-3">Why ESG Benchmarking is Essential for Business Growth</h2> -->
+              <h3 class="display-4 mb-5 text-white">Why ESG Benchmarking is Essential for Business Growth</h3>
+              <p class="text-soft-primary lead fs-md">ESG is no longer optional. Companies that fail to benchmark their ESG performance risk compliance failures, reputational damage, and investor pullout. Leading organizations use ESG benchmarking to ensure compliance, drive investment growth, boost financial performance and mitigate risks.</p>
+              <!-- <a href="#" class="btn btn-navy rounded-pill mt-3">More Details</a> -->
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light offerings">
+        <div class="container py-12 text-center">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="display-4 mb-3">ecoPRISM ESG Intelligence for Competitive Benchmarking</h3>
+              <p class="lead fs-lg mb-8 pe-xxl-2">ecoPRISM provides a comprehensive ESG benchmarking solution across four key areas:</p>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="position-relative">
+            <div class="shape rounded-circle bg-soft-blue rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.2rem; z-index: 0"></div>
+            <div class="shape bg-dot yellow rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
+            <div class="row gx-md-3 gy-3 text-center">
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-leaf">
+                  <div class="card-body">
+                    <img src="../assets/img/icons/new/benchmarking-05.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="Icon" / loading="lazy">
+                    <h4>Emissions Benchmarking</h4>
+                    <p>Analyze and compare carbon footprints to industry standards for better.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-leaf">
+                  <div class="card-body">
+                    <img src="../assets/img/icons/new/benchmarking-06.svg" class="svg-inject icon-svg icon-svg-md text-red mb-3" alt="Icon" / loading="lazy">
+                    <h4>Emissions Targets</h4>
+                    <p>Set, track and achieve carbon reduction goals to drive sustainable progress.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-leaf">
+                  <div class="card-body">
+                    <img src="../assets/img/icons/new/benchmarking-07.svg" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="Icon" / loading="lazy">
+                    <h5>ESG Reporting Standards</h5>
+                    <p>Ensure compliance with global ESG frameworks for transparent sustainability reporting.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-leaf">
+                  <div class="card-body">
+                    <img src="../assets/img/icons/new/benchmarking-08.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="Icon" / loading="lazy">
+                    <h4>CSRD Benchmarking</h4>
+                    <p>Align sustainability disclosures with CSRD requirements to meet EU regulatory standards.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /.position-relative -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+
+      <section class="wrapper bg-light">
+        <div class="container pb-10">
+          <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center mb-10">
+            <div class="col-lg-7 position-relative">
+              <figure class="bg-soft-yellow rounded"><img class="w-auto" src="assets/img/photos/new/esg-benchmarking/emissions-full.webp" alt="Emissions Tracking" loading="lazy" /></figure>
+            </div>
+            <!--/column -->
+            <div class="col-lg-5">
+              <h3 class="display-4 mb-5">Emissions Benchmarking</h3>
+              <ul class="icon-list bullet-bg bullet-soft-primary">
+                <li><i class="uil uil-check"></i>Compare your Scope 1, 2, and 3 emissions against industry peers.</li>
+                <li><i class="uil uil-check"></i>Analyze your carbon intensity and sustainability footprint.</li>
+                <li><i class="uil uil-check"></i>Identify emission reduction opportunities and align with global climate goals.</li>
+              </ul>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+          <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center mb-10">
+            <div class="col-lg-7 position-relative order-lg-2">
+              <figure class="bg-soft-leaf rounded"><img class="w-auto" src="../assets/img/photos/new/esg-benchmarking/targets-mock.webp" alt="Targets Management" loading="lazy" /></figure>
+            </div>
+
+            <!--/column -->
+            <div class="col-lg-5">
+              <h3 class="display-4 mb-5">Emissions Targets Benchmarking</h3>
+              <ul class="icon-list bullet-bg bullet-soft-leaf">
+                <li><i class="uil uil-check"></i> Track SBTi (Science-Based Targets initiative) commitments across your industry.</li>
+                <li><i class="uil uil-check"></i>Compare your net-zero and decarbonization goals with competitors.</li>
+                <li><i class="uil uil-check"></i>Identify the most ambitious and achievable pathways for emissions reduction.</li>
+              </ul>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+          <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center mb-10">
+            <div class="col-lg-7 position-relative">
+              <figure class="bg-soft-yellow rounded"><img class="w-auto" src="../assets/img/photos/new/esg-benchmarking/reports-full.webp" alt="Image" / loading="lazy"></figure>
+            </div>
+            <!--/column -->
+            <div class="col-lg-5">
+              <h3 class="display-4 mb-5">ESG Reporting Standards & Frameworks Benchmarking</h3>
+              <p class="mb-5">Analyze ESG reports from leading companies and assess alignment with:</p>
+              <ul class="icon-list bullet-bg bullet-soft-leaf">
+                <li><i class="uil uil-check"></i>GRI (Global Reporting Initiative)</li>
+                <li><i class="uil uil-check"></i>SASB (Sustainability Accounting Standards Board)</li>
+                <li><i class="uil uil-check"></i>TCFD (Task Force on Climate-related Financial Disclosures)</li>
+                <li><i class="uil uil-check"></i>ISSB (International Sustainability Standards Board)</li>
+              </ul>
+              <p>Also, identify key topics and material issues covered in reports across your industry.</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+          <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+            <div class="col-lg-7 position-relative order-lg-2">
+              <figure class="bg-soft-leaf rounded"><img class="w-auto" src="../assets/img/photos/new/esg-benchmarking/csrd-mock.webp" alt="CSRD Compliance" loading="lazy" /></figure>
+            </div>
+            <div class="col-lg-5">
+              <h3 class="display-4 mb-5">CSRD Benchmarking</h3>
+              <ul class="icon-list bullet-bg bullet-soft-primary">
+                <li><i class="uil uil-check"></i>Evaluate Corporate Sustainability Reporting Directive (CSRD) disclosures across competitors.</li>
+                <li><i class="uil uil-check"></i>See companies’ ranking based on compliance and transparency.</li>
+                <li><i class="uil uil-check"></i>Assess performance in key CSRD sections and uncover improvement areas.</li>
+              </ul>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-soft-leaf">
+        <div class="container py-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="display-4 mb-3">Why Choose ecoPRISM for ESG Benchmarking?</h3>
+              <p class="lead fs-md mb-9">ecoPRISM offers an AI-driven, real-time ESG benchmarking platform that integrates:</p>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="row gx-md-8 gy-8">
+            <div class="col-md-6 col-lg-3">
+              <img src="../assets/img/icons/new/benchmarking-09.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="Icon" / loading="lazy">
+              <h4>Custom Peer Comparisons</h4>
+              <p>Measure ESG performance against industry leaders.</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-3">
+              <img src="../assets/img/icons/new/benchmarking-10.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="Icon" / loading="lazy">
+              <h4>Real-Time ESG Dashboards</h4>
+              <p>Gain instant insights into your ESG standing.</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-3">
+              <img src="../assets/img/icons/new/benchmarking-11.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="Icon" / loading="lazy">
+              <h4>Investor & Board Reports</h4>
+              <p>Generate high-impact ESG reports effortlessly.</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-6 col-lg-3">
+              <img src="../assets/img/icons/new/benchmarking-12.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="Icon" / loading="lazy">
+              <h4>Predictive Analytics</h4>
+              <p>Identify trends and future-proof your ESG strategy.</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+      <section class="wrapper bg-light">
+        <div class="container py-12">
+          <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-300">
+            <div class="card-body p-10 p-xl-12">
+              <div class="row text-center">
+                <div class="col-xl-12 col-xxl-10 mx-auto">
+                  <h3 class="display-3 mb-8 px-lg-8 text-white">Start Your <span class="underline-3 style-2 yellow">ESG Benchmarking</span> Journey Today</h3>
+                  <p class="text-white px-lg-8 lead fs-lg">ESG benchmarking is the key to compliance, investor trust, and long-term business success. Get started today and take control of your ESG performance.</p>
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+              <div class="d-flex justify-content-center">
+                <span><a class="pdf btn btn-white rounded">Get Started Now</a></span>
+              </div>
+            </div>
+            <!--/.card-body -->
+          </div>
+          <!--/.card -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+    </div>
+
+    <!-- /.content-wrapper -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!--<div class="modal-header">-->
+          <!--  <h5 class="modal-title" id="downloadModalLabel">Download Guide</h5>-->
+
+          <!--</div>-->
+          <div class="modal-body">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+                portalId: "40029313",
+                formId: "f9ac5201-7a64-406f-89b3-e1a269e96161",
+                region: "na1",
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal /.-->
+
+    <div id="footer"></div>
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+      // Function to show the modal when the ".pdf" buttons are clicked
+      const pdfButtons = document.querySelectorAll(".pdf");
+      pdfButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          $("#downloadModal").modal("show");
+        });
+      });
+    </script>
+  </body>
+</html>

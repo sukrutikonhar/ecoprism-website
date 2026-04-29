@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about ecoPRISM's mission, vision, and commitment to driving sustainable business transformation through innovative ESG solutions." />
+    <meta name="keywords" content="About ecoPRISM, ESG Company, Sustainability Leadership, Company Mission, ESG Expertise" />
+    <meta name="author" content="ecoPRISM" />
+    <title>About Us | ecoPRISM - Leading ESG Solutions Provider</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.webp" />
+
+    <!-- Google Fonts - Roboto & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://ecoprism.com/about/" />
+
+    <!-- Modern CSS Framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ecoprism: {
+                primary: "#407775",
+                secondary: "#588885",
+                accent: "#9dbdb8",
+                yellow: "#fbbf24",
+                dark: "#1f2937",
+                title: "#343f52",
+                text: "#575757",
+              },
+            },
+            fontFamily: {
+              sans: ["Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+              poppins: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Alpine.js x-cloak styling to prevent menu flash -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/main.css?v=1.0.10" />
+    <link rel="stylesheet" href="assets/css/components.css?v=1.0.10" />
+  </head>
+  <body class="font-sans">
+    <!-- Header Component -->
+    <header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: false }" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-init="window.addEventListener('scroll', () => { isScrolled = window.scrollY > 0 })" x-cloak>
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center">
+              <img src="assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <!-- About Dropdown -->
+              <div x-data="{ open: false }" class="relative group">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+                  About
+                  <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="about.html" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
+                  <a href="../our-team/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
+                  <a href="../careers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+                </div>
+              </div>
+
+              <!-- Products Dropdown -->
+              <div x-data="{ open: false }" class="relative group">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+                  Products
+                  <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="../esg-platform/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Platform</a>
+                  <a href="../csrd-reporting/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Reporting</a>
+                  <a href="../ecoquote/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ecoQUOTE</a>
+                  <a href="../esg-benchmarking" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Benchmarking</a>
+                  <a href="../ecobot" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD ecobot</a>
+                </div>
+              </div>
+
+              <!-- Services Dropdown -->
+              <div x-data="{ open: false }" class="relative group">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+                  Services
+                  <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="../services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
+                  <a href="../services/training-capacity-building/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
+                </div>
+              </div>
+
+              <!-- Newsfeed Dropdown -->
+              <div x-data="{ open: false }" class="relative group">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+                  Newsfeed
+                  <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <div x-data="{ newsOpen: false }" class="relative">
+                    <button @mouseenter="newsOpen = true" @mouseleave="newsOpen = false" class="block w-full text-left px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50 flex items-center justify-between">
+                      News
+                      <svg class="h-3 w-3 transition-transform duration-200" :class="{ 'rotate-180': newsOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                    <div x-show="newsOpen" @mouseenter="newsOpen = true" @mouseleave="newsOpen = false" class="absolute left-full top-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 border ml-1">
+                      <a href="../news/company-news/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Company News</a>
+                      <a href="../news/news-media/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News & Media</a>
+                    </div>
+                  </div>
+                  <a href="../events/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
+                </div>
+              </div>
+
+              <!-- Resources Dropdown -->
+              <div x-data="{ open: false }" class="relative group">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+                  Resources
+                  <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="../resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
+                  <a href="../resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
+                  <a href="../resources/glossary/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
+                  <a href="../resources/csrd-adoption/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
+                  <a href="../resources/california-climate-laws/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+                </div>
+              </div>
+
+              <!-- Get Started Button -->
+              <a href="..contact-us" class="text-white px-6 py-2 rounded-full font-medium transition-colors duration-200" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #407775">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-ecoprism-text p-2 rounded-md">
+              <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="lg:hidden fixed inset-0 z-50">
+        <!-- Backdrop -->
+        <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <!-- Menu panel -->
+        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="relative bg-white h-full w-80 shadow-xl overflow-y-auto">
+          <!-- Menu header -->
+          <div class="flex items-center justify-between p-4 border-b">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <img src="assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+            </div>
+
+            <!-- Close button -->
+            <button @click="mobileMenuOpen = false" class="p-2 rounded-md text-ecoprism-text hover:text-ecoprism-primary hover:bg-gray-100">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Menu content -->
+          <div class="px-4 pt-4 pb-6 space-y-1">
+            <!-- About Dropdown -->
+            <div>
+              <button @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                About
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'about'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="about.html" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
+                <a href="../our-team/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
+                <a href="../careers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
+              </div>
+            </div>
+
+            <!-- Products Dropdown -->
+            <div>
+              <button @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Products
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'products'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="../esg-platform/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Platform</a>
+                <a href="../csrd-reporting/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Reporting</a>
+                <a href="../ecoquote/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
+                <a href="../esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
+                <a href="../ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
+              </div>
+            </div>
+
+            <!-- Services Dropdown -->
+            <div>
+              <button @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Services
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'services'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="../services/esg-advisory" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Advisory</a>
+                <a href="../services/training-capacity-building/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Training and Capacity Building</a>
+              </div>
+            </div>
+
+            <!-- Newsfeed Dropdown -->
+            <div>
+              <button @click="activeDropdown = activeDropdown === 'newsfeed' ? null : 'newsfeed'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Newsfeed
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'newsfeed' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'newsfeed'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <!-- News Sub-dropdown -->
+                <div x-data="{ newsOpen: false }">
+                  <button @click="newsOpen = !newsOpen" class="flex items-center justify-between w-full px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">
+                    News
+                    <svg class="h-3 w-3 transition-transform duration-200" :class="{ 'rotate-180': newsOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="newsOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1">
+                    <a href="../news/company-news/" class="block px-3 py-2 text-xs text-ecoprism-text hover:text-ecoprism-primary">Company News</a>
+                    <a href="../news/news-media/" class="block px-3 py-2 text-xs text-ecoprism-text hover:text-ecoprism-primary">News & Media</a>
+                  </div>
+                </div>
+                <a href="../events/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
+              </div>
+            </div>
+
+            <!-- Resources Dropdown -->
+            <div>
+              <button @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Resources
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="../resources/insights/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
+                <a href="../resources/whitepapers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
+                <a href="../resources/glossary/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
+                <a href="../resources/csrd-adoption/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
+                <a href="../resources/california-climate-laws/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+              </div>
+            </div>
+
+            <!-- Get Started Button -->
+            <a href="..contact-us" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Us Hero Section -->
+    <section class="bg-gradient-to-r from-ecoprism-primary to-ecoprism-secondary py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">About ecoPRISM</h1>
+        <p class="text-xl text-white opacity-90 max-w-3xl mx-auto">Leading the transformation toward sustainable business practices through innovative ESG solutions and expert guidance.</p>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-ecoprism-title mb-8">Our Mission</h2>
+          <p class="text-lg text-ecoprism-text leading-relaxed mb-8">At ecoPRISM, we believe that sustainable business practices are not just an option—they're essential for long-term success. Our mission is to empower organizations with the tools, insights, and expertise needed to navigate the complex landscape of environmental, social, and governance (ESG) requirements while driving meaningful impact.</p>
+          <p class="text-lg text-ecoprism-text leading-relaxed">We combine cutting-edge technology with deep industry expertise to help companies measure, manage, and improve their sustainability performance, ensuring they meet regulatory requirements while creating value for all stakeholders.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-ecoprism-title mb-8">Our Vision</h2>
+          <p class="text-lg text-ecoprism-text leading-relaxed mb-8">We envision a world where every organization seamlessly integrates sustainability into their core business strategy, creating positive environmental and social impact while driving financial performance. Through our comprehensive ESG platform and advisory services, we aim to be the catalyst for this transformation.</p>
+          <p class="text-lg text-ecoprism-text leading-relaxed">Our goal is to make ESG reporting and management as intuitive and efficient as possible, enabling businesses to focus on what matters most: creating sustainable value for all stakeholders.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-ecoprism-title mb-4">Our Values</h2>
+          <p class="text-lg text-ecoprism-text">The principles that guide everything we do</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-lg text-center">
+            <div class="w-16 h-16 bg-ecoprism-primary rounded-full mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ecoprism-title mb-4">Integrity</h3>
+            <p class="text-ecoprism-text">We maintain the highest standards of transparency and ethical conduct in all our interactions.</p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg text-center">
+            <div class="w-16 h-16 bg-ecoprism-primary rounded-full mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ecoprism-title mb-4">Innovation</h3>
+            <p class="text-ecoprism-text">We continuously push boundaries to develop cutting-edge solutions that address evolving ESG challenges.</p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg text-center">
+            <div class="w-16 h-16 bg-ecoprism-primary rounded-full mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ecoprism-title mb-4">Collaboration</h3>
+            <p class="text-ecoprism-text">We work closely with our clients as partners, building lasting relationships based on mutual success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-ecoprism-title mb-4">Meet Our Team</h2>
+          <p class="text-lg text-ecoprism-text">Experts in ESG, sustainability, and technology</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="w-24 h-24 bg-ecoprism-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-2xl font-bold text-white">JD</span>
+            </div>
+            <h3 class="text-xl font-semibold text-ecoprism-title mb-2">John Doe</h3>
+            <p class="text-ecoprism-primary font-medium mb-3">CEO & Founder</p>
+            <p class="text-ecoprism-text text-sm">15+ years in sustainability consulting and ESG strategy development.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="w-24 h-24 bg-ecoprism-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-2xl font-bold text-white">JS</span>
+            </div>
+            <h3 class="text-xl font-semibold text-ecoprism-title mb-2">Jane Smith</h3>
+            <p class="text-ecoprism-primary font-medium mb-3">CTO</p>
+            <p class="text-ecoprism-text text-sm">Technology leader with expertise in building scalable ESG platforms.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="w-24 h-24 bg-ecoprism-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-2xl font-bold text-white">MJ</span>
+            </div>
+            <h3 class="text-xl font-semibold text-ecoprism-title mb-2">Mike Johnson</h3>
+            <p class="text-ecoprism-primary font-medium mb-3">Head of ESG Advisory</p>
+            <p class="text-ecoprism-text text-sm">Former sustainability director with deep regulatory compliance expertise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-ecoprism-primary">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your ESG Journey?</h2>
+        <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">Join hundreds of organizations that trust ecoPRISM to guide their sustainability transformation.</p>
+        <a href="..contact-us" class="bg-white text-ecoprism-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 inline-block"> Get Started Today </a>
+      </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Alpine.js Components -->
+    <script src="assets/js/components.js?v=1.0.10"></script>
+    <script src="assets/js/utils.js?v=1.0.10"></script>
+
+    <!-- Load Footer Component -->
+    <script>
+      // Load footer component
+      document.addEventListener("DOMContentLoaded", async () => {
+        const footerContainer = document.getElementById("footer-container");
+        if (footerContainer) {
+          const response = await fetch("components/footer.html?v=1.0.18");
+          const html = await response.text();
+          footerContainer.innerHTML = html;
+        }
+      });
+    </script>
+
+    <!-- Suppress Tailwind CDN warning for development -->
+    <script>
+      // Override console.warn to filter out Tailwind CDN warning
+      const originalWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && args[0].includes && args[0].includes("cdn.tailwindcss.com should not be used in production")) {
+          return; // Suppress this specific warning
+        }
+        originalWarn.apply(console, args);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1875 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Automatic Cache Buster -->
+    <script src="/v3/assets/js/cache-buster.js"></script>
+
+    <!-- SEO Meta Tags (keeping existing ones) -->
+    <title>ESG Software Platform, Advisory and Training | ecoPRISM</title>
+
+    <meta
+      name="description"
+      content="ecoPRISM helps enterprises manage ESG data, reporting, and compliance with software, advisory services, and training programs built for measurable outcomes."
+    />
+    <meta name="keywords" content="ESG Journey, ecoPRISM, Sustainable Solutions, Data-Driven Insights, Software Solutions, Expert Consulting, Training Programs" />
+    <meta name="author" content="ecoPRISM" />
+    <meta name="google-site-verification" content="YK-vYPKcp-_0357si19JI2tvGiD6bJwyvwSoCvIAyFg" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://ecoprism.com/" />
+
+    <!-- Alternate language links -->
+    <link rel="alternate" hreflang="en" href="https://ecoprism.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://ecoprism.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ecoprism.com/" />
+    <meta property="og:title" content="Driving Sustainability Excellence | Innovative ESG Solutions | ecoPRISM" />
+    <meta property="og:description" content="Explore ecoPRISM's comprehensive ESG software, advisory services, and training programs to streamline sustainability efforts and drive strategic, sustainable growth." />
+    <meta property="og:image" content="https://ecoprism.com/assets/img/og-image/home.webp" />
+    <meta property="og:site_name" content="ecoPRISM" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ecoprism.com/" />
+    <meta name="twitter:title" content="Driving Sustainability Excellence | Innovative ESG Solutions | ecoPRISM" />
+    <meta name="twitter:description" content="Explore ecoPRISM's comprehensive ESG software, advisory services, and training programs to streamline sustainability efforts and drive strategic, sustainable growth." />
+    <meta name="twitter:image" content="https://ecoprism.com/assets/img/og-image/home.webp" />
+
+    <!-- Favicon (keeping existing) -->
+    <link rel="shortcut icon" href="/assets/img/favicon.webp" />
+
+    <!-- Google Fonts - Inter (body) & Poppins (accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <!-- Modern CSS Framework -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ecoprism: {
+                primary: "#407775",
+                secondary: "#588885",
+                accent: "#9dbdb8",
+                yellow: "#fbbf24",
+                dark: "#1f2937",
+                title: "#343f52",
+                text: "#575757",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+              poppins: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Inter", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Alpine.js x-cloak styling to prevent menu flash -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+      /* Inter for body copy on this page (overrides main.css body Roboto) */
+      body.font-sans {
+        font-family:
+          "Inter",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          "Helvetica Neue",
+          Arial,
+          "Noto Sans",
+          sans-serif;
+      }
+      .cta-bg {
+        background: linear-gradient(109deg, #0b2e26 0%, #407775 100%);
+      }
+      header:not(.bg-white) .site-header-bar button.text-ecoprism-text {
+        color: #ffffff !important;
+      }
+      header .mobile-nav-drawer {
+        color: #111827;
+      }
+      header .mobile-nav-drawer a,
+      header .mobile-nav-drawer button {
+        color: #111827 !important;
+      }
+      header .mobile-nav-drawer a:hover,
+      header .mobile-nav-drawer button:hover {
+        color: #407775 !important;
+      }
+      header .mobile-nav-drawer svg {
+        color: #111827;
+      }
+
+      /* Home — same motion + buttons as ecoGRID product page */
+      @keyframes ecoprism-hero-in {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 28px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .hero-reveal {
+        opacity: 0;
+        animation: ecoprism-hero-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      .hero-reveal-delay-img {
+        animation-delay: 0.05s;
+      }
+      .hero-reveal-delay-h1 {
+        animation-delay: 0.45s;
+      }
+      .hero-reveal-delay-lead {
+        animation-delay: 0.7s;
+      }
+      .hero-reveal-delay-cta {
+        animation-delay: 0.95s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-reveal {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+      .js-reveal {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .js-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+      .js-reveal-delay-1 {
+        transition-delay: 0.06s;
+      }
+      .js-reveal-delay-2 {
+        transition-delay: 0.12s;
+      }
+      .js-reveal-delay-3 {
+        transition-delay: 0.18s;
+      }
+      .js-reveal-delay-4 {
+        transition-delay: 0.24s;
+      }
+      .ecogrid-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          filter 0.2s ease;
+      }
+      .ecogrid-btn:hover {
+        transform: translateY(-2px);
+      }
+      .ecogrid-btn:active {
+        transform: translateY(0) scale(0.98);
+      }
+      .ecogrid-btn:focus-visible {
+        outline: 2px solid #fab430;
+        outline-offset: 3px;
+      }
+      .ecogrid-btn-outline {
+        background: rgba(255, 255, 255, 0.65);
+        border: 2px solid #2f6f64;
+        color: #2f6f64;
+        box-shadow: 0 2px 8px rgba(47, 111, 100, 0.08);
+      }
+      .ecogrid-btn-outline:hover {
+        background: rgba(47, 111, 100, 0.1);
+        border-color: #245548;
+        color: #1a3d36;
+        box-shadow: 0 6px 18px rgba(47, 111, 100, 0.16);
+      }
+      .ecogrid-btn-outline-light {
+        background: #fff !important;
+      }
+      .ecogrid-btn-outline-light:hover {
+        background: rgba(47, 111, 100, 0.08) !important;
+      }
+      .ecogrid-nav-cta {
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .ecogrid-nav-cta:hover {
+        background-color: rgba(64, 119, 117, 0.1);
+        color: #2f6f64;
+      }
+      header div.absolute.left-0.bg-white.rounded-md.shadow-lg a.block {
+        transition:
+          background-color 0.18s ease,
+          color 0.18s ease;
+      }
+      header div.absolute.left-0.bg-white.rounded-md.shadow-lg a.block:hover {
+        background-color: #eaf5f1;
+        color: #2f6f64;
+      }
+      .ecogrid-cap-card {
+        transition:
+          transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .ecogrid-cap-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(47, 111, 100, 0.2);
+        box-shadow: 0 12px 32px 0 rgba(47, 111, 100, 0.1);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ecogrid-btn:hover,
+        .ecogrid-btn:active {
+          transform: none;
+        }
+        .ecogrid-btn {
+          transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+        }
+        .ecogrid-cap-card:hover {
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Custom Styles - Automatically versioned by cache-buster.js -->
+    <link rel="stylesheet" href="/v3/assets/css/main.css" />
+    <link rel="stylesheet" href="/v3/assets/css/components.css" />
+    <!-- CTA fills inlined after external CSS: green/gold buttons still work if main.css 404s, is blocked, or CDN serves a stale copy -->
+    <style>
+      .ecogrid-btn-primary {
+        background: #2f7f75;
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(47, 119, 117, 0.28);
+      }
+      .ecogrid-btn-primary:hover {
+        background: linear-gradient(165deg, #3a7d6e 0%, #2f6f64 55%, #285a50 100%);
+        box-shadow: 0 10px 28px rgba(47, 111, 100, 0.42);
+      }
+      .ecogrid-btn-header {
+        background: #407775;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(32, 90, 84, 0.32);
+      }
+      .ecogrid-btn-header:hover {
+        background: linear-gradient(165deg, #4d8f82 0%, #407775 50%, #356963 100%);
+        box-shadow: 0 8px 22px rgba(32, 90, 84, 0.48);
+      }
+      .ecogrid-btn-cta-gold {
+        background: #f4b940;
+        color: #0b2e26;
+        box-shadow: 0 6px 18px rgba(244, 185, 64, 0.32);
+      }
+      .ecogrid-btn-cta-gold:hover {
+        background: linear-gradient(165deg, #fce089 0%, #f4b940 45%, #e0a32a 100%);
+        box-shadow: 0 12px 34px rgba(244, 185, 64, 0.5);
+      }
+    </style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JTG1Q17RB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6JTG1Q17RB");
+    </script>
+
+    <!-- Lead5beat Tracking Code -->
+    <script type="text/javascript" src="https://secure.lead5beat.com/js/221793.js"></script>
+    <noscript><img src="https://secure.lead5beat.com/221793.png" style="display: none" loading="lazy" /></noscript>
+
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+      _linkedin_partner_id = "8282116";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript><img height="1" width="1" style="display: none" alt="Image" src="https://px.ads.linkedin.com/collect/?pid=8282116&fmt=gif" loading="lazy" /></noscript>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Corporation",
+        "name": "ecoPRISM",
+        "url": "https://ecoprism.com/",
+        "logo": "https://ecoprism.com/assets/img/logo-light.webp",
+        "sameAs": ["https://www.linkedin.com/company/ecoprism/", "https://www.youtube.com/@Ecoprism-kz4yb"]
+      }
+    </script>
+  </head>
+  <body class="overflow-x-hidden bg-white font-sans text-ecoprism-text">
+    <!-- Header (aligned with Unisys / latest site nav) -->
+    <header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: window.scrollY > 0 }" x-init="const update = () => { isScrolled = window.scrollY > 0; }; update(); requestAnimationFrame(update); window.addEventListener('scroll', update, { passive: true });" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-cloak>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-9 w-auto" />
+            </a>
+          </div>
+
+          <div class="hidden lg:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  About
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/about-us" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
+                  <a href="/our-team" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
+                  <a href="/careers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+                  <a href="/news" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News</a>
+                  <a href="/events" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Products
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 z-50 flex w-max max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-gray-200 bg-white py-3 shadow-lg">
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-platform" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Platform</a>
+                    <a href="/csrd-reporting" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD Reporting</a>
+                    <a href="/ecoquote" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoQUOTE</a>
+                  </div>
+                  <div class="w-px shrink-0 self-stretch bg-gray-200" aria-hidden="true"></div>
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-benchmarking" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Benchmarking</a>
+                    <a href="/ecobot" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD ecobot</a>
+                    <a href="/ecogrid" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoGRID</a>
+                  </div>
+                </div>
+              </div>
+              <a href="/ecoprism-ai" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium py-4">ecoPRISM AI</a>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Services
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
+                  <a href="/services/training-capacity-building" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Case Studies
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Sustainability in Proposals</a>
+                  <a href="/resources/case-studies/unisys-climate-risk" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Climate Risk Intelligence</a>
+                  <a href="/resources/case-studies/acumant-ecovadis" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">EcoVadis Readiness</a>
+                  <a href="/resources/case-studies/camfil-esg-training" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Capacity Building</a>
+                  <a href="/resources/case-studies/double-materiality-assessment" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Double Materiality Assessment</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Resources
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
+                  <a href="/resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
+                  <a href="/resources/glossary" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
+                  <a href="/resources/csrd-adoption" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
+                  <a href="/resources/california-climate-laws-explained" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+                  <a href="/resources/brsr-reporting" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">BRSR Reporting</a>
+                </div>
+              </div>
+
+              <a href="/contact-us" class="ecogrid-btn ecogrid-btn-header rounded-full px-6 py-2 text-sm font-semibold">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="lg:hidden">
+            <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" class="rounded-md p-2 text-ecoprism-text transition hover:bg-black/5 hover:text-ecoprism-primary active:scale-95" aria-label="Toggle mobile menu" :aria-expanded="mobileMenuOpen">
+              <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 lg:hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50" @click="mobileMenuOpen = false"></div>
+        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="mobile-nav-drawer relative flex h-full min-h-0 w-full max-w-xs flex-col bg-white shadow-xl">
+          <div class="flex shrink-0 items-center justify-between border-b p-4">
+            <div class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+            </div>
+            <button type="button" @click="mobileMenuOpen = false" class="rounded-md p-2 text-ecoprism-text hover:bg-gray-100 hover:text-ecoprism-primary">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-4">
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                About
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'about'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/about-us" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
+                <a href="/our-team" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
+                <a href="/careers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
+                <a href="/news" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">News</a>
+                <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Products
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'products'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/esg-platform" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Platform</a>
+                <a href="/csrd-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Reporting</a>
+                <a href="/ecoquote" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
+                <a href="/esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
+                <a href="/ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
+                <a href="/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
+              </div>
+            </div>
+            <a href="/ecoprism-ai" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">ecoPRISM AI</a>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Services
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'services'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/services/esg-advisory" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Advisory</a>
+                <a href="/services/training-capacity-building" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Training and Capacity Building</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'casestudies' ? null : 'casestudies'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Case Studies
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'casestudies' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'casestudies'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Sustainability in Proposals</a>
+                <a href="/resources/case-studies/unisys-climate-risk" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Climate Risk Intelligence</a>
+                <a href="/resources/case-studies/acumant-ecovadis" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">EcoVadis Readiness</a>
+                <a href="/resources/case-studies/camfil-esg-training" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Capacity Building</a>
+                <a href="/resources/case-studies/double-materiality-assessment" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Double Materiality Assessment</a>
+              </div>
+            </div>
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Resources
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/insights/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
+                <a href="/resources/whitepapers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
+                <a href="/resources/glossary" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
+                <a href="/resources/csrd-adoption" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
+                <a href="/resources/california-climate-laws-explained" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+                <a href="/resources/brsr-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">BRSR Reporting</a>
+              </div>
+            </div>
+            <a href="/contact-us" class="ecogrid-nav-cta block rounded-full px-3 py-2 text-base font-semibold text-ecoprism-text">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative -mt-20 pt-36 sm:pt-16 pb-16 sm:pb-20 hero-gradient">
+        <div class="container mx-auto px-4 lg:px-8">
+          <!-- Main Content: Text Left, Dashboard Right -->
+          <div class="grid grid-cols-1 items-center gap-8 gap-y-10 lg:grid-cols-2 lg:gap-10 mb-12">
+            <!-- Text (below carousel on mobile) -->
+            <div class="order-2 min-w-0 text-center lg:order-1 lg:text-left">
+              <h1 class="hero-reveal hero-reveal-delay-h1 hero-title text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 leading-tight">The ESG Platform Enterprises Rely On</h1>
+              <p class="hero-reveal hero-reveal-delay-lead text-base sm:text-lg md:text-xl text-ecoprism-text mb-6 sm:mb-12 leading-relaxed">Track, manage and report sustainability data backed by expert consulting and industry-tailored solutions</p>
+
+              <!-- CTA Buttons -->
+              <div class="hero-reveal hero-reveal-delay-cta flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
+                <a href="/contact-us" class="ecogrid-btn ecogrid-btn-primary min-h-[44px] rounded-lg px-7 py-3 text-center text-sm font-semibold sm:text-base">Book a Demo</a>
+                <a href="/esg-platform" class="ecogrid-btn ecogrid-btn-outline min-h-[44px] rounded-lg px-7 py-3 text-center text-sm font-semibold sm:text-base">Platform Overview</a>
+              </div>
+            </div>
+
+            <!-- Dashboard Slides (first on mobile — matches ecoGRID hero) -->
+            <div
+              class="order-1 min-w-0 lg:order-2"
+              x-data="{ 
+         currentSlide: 0, 
+            slides: [
+           { src: '/v3/assets/img/dashboard/dashboard.webp', alt: 'ESG Dashboard Overview' },
+           { src: '/v3/assets/img/dashboard/ai-feature.webp', alt: 'AI-Powered ESG Features' },
+           { src: '/v3/assets/img/dashboard/connector.webp', alt: 'ESG Data Connectors' },
+           { src: '/v3/assets/img/dashboard/config.webp', alt: 'ESG Configuration Dashboard' },
+           { src: '/v3/assets/img/dashboard/target.webp', alt: 'ESG Target Tracking' }
+         ],
+         nextSlide() {
+           this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+         },
+         goToSlide(index) {
+           this.currentSlide = index;
+         }
+       }"
+              x-init="setInterval(() => nextSlide(), 6000)"
+            >
+              <!-- Dashboard Images Container -->
+              <div class="hero-reveal hero-reveal-delay-img relative h-[400px] w-full overflow-hidden rounded-2xl sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[500px]">
+                <template x-for="(slide, index) in slides" :key="index">
+                  <img x-show="currentSlide === index" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-out duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" :src="slide.src" :alt="slide.alt" class="absolute inset-0 w-full h-full object-contain rounded-2xl" loading="lazy" />
+                </template>
+              </div>
+
+              <!-- Slide Indicators - Outside slides container -->
+              <div class="flex justify-center mt-6 space-x-3" role="tablist" aria-label="Slide indicators">
+                <template x-for="(slide, index) in slides" :key="index">
+                  <button @click="goToSlide(index)" :class="currentSlide === index ? 'bg-yellow-500' : 'bg-white'" class="w-4 h-4 rounded-full transition-all duration-200 hover:scale-110" :aria-label="`Go to slide ${index + 1}`" :aria-selected="currentSlide === index" role="tab"></button>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand Logos Section -->
+          <div class="js-reveal rounded-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-10 gap-6 items-center">
+              <!-- Left Side - Text (3 columns) -->
+              <div class="md:col-span-3 text-center md:text-left">
+                <h2 class="text-white text-md md:text-lg font-medium leading-tight md:pr-12">Trusted by Leaders Across Industries</h2>
+              </div>
+
+              <!-- Right Side - Brand Logos (7 columns) -->
+              <div class="md:col-span-7">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 items-center justify-items-center">
+                  <div class="flex justify-center">
+                    <a href="https://www.camfil.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/v3/assets/img/brands/camfil1.png" alt="Camfil" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity duration-200 drop-shadow-md" loading="lazy" />
+                    </a>
+                  </div>
+                  <div class="flex justify-center">
+                    <a href="https://www.abb.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/v3/assets/img/brands/abb.svg" alt="ABB" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity duration-200 drop-shadow-md" loading="lazy" />
+                    </a>
+                  </div>
+                  <div class="flex justify-center">
+                    <a href="https://www.unisys.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/v3/assets/img/brands/unisys.png" alt="Unisys" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity duration-200 drop-shadow-md" loading="lazy" />
+                    </a>
+                  </div>
+                  <div class="flex justify-center">
+                    <a href="https://atnatechnologies.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/v3/assets/img/brands/atna1.png" alt="ATNA Technologies" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity duration-200 drop-shadow-md" loading="lazy" />
+                    </a>
+                  </div>
+                  <div class="flex justify-center">
+                    <a href="https://www.acumant.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/v3/assets/img/brands/acumant.webp" alt="Acumant" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity duration-200 drop-shadow-md" loading="lazy" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Regulatory Spotlight Section -->
+      <section class="py-20" style="background: linear-gradient(0deg, rgba(249, 212, 35, 0.4) 0%, #fff 100%)">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <!-- Section Header -->
+          <div class="text-center mb-12 sm:mb-16">
+            <!-- Tag -->
+            <div class="mb-4">
+              <span class="inline-block px-4 py-2 rounded-lg text-sm font-semibold font-poppins" style="background-color: rgba(249, 212, 35, 0.3); color: #407775">Regulatory Spotlight</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ecoprism-title mb-4 sm:mb-6 px-4">Helping You Navigate the New ESG Regulations</h2>
+
+            <!-- Sub Heading -->
+            <p class="text-base sm:text-lg text-ecoprism-text max-w-4xl mx-auto leading-relaxed px-4">Stay ahead of global sustainability mandates with ecoPRISM's data-driven compliance and reporting solutions.</p>
+          </div>
+
+          <!-- Three Column Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Column 1 - California Climate Laws -->
+            <div class="ecogrid-cap-card relative overflow-hidden rounded-xl border-b-8 bg-white shadow-lg" style="border-bottom-color: #407775">
+              <!-- Content -->
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex flex-col h-full justify-between">
+                  <!-- Main Content -->
+                  <div class="flex-1">
+                    <!-- Tag -->
+                    <div class="mb-4 sm:mb-5">
+                      <span class="inline-block px-3 py-1 rounded text-xs font-semibold text-white font-poppins" style="background-color: #f3f8f2; color: #407775">CLIMATE COMPLIANCE</span>
+                    </div>
+
+                    <!-- Heading -->
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-ecoprism-primary mb-3 sm:mb-4 leading-tight">
+                      California Climate Laws<br />
+                      (SB 253 & SB 261)
+                    </h3>
+
+                    <!-- Body Text -->
+                    <div class="mb-6 sm:mb-8">
+                      <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">Comply confidently with California's new climate disclosure mandates. ecoPRISM simplifies emissions tracking and reporting.</p>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Section with CTA and Image -->
+                  <div class="flex items-end justify-between gap-4">
+                    <!-- CTA Button -->
+                    <a href="/resources/california-climate-laws-explained" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
+
+                    <!-- Regulatory Image -->
+                    <div class="flex-shrink-0">
+                      <img src="/v3/assets/img/photos/regulatory-img-01.webp" alt="California Climate Laws" class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover rounded-lg" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2 - CSRD -->
+            <div class="ecogrid-cap-card relative overflow-hidden rounded-xl border-b-8 bg-white shadow-lg" style="border-bottom-color: #407775">
+              <!-- Content -->
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex flex-col h-full justify-between">
+                  <!-- Main Content -->
+                  <div class="flex-1">
+                    <!-- Tag -->
+                    <div class="mb-4 sm:mb-5">
+                      <span class="inline-block px-3 py-1 rounded text-xs font-semibold text-white font-poppins" style="background-color: #f3f8f2; color: #407775">REPORTING COMPLIANCE</span>
+                    </div>
+
+                    <!-- Heading -->
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-ecoprism-primary mb-3 sm:mb-4 leading-tight">Corporate Sustainability Reporting Directive (CSRD)</h3>
+
+                    <!-- Body Text -->
+                    <div class="mb-6 sm:mb-8">
+                      <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">Prepare for Europe's most comprehensive sustainability disclosure rule. ecoPRISM guides your CSRD readiness — from data systems to final reports.</p>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Section with CTA and Image -->
+                  <div class="flex items-end justify-between gap-4">
+                    <!-- CTA Button -->
+                    <a href="/resources/csrd-adoption" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
+
+                    <!-- Regulatory Image -->
+                    <div class="flex-shrink-0">
+                      <img src="/v3/assets/img/photos/regulatory-img-02.webp" alt="CSRD Compliance" class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover rounded-lg" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3 - BRSR -->
+            <div class="ecogrid-cap-card relative overflow-hidden rounded-xl border-b-8 bg-white shadow-lg" style="border-bottom-color: #407775">
+              <!-- Content -->
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex flex-col h-full justify-between">
+                  <!-- Main Content -->
+                  <div class="flex-1">
+                    <!-- Tag -->
+                    <div class="mb-4 sm:mb-5">
+                      <span class="inline-block px-3 py-1 rounded text-xs font-semibold text-white font-poppins" style="background-color: #f3f8f2; color: #407775">REGULATORY COMPLIANCE</span>
+                    </div>
+
+                    <!-- Heading -->
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-ecoprism-primary mb-3 sm:mb-4 leading-tight">Business Responsibility & Sustainability Reporting (BRSR)</h3>
+
+                    <!-- Body Text -->
+                    <div class="mb-6 sm:mb-8">
+                      <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">Stay ahead of SEBI's evolving sustainability requirements. ecoPRISM streamlines BRSR and BRSR Core reporting for listed entities — integrating policies, KPIs, and assurance-ready ESG data in one platform.</p>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Section with CTA and Image -->
+                  <div class="flex items-end justify-between gap-4">
+                    <!-- CTA Button -->
+                    <a href="/resources/brsr-reporting" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
+
+                    <!-- Regulatory Image -->
+                    <div class="flex-shrink-0">
+                      <img src="/v3/assets/img/photos/regulatory-img-03.webp" alt="BRSR Compliance" class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover rounded-lg" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What we offer Section -->
+      <section class="py-20 bg-white">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <!-- Pretitle -->
+          <div class="text-center mb-6">
+            <span class="inline-block px-4 py-2 rounded-lg text-sm font-semibold font-poppins" style="background-color: rgba(249, 212, 35, 0.3); color: #407775">Our Offerings</span>
+          </div>
+
+          <!-- Main Title and Description -->
+          <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-ecoprism-title mb-6">What We Offer</h2>
+            <p class="text-lg text-ecoprism-text max-w-4xl mx-auto leading-relaxed px-12">Explore our integrated suite of ESG solutions - from ESG data intelligence and reporting to expert advisory and purpose-built tools designed for your industry.</p>
+          </div>
+
+          <!-- Service Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1: ecoPRISM Platform -->
+            <a href="/esg-platform" class="service-card-link rounded-lg p-6 relative overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105" style="background-color: rgba(249, 212, 35, 0.3)">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-ecoprism-title mb-3 leading-tight">ecoPRISM Platform</h3>
+                <p class="text-ecoprism-text text-sm leading-snug">Aggregate ESG data, calculate emissions, report seamlessly and enhance your ESG performance.</p>
+              </div>
+
+              <!-- Image with Overlay Icon -->
+              <div class="relative mt-4">
+                <img src="/v3/assets/img/photos/esg-platform.webp" alt="ecoPRISM Platform" class="w-full h-48 object-cover rounded-lg" loading="lazy" />
+
+                <!-- Overlay Icon -->
+                <div class="absolute left-1 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #f3f8f2">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center" style="filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))">
+                    <img src="/v3/assets/img/icons/services/icon-01.svg" alt="Platform" class="w-6 h-6" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hover Overlay -->
+              <div class="service-card-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg" style="background-color: rgba(64, 119, 117, 0.9)">
+                <span class="text-white text-xl font-semibold">Read more →</span>
+              </div>
+            </a>
+
+            <!-- Card 2: ESG Consulting & Training -->
+            <a href="/services/esg-advisory" class="service-card-link rounded-lg p-6 relative overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105" style="background-color: rgba(249, 212, 35, 0.3)">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-ecoprism-title mb-3 !leading-tight">ESG Consulting & Training</h3>
+                <p class="text-ecoprism-text text-sm leading-snug">Empower businesses with tailored ESG strategies, compliance insights, and hands-on training.</p>
+              </div>
+
+              <!-- Image with Overlay Icon -->
+              <div class="relative mt-4">
+                <img src="/v3/assets/img/photos/esg-consulting.webp" alt="ESG Consulting & Training" class="w-full h-48 object-cover rounded-lg" loading="lazy" />
+
+                <!-- Overlay Icon -->
+                <div class="absolute left-1 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #f3f8f2">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center" style="filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))">
+                    <img src="/v3/assets/img/icons/services/icon-02.svg" alt="Consulting" class="w-6 h-6" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hover Overlay -->
+              <div class="service-card-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg" style="background-color: rgba(64, 119, 117, 0.9)">
+                <span class="text-white text-xl font-semibold">Read more →</span>
+              </div>
+            </a>
+
+            <!-- Card 3: Tailored ESG Software Solutions -->
+            <a href="/ecoquote" class="service-card-link rounded-lg p-6 relative overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105" style="background-color: rgba(249, 212, 35, 0.3)">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-ecoprism-title mb-3 leading-tight">Tailored ESG Software Solutions</h3>
+                <p class="text-ecoprism-text text-sm leading-snug">Custom-built ESG solutions that adapt to the client's ESG journey.</p>
+              </div>
+
+              <!-- Image with Overlay Icon -->
+              <div class="relative mt-4">
+                <img src="/v3/assets/img/photos/tailored-esg.webp" alt="Custom ESG Solutions" class="w-full h-48 object-cover rounded-lg" loading="lazy" />
+
+                <!-- Overlay Icon -->
+                <div class="absolute left-1 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #f3f8f2">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center" style="filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))">
+                    <img src="/v3/assets/img/icons/services/icon-03.svg" alt="Tailored Solutions" class="w-5 h-5" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hover Overlay -->
+              <div class="service-card-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg" style="background-color: rgba(64, 119, 117, 0.9)">
+                <span class="text-white text-xl font-semibold">Read more →</span>
+              </div>
+            </a>
+
+            <!-- Card 4: Targeted ESG Tools -->
+            <a href="/esg-benchmarking" class="service-card-link rounded-lg p-6 relative overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105" style="background-color: rgba(249, 212, 35, 0.3)">
+              <div class="flex-grow">
+                <h3 class="text-xl font-bold text-ecoprism-title mb-3 leading-tight">Targeted ESG Tools</h3>
+                <p class="text-ecoprism-text text-sm leading-snug">Purpose-built tools to cut through complexity, benchmark and accelerate reporting.</p>
+              </div>
+
+              <!-- Image with Overlay Icon -->
+              <div class="relative mt-4">
+                <img src="/v3/assets/img/photos/targeted-esg.webp" alt="Targeted ESG Tools" class="w-full h-48 object-cover rounded-lg" loading="lazy" />
+
+                <!-- Overlay Icon -->
+                <div class="absolute left-1 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #f3f8f2">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center" style="filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25))">
+                    <img src="/v3/assets/img/icons/services/icon-04.svg" alt="ESG Tools" class="w-5 h-5" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hover Overlay -->
+              <div class="service-card-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg" style="background-color: rgba(64, 119, 117, 0.9)">
+                <span class="text-white text-xl font-semibold">Read more →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trusted by Leading Sustainability Teams Section -->
+      <section class="py-20" style="background-color: #f3f8f2">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <!-- Pretitle -->
+          <div class="text-center mb-6">
+            <span class="inline-block px-4 py-2 rounded-lg text-sm font-semibold font-poppins bg-white text-ecoprism-primary">Client Success</span>
+          </div>
+
+          <!-- Main Title -->
+          <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-ecoprism-title mb-6">Trusted by Leading Sustainability Teams</h2>
+          </div>
+
+          <!-- Testimonial Box with Quotation Marks -->
+          <div
+            class="max-w-5xl mx-auto relative"
+            x-data="{
+              currentTestimonial: 0,
+              autoplayInterval: null,
+              testimonials: [
+                {
+                  quote: 'ecoPRISM helped us calculate the environmental impact of our services like avoided emissions and material usage - enabling our customers to make more responsible, lower-footprint decisions.',
+                  logo: '/v3/assets/img/brands/abb-testimonial.webp',
+                  logoAlt: 'ABB',
+                  name: 'Valeria Cornelli',
+                  title: 'Global Product Manager - Maintenance',
+                  link: 'resources/case-studies/abb-ecoquote-sustainability-reporting'
+                },
+                {
+                  quote: 'ecoPRISM has been a strategic partner in our climate risk assessment, bringing a rigorous, structured approach and deep climate expertise. Their work has helped translate complex climate risks into clear, decision-ready insights that continue to inform internal discussions and next-step actions.',
+                  logo: '/v3/assets/img/brands/unisys-dark.png',
+                  logoAlt: 'Unisys',
+                  name: 'Tanushree Chakravarty',
+                  title: 'Director, Environmental, Health, Safety, Security, Sustainability & CSR',
+                  link: 'resources/case-studies/unisys-climate-risk'
+                }
+              ],
+              nextTestimonial() {
+                this.currentTestimonial = (this.currentTestimonial + 1) % this.testimonials.length;
+              },
+              goToTestimonial(index) {
+                this.currentTestimonial = index;
+              },
+              startAutoplay() {
+                this.stopAutoplay();
+                this.autoplayInterval = setInterval(() => {
+                  this.nextTestimonial();
+                }, 5000);
+              },
+              stopAutoplay() {
+                if (this.autoplayInterval) {
+                  clearInterval(this.autoplayInterval);
+                  this.autoplayInterval = null;
+                }
+              }
+            }"
+            x-init="startAutoplay()"
+            @mouseenter="stopAutoplay()"
+            @mouseleave="startAutoplay()"
+          >
+            <div class="px-4 sm:px-8 md:px-12 lg:px-20 relative">
+              <!-- Large Stylized Quotation Marks -->
+              <div class="absolute -left-2 sm:-left-4 lg:-left-6 -top-2 sm:-top-4 w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 text-gray-300 opacity-60 z-10">
+                <img src="/v3/assets/img/icons/double-quotes.svg" alt="Opening Quote" class="w-full h-full object-contain" style="fill: var(--secondary-black, #050505)" loading="lazy" />
+              </div>
+              <div class="absolute -right-2 sm:-right-4 lg:-right-6 -bottom-2 sm:-bottom-4 w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 text-gray-300 opacity-60 z-10">
+                <img src="/v3/assets/img/icons/double-quotes.svg" alt="Closing Quote" class="w-full h-full object-contain transform scale-x-[-1]" style="fill: var(--secondary-black, #050505)" loading="lazy" />
+              </div>
+
+              <!-- White Testimonial Box -->
+              <div class="">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 relative z-10" style="box-shadow: 0 61.94px 131.79px 0 rgba(0, 0, 0, 0.15)">
+                  <p class="text-lg sm:text-xl text-ecoprism-text leading-relaxed text-center" x-text="testimonials[currentTestimonial].quote"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Attribution and CTA Section -->
+            <div class="flex flex-col sm:flex-row items-center justify-between mt-6 sm:mt-8 px-4 sm:px-8 md:px-12 lg:px-20 space-y-4 sm:space-y-0 sm:gap-6">
+              <!-- Left: Company Logo and Attribution -->
+              <div class="flex items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 flex items-center justify-center">
+                  <img :src="testimonials[currentTestimonial].logo" :alt="testimonials[currentTestimonial].logoAlt" class="bg-transparent object-contain h-14 sm:h-16 lg:h-20 w-auto" loading="lazy" />
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-base sm:text-lg font-bold text-ecoprism-title" x-text="testimonials[currentTestimonial].name"></h3>
+                  <p class="text-sm sm:text-base text-ecoprism-text" x-text="testimonials[currentTestimonial].title"></p>
+                </div>
+              </div>
+
+              <!-- Right: CTA Button -->
+              <a :href="testimonials[currentTestimonial].link" class="shrink-0 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors duration-200 text-sm sm:text-base" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #407775"> Read Full Case Study </a>
+            </div>
+
+            <!-- Slide Indicators -->
+            <div class="flex justify-center mt-6 space-x-3">
+              <template x-for="(item, index) in testimonials" :key="index">
+                <button @click="goToTestimonial(index)" :class="currentTestimonial === index ? 'bg-ecoprism-primary' : 'bg-gray-300'" class="w-2.5 h-2.5 rounded-full transition-colors duration-200" :aria-label="`Go to testimonial ${index + 1}`"></button>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Your Central Hub for ESG Data, Compliance & Impact Section -->
+      <section class="py-20" style="background: linear-gradient(91deg, rgba(249, 212, 35, 0.4) -31.19%, #fff 68.98%)">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <!-- Single Row: Left Content, Right Dashboard -->
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">
+            <!-- Left Column: All Content -->
+            <div>
+              <!-- Pretitle Badge -->
+              <div class="inline-block px-4 py-2 rounded-lg mb-4" style="background-color: #fff">
+                <span class="text-sm font-semibold font-poppins" style="color: #407775">ecoPRISM Tool</span>
+              </div>
+
+              <!-- Title -->
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ecoprism-title mb-4">Your Central Hub for ESG Data, Compliance & Impact</h2>
+
+              <!-- Description -->
+              <p class="text-base sm:text-lg text-ecoprism-text leading-relaxed mb-8">ecoPRISM's SaaS platform empowers sustainability and compliance teams to automate ESG data collection, monitor real-time KPIs.</p>
+
+              <!-- Core Features -->
+              <div class="mb-16">
+                <h3 class="text-xl font-semibold mb-6" style="color: #407775">Core Features</h3>
+
+                <!-- Feature Icons Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6">
+                  <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="none" style="filter: brightness(0) invert(1)">
+                        <g clip-path="url(#clip0_378_652)">
+                          <path
+                            d="M18.2422 15.3957V15.3125C18.2422 12.9115 16.0162 11.7339 14.0861 10.6948C12.2865 9.72551 10.5859 8.80996 10.5859 7.10938C10.5859 6.91875 10.5859 1.91594 10.5859 2.24305L12.3438 4.00086L13.1723 3.1723L10 0L6.8277 3.1723L7.65625 4.00086L9.41406 2.24305C9.41406 2.42051 9.41406 7.22738 9.41406 7.10938C9.41406 8.80996 7.71348 9.72551 5.91391 10.6948C3.98383 11.7339 1.75781 12.9115 1.75781 15.3125V15.3957C0.749727 15.6577 0 16.5671 0 17.6562C0 18.9489 1.05113 20 2.34375 20C3.63637 20 4.6875 18.9489 4.6875 17.6562C4.6875 16.5671 3.93777 15.6577 2.92969 15.3957V15.3125C2.92969 13.6119 4.66934 12.6964 6.46891 11.7271C7.50754 11.1677 8.6073 10.5593 9.41406 9.75066V15.3957C8.40598 15.6577 7.65625 16.5671 7.65625 17.6562C7.65625 18.9489 8.70738 20 10 20C11.2926 20 12.3438 18.9489 12.3438 17.6562C12.3438 16.5671 11.594 15.6577 10.5859 15.3957V9.75066C11.3927 10.5593 12.4925 11.1677 13.5311 11.7271C15.3307 12.6964 17.0703 13.6119 17.0703 15.3125V15.3957C16.0622 15.6577 15.3125 16.5671 15.3125 17.6562C15.3125 18.9489 16.3636 20 17.6562 20C18.9489 20 20 18.9489 20 17.6562C20 16.5671 19.2503 15.6577 18.2422 15.3957Z"
+                            fill="white"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_378_652">
+                            <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-medium text-ecoprism-title leading-tight">Automated ESG data collection & aggregation</h3>
+                  </div>
+
+                  <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="none" style="filter: brightness(0) invert(1)">
+                        <path
+                          d="M5.20833 12.0833C5.20833 11.7949 5.29386 11.5129 5.45411 11.2731C5.61435 11.0333 5.84211 10.8464 6.10859 10.736C6.37506 10.6256 6.66828 10.5968 6.95117 10.653C7.23406 10.7093 7.49391 10.8482 7.69786 11.0521C7.90182 11.2561 8.04071 11.5159 8.09698 11.7988C8.15325 12.0817 8.12437 12.3749 8.01399 12.6414C7.90361 12.9079 7.71669 13.1356 7.47687 13.2959C7.23705 13.4561 6.9551 13.5417 6.66667 13.5417C6.28057 13.5395 5.9109 13.3851 5.63789 13.1121C5.36487 12.8391 5.21052 12.4694 5.20833 12.0833ZM1.875 7.29167H18.125V16.25C18.125 16.7473 17.9275 17.2242 17.5758 17.5758C17.2242 17.9275 16.7473 18.125 16.25 18.125H3.75C3.25272 18.125 2.77581 17.9275 2.42417 17.5758C2.07254 17.2242 1.875 16.7473 1.875 16.25V7.29167ZM14.7083 14.1667C14.7083 14.3324 14.7742 14.4914 14.8914 14.6086C15.0086 14.7258 15.1676 14.7917 15.3333 14.7917C15.4991 14.7917 15.6581 14.7258 15.7753 14.6086C15.8925 14.4914 15.9583 14.3324 15.9583 14.1667V11.6667C15.9583 11.5009 15.8925 11.3419 15.7753 11.2247C15.6581 11.1075 15.4991 11.0417 15.3333 11.0417C15.1676 11.0417 15.0086 11.1075 14.8914 11.2247C14.7742 11.3419 14.7083 11.5009 14.7083 11.6667V14.1667ZM12.7083 14.1667C12.7083 14.3324 12.7742 14.4914 12.8914 14.6086C13.0086 14.7258 13.1676 14.7917 13.3333 14.7917C13.4991 14.7917 13.6581 14.7258 13.7753 14.6086C13.8925 14.4914 13.9583 14.3324 13.9583 14.1667V10C13.9583 9.83424 13.8925 9.67527 13.7753 9.55806C13.6581 9.44085 13.4991 9.375 13.3333 9.375C13.1676 9.375 13.0086 9.44085 12.8914 9.55806C12.7742 9.67527 12.7083 9.83424 12.7083 10V14.1667ZM10.625 14.1667C10.625 14.3324 10.6908 14.4914 10.8081 14.6086C10.9253 14.7258 11.0842 14.7917 11.25 14.7917C11.4158 14.7917 11.5747 14.7258 11.6919 14.6086C11.8092 14.4914 11.875 14.3324 11.875 14.1667V12.5C11.875 12.3342 11.8092 12.1753 11.6919 12.0581C11.5747 11.9408 11.4158 11.875 11.25 11.875C11.0842 11.875 10.9253 11.9408 10.8081 12.0581C10.6908 12.1753 10.625 12.3342 10.625 12.5V14.1667ZM3.95833 12.0833C3.95833 12.619 4.11717 13.1426 4.41477 13.588C4.71237 14.0334 5.13535 14.3805 5.63023 14.5855C6.12512 14.7905 6.66967 14.8441 7.19504 14.7396C7.7204 14.6351 8.20298 14.3772 8.58175 13.9984C8.96051 13.6196 9.21846 13.1371 9.32296 12.6117C9.42746 12.0863 9.37383 11.5418 9.16884 11.0469C8.96385 10.552 8.61672 10.129 8.17134 9.83144C7.72595 9.53384 7.20232 9.375 6.66667 9.375C5.94905 9.3772 5.26145 9.66325 4.75401 10.1707C4.24658 10.6781 3.96053 11.3657 3.95833 12.0833ZM18.125 3.75V6.04167H1.875V3.75C1.875 3.25272 2.07254 2.77581 2.42417 2.42417C2.77581 2.07254 3.25272 1.875 3.75 1.875H16.25C16.7473 1.875 17.2242 2.07254 17.5758 2.42417C17.9275 2.77581 18.125 3.25272 18.125 3.75ZM6.04167 4.16667C6.03951 4.00158 5.97297 3.84386 5.85622 3.72711C5.73948 3.61037 5.58176 3.54382 5.41667 3.54167H4.58333C4.41757 3.54167 4.2586 3.60751 4.14139 3.72472C4.02418 3.84194 3.95833 4.00091 3.95833 4.16667C3.95833 4.33243 4.02418 4.4914 4.14139 4.60861C4.2586 4.72582 4.41757 4.79167 4.58333 4.79167H5.41667C5.58176 4.78951 5.73948 4.72297 5.85622 4.60622C5.97297 4.48948 6.03951 4.33176 6.04167 4.16667ZM8.54167 4.16667C8.53951 4.00158 8.47297 3.84386 8.35622 3.72711C8.23948 3.61037 8.08176 3.54382 7.91667 3.54167H7.08333C6.91757 3.54167 6.7586 3.60751 6.64139 3.72472C6.52418 3.84194 6.45833 4.00091 6.45833 4.16667C6.45833 4.33243 6.52418 4.4914 6.64139 4.60861C6.7586 4.72582 6.91757 4.79167 7.08333 4.79167H7.91667C8.08176 4.78951 8.23948 4.72297 8.35622 4.60622C8.47297 4.48948 8.53951 4.33176 8.54167 4.16667Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-medium text-ecoprism-title leading-tight">Real-time ESG KPI dashboards and reports</h3>
+                  </div>
+
+                  <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="none" style="filter: brightness(0) invert(1)">
+                        <g clip-path="url(#clip0_378_648)">
+                          <path
+                            d="M17.6191 9.52379H16.1905V5.71429C16.1905 4.66192 15.3381 3.80951 14.2857 3.80951H10.4762V2.38094C10.4762 1.06665 9.40951 0 8.09522 0C6.78094 0 5.71429 1.06665 5.71429 2.38094V3.80951H1.90478C0.852411 3.80951 0.00955357 4.66188 0.00955357 5.71429L0.00477679 9.33335H1.42857C2.84763 9.33335 4 10.4857 4 11.9048C4 13.3238 2.84763 14.4762 1.42857 14.4762H0.00477679L0 18.0952C0 19.1476 0.852366 20 1.90478 20H5.52384V18.5714C5.52384 17.1524 6.67621 16 8.09527 16C9.51433 16 10.6667 17.1524 10.6667 18.5714V20H14.2857C15.3381 20 16.1905 19.1476 16.1905 18.0952V14.2857H17.6191C18.9333 14.2857 20 13.2191 20 11.9048C20 10.5905 18.9333 9.52379 17.6191 9.52379Z"
+                            fill="white"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_378_648">
+                            <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-medium text-ecoprism-title leading-tight">Integrated Frameworks: CSRD, GRI, SASB, SDGs</h3>
+                  </div>
+
+                  <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="none" style="filter: brightness(0) invert(1)">
+                        <path d="M9.58333 10.2033C12.1146 10.2033 14.1667 8.15126 14.1667 5.61995C14.1667 3.08865 12.1146 1.03662 9.58333 1.03662C7.05203 1.03662 5 3.08865 5 5.61995C5 8.15126 7.05203 10.2033 9.58333 10.2033Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5833 11.615C12.945 11.615 11.615 12.945 11.615 14.5833C11.615 16.2217 12.945 17.5525 14.5833 17.5525C16.2217 17.5525 17.5525 16.2217 17.5525 14.5833C17.5525 12.945 16.2217 11.615 14.5833 11.615ZM14.5833 12.865C15.5317 12.865 16.3025 13.635 16.3025 14.5833C16.3025 15.5317 15.5317 16.3025 14.5833 16.3025C13.635 16.3025 12.8642 15.5317 12.8642 14.5833C12.8642 13.635 13.635 12.865 14.5833 12.865Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2085 12.2391V10.8333C15.2085 10.4883 14.9285 10.2083 14.5835 10.2083C14.2385 10.2083 13.9585 10.4883 13.9585 10.8333V12.2399C13.9585 12.5841 14.2385 12.8649 14.5835 12.8649C14.9285 12.8641 15.2085 12.5841 15.2085 12.2391Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6826 13.3683L17.6768 12.3733C17.921 12.13 17.921 11.7333 17.6768 11.49C17.4335 11.2458 17.0368 11.2458 16.7935 11.49L15.7985 12.4842C15.5551 12.7283 15.5551 13.1242 15.7985 13.3683C16.0426 13.6117 16.4385 13.6117 16.6826 13.3683Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9267 15.2083H18.3333C18.6783 15.2083 18.9583 14.9283 18.9583 14.5833C18.9583 14.2383 18.6783 13.9583 18.3333 13.9583H16.9267C16.5825 13.9583 16.3025 14.2383 16.3025 14.5833C16.3017 14.9283 16.5825 15.2083 16.9267 15.2083Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7985 16.6824L16.7935 17.6766C17.0368 17.9207 17.4335 17.9207 17.6768 17.6766C17.921 17.4332 17.921 17.0366 17.6768 16.7932L16.6826 15.7982C16.4385 15.5549 16.0426 15.5549 15.7985 15.7982C15.5551 16.0424 15.5551 16.4382 15.7985 16.6824Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9585 16.9265V18.3332C13.9585 18.6782 14.2385 18.9582 14.5835 18.9582C14.9285 18.9582 15.2085 18.6782 15.2085 18.3332V16.9265C15.2085 16.5823 14.9285 16.3023 14.5835 16.3015C14.2385 16.3015 13.9585 16.5823 13.9585 16.9265Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4842 15.7982L11.49 16.7932C11.2458 17.0366 11.2458 17.4332 11.49 17.6766C11.7333 17.9207 12.13 17.9207 12.3733 17.6766L13.3683 16.6824C13.6117 16.4382 13.6117 16.0424 13.3683 15.7982C13.1242 15.5549 12.7283 15.5549 12.4842 15.7982Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2393 13.9583H10.8335C10.4885 13.9583 10.2085 14.2383 10.2085 14.5833C10.2085 14.9283 10.4885 15.2083 10.8335 15.2083H12.2393C12.5843 15.2083 12.8652 14.9283 12.8643 14.5833C12.8643 14.2383 12.5843 13.9583 12.2393 13.9583Z" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3683 12.4842L12.3733 11.49C12.13 11.2458 11.7333 11.2458 11.49 11.49C11.2458 11.7333 11.2458 12.13 11.49 12.3733L12.4842 13.3683C12.7283 13.6117 13.1242 13.6117 13.3683 13.3683C13.6117 13.1242 13.6117 12.7283 13.3683 12.4842Z" fill="white" />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M10.7801 18.13C10.3351 17.5583 10.3751 16.7291 10.9009 16.2041L11.0626 16.0416H10.8334C10.0284 16.0416 9.37508 15.3883 9.37508 14.5833C9.37508 13.7783 10.0284 13.125 10.8334 13.125H11.0626L10.9009 12.9625C10.3542 12.4166 10.3326 11.5425 10.8359 10.97C10.4276 10.9383 10.0092 10.9216 9.58341 10.9216C6.81508 10.9216 4.36425 11.6141 2.84258 12.6516C1.68175 13.4433 1.04175 14.4491 1.04175 15.505V16.7133C1.04175 17.0891 1.19091 17.45 1.45675 17.715C1.72258 17.9808 2.08258 18.13 2.45841 18.13H10.7801Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-medium text-ecoprism-title leading-tight">Role-based access & collaboration</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <div class="flex">
+                <a href="/contact-us" class="ecogrid-btn ecogrid-btn-outline ecogrid-btn-outline-light mb-16 inline-block min-h-[44px] rounded-lg border-2 border-ecoprism-primary px-7 py-3 text-sm font-semibold sm:text-base lg:mb-0">Book a Demo</a>
+              </div>
+            </div>
+
+            <!-- Right Column: Dashboard -->
+            <div class="relative flex justify-center">
+              <img src="/v3/assets/img/dashboard/dashboard-01.webp" alt="ESG Dashboard" class="w-full max-w-2xl h-auto rounded-2xl shadow-2xl" loading="lazy" />
+
+              <!-- Yellow CSRD Compliant Badge - Top Left -->
+              <div class="absolute -top-14 -left-10 rounded-lg p-3 flex items-center space-x-3" style="background: #f9d423; box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25)">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                  <img src="/v3/assets/img/icons/feature-05.svg" alt="CSRD Compliant" class="w-6 h-6" loading="lazy" />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-[#575757]">CSRD Compliant</div>
+                  <div class="text-xs text-[#575757]">Automatic Updates</div>
+                </div>
+              </div>
+
+              <!-- Green 85% Time Saved Badge - Bottom Right -->
+              <div class="absolute -bottom-14 -right-2 rounded-lg p-3 shadow-lg flex items-center space-x-3" style="background-color: #407775">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                  <img src="/v3/assets/img/icons/feature-06.svg" alt="85% Time Saved" class="w-6 h-6" loading="lazy" />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-white">85% Time Saved</div>
+                  <div class="text-xs font-semibold text-white">Automated Reports</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategic ESG Guidance, Every Step of the Way Section -->
+      <section class="py-20" style="background-color: #f3f8f2">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-24 items-start">
+            <div class="lg:sticky lg:top-24">
+              <!-- Pretitle Badge -->
+              <div class="inline-block px-4 py-2 rounded-lg mb-4" style="background-color: #fff">
+                <span class="text-sm font-semibold font-poppins" style="color: #407775">ESG Consulting & Training</span>
+              </div>
+
+              <h2 class="text-3xl lg:text-4xl font-bold text-ecoprism-title mb-6">Strategic ESG Guidance, Every Step of the Way</h2>
+              <p class="text-lg text-ecoprism-text mb-8 leading-relaxed">Our ESG experts partner with your team to design and operationalize sustainability strategies – from materiality assessments to regulatory readiness, including CSRD, SB 253/261 and other frameworks.</p>
+              <p class="text-lg text-ecoprism-text mb-8 leading-relaxed">Our goal: to transform ESG from a compliance task into a true strategic advantage.</p>
+              <a href="/contact-us" class="ecogrid-btn ecogrid-btn-primary inline-block min-h-[44px] rounded-lg px-7 py-3 font-semibold">Book a Consultation</a>
+            </div>
+
+            <div class="space-y-6" x-data="scrollHoverCards()">
+              <!-- Training & Capacity Building -->
+              <div class="rounded-lg p-6 transition-all duration-700 ease-in-out" :class="activeCard === 0 ? 'scale-105' : ''" :style="activeCard === 0 ? 'background: linear-gradient(90deg, #FFED96 0%, #FFF 100%); border: 2px solid #FAB430; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);' : 'background: #fff; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25); border: 1px solid white;'" style="transform-origin: center">
+                <div class="flex flex-col lg:flex-row lg:items-start items-start text-left">
+                  <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center lg:mr-4 mb-4 lg:mb-0 flex-shrink-0" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                    <img src="/v3/assets/img/icons/consulting-01.svg" alt="Training & Capacity Building" class="w-6 h-6" style="filter: brightness(0) invert(1)" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-ecoprism-title mb-2">Training & Capacity Building</h3>
+                    <p class="text-ecoprism-text">Equip your team with practical ESG knowledge to drive cross-functional adoption and engagement.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ESG Strategy Development -->
+              <div class="rounded-lg p-6 transition-all duration-700 ease-in-out" :class="activeCard === 1 ? 'scale-105' : ''" :style="activeCard === 1 ? 'background: linear-gradient(90deg, #FFED96 0%, #FFF 100%); border: 2px solid #FAB430; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);' : 'background: #fff; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25); border: 1px solid white;'" style="transform-origin: center">
+                <div class="flex flex-col lg:flex-row lg:items-start items-start text-left">
+                  <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center lg:mr-4 mb-4 lg:mb-0 flex-shrink-0" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                    <img src="/v3/assets/img/icons/consulting-02.svg" alt="ESG Roadmap Development" class="w-6 h-6" style="filter: brightness(0) invert(1)" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-ecoprism-title mb-2">ESG Roadmap Development</h3>
+                    <p class="text-ecoprism-text">Tailored long-term ESG strategies aligned with your business goals and stakeholder expectations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Materiality Assessments -->
+              <div class="rounded-lg p-6 transition-all duration-700 ease-in-out" :class="activeCard === 2 ? 'scale-105' : ''" :style="activeCard === 2 ? 'background: linear-gradient(90deg, #FFED96 0%, #FFF 100%); border: 2px solid #FAB430; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);' : 'background: #fff; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25); border: 1px solid white;'" style="transform-origin: center">
+                <div class="flex flex-col lg:flex-row lg:items-start items-start text-left">
+                  <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center lg:mr-4 mb-4 lg:mb-0 flex-shrink-0" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                    <img src="/v3/assets/img/icons/consulting-03.svg" alt="Materiality Assessments" class="w-6 h-6" style="filter: brightness(0) invert(1)" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-ecoprism-title mb-2">Materiality Assessments</h3>
+                    <p class="text-ecoprism-text">Identify and prioritize ESG issues most relevant to your internal and external stakeholders.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Regulatory Readiness -->
+              <div class="rounded-lg p-6 transition-all duration-700 ease-in-out" :class="activeCard === 3 ? 'scale-105' : ''" :style="activeCard === 3 ? 'background: linear-gradient(90deg, #FFED96 0%, #FFF 100%); border: 2px solid #FAB430; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);' : 'background: #fff; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25); border: 1px solid white;'" style="transform-origin: center">
+                <div class="flex flex-col lg:flex-row lg:items-start items-start text-left">
+                  <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center lg:mr-4 mb-4 lg:mb-0 flex-shrink-0" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                    <img src="/v3/assets/img/icons/consulting-04.svg" alt="Regulatory Readiness" class="w-6 h-6" style="filter: brightness(0) invert(1)" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-ecoprism-title mb-2">Regulatory Readiness</h3>
+                    <p class="text-ecoprism-text">Prepare your organization for full CSRD compliance with expert support.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Implementation Support -->
+              <div class="rounded-lg p-6 transition-all duration-700 ease-in-out" :class="activeCard === 4 ? 'scale-105' : ''" :style="activeCard === 4 ? 'background: linear-gradient(90deg, #FFED96 0%, #FFF 100%); border: 2px solid #FAB430; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);' : 'background: #fff; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25); border: 1px solid white;'" style="transform-origin: center">
+                <div class="flex flex-col lg:flex-row lg:items-start items-start text-left">
+                  <div class="w-12 h-12 bg-ecoprism-primary rounded-full flex items-center justify-center lg:mr-4 mb-4 lg:mb-0 flex-shrink-0" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                    <img src="/v3/assets/img/icons/consulting-05.svg" alt="ESG Reporting Support" class="w-6 h-6" style="filter: brightness(0) invert(1)" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-ecoprism-title mb-2">ESG Reporting Support</h3>
+                    <p class="text-ecoprism-text">Align your ESG reports with frameworks like CSRD, GRI, SASB, and TCFD, confidently and efficiently.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flexible ESG Solutions, Built Around Your Business Section -->
+      <section class="py-20 bg-white">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <!-- Main Content Grid: Image Left + Content Right -->
+          <div class="">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <!-- Left Column: Image -->
+              <div class="order-2 lg:order-1 pe-4">
+                <img src="/v3/assets/img/photos/solution-01.webp" alt="ESG Solutions" class="w-full h-auto rounded-2xl shadow-2xl" loading="lazy" />
+              </div>
+
+              <!-- Right Column: Content -->
+              <div class="order-1 lg:order-2">
+                <!-- Pretitle, Title, and Description -->
+                <div class="mb-4">
+                  <!-- Pretitle Badge -->
+                  <div class="inline-block px-4 py-2 rounded-lg mb-4" style="background-color: rgba(249, 212, 35, 0.3)">
+                    <span class="text-sm font-semibold font-poppins" style="color: #407775">Tailored ESG Software Solutions</span>
+                  </div>
+
+                  <h2 class="text-2xl lg:text-4xl font-bold text-ecoprism-title mb-4">Flexible ESG Solutions,<br />Built Around Your Business</h2>
+                  <p class="text-base text-ecoprism-text leading-relaxed">No two ESG journeys are the same. That's why we create custom solutions that match your goals, operations, and maturity level-whether you're building internal workflows, automating assessments, or designing stakeholder tools.</p>
+                </div>
+
+                <!-- All Icon Features in One Column -->
+                <div class="space-y-2">
+                  <!-- Feature 1: Tailored Insights -->
+                  <div class="flex items-center space-x-4">
+                    <div class="w-8 h-12 flex items-center justify-start flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20" fill="none">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M15.2575 10.664L15.5642 11.4024C15.6833 11.4624 15.7992 11.5291 15.91 11.6024L16.7033 11.4982C16.9108 11.4716 17.1175 11.5499 17.255 11.7074C17.6275 12.134 17.9142 12.6299 18.0975 13.1657C18.165 13.364 18.1292 13.5824 18.0025 13.7482C18.0025 13.7482 17.5158 14.3841 17.5158 14.3832C17.5233 14.5166 17.5233 14.6507 17.5158 14.7824L18.0025 15.4182C18.1292 15.5841 18.165 15.8024 18.0975 16.0007C17.9142 16.5366 17.6275 17.0324 17.255 17.4591C17.1175 17.6166 16.9108 17.6949 16.7033 17.6682L15.91 17.5641C15.7983 17.6374 15.6825 17.7041 15.5642 17.7641L15.2575 18.5024C15.1775 18.6957 15.0058 18.8357 14.8008 18.8766C14.2442 18.9857 13.6725 18.9857 13.1158 18.8766C12.9108 18.8357 12.7392 18.6957 12.6592 18.5024L12.3525 17.7641C12.2333 17.7041 12.1175 17.6374 12.0067 17.5641L11.2133 17.6682C11.0058 17.6949 10.7992 17.6166 10.6617 17.4591C10.2892 17.0324 10.0025 16.5366 9.81916 16.0007C9.75166 15.8024 9.7875 15.5841 9.91416 15.4182C9.91416 15.4182 10.4008 14.7824 10.4008 14.7832C10.3933 14.6499 10.3933 14.5157 10.4008 14.384L9.91416 13.7482C9.7875 13.5824 9.75166 13.364 9.81916 13.1657C10.0025 12.6299 10.2892 12.134 10.6617 11.7074C10.7992 11.5499 11.0058 11.4716 11.2133 11.4982L12.0067 11.6024C12.1183 11.5291 12.2342 11.4624 12.3525 11.4024L12.6592 10.664C12.7392 10.4707 12.9108 10.3307 13.1158 10.2899C13.6725 10.1807 14.2442 10.1807 14.8008 10.2899C15.0058 10.3307 15.1775 10.4707 15.2575 10.664ZM13.9583 13.5415C13.3833 13.5415 12.9167 14.0082 12.9167 14.5832C12.9167 15.1582 13.3833 15.6249 13.9583 15.6249C14.5333 15.6249 15 15.1582 15 14.5832C15 14.0082 14.5333 13.5415 13.9583 13.5415Z"
+                          fill="#407775"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.9541 18.9582H4.16081C3.55247 18.9582 2.96997 18.7165 2.53997 18.2873C2.10997 17.8573 1.86914 17.274 1.86914 16.6665V3.33317C1.86914 2.72567 2.10997 2.14234 2.53997 1.71234C2.96997 1.28317 3.55247 1.0415 4.16081 1.0415H11.315C11.7025 1.0415 12.0733 1.19484 12.3466 1.469L16.025 5.14734C16.2983 5.42067 16.4525 5.7915 16.4525 6.17817V10.6907L16.1858 10.7257C16.1075 10.5365 16.0275 10.344 16.0275 10.344C15.84 9.89317 15.44 9.5665 14.9608 9.47234C14.2991 9.34234 13.6175 9.34234 12.9558 9.47234C12.4766 9.5665 12.0766 9.89317 11.8891 10.344L11.7308 10.7257C11.5283 10.699 11.3216 10.6723 11.3216 10.6723C10.8375 10.609 10.3541 10.7915 10.0333 11.159C9.58997 11.6682 9.24914 12.2573 9.03081 12.8965C8.87247 13.3573 8.95581 13.8682 9.25247 14.2548L9.50414 14.5832C9.37997 14.7457 9.25247 14.9115 9.25247 14.9115C8.95581 15.2982 8.87247 15.809 9.03081 16.2698C9.24914 16.909 9.58997 17.4982 10.0333 18.0073C10.3541 18.3748 10.8375 18.5573 11.3216 18.494L11.7308 18.4407C11.8091 18.6298 11.8891 18.8223 11.8891 18.8223C11.9091 18.869 11.9308 18.914 11.9541 18.9582ZM11.2441 2.15817V5.4165C11.2441 5.8765 11.6166 6.24984 12.0775 6.24984H15.3358C15.295 6.15984 15.2375 6.07734 15.1666 6.00567L11.4883 2.32734C11.4166 2.25567 11.3341 2.199 11.2441 2.15817ZM4.99414 6.44234H8.74414C9.08914 6.44234 9.36914 6.16234 9.36914 5.81734C9.36914 5.47234 9.08914 5.19234 8.74414 5.19234H4.99414C4.64914 5.19234 4.36914 5.47234 4.36914 5.81734C4.36914 6.16234 4.64914 6.44234 4.99414 6.44234ZM4.99414 15.2082H7.91081C8.25581 15.2082 8.53581 14.9282 8.53581 14.5832C8.53581 14.2382 8.25581 13.9582 7.91081 13.9582H4.99414C4.64914 13.9582 4.36914 14.2382 4.36914 14.5832C4.36914 14.9282 4.64914 15.2082 4.99414 15.2082ZM4.99414 12.2915H7.91081C8.25581 12.2915 8.53581 12.0115 8.53581 11.6665C8.53581 11.3215 8.25581 11.0415 7.91081 11.0415H4.99414C4.64914 11.0415 4.36914 11.3215 4.36914 11.6665C4.36914 12.0115 4.64914 12.2915 4.99414 12.2915ZM4.99414 9.37484H10.8275C11.1725 9.37484 11.4525 9.09484 11.4525 8.74984C11.4525 8.40484 11.1725 8.12484 10.8275 8.12484H4.99414C4.64914 8.12484 4.36914 8.40484 4.36914 8.74984C4.36914 9.09484 4.64914 9.37484 4.99414 9.37484Z"
+                          fill="#407775"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-normal text-ecoprism-title leading-tight">Tailored insights, clear KPIs</h3>
+                  </div>
+
+                  <!-- Feature 2: Data Automation -->
+                  <div class="flex items-center space-x-4">
+                    <div class="w-8 h-12 flex items-center justify-start flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20" fill="none">
+                        <g clip-path="url(#clip0_387_817)">
+                          <path d="M14.723 13.1388L13.9288 12.3447C13.9171 12.3624 13.9053 12.38 13.8906 12.3977C13.6877 12.6771 13.4494 12.9536 13.1847 13.2186C12.9406 13.4653 12.6965 13.6771 12.4465 13.8653C12.4288 13.8803 12.4141 13.8918 12.3965 13.9035L13.1759 14.6891L14.723 13.1388Z" fill="#407775" />
+                          <path d="M18.6784 15.9512L15.7669 13.0312C15.5992 12.8633 15.3072 12.8633 15.1398 13.0312L13.0689 15.108C12.8963 15.2812 12.8963 15.5627 13.0689 15.7356L16.0313 18.7065C16.3925 19.0686 16.8707 19.2671 17.381 19.2671C17.3898 19.2671 17.3987 19.2671 17.4078 19.2668C17.9272 19.26 18.4104 19.0474 18.7684 18.6683C19.471 17.9245 19.4307 16.7054 18.6784 15.9512Z" fill="#407775" />
+                          <path
+                            d="M13.7156 12.2645C13.8148 12.1333 13.9059 11.998 13.9956 11.8603C14.1942 11.553 14.3709 11.2215 14.5215 10.8756C15.7148 8.17387 15.1153 4.94828 13.0301 2.84917C11.5792 1.39416 9.56475 0.626812 7.50476 0.744754C5.74653 0.845632 4.08917 1.5924 2.8377 2.8471C0.0274075 5.66534 0.0274075 10.2509 2.8377 13.0689C4.08064 14.315 5.73506 15.0618 7.49652 15.1712C7.63916 15.1797 7.78152 15.1839 7.92388 15.1839C8.92975 15.1839 9.93152 14.973 10.8447 14.5665C11.2042 14.4053 11.5248 14.2321 11.8245 14.0374C12.0253 13.9071 12.1774 13.7989 12.3148 13.6886C12.5568 13.5074 12.7909 13.303 13.0301 13.063C13.2856 12.8068 13.5165 12.5377 13.7156 12.2645ZM4.52388 10.5915C4.52388 10.7783 4.37299 10.9298 4.18682 10.9298H3.23182C3.04564 10.9298 2.89476 10.7783 2.89476 10.5915V8.8977C2.89476 8.71093 3.04564 8.55945 3.23182 8.55945H4.18682C4.37299 8.55945 4.52388 8.71093 4.52388 8.8977V10.5915ZM6.94947 10.5915C6.94947 10.7783 6.79858 10.9298 6.61241 10.9298H5.65741C5.47123 10.9298 5.32035 10.7783 5.32035 10.5915V6.50652C5.32035 6.31975 5.47123 6.16828 5.65741 6.16828H6.61241C6.79858 6.16828 6.94947 6.31975 6.94947 6.50652V10.5915ZM9.4127 10.5915C9.4127 10.7783 9.26151 10.9298 9.07534 10.9298H8.08977C7.90357 10.9298 7.75271 10.7783 7.75271 10.5915V7.48445C7.75271 7.2974 7.90357 7.14622 8.08977 7.14622H9.07534C9.26151 7.14622 9.4127 7.2974 9.4127 7.48445V10.5915ZM11.7968 10.5915C11.7968 10.7783 11.6456 10.9298 11.4597 10.9298H10.5048C10.3186 10.9298 10.1674 10.7783 10.1674 10.5915V4.51358C10.1674 4.32681 10.3186 4.17534 10.5048 4.17534H11.4597C11.6456 4.17534 11.7968 4.32681 11.7968 4.51358V10.5915Z"
+                            fill="#407775"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_387_817">
+                            <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-normal text-ecoprism-title leading-tight">Data automation & role-based reporting</h3>
+                  </div>
+
+                  <!-- Feature 3: System Integrations -->
+                  <div class="flex items-center space-x-4">
+                    <div class="w-8 h-12 flex items-center justify-start flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20" fill="none">
+                        <path d="M5.89844 14.7339V16.1396L3.94949 17.2224C3.68113 17.0054 3.33996 16.875 2.96875 16.875C2.10719 16.875 1.40625 17.5759 1.40625 18.4375C1.40625 19.2991 2.10719 20 2.96875 20C3.83031 20 4.53125 19.2991 4.53125 18.4375C4.53125 18.3728 4.52684 18.3091 4.51914 18.2464L6.76891 16.9966C6.95496 16.8932 7.07031 16.6971 7.07031 16.4844V14.3164L6.79148 14.4837C6.52152 14.6457 6.21297 14.7319 5.89844 14.7339Z" fill="#407775" />
+                        <path d="M10.5859 16.9894V16.0156H9.41406V16.9894C8.84207 17.2217 8.4375 17.7831 8.4375 18.4375C8.4375 19.2991 9.13844 20 10 20C10.8616 20 11.5625 19.2991 11.5625 18.4375C11.5625 17.7831 11.158 17.2217 10.5859 16.9894Z" fill="#407775" />
+                        <path d="M17.0312 16.875C16.66 16.875 16.3189 17.0054 16.0505 17.2223L14.1016 16.1396V14.7339C13.787 14.7318 13.4785 14.6457 13.2086 14.4837L12.9297 14.3164V16.4844C12.9297 16.6971 13.045 16.8932 13.2311 16.9966L15.4809 18.2464C15.4732 18.3091 15.4688 18.3728 15.4688 18.4375C15.4688 19.2991 16.1697 20 17.0312 20C17.8928 20 18.5938 19.2991 18.5938 18.4375C18.5938 17.5759 17.8928 16.875 17.0312 16.875Z" fill="#407775" />
+                        <path
+                          d="M14.5273 13.3907L15.9689 11.9491C16.159 11.759 16.1953 11.4639 16.057 11.2333L15.5216 10.3409C15.7029 9.99789 15.8521 9.63672 15.9673 9.26238L16.978 9.00969C17.2389 8.94449 17.4219 8.71012 17.4219 8.44125V6.4025C17.4219 6.13363 17.2389 5.89926 16.978 5.83406L15.9673 5.58137C15.8521 5.20703 15.7029 4.84582 15.5215 4.50285L16.057 3.61039C16.1953 3.37984 16.159 3.08473 15.9689 2.89461L14.5273 1.45301C14.3372 1.26289 14.0421 1.22656 13.8115 1.36488L12.919 1.90035C12.5761 1.71898 12.2149 1.56973 11.8405 1.45461L11.5879 0.443828C11.5226 0.182969 11.2882 0 11.0194 0H8.98063C8.71176 0 8.47738 0.182969 8.41219 0.443828L8.15949 1.45461C7.78523 1.56969 7.42398 1.71902 7.08105 1.90035L6.18852 1.36488C5.95797 1.22656 5.66285 1.26289 5.47277 1.45301L4.03117 2.89461C3.84105 3.08473 3.80473 3.37984 3.94305 3.61039L4.47852 4.50285C4.29715 4.84582 4.14789 5.20703 4.03277 5.58137L3.02199 5.83406C2.76109 5.89926 2.57812 6.13363 2.57812 6.4025V8.44125C2.57812 8.71012 2.76109 8.94449 3.02195 9.00969L4.03273 9.26238C4.14785 9.63672 4.29715 9.99793 4.47844 10.3409L3.94301 11.2333C3.80469 11.4639 3.84102 11.759 4.03113 11.9491L5.47273 13.3907C5.66285 13.5809 5.95797 13.6172 6.18852 13.4789L7.08098 12.9434C7.42398 13.1248 7.7852 13.2741 8.15945 13.3892L8.41215 14.4C8.47734 14.6608 8.71172 14.8438 8.98059 14.8438H11.0193C11.2882 14.8438 11.5226 14.6608 11.5878 14.4L11.8405 13.3892C12.2147 13.2741 12.5759 13.1248 12.9189 12.9434L13.8114 13.4789C14.042 13.6172 14.3371 13.5809 14.5273 13.3907ZM10 10.1562C8.48984 10.1562 7.26562 8.93203 7.26562 7.42188C7.26562 5.91172 8.48984 4.6875 10 4.6875C11.5102 4.6875 12.7344 5.91172 12.7344 7.42188C12.7344 8.93203 11.5102 10.1562 10 10.1562Z"
+                          fill="#407775"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-normal text-ecoprism-title leading-tight">Integrations with internal systems (ERP, CRM etc.)</h3>
+                  </div>
+
+                  <!-- Feature 4: Sales Team Empowerment -->
+                  <div class="flex items-center space-x-4">
+                    <div class="w-8 h-12 flex items-center justify-start flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 512 512" fill="none">
+                        <g>
+                          <circle cx="348.5" cy="77" r="55" fill="#407775"></circle>
+                          <circle cx="233.5" cy="45" r="45" fill="#407775"></circle>
+                          <circle cx="128.5" cy="77" r="45" fill="#407775"></circle>
+                          <circle cx="48.5" cy="157" r="45" fill="#407775"></circle>
+                          <path
+                            d="m286.059 369.113c-8.426-21.133-17.139-42.985-15.724-59.784 1.51-17.916 10.235-37.54 25.934-58.327 13.349-17.676 31.631-41.883 26.295-71.892-3.253-18.298-12.835-33.15-27.71-42.952-32.165-21.195-78.369-13.499-96.742-9.205-8.563 2.001-70.054 24.47-90.761 64.667-17.308 33.599-15.224 70.526-10.394 105.427 5.743 41.492 12.812 75.213 22.244 106.122l.111.364c9.457 30.989 20.176 66.112 48.576 89.34 14.53 11.871 33.145 18.654 52.417 19.102.683.016 1.364.023 2.046.023 18.333 0 36.429-5.708 51.165-16.177 21.977-15.613 32.327-36.829 30.762-63.058-1.259-21.115-9.881-42.739-18.219-63.65z"
+                            fill="#407775"
+                          ></path>
+                          <path d="m478.5 312c0-24.813-20.187-45-45-45s-45 20.187-45 45 20.187 45 45 45 45-20.187 45-45zm-45 25c-13.785 0-25-11.215-25-25s11.215-25 25-25 25 11.215 25 25-11.215 25-25 25z" fill="#407775"></path>
+                          <path
+                            d="m374.927 329.458c-4.232-3.549-10.54-2.997-14.088 1.235-.573.684-1.188 1.319-1.83 1.89-3.291 2.931-7.516 4.417-12.558 4.417-13.785 0-25-11.215-25-25s11.215-25 25-25c5.012 0 9.842 1.474 13.969 4.263 4.576 3.092 10.793 1.889 13.885-2.687s1.889-10.792-2.687-13.885c-7.447-5.032-16.149-7.692-25.167-7.692-24.813 0-45 20.187-45 45s20.187 45 45 45c9.953 0 18.895-3.279 25.858-9.48 1.362-1.212 2.658-2.549 3.853-3.973 3.549-4.231 2.996-10.538-1.235-14.088z"
+                            fill="#407775"
+                          ></path>
+                          <path
+                            d="m498.374 416.865c-3.566.044-7.281.081-10.811.104 2.743-3.752 6.076-8.394 10.087-14.125 4.062-5.805 6.616-11.121 7.805-16.251.245-1.298.515-3.215.549-4.534 0-13.817-11.241-25.059-25.058-25.059-11.947 0-22.288 8.5-24.588 20.212-1.064 5.419 2.466 10.676 7.885 11.74 5.418 1.063 10.676-2.466 11.74-7.885.463-2.357 2.55-4.067 4.963-4.067 2.631 0 4.799 2.02 5.037 4.59l-.115.901c-.485 1.803-1.686 4.716-4.604 8.886-9.282 13.262-14.817 20.509-17.791 24.403-3.859 5.053-6.409 8.392-4.768 13.728.974 3.166 3.456 5.689 6.643 6.752 1.328.443 2.276.759 14.03.759 4.566 0 10.763-.048 19.246-.155 5.522-.069 9.943-4.602 9.874-10.125-.068-5.523-4.576-9.961-10.124-9.874z"
+                            fill="#407775"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-normal text-ecoprism-title leading-tight">Empower sales teams with carbon-aware pricing and sustainability impact estimates.</h3>
+                  </div>
+
+                  <!-- Feature 5: Stakeholder Engagement -->
+                  <div class="flex items-center space-x-4">
+                    <div class="w-8 h-12 flex items-center justify-start flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 20 20" fill="none">
+                        <g clip-path="url(#clip0_387_800)">
+                          <path d="M5.5268 12.1749C5.5268 11.5588 5.65203 10.9713 5.87832 10.4367C5.44039 10.1863 4.93414 10.0425 4.39461 10.0425C2.74035 10.0425 1.39453 11.3883 1.39453 13.0425C1.39453 14.0088 1.85422 14.8694 2.56594 15.4184C1.05313 16.1135 0 17.6429 0 19.4139V19.9998H3.94598V19.4351C3.94598 18.2101 4.31164 17.029 5.00344 16.0197C5.36039 15.4988 5.79133 15.0414 6.28109 14.6595C5.79578 13.9342 5.5268 13.0731 5.5268 12.1749Z" fill="#407775" />
+                          <path d="M17.4342 15.4184C18.1458 14.8693 18.6056 14.0088 18.6056 13.0425C18.6056 11.3883 17.2597 10.0425 15.6055 10.0425C15.066 10.0425 14.5597 10.1864 14.1218 10.4367C14.3481 10.9713 14.4733 11.5587 14.4733 12.1749C14.4733 13.0731 14.2043 13.9343 13.719 14.6595C14.2088 15.0414 14.6397 15.4989 14.9967 16.0197C15.6884 17.029 16.0541 18.2101 16.0541 19.4351V19.9999H20V19.4139C20 17.6429 18.9469 16.1135 17.4342 15.4184Z" fill="#407775" />
+                          <path d="M11.8414 14.9138C12.7216 14.3202 13.3015 13.314 13.3015 12.1749C13.3015 10.3545 11.8205 8.87354 10.0001 8.87354C8.17968 8.87354 6.6987 10.3545 6.6987 12.1749C6.6987 13.314 7.27862 14.3202 8.15874 14.9138C6.37683 15.6422 5.11792 17.3942 5.11792 19.4351V19.9999H14.8822V19.4351C14.8822 17.3943 13.6233 15.6422 11.8414 14.9138Z" fill="#407775" />
+                          <path d="M10.0528 0H0.835205V6.65488H4.27259L7.22895 8.24168L7.207 6.65488H10.0528V0ZM7.35966 3.85379H3.52833V2.68191H7.35966V3.85379Z" fill="#407775" />
+                          <path d="M11.3872 2.50977V8.18336H13.7222L13.7033 9.55793L16.2642 8.18336H19.1649V2.50977H11.3872ZM16.8489 5.88359H13.7033V4.71172H16.8489V5.88359Z" fill="#407775" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_387_800">
+                            <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <h3 class="text-sm font-normal text-ecoprism-title leading-tight">Embedded stakeholder engagement tools for transparent communication.</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ready-to-Use Tools for Common ESG Challenges Section -->
+      <section class="py-20 bg-ecoprism-accent bg-opacity-30">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <div class="text-center mb-16">
+            <!-- Pretitle Badge -->
+            <div class="inline-block px-4 py-2 rounded-lg mb-4" style="background-color: #fff">
+              <span class="text-sm font-semibold font-poppins" style="color: #407775">Targeted ESG Tools</span>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl mx-auto font-bold text-ecoprism-title mb-4">Ready-to-Use Tools for<br />Common ESG Challenges</h2>
+            <p class="text-base sm:text-lg mx-auto max-w-4xl text-ecoprism-text leading-relaxed" style="font-size: 16px; font-size: clamp(16px, 4vw, 18px)">Quickly solve high-impact ESG tasks with deployable tools - benchmarking, gap analysis, risk evaluation, emissions modeling, and more. Each module works independently or alongside our ecoPRISM platform.</p>
+          </div>
+
+          <!-- Tool Cards Swiper -->
+          <div
+            class="relative overflow-hidden"
+            x-data="{
+            currentSlide: 0,
+            totalSlides: 5,
+            cardsPerView: 4,
+            autoplayInterval: null,
+            getCardsPerView() {
+              if (window.innerWidth < 640) return 1; // Mobile
+              if (window.innerWidth < 1024) return 2; // Tablet
+              return 4; // Desktop
+            },
+            updateCardsPerView() {
+              this.cardsPerView = this.getCardsPerView();
+            },
+            cards: [
+              {
+                title: 'CSRD Ecobot',
+                description: 'Automated CSRD Compliance Assistant',
+                image: 'slide-01.webp',
+                link: 'ecobot/'
+              },
+              {
+                title: 'CSRD Benchmarking Tool',
+                description: 'Evaluate compliance gaps with CSRD criteria',
+                image: 'slide-02.webp',
+                link: 'csrd-reporting/'
+              },
+              {
+                title: 'ESG Benchmarking Tool',
+                description: 'Compare ESG KPIs across peers & regions',
+                image: 'slide-03.webp',
+                link: 'esg-benchmarking/'
+              },
+              {
+                title: 'Travel Carbon Calculator',
+                description: 'Track GHG emissions from business travel',
+                image: 'slide-04.webp',
+                link: ''
+              },
+              {
+                title: 'Supply Chain Risk Module',
+                description: 'Assess ESG risk across vendors and partners',
+                image: 'slide-05.webp',
+                link: ''
+              },
+            ],
+            nextSlide() {
+              this.currentSlide = Math.min(this.currentSlide + 1, this.totalSlides - this.cardsPerView);
+            },
+            prevSlide() {
+              this.currentSlide = Math.max(this.currentSlide - 1, 0);
+            },
+            goToSlide(index) {
+              this.currentSlide = Math.min(index, this.totalSlides - this.cardsPerView);
+            },
+            startAutoplay() {
+              this.autoplayInterval = setInterval(() => {
+                if (this.currentSlide >= this.totalSlides - this.cardsPerView) {
+                  this.currentSlide = 0;
+                } else {
+                  this.nextSlide();
+                }
+              }, 4000);
+            },
+            stopAutoplay() {
+              if (this.autoplayInterval) {
+                clearInterval(this.autoplayInterval);
+                this.autoplayInterval = null;
+              }
+            }
+          }"
+            x-init="
+            updateCardsPerView();
+            startAutoplay();
+            window.addEventListener('resize', () => {
+              updateCardsPerView();
+              if (currentSlide >= totalSlides - cardsPerView) {
+                currentSlide = Math.max(0, totalSlides - cardsPerView);
+              }
+            });
+          "
+            @mouseenter="stopAutoplay()"
+            @mouseleave="startAutoplay()"
+          >
+            <!-- Cards Container -->
+            <div class="flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${currentSlide * (100 / cardsPerView)}%)`">
+              <template x-for="(card, index) in cards" :key="index">
+                <div
+                  class="flex-shrink-0 px-2 sm:px-4"
+                  :class="{
+                'w-full': cardsPerView === 1,
+                'w-1/2': cardsPerView === 2,
+                'w-1/4': cardsPerView === 4
+              }"
+                >
+                  <div class="relative bg-gray-800 rounded-lg overflow-hidden h-80 group cursor-pointer" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                    <!-- Background Image -->
+                    <img :src="`/v3/assets/img/photos/${card.image}`" :alt="card.title" class="w-full h-full object-cover" loading="lazy" />
+
+                    <!-- Top Title Overlay (Yellow text, no background) -->
+                    <div class="absolute top-0 left-0 right-0 h-20 group-hover:opacity-0 transition-opacity duration-300">
+                      <div class="absolute top-8 left-8">
+                        <div class="text-yellow-400 font-poppins">
+                          <div class="text-2xl font-semibold uppercase -mb-2" x-text="card.title.split(' ')[0]"></div>
+                          <div class="text-md font-normal font-semibold" x-text="card.title.split(' ').slice(1).join(' ')" style="color: #ffffff"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Hover Content (Gradient Background, Space Between Layout) -->
+                    <div class="absolute inset-0 flex flex-col justify-between items-start p-6 opacity-0 group-hover:opacity-100 transition-all duration-300" style="background: linear-gradient(181deg, #fff 0.8%, #f9d423 152.62%)">
+                      <!-- Top Section: Icon, Title, Description -->
+                      <div class="flex flex-col items-start">
+                        <!-- Arrow Icon -->
+                        <div class="w-8 h-8 bg-ecoprism-primary rounded-lg flex items-center justify-center mb-4" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 23 22" fill="none" style="filter: brightness(0) invert(1)">
+                            <path
+                              d="M21.9703 0.940002C21.807 0.7819 21.5852 0.696768 21.3591 0.700822C21.3257 0.700822 17.8053 0.773792 13.9376 1.23188C11.6521 1.50349 9.68471 1.85213 8.09408 2.27374C5.98439 2.82912 4.54444 3.50207 3.69052 4.32906C2.82404 5.16822 2.10407 6.25467 1.60176 7.47894C1.10783 8.69917 0.835747 9.99236 0.789703 11.3018C0.743658 12.6801 0.94458 14.0057 1.39247 15.2422C1.72734 16.1867 2.21709 17.0705 2.84497 17.861C2.99566 17.188 3.33891 16.2556 4.10492 15.1408C4.96303 13.8963 6.19368 12.6517 7.7592 11.4396C9.68471 9.95588 12.1335 8.50864 15.0426 7.14247C15.4654 6.95194 15.9635 7.13031 16.1603 7.53975C16.3528 7.93704 16.1812 8.41134 15.7752 8.60998C4.1426 14.0746 4.41468 18.7569 4.42305 18.8015C4.44817 18.9799 4.41049 19.1623 4.31422 19.3163C5.17651 19.9933 6.15601 20.5163 7.20248 20.8649C8.3829 21.2622 9.62192 21.4608 10.8693 21.4527C11.0033 21.4527 11.1372 21.4487 11.2712 21.4446C12.6232 21.4 13.9585 21.1365 15.2185 20.6582C16.4826 20.1717 17.6044 19.4744 18.4709 18.6353C19.3248 17.8083 20.0197 16.4137 20.5931 14.3706C21.0285 12.8301 21.3885 10.9248 21.6689 8.71133C22.1419 4.96553 22.2131 1.56025 22.2131 1.52376C22.2214 1.31296 22.1335 1.0981 21.9703 0.940002Z"
+                              fill="#407775"
+                            />
+                          </svg>
+                        </div>
+
+                        <!-- Title -->
+                        <div class="text-[#1B1B1B] font-poppins mb-3">
+                          <div class="text-xl font-semibold uppercase -mb-2" x-text="card.title.split(' ')[0]"></div>
+                          <div class="text-md font-normal" x-text="card.title.split(' ').slice(1).join(' ')"></div>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-[#575757] text-sm leading-relaxed" x-text="card.description"></p>
+                      </div>
+
+                      <!-- Bottom Section: CTA -->
+                      <div class="w-full" x-show="card.link">
+                        <a :href="card.link" class="font-poppins text-ecoprism-primary hover:text-black transition-colors duration-300 font-medium text-sm">Explore more >></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Navigation Arrows (Smaller, Positioned Away from Slides) -->
+            <button @click="prevSlide()" :disabled="currentSlide === 0" :class="currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 hover:bg-gray-100'" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 sm:-translate-x-8 lg:-translate-x-16 w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full shadow-md flex items-center justify-center transition-all duration-200">
+              <svg class="w-3 h-3 sm:w-4 sm:h-4 text-ecoprism-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button @click="nextSlide()" :disabled="currentSlide >= totalSlides - cardsPerView" :class="currentSlide >= totalSlides - cardsPerView ? 'opacity-50 cursor-not-allowed' : 'opacity-100 hover:bg-gray-100'" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 sm:translate-x-8 lg:translate-x-16 w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full shadow-md flex items-center justify-center transition-all duration-200">
+              <svg class="w-3 h-3 sm:w-4 sm:h-4 text-ecoprism-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <!-- Slide Indicators -->
+            <div class="flex justify-center mt-8 space-x-4 py-2" role="tablist" aria-label="Page indicators">
+              <template x-for="i in Math.ceil(totalSlides / cardsPerView)" :key="i">
+                <button
+                  @click="currentSlide = Math.min((i - 1) * cardsPerView, totalSlides - cardsPerView)"
+                  :class="currentSlide >= (i - 1) * cardsPerView && currentSlide < i * cardsPerView ? 'bg-ecoprism-primary' : 'bg-gray-300'"
+                  class="w-3 h-3 rounded-full transition-colors duration-200 flex-shrink-0 border-2 border-transparent hover:border-ecoprism-primary"
+                  :aria-label="`Go to page ${i}`"
+                  :aria-selected="currentSlide >= (i - 1) * cardsPerView && currentSlide < i * cardsPerView"
+                  role="tab"
+                ></button>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Leading teams choose ecoPRISM Section -->
+      <section class="py-20 bg-white">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="relative p-6">
+              <img src="/v3/assets/img/photos/about.webp" alt="Leading teams" class="rounded-lg shadow-2xl w-full" loading="lazy" />
+              <div class="absolute -top-6 -left-3 bg-ecoprism-primary text-white px-6 py-4 rounded-xl shadow-lg flex items-center space-x-4">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="none" class="w-6 h-6">
+                    <g clip-path="url(#clip0_705_429)">
+                      <path d="M20 7.72742L12.7329 7.24965L9.99602 0.374023L7.25918 7.24965L0 7.72742L5.56773 12.455L3.7407 19.6264L9.99602 15.6725L16.2514 19.6264L14.4243 12.455L20 7.72742Z" fill="#407775" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_705_429">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold">100%</div>
+                  <div class="text-sm">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <!-- Pretitle Badge -->
+              <div class="inline-block px-4 py-2 rounded-lg mb-4" style="background-color: rgba(249, 212, 35, 0.3)">
+                <span class="text-sm font-semibold font-poppins" style="color: #407775">About Us</span>
+              </div>
+
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ecoprism-title mb-6">
+                Why Leading Teams Choose
+                <span class="text-ecoprism-primary">ecoPRISM</span>
+              </h2>
+              <p class="text-base sm:text-lg text-ecoprism-text mb-8 leading-relaxed">ecoPRISM brings together a purpose-built ESG platform and expert guidance that simplifies reporting, enhances data integrity, and drives action - aligned with your evolving sustainability needs.</p>
+
+              <!-- Feature Cards Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div class="bg-white rounded-lg p-4 flex items-center space-x-4" style="background-color: #dae5e34d">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="none" class="flex-shrink-0">
+                    <path d="M17.1129 10.6768H15.5662C15.7238 11.1084 15.81 11.5742 15.81 12.0597V17.9054C15.81 18.1079 15.7747 18.3022 15.7106 18.4829H18.2677C19.2229 18.4829 20 17.7058 20 16.7506V13.5638C20 11.9719 18.7048 10.6768 17.1129 10.6768Z" fill="#407775" />
+                    <path d="M4.19005 12.0597C4.19005 11.5742 4.27618 11.1084 4.43384 10.6768H2.88712C1.29516 10.6768 0 11.9719 0 13.5639V16.7506C0 17.7058 0.777072 18.4829 1.73227 18.4829H4.28938C4.22528 18.3021 4.19005 18.1079 4.19005 17.9054V12.0597Z" fill="#407775" />
+                    <path d="M11.7681 9.17236H8.23209C6.64013 9.17236 5.34497 10.4675 5.34497 12.0595V17.9052C5.34497 18.2241 5.60349 18.4826 5.92239 18.4826H14.0778C14.3967 18.4826 14.6552 18.2241 14.6552 17.9052V12.0595C14.6552 10.4675 13.3601 9.17236 11.7681 9.17236Z" fill="#407775" />
+                    <path d="M9.99995 1.51709C8.08541 1.51709 6.52783 3.07467 6.52783 4.98924C6.52783 6.28788 7.24459 7.42206 8.30311 8.01753C8.80518 8.29996 9.38401 8.46136 9.99995 8.46136C10.6159 8.46136 11.1947 8.29996 11.6968 8.01753C12.7553 7.42206 13.4721 6.28784 13.4721 4.98924C13.4721 3.07471 11.9145 1.51709 9.99995 1.51709Z" fill="#407775" />
+                    <path d="M3.90308 4.75342C2.47124 4.75342 1.3064 5.91826 1.3064 7.3501C1.3064 8.78194 2.47124 9.94679 3.90308 9.94679C4.26628 9.94679 4.61214 9.87155 4.92633 9.73632C5.46953 9.50245 5.91742 9.08847 6.19457 8.56991C6.3891 8.20596 6.49977 7.79077 6.49977 7.3501C6.49977 5.9183 5.33492 4.75342 3.90308 4.75342Z" fill="#407775" />
+                    <path d="M16.0969 4.75342C14.6651 4.75342 13.5002 5.91826 13.5002 7.3501C13.5002 7.79081 13.6109 8.206 13.8054 8.56991C14.0826 9.0885 14.5305 9.50249 15.0737 9.73632C15.3879 9.87155 15.7337 9.94679 16.0969 9.94679C17.5288 9.94679 18.6936 8.78194 18.6936 7.3501C18.6936 5.91826 17.5288 4.75342 16.0969 4.75342Z" fill="#407775" />
+                  </svg>
+                  <h3 class="text-md font-medium text-ecoprism-title">Intelligent & Expert-Led</h3>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 flex items-center space-x-4" style="background-color: #dae5e34d">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="none" class="flex-shrink-0">
+                    <path
+                      d="M18.6857 2.79908C18.6498 2.54122 18.4643 2.32911 18.2135 2.25939L10.1751 0.0239216C10.0605 -0.00797385 9.93947 -0.00797385 9.82478 0.0239216L1.78644 2.25939C1.53563 2.32911 1.3501 2.54113 1.3142 2.79908C1.26757 3.13434 0.203957 11.0556 2.93206 14.9961C5.65694 18.932 9.67672 19.9406 9.84648 19.9817C9.89694 19.9939 9.94836 19.9999 9.99995 19.9999C10.0515 19.9999 10.103 19.9938 10.1534 19.9817C10.3233 19.9406 14.343 18.932 17.0678 14.9961C19.7959 11.0556 18.7323 3.13442 18.6857 2.79908ZM15.1837 7.42357L9.70069 12.9065C9.57311 13.0341 9.40579 13.098 9.23855 13.098C9.07132 13.098 8.904 13.0342 8.77642 12.9065L5.38635 9.51647C5.26374 9.39394 5.19489 9.22767 5.19489 9.05434C5.19489 8.881 5.26383 8.71473 5.38635 8.5922L6.05947 7.91908C6.31472 7.66392 6.72857 7.66383 6.98374 7.91908L9.23855 10.1739L13.5863 5.8261C13.7088 5.70349 13.8751 5.63464 14.0484 5.63464C14.2217 5.63464 14.388 5.70349 14.5105 5.8261L15.1837 6.49922C15.4389 6.75447 15.4389 7.16832 15.1837 7.42357Z"
+                      fill="#407775"
+                    />
+                  </svg>
+                  <h3 class="text-md font-medium text-ecoprism-title">Beyond Compliance</h3>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 flex items-center space-x-4" style="background-color: #dae5e34d">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="none" class="flex-shrink-0">
+                    <g clip-path="url(#clip0_405_896)">
+                      <path
+                        d="M17.6191 9.52379H16.1905V5.71429C16.1905 4.66192 15.3381 3.80951 14.2857 3.80951H10.4762V2.38094C10.4762 1.06665 9.40951 0 8.09522 0C6.78094 0 5.71429 1.06665 5.71429 2.38094V3.80951H1.90478C0.852411 3.80951 0.00955357 4.66188 0.00955357 5.71429L0.00477679 9.33335H1.42857C2.84763 9.33335 4 10.4857 4 11.9048C4 13.3238 2.84763 14.4762 1.42857 14.4762H0.00477679L0 18.0952C0 19.1476 0.852366 20 1.90478 20H5.52384V18.5714C5.52384 17.1524 6.67621 16 8.09527 16C9.51433 16 10.6667 17.1524 10.6667 18.5714V20H14.2857C15.3381 20 16.1905 19.1476 16.1905 18.0952V14.2857H17.6191C18.9333 14.2857 20 13.2191 20 11.9048C20 10.5905 18.9333 9.52379 17.6191 9.52379Z"
+                        fill="#407775"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_405_896">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <h3 class="text-md font-medium text-ecoprism-title">Holistic Tailored Solutions</h3>
+                </div>
+
+                <div class="bg-white rounded-lg p-4 flex items-center space-x-4" style="background-color: #dae5e34d">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="none" class="flex-shrink-0">
+                    <g clip-path="url(#clip0_418_126)">
+                      <path d="M8.10885 9.12795C10.6047 8.9629 12.4941 6.80584 12.3291 4.31003C12.164 1.81422 10.0069 -0.0752382 7.51113 0.0898156C5.01532 0.254869 3.12587 2.41193 3.29092 4.90774C3.45598 7.40355 5.61303 9.29301 8.10885 9.12795Z" fill="#407775" />
+                      <path d="M9.40315 13.8812C9.40315 12.3156 10.0469 10.9031 11.0844 9.88437C10.7625 9.72812 10.4281 9.59688 10.0813 9.4875C9.39065 9.8125 8.6219 9.99687 7.8094 9.99687C6.99377 9.99687 6.22502 9.80937 5.53127 9.48438C2.46565 10.4531 0.243774 13.3187 0.243774 16.7062V19.9219H15.3906V19.4719C15.2656 19.4813 15.1406 19.4906 15.0156 19.4906C11.9188 19.4906 9.40315 16.975 9.40315 13.8812Z" fill="#407775" />
+                      <path
+                        d="M15.0125 9.13721C12.3907 9.13721 10.2688 11.2622 10.2688 13.881C10.2688 16.5028 12.3938 18.6247 15.0125 18.6247C17.6344 18.6247 19.7563 16.4997 19.7563 13.881C19.7563 11.2622 17.6313 9.13721 15.0125 9.13721ZM17.775 13.4966L16.4969 14.4247L16.9844 15.9247C17.1188 16.3435 16.6407 16.6903 16.2875 16.431L15.0094 15.5028L13.7313 16.431C13.375 16.6903 12.8969 16.3403 13.0344 15.9247L13.5219 14.4247L12.2438 13.4966C11.8875 13.2372 12.0719 12.6747 12.5094 12.6747H14.0875L14.575 11.1747C14.7094 10.756 15.3032 10.756 15.4375 11.1747L15.925 12.6747H17.5032C17.95 12.6778 18.1313 13.2403 17.775 13.4966Z"
+                        fill="#407775"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_418_126">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <h3 class="text-md font-medium text-ecoprism-title">Trusted by Leaders</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scroll to Top Button with Progress -->
+      <div
+        x-data="{ 
+        show: false,
+        progress: 0,
+        init() {
+          window.addEventListener('scroll', () => {
+            this.show = window.scrollY > 300;
+            // Calculate scroll progress (0-100)
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            this.progress = Math.min((scrollTop / docHeight) * 100, 100);
+          });
+        }
+      }"
+        x-show="show"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-95"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-95"
+        class="fixed bottom-8 right-8 z-40"
+      >
+        <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })" class="relative w-12 h-12 rounded-full transition-all duration-300 transform hover:scale-110 group">
+          <!-- Progress Circle -->
+          <svg class="absolute inset-0 w-12 h-12 transform -rotate-90" viewBox="0 0 48 48">
+            <!-- Background circle -->
+            <circle cx="24" cy="24" r="20" stroke="#e5e7eb" stroke-width="3" fill="none" />
+            <!-- Progress circle -->
+            <circle cx="24" cy="24" r="20" stroke="#407775" stroke-width="3" fill="none" stroke-linecap="round" :stroke-dasharray="125.66" :stroke-dashoffset="125.66 - (125.66 * progress / 100)" class="transition-all duration-300 ease-out" />
+          </svg>
+
+          <!-- Upward Arrow Icon -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-ecoprism-primary group-hover:text-ecoprism-secondary transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(-90 12 12)" />
+            </svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- CTA Section (Unisys-style band) -->
+      <section class="cta-bg relative overflow-hidden px-4 py-16 text-center sm:py-20 md:py-24 lg:py-[100px]">
+        <div class="pointer-events-none absolute inset-0" style="background: radial-gradient(50% 50% at 50% 50%, rgba(61, 220, 151, 0.14) 0%, rgba(61, 220, 151, 0) 36%)"></div>
+        <div class="js-reveal relative mx-auto max-w-4xl lg:max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#f4b940]">Get Started</p>
+          <h2 class="mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">Ready to Transform Your ESG Journey?</h2>
+          <p class="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg md:text-xl">Join hundreds of organizations that trust ecoPRISM to guide their sustainability transformation.</p>
+          <a href="/contact-us" class="ecogrid-btn ecogrid-btn-cta-gold mt-10 inline-flex min-h-[48px] items-center gap-2 rounded-lg px-8 py-3 text-base font-semibold">Get Started Today</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Alpine.js Components - Automatically versioned by cache-buster.js -->
+    <script src="/v3/assets/js/components.js"></script>
+    <script src="/v3/assets/js/utils.js"></script>
+
+    <!-- Scroll Hover Cards Function -->
+    <script>
+      function scrollHoverCards() {
+        return {
+          activeCard: -1,
+          cards: [],
+
+          init() {
+            this.cards = this.$el.querySelectorAll(".rounded-lg");
+            this.updateActiveCard();
+            window.addEventListener("scroll", () => this.updateActiveCard());
+          },
+
+          updateActiveCard() {
+            const section = this.$el.closest("section");
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const scrollTop = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+
+            // Calculate when section enters and exits the viewport
+            const sectionBottom = sectionTop + sectionHeight;
+            const viewportTop = scrollTop;
+            const viewportBottom = scrollTop + windowHeight;
+
+            // Only activate when section is significantly visible (at least 30% of viewport)
+            const visibleTop = Math.max(sectionTop, viewportTop);
+            const visibleBottom = Math.min(sectionBottom, viewportBottom);
+            const visibleHeight = visibleBottom - visibleTop;
+            const minVisibleHeight = windowHeight * 0.3; // At least 30% of viewport
+
+            if (visibleHeight >= minVisibleHeight) {
+              // Calculate scroll progress within the visible range
+              const sectionCenter = sectionTop + sectionHeight / 2;
+              const viewportCenter = scrollTop + windowHeight / 2;
+
+              // Calculate progress based on how far through the section we've scrolled
+              const scrollProgress = Math.max(0, Math.min(1, (viewportCenter - sectionTop) / sectionHeight));
+
+              // Determine which card should be active based on scroll progress
+              const cardCount = this.cards.length;
+              const newActiveCard = Math.floor(scrollProgress * cardCount);
+
+              // Only update if the active card has changed
+              if (newActiveCard !== this.activeCard) {
+                this.activeCard = newActiveCard;
+              }
+            } else {
+              // Reset active card when section is not sufficiently visible
+              if (this.activeCard !== -1) {
+                this.activeCard = -1;
+              }
+            }
+          },
+        };
+      }
+    </script>
+
+    <!-- Load Footer Component with automatic versioning -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Wait for cache-buster.js to load getVersionedUrl function
+        const loadFooter = () => {
+          if (typeof getVersionedUrl === "function") {
+            const footerUrl = getVersionedUrl("/v3/components/footer.html");
+            fetch(footerUrl)
+              .then((response) => response.text())
+              .then((data) => {
+                document.getElementById("footer-container").innerHTML = data;
+              })
+              .catch((error) => console.error("Error loading footer:", error));
+          } else {
+            // Fallback: load with cache buster if getVersionedUrl is not available
+            const cacheVersion = new Date().getFullYear() + String(new Date().getMonth() + 1).padStart(2, "0") + String(new Date().getDate()).padStart(2, "0");
+            fetch("/v3/components/footer.html?v=" + cacheVersion)
+              .then((response) => response.text())
+              .then((data) => {
+                document.getElementById("footer-container").innerHTML = data;
+              })
+              .catch((error) => console.error("Error loading footer:", error));
+          }
+        };
+
+        // Small delay to ensure cache-buster.js is loaded
+        setTimeout(loadFooter, 100);
+
+        function initScrollReveals() {
+          var nodes = document.querySelectorAll(".js-reveal");
+          if (!nodes.length) return;
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            nodes.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          if (!("IntersectionObserver" in window)) {
+            nodes.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.06 },
+          );
+          nodes.forEach(function (el) {
+            io.observe(el);
+          });
+        }
+        initScrollReveals();
+      });
+    </script>
+
+    <!-- Scroll to Top Function -->
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+
+    <!-- Suppress Tailwind CDN warning for development -->
+    <script>
+      // Override console.warn to filter out Tailwind CDN warning
+      const originalWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && args[0].includes && args[0].includes("cdn.tailwindcss.com should not be used in production")) {
+          return; // Suppress this specific warning
+        }
+        originalWarn.apply(console, args);
+      };
+    </script>
+  </body>
+</html>

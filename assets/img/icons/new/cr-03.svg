@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg8" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="layer3">
+    <path id="path2248" class="st0" d="M9,4c-1.1,0-2,.9-2,2v23c0,1.1.9,2,2,2h18c1.1,0,2-.9,2-2v-1c0-.6-.4-1-1-1h0c-.6,0-1,.4-1,1h0v1H9V6h18v13c0,.6.4,1,1,1h0c.6,0,1-.4,1-1h0V6c0-1.1-.9-2-2-2H9Z" vector-effect="none"/>
+    <path id="path2252" class="st0" d="M3,1c-1.1,0-2,.9-2,2v23c0,1.1.9,2,2,2h5c.6,0,1-.4,1-1,0-.6-.4-1-1-1H3V3h18v2c0,.6.4,1,1,1h0c.6,0,1-.4,1-1v-2c0-1.1-.9-2-2-2H3Z" vector-effect="none"/>
+    <path id="path2256" class="st0" d="M12,8c-.6,0-1,.4-1,1,0,.6.4,1,1,1h5c.6,0,1-.4,1-1h0c0-.6-.4-1-1-1h-5Z" vector-effect="none"/>
+    <path id="path2260" class="st0" d="M12,14c-.6,0-1,.4-1,1,0,.6.4,1,1,1h5c.6,0,1-.4,1-1,0-.6-.4-1-1-1h-5Z" vector-effect="none"/>
+    <path id="path2264" class="st0" d="M12,18c-.6,0-1,.4-1,1,0,.6.4,1,1,1h5c.6,0,1-.4,1-1h0c0-.6-.4-1-1-1h-5Z" vector-effect="none"/>
+    <path id="path2268" class="st0" d="M12,22c-.6,0-1,.4-1,1,0,.6.4,1,1,1h5c.6,0,1-.4,1-1h0c0-.6-.4-1-1-1h-5Z" vector-effect="none"/>
+    <path id="path2272" class="st0" d="M30,21c-.2,0-.4,0-.5.1l-4.3,2.6-1.4-1.4c-.4-.4-1-.4-1.4,0h0c-.4.4-.4,1,0,1.4h0s2,2,2,2c.3.3.8.4,1.2.2l5-3c.5-.3.6-.9.3-1.4-.2-.3-.5-.5-.9-.5Z" vector-effect="none"/>
+  </g>
+</svg>

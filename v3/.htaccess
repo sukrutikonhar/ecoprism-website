@@ -1,0 +1,57 @@
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching with Cache Control
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images - 1 month
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS and JavaScript - 1 week (shorter for updates)
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+  
+  # HTML - 1 hour (so changes appear quickly)
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # Fonts - 1 month
+  ExpiresByType font/woff "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 month"
+  ExpiresByType application/font-woff "access plus 1 month"
+  ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>
+
+# Set Cache-Control Headers
+<IfModule mod_headers.c>
+  # HTML files - allow caching but revalidate
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  
+  # CSS and JS files - cache with version checking
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800, must-revalidate"
+  </FilesMatch>
+  
+  # Images - cache for longer
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# Force no caching during development (comment this out in production)
+# <IfModule mod_headers.c>
+#   Header set Cache-Control "no-cache, no-store, must-revalidate"
+#   Header set Pragma "no-cache"
+#   Header set Expires 0
+# </IfModule>

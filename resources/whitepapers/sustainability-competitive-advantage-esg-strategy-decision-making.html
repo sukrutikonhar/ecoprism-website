@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta (mirrors sustainability-competitive-advantage page) -->
+    <meta name="description" content="Move beyond ESG reporting and turn sustainability into a strategic advantage. Learn how to integrate ESG into decision-making, drive performance, and create long-term value." />
+    <meta name="keywords" content="Sustainability as a Competitive Advantage, ESG Strategy, Decision-Making, Performance Improvement, Long-Term Value, Sustainability Integration, Corporate Sustainability" />
+    <meta name="author" content="ecoPRISM" />
+    <meta name="date" content="2025-03-19" />
+
+    <title>Sustainability as a Competitive Advantage | From ESG Reporting to Strategy</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/img/favicon.webp" />
+
+    <!-- Canonical + hreflang -->
+    <link rel="canonical" href="https://ecoprism.com/resources/whitepapers/sustainability-competitive-advantage-esg-strategy-decision-making" />
+    <link rel="alternate" hreflang="en" href="https://ecoprism.com/resources/whitepapers/sustainability-competitive-advantage-esg-strategy-decision-making" />
+    <link rel="alternate" hreflang="x-default" href="https://ecoprism.com/resources/whitepapers/sustainability-competitive-advantage-esg-strategy-decision-making" />
+
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ecoprism.com/resources/whitepapers/sustainability-competitive-advantage-esg-strategy-decision-making" />
+    <meta property="og:title" content="Sustainability as a Competitive Advantage | From ESG Reporting to Strategy | ecoPRISM" />
+    <meta property="og:description" content="Move beyond ESG reporting and turn sustainability into a strategic advantage." />
+    <meta property="og:image" content="https://ecoprism.com/assets/img/whitepapers/whitepaper-09-thumb.webp" />
+    <meta property="og:site_name" content="ecoPRISM" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://ecoprism.com/assets/img/whitepapers/whitepaper-09-thumb.webp" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://ecoprism.com/#corporation",
+            "name": "ecoPRISM",
+            "url": "https://ecoprism.com/",
+            "logo": { "@type": "ImageObject", "url": "https://ecoprism.com/assets/img/logo-light.webp" },
+            "sameAs": ["https://www.linkedin.com/company/ecoprism/", "https://www.youtube.com/@Ecoprism-kz4yb"]
+          },
+          {
+            "@type": "Report",
+            "@id": "https://ecoprism.com/resources/whitepapers/sustainability-competitive-advantage-esg-strategy-decision-making#report",
+            "name": "Sustainability as a Competitive Advantage | From ESG Reporting to Strategy",
+            "description": "Move beyond ESG reporting and turn sustainability into a strategic advantage.",
+            "image": "https://ecoprism.com/assets/img/whitepapers/whitepaper-09-thumb.webp",
+            "datePublished": "2026-03-19",
+            "dateModified": "2026-03-19",
+            "author": { "@type": "Organization", "name": "ecoPRISM", "@id": "https://ecoprism.com/#corporation" },
+            "publisher": { "@id": "https://ecoprism.com/#corporation" },
+            "inLanguage": "en",
+            "url": "https://ecoprism.com/resources/whitepapers/sustainability-competitive-advantage-esg-strategy-decision-making",
+            "isAccessibleForFree": true
+          }
+        ]
+      }
+    </script>
+
+    <!-- Automatic Cache Buster (same as index.html) -->
+    <script src="/v3/assets/js/cache-buster.js"></script>
+
+    <!-- Fonts (Inter body, Poppins titles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind (same approach as index.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ecoprism: {
+                primary: "#2f7f75",
+                secondary: "#588885",
+                accent: "#9dbdb8",
+                yellow: "#fbbf24",
+                dark: "#1f2937",
+                title: "#343f52",
+                text: "#575757",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+              poppins: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Font Awesome (used by footer component) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Alpine.js (same as index.html) -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+
+      @keyframes ecoprism-hero-in {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 28px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .hero-reveal {
+        opacity: 0;
+        animation: ecoprism-hero-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      .hero-reveal-delay-img {
+        animation-delay: 0.05s;
+      }
+      .hero-reveal-delay-pretitle {
+        animation-delay: 0.3s;
+      }
+      .hero-reveal-delay-h1 {
+        animation-delay: 0.45s;
+      }
+      .hero-reveal-delay-lead {
+        animation-delay: 0.7s;
+      }
+      .hero-reveal-delay-cta {
+        animation-delay: 0.95s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-reveal {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+      .js-reveal {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .js-reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+      .ecogrid-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .ecogrid-btn:hover {
+        transform: translateY(-2px);
+      }
+      .ecogrid-btn:active {
+        transform: translateY(0) scale(0.98);
+      }
+      .ecogrid-btn:focus-visible {
+        outline: 2px solid #fab430;
+        outline-offset: 3px;
+      }
+      .ecogrid-nav-cta {
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease;
+      }
+      .ecogrid-nav-cta:hover {
+        background-color: rgba(64, 119, 117, 0.1);
+        color: #2f7f75;
+      }
+      header div.absolute.left-0.bg-white.rounded-md.shadow-lg a.block {
+        transition:
+          background-color 0.18s ease,
+          color 0.18s ease;
+      }
+      header div.absolute.left-0.bg-white.rounded-md.shadow-lg a.block:hover {
+        background-color: #eaf5f1;
+        color: #2f7f75;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ecogrid-btn:hover,
+        .ecogrid-btn:active {
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Custom v3 styles (same as index.html) -->
+    <link rel="stylesheet" href="/v3/assets/css/main.css" />
+    <link rel="stylesheet" href="/v3/assets/css/components.css" />
+    <!-- CTA fills inlined after external CSS: green/gold buttons still work if main.css 404s, is blocked, or CDN serves a stale copy -->
+    <style>
+      .ecogrid-btn-primary {
+        background: #2f7f75;
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(47, 119, 117, 0.28);
+      }
+      .ecogrid-btn-primary:hover {
+        background: linear-gradient(165deg, #3a7d6e 0%, #2f6f64 55%, #285a50 100%);
+        box-shadow: 0 10px 28px rgba(47, 111, 100, 0.42);
+      }
+      .ecogrid-btn-header {
+        background: #407775;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(32, 90, 84, 0.32);
+      }
+      .ecogrid-btn-header:hover {
+        background: linear-gradient(165deg, #4d8f82 0%, #407775 50%, #356963 100%);
+        box-shadow: 0 8px 22px rgba(32, 90, 84, 0.48);
+      }
+      .ecogrid-btn-cta-gold {
+        background: #f4b940;
+        color: #0b2e26;
+        box-shadow: 0 6px 18px rgba(244, 185, 64, 0.32);
+      }
+      .ecogrid-btn-cta-gold:hover {
+        background: linear-gradient(165deg, #fce089 0%, #f4b940 45%, #e0a32a 100%);
+        box-shadow: 0 12px 34px rgba(244, 185, 64, 0.5);
+      }
+    </style>
+
+    <!-- Icons (kept from original whitepaper export) -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  </head>
+
+  <body class="overflow-x-hidden bg-white font-sans text-[#575757] antialiased" x-data="{ downloadOpen: false }">
+    <!-- Header (same structure/code style as index.html) -->
+    <header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: false }" x-init="window.addEventListener('scroll', () => { isScrolled = window.scrollY > 0; })" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-cloak>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-9 w-auto" />
+            </a>
+          </div>
+
+          <div class="hidden lg:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  About
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/about-us" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
+                  <a href="/our-team" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
+                  <a href="/careers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+                  <a href="/news" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News</a>
+                  <a href="/events" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Products
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 z-50 flex w-max max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-gray-200 bg-white py-3 shadow-lg">
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-platform" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Platform</a>
+                    <a href="/csrd-reporting" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD Reporting</a>
+                    <a href="/ecoquote" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoQUOTE</a>
+                  </div>
+                  <div class="w-px shrink-0 self-stretch bg-gray-200" aria-hidden="true"></div>
+                  <div class="flex shrink-0 flex-col">
+                    <a href="/esg-benchmarking" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Benchmarking</a>
+                    <a href="/ecobot" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD ecobot</a>
+                    <a href="/ecogrid" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoGRID</a>
+                  </div>
+                </div>
+              </div>
+              <a href="/ecoprism-ai" class="transition-colors duration-200 font-medium py-4" :class="isScrolled ? 'text-ecoprism-text hover:text-ecoprism-primary' : 'text-white hover:text-white/85'">ecoPRISM AI</a>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Services
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
+                  <a href="/services/training-capacity-building" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Case Studies
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Sustainability in Proposals</a>
+                  <a href="/resources/case-studies/unisys-climate-risk" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Climate Risk Intelligence</a>
+                  <a href="/resources/case-studies/acumant-ecovadis" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">EcoVadis Readiness</a>
+                  <a href="/resources/case-studies/camfil-esg-training" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Capacity Building</a>
+                  <a href="/resources/case-studies/double-materiality-assessment" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Double Materiality Assessment</a>
+                </div>
+              </div>
+
+              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+                  Resources
+                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+                  <a href="/resources/insights" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
+                  <a href="/resources/whitepapers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
+                  <a href="/resources/glossary" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
+                  <a href="/resources/csrd-adoption" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
+                  <a href="/resources/california-climate-laws" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+                  <a href="/resources/brsr-reporting" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">BRSR Reporting</a>
+                </div>
+              </div>
+
+              <a href="/contact-us" class="ecogrid-btn ecogrid-btn-header rounded-full px-6 py-2 text-sm font-semibold">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="lg:hidden">
+            <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" class="rounded-md p-2 text-ecoprism-text transition hover:bg-black/5 hover:text-ecoprism-primary active:scale-95" aria-label="Toggle mobile menu" :aria-expanded="mobileMenuOpen">
+              <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu (inside header so Alpine sees mobileMenuOpen / activeDropdown) -->
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="lg:hidden fixed inset-0 z-50">
+        <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="relative bg-white h-full w-80 max-w-[85vw] shadow-xl overflow-y-auto">
+          <div class="flex items-center justify-between p-4 border-b">
+            <div class="flex items-center">
+              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+            </div>
+
+            <button type="button" @click="mobileMenuOpen = false" class="p-2 rounded-md text-ecoprism-text hover:text-ecoprism-primary hover:bg-gray-100" aria-label="Close menu">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="px-4 pt-4 pb-6 space-y-1">
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                About
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'about'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/about-us" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
+                <a href="/our-team" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
+                <a href="/careers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
+                <a href="/news" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">News</a>
+                <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
+              </div>
+            </div>
+
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Products
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'products'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/esg-platform" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Platform</a>
+                <a href="/csrd-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Reporting</a>
+                <a href="/ecoquote" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
+                <a href="/esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
+                <a href="/ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
+                <a href="/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
+              </div>
+            </div>
+            <a href="/ecoprism-ai" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">ecoPRISM AI</a>
+
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Services
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'services'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/services/esg-advisory" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Advisory</a>
+                <a href="/services/training-capacity-building" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Training and Capacity Building</a>
+              </div>
+            </div>
+
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'casestudies' ? null : 'casestudies'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Case Studies
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'casestudies' }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'casestudies'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Sustainability in Proposals</a>
+                <a href="/resources/case-studies/unisys-climate-risk" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Climate Risk Intelligence</a>
+                <a href="/resources/case-studies/acumant-ecovadis" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">EcoVadis Readiness</a>
+                <a href="/resources/case-studies/camfil-esg-training" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Capacity Building</a>
+                <a href="/resources/case-studies/double-materiality-assessment" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Double Materiality Assessment</a>
+              </div>
+            </div>
+
+            <div>
+              <button type="button" @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+                Resources
+                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+                <a href="/resources/insights" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
+                <a href="/resources/whitepapers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
+                <a href="/resources/glossary" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
+                <a href="/resources/csrd-adoption" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
+                <a href="/resources/california-climate-laws" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+                <a href="/resources/brsr-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">BRSR Reporting</a>
+              </div>
+            </div>
+
+            <a href="/contact-us" class="ecogrid-nav-cta block rounded-full px-3 py-2 text-base font-semibold text-ecoprism-text">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="relative overflow-hidden bg-[linear-gradient(135deg,#0a302b_0%,#1b5c53_55%,#0a302b_100%)] pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div
+          class="pointer-events-none absolute inset-0 opacity-100 [background-image:url(&quot;data:image/svg+xml,%3Csvg%20width='80'%20height='80'%20viewBox='0%200%2080%2080'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cg%20fill='none'%20fill-rule='evenodd'%3E%3Cg%20fill='%23ffffff'%20fill-opacity='0.03'%3E%3Cpath%20d='M50%2050c0-5.523%204.477-10%2010-10s10%204.477%2010%2010-4.477%2010-10%2010c0%205.523-4.477%2010-10%2010s-10-4.477-10-10%204.477-10%2010-10zM10%2010c0-5.523%204.477-10%2010-10s10%204.477%2010%2010-4.477%2010-10%2010c0%205.523-4.477%2010-10%2010S0%2025.523%200%2020s4.477-10%2010-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)]"
+        ></div>
+
+        <div class="relative z-10 container mx-auto px-4 lg:px-12">
+          <div class="grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] lg:gap-20">
+            <div class="order-2 min-w-0 max-w-[600px] lg:order-1">
+              <div class="hero-reveal hero-reveal-delay-pretitle inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white mb-8">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#fab430]"></span>
+                Whitepaper
+              </div>
+
+              <h1 class="hero-reveal hero-reveal-delay-h1 font-poppins text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl lg:leading-[1.1] mb-5 sm:mb-6 text-white">
+                Sustainability as a<br />
+                <span class="text-[#fab430]">Competitive Advantage</span>
+              </h1>
+
+              <p class="hero-reveal hero-reveal-delay-lead text-lg leading-relaxed text-white/80 sm:text-xl">A Practical Guide to Moving from ESG Reporting to Strategic Decision-Making</p>
+
+              <div class="hero-reveal hero-reveal-delay-cta mt-8 flex flex-col items-start gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4">
+                <div class="flex shrink-0">
+                  <img src="https://i.pravatar.cc/100?img=1" alt="Avatar" class="h-10 w-10 rounded-full border-2 border-[#2f7f75]" />
+                  <img src="https://i.pravatar.cc/100?img=11" alt="Avatar" class="-ml-3 h-10 w-10 rounded-full border-2 border-[#2f7f75]" />
+                  <img src="https://i.pravatar.cc/100?img=5" alt="Avatar" class="-ml-3 h-10 w-10 rounded-full border-2 border-[#2f7f75]" />
+                  <img src="https://i.pravatar.cc/100?img=3" alt="Avatar" class="-ml-3 h-10 w-10 rounded-full border-2 border-[#2f7f75]" />
+                </div>
+                <div class="max-w-[260px] text-[15px] font-medium leading-tight text-white/90 sm:max-w-none sm:text-sm">Join 5,000+ ESG leaders who have downloaded this guide</div>
+              </div>
+            </div>
+
+            <div class="hero-reveal hero-reveal-delay-img order-1 min-w-0 overflow-hidden rounded-3xl bg-white shadow-[0_32px_64px_rgba(0,0,0,0.3)] lg:order-2">
+              <div class="h-[190px] border-b border-[#e2e8e6] bg-[#f5f7f6] sm:h-[220px]">
+                <img alt="Sustainability as a Competitive Advantage Whitepaper" src="../../assets/img/whitepapers/whitepaper-09-download1.webp" loading="lazy" class="h-full w-full object-cover" />
+              </div>
+              <div class="p-5 sm:p-8">
+                <h3 class="mb-2 font-poppins text-xl font-semibold text-[#343f52]">Get your free copy</h3>
+                <p class="mb-6 text-sm leading-snug text-[#575757]">Fill out the form below to receive the whitepaper in your inbox immediately.</p>
+                <button type="button" class="ecogrid-btn ecogrid-btn-primary h-12 w-full gap-2 rounded-lg px-6 text-[15px] font-medium" @click="downloadOpen = true">
+                  <span class="flex h-[18px] w-[18px] items-center justify-center">
+                    <iconify-icon icon="lucide:download" style="font-size: 18px"></iconify-icon>
+                  </span>
+                  Download Whitepaper
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE STRIP -->
+      <section class="py-16 sm:py-24 bg-[linear-gradient(180deg,#ffffff_0%,#fafcfb_100%)] border-b border-[#e2e8e6]">
+        <div class="js-reveal container mx-auto grid grid-cols-1 items-start gap-8 px-4 lg:px-12 sm:gap-10 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-14">
+          <div class="flex flex-col gap-4 pt-3">
+            <div class="text-xs font-extrabold tracking-[0.12em] uppercase text-[#1f7a63]">Why this matters</div>
+            <h2 class="font-poppins text-2xl sm:text-4xl font-bold tracking-[-0.03em] leading-tight text-[#343f52] max-w-none">Why ESG Fails to Deliver Competitive Advantage</h2>
+            <p class="text-base leading-7 text-[#575757] max-w-none lg:max-w-[300px]">Most organizations have ESG programs. Few have turned them into a source of competitive advantage. This paper explains the difference.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="min-h-0 md:min-h-[284px] p-5 sm:p-6 rounded-[18px] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfa_100%)] border border-[rgba(226,232,230,0.92)] shadow-[0_18px_40px_rgba(11,46,38,0.07)] flex flex-col gap-6">
+              <div class="flex flex-col items-start gap-4">
+                <div class="w-[60px] h-[60px] rounded-[18px] bg-[linear-gradient(180deg,rgba(61,220,151,0.14)_0%,rgba(31,122,99,0.06)_100%)] text-[#1f7a63] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  <iconify-icon icon="lucide:alert-circle" style="font-size: 24px"></iconify-icon>
+                </div>
+                <div class="font-poppins text-xs font-extrabold tracking-[0.1em] uppercase text-[#1f7a63]">The Stakes</div>
+              </div>
+              <div class="pt-1 border-t border-[rgba(226,232,230,0.9)]">
+                <p class="text-md leading-[1.72] text-[#575757]">ESG is now shaped by regulation, capital markets, and consumer expectations - the pressure is only increasing.</p>
+              </div>
+            </div>
+
+            <div class="min-h-0 md:min-h-[284px] p-5 sm:p-6 rounded-[18px] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfa_100%)] border border-[rgba(226,232,230,0.92)] shadow-[0_18px_40px_rgba(11,46,38,0.07)] flex flex-col gap-6">
+              <div class="flex flex-col items-start gap-4">
+                <div class="w-[60px] h-[60px] rounded-[18px] bg-[linear-gradient(180deg,rgba(61,220,151,0.14)_0%,rgba(31,122,99,0.06)_100%)] text-[#1f7a63] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  <iconify-icon icon="lucide:split-square-vertical" style="font-size: 24px"></iconify-icon>
+                </div>
+                <div class="font-poppins text-xs font-extrabold tracking-[0.1em] uppercase text-[#1f7a63]">The Problem</div>
+              </div>
+              <div class="pt-1 border-t border-[rgba(226,232,230,0.9)]">
+                <p class="text-md leading-[1.72] text-[#575757]">Most sustainability efforts stay fragmented and disconnected from the decisions that actually drive business performance.</p>
+              </div>
+            </div>
+
+            <div class="min-h-0 md:min-h-[284px] p-5 sm:p-6 rounded-[18px] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfa_100%)] border border-[rgba(226,232,230,0.92)] shadow-[0_18px_40px_rgba(11,46,38,0.07)] flex flex-col gap-6">
+              <div class="flex flex-col items-start gap-4">
+                <div class="w-[60px] h-[60px] rounded-[18px] bg-[linear-gradient(180deg,rgba(61,220,151,0.14)_0%,rgba(31,122,99,0.06)_100%)] text-[#1f7a63] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  <iconify-icon icon="lucide:waypoints" style="font-size: 24px"></iconify-icon>
+                </div>
+                <div class="font-poppins text-xs font-extrabold tracking-[0.1em] uppercase text-[#1f7a63]">The Answer</div>
+              </div>
+              <div class="pt-1 border-t border-[rgba(226,232,230,0.9)]">
+                <p class="text-md leading-[1.72] text-[#575757]">A practical framework for embedding ESG into core strategy - with real examples from companies already doing it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT THIS COVERS -->
+      <section class="py-24 sm:py-28 bg-[#f5f7f6]">
+        <div class="js-reveal container mx-auto grid grid-cols-1 gap-10 px-4 lg:px-12 sm:gap-12 lg:grid-cols-[minmax(0,440px)_minmax(0,1fr)] lg:gap-20">
+          <div class="relative">
+            <div class="lg:sticky lg:top-28">
+              <h2 class="font-poppins text-3xl sm:text-4xl font-bold leading-tight tracking-[-0.02em] mb-10 text-[#343f52]">What This Whitepaper Covers</h2>
+              <div class="rounded-3xl bg-[#2f7f75] text-white p-6 sm:p-10 shadow-[0_24px_48px_rgba(0,0,0,0.1)]">
+                <div class="font-poppins text-xs font-semibold tracking-[0.1em] uppercase text-[#fab430] mb-4">Key takeaway</div>
+                <div class="font-poppins text-xl font-medium leading-relaxed">The competitive advantage of the next decade will belong to organizations that treat sustainability not as a compliance, but as a core strategic capability.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-5">
+            <div class="bg-white p-5 sm:p-8 rounded-xl border border-[#e2e8e6] shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-start sm:items-center gap-5 sm:gap-6">
+              <div class="w-12 h-12 rounded-full bg-[rgba(61,220,151,0.1)] text-[#1f7a63] flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:target" style="font-size: 24px"></iconify-icon>
+              </div>
+              <div class="min-w-0 font-poppins text-base font-medium leading-snug text-[#343f52] sm:text-lg">Why ESG often fails to deliver competitive advantage</div>
+            </div>
+
+            <div class="bg-white p-5 sm:p-8 rounded-xl border border-[#e2e8e6] shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-start sm:items-center gap-5 sm:gap-6">
+              <div class="w-12 h-12 rounded-full bg-[rgba(61,220,151,0.1)] text-[#1f7a63] flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:trending-up" style="font-size: 24px"></iconify-icon>
+              </div>
+              <div class="min-w-0 font-poppins text-base font-medium leading-snug text-[#343f52] sm:text-lg">How sustainability drives revenue, cost efficiency, and risk management</div>
+            </div>
+
+            <div class="bg-white p-5 sm:p-8 rounded-xl border border-[#e2e8e6] shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-start sm:items-center gap-5 sm:gap-6">
+              <div class="w-12 h-12 rounded-full bg-[rgba(61,220,151,0.1)] text-[#1f7a63] flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:map" style="font-size: 24px"></iconify-icon>
+              </div>
+              <div class="min-w-0 font-poppins text-base font-medium leading-snug text-[#343f52] sm:text-lg">Sector-specific pathways to value creation</div>
+            </div>
+
+            <div class="bg-white p-5 sm:p-8 rounded-xl border border-[#e2e8e6] shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-start sm:items-center gap-5 sm:gap-6">
+              <div class="w-12 h-12 rounded-full bg-[rgba(61,220,151,0.1)] text-[#1f7a63] flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:layout-template" style="font-size: 24px"></iconify-icon>
+              </div>
+              <div class="min-w-0 font-poppins text-base font-medium leading-snug text-[#343f52] sm:text-lg">A practical framework to integrate ESG into business decisions</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-20 sm:py-28 bg-white">
+        <div class="container mx-auto px-4 lg:px-12">
+          <div class="js-reveal relative grid grid-cols-1 items-stretch gap-8 overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#0a302b_0%,#1b5c53_55%,#0a302b_100%)] p-5 text-white shadow-[0_24px_48px_rgba(11,46,38,0.14)] sm:gap-10 sm:p-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:p-12">
+            <div class="pointer-events-none absolute -left-20 -bottom-24 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(250,180,48,0.14)_0%,transparent_72%)]"></div>
+            <div class="pointer-events-none absolute -right-10 -top-20 w-72 h-72 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_72%)]"></div>
+
+            <div class="relative z-10 flex min-w-0 flex-col justify-between gap-6">
+              <div class="flex min-w-0 flex-col gap-6">
+                <div class="inline-flex items-center gap-3">
+                  <div class="w-14 h-14 rounded-[18px] border border-white/15 bg-white/10 text-[#fab430] flex items-center justify-center text-2xl">
+                    <iconify-icon icon="lucide:quote"></iconify-icon>
+                  </div>
+                  <div class="font-poppins text-xs font-extrabold tracking-[0.12em] uppercase text-white/70">Why download now</div>
+                </div>
+
+                <div class="font-poppins text-xl italic font-normal tracking-[-0.03em] leading-snug text-white/95 sm:text-2xl md:text-3xl lg:text-[34px] max-w-[680px] break-words">"This shift transforms ESG from a reporting function into a driver of growth, efficiency, and resilience."</div>
+
+                <div class="w-24 h-px bg-white/20"></div>
+              </div>
+
+              <div class="flex items-center gap-3 sm:gap-4 flex-wrap p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 max-w-[520px]">
+                <div class="text-xs font-bold tracking-[0.1em] uppercase text-white/60 max-w-[260px]">Ready to move from ESG ambition to strategic execution?</div>
+                <a href="/contact-us" class="ecogrid-btn sm:ml-auto inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-6 text-[15px] font-medium text-[#2f7f75] hover:bg-white/95">
+                  <span class="flex h-[18px] w-[18px] items-center justify-center">
+                    <iconify-icon icon="lucide:arrow-right" style="font-size: 18px"></iconify-icon>
+                  </span>
+                  Talk to our team
+                </a>
+              </div>
+            </div>
+
+            <div class="relative z-10 flex min-w-0 flex-col justify-center rounded-2xl border border-white/15 bg-white/10 px-5 py-6 backdrop-blur sm:px-8 sm:py-8">
+              <h2 class="font-poppins text-2xl font-bold tracking-[-0.03em] leading-tight text-white sm:text-3xl mb-4 max-w-[360px] break-words">Turn sustainability into a strategic advantage.</h2>
+              <p class="mb-7 max-w-[360px] text-base leading-7 text-white/80 sm:text-[17px] break-words">Download the whitepaper to learn how to embed ESG into capital allocation, operations, and growth strategy.</p>
+
+              <button type="button" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg px-6 text-[15px] font-medium sm:w-fit" @click="downloadOpen = true">
+                <span class="flex h-[18px] w-[18px] items-center justify-center">
+                  <iconify-icon icon="lucide:download" style="font-size: 18px"></iconify-icon>
+                </span>
+                Download Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="pt-16 pb-24 sm:pt-20 sm:pb-28 bg-[#f5f7f6] text-center border-t border-[#e2e8e6]">
+        <div class="js-reveal container mx-auto px-4 lg:px-12">
+          <h2 class="font-poppins text-2xl sm:text-3xl leading-tight lg:text-4xl font-bold mb-6 text-[#343f52]">About ecoPRISM</h2>
+          <p class="text-[15px] sm:text-[17px] leading-7 text-[#575757] max-w-[800px] mx-auto">
+            ecoPRISM revolutionizes sustainability management for enterprises by automating data collection, generating advanced insights, and facilitating scenario simulations for actionable strategies. With a SaaS-based approach, ecoPRISM empowers businesses to set and monitor ambitious targets while ensuring compliance with regulatory requirements, including the new CSRD regulation. As business leaders navigate their ESG transformation journey, ecoPRISM provides essential tools.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Download Modal (same HubSpot form as reference page) -->
+    <div x-show="downloadOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Download whitepaper" @keydown.escape.window="downloadOpen = false">
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" @click="downloadOpen = false" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-h-[min(90vh,800px)] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white shadow-2xl">
+        <div class="flex items-center justify-between border-b px-4 py-3 sm:px-6 sm:py-4">
+          <div class="font-poppins text-lg font-semibold text-[#343f52]">Download Whitepaper</div>
+          <button type="button" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" @click="downloadOpen = false" aria-label="Close">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="p-4 sm:p-6">
+          <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+          <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+          <div id="hs-download-form"></div>
+          <script>
+            (function () {
+              function createFormOnce() {
+                if (window.__ecoWhitepaperHsFormMounted) return;
+                if (typeof hbspt === "undefined" || !hbspt.forms || !hbspt.forms.create) return;
+                window.__ecoWhitepaperHsFormMounted = true;
+                hbspt.forms.create({
+                  portalId: "40029313",
+                  formId: "c0a17f04-8883-4722-b477-06e360528d81",
+                  region: "na2",
+                  target: "#hs-download-form",
+                });
+              }
+
+              createFormOnce();
+              setTimeout(createFormOnce, 250);
+              setTimeout(createFormOnce, 1000);
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Component (same as index.html) -->
+    <div id="footer-container"></div>
+
+    <!-- Alpine.js Components (same as index.html) -->
+    <script src="/v3/assets/js/components.js"></script>
+    <script src="/v3/assets/js/utils.js"></script>
+
+    <!-- Load Footer Component with automatic versioning (same as index.html) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function initScrollReveals() {
+          var nodes = document.querySelectorAll(".js-reveal");
+          if (!nodes.length) return;
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            nodes.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          if (!("IntersectionObserver" in window)) {
+            nodes.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.06 },
+          );
+          nodes.forEach(function (el) {
+            io.observe(el);
+          });
+        }
+        initScrollReveals();
+
+        const loadFooter = () => {
+          if (typeof getVersionedUrl === "function") {
+            const footerUrl = getVersionedUrl("/v3/components/footer.html");
+            fetch(footerUrl)
+              .then((response) => response.text())
+              .then((data) => {
+                document.getElementById("footer-container").innerHTML = data;
+              })
+              .catch((error) => console.error("Error loading footer:", error));
+          } else {
+            const cacheVersion = new Date().getFullYear() + String(new Date().getMonth() + 1).padStart(2, "0") + String(new Date().getDate()).padStart(2, "0");
+            fetch("/v3/components/footer.html?v=" + cacheVersion)
+              .then((response) => response.text())
+              .then((data) => {
+                document.getElementById("footer-container").innerHTML = data;
+              })
+              .catch((error) => console.error("Error loading footer:", error));
+          }
+        };
+        setTimeout(loadFooter, 100);
+      });
+    </script>
+
+    <!-- Suppress Tailwind CDN warning for development (same as index.html) -->
+    <script>
+      const originalWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && args[0].includes && args[0].includes("cdn.tailwindcss.com should not be used in production")) {
+          return;
+        }
+        originalWarn.apply(console, args);
+      };
+    </script>
+  </body>
+</html>

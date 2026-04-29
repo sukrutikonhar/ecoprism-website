@@ -1,0 +1,549 @@
+/* Custom styles for Ecoprism Alpine.js Homepage */
+
+/* Hero Section Styles */
+.hero-gradient {
+  background: linear-gradient(178deg, rgba(249, 212, 35, 0.1) 14.96%, rgba(249, 212, 35, 0.5) 47.06%, rgba(111, 134, 100, 0.8) 74.16%, #407775 98.04%);
+}
+
+.hero-title {
+  color: #407775;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Custom CSS Variables */
+:root {
+  --ecoprism-primary: #407775;
+  --ecoprism-secondary: #588885;
+  --ecoprism-accent: #9dbdb8;
+  --ecoprism-yellow: #fbbf24;
+  --ecoprism-dark: #1f2937;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* Ensure header blends properly with background */
+header {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* Poppins for Headings and Buttons */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+}
+
+button,
+.btn,
+.btn-primary,
+.btn-secondary,
+a.button,
+input[type="submit"],
+input[type="button"] {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+}
+
+/* 3D Card Flip Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--ecoprism-primary), var(--ecoprism-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ecoprism-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ecoprism-secondary);
+}
+
+/* Loading Animation */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--ecoprism-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  background: linear-gradient(135deg, var(--ecoprism-primary), var(--ecoprism-secondary));
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--ecoprism-secondary), var(--ecoprism-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(64, 119, 117, 0.3);
+}
+
+.btn-secondary {
+  background: var(--ecoprism-yellow);
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.btn-secondary:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+}
+
+/* All CTA buttons use Poppins font */
+a[class*="bg-"],
+button[class*="bg-"],
+.cta-button,
+a[href*="contact"],
+a[href*="demo"],
+a[href*="explore"] {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Card Styles */
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--ecoprism-yellow);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Navigation menu items font */
+nav .nav-link,
+nav button,
+nav a,
+header nav button,
+header nav a,
+header button,
+header a {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500;
+}
+
+/* Smaller chevron icons */
+.chevron-icon {
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px;
+  min-height: 12px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon path {
+  stroke-width: 3 !important;
+}
+
+.chevron-icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Video Play Button */
+.video-play-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.video-play-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.video-play-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 0;
+  }
+}
+
+/* Text Selection */
+::selection {
+  background: rgb(121 160 158) !important;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgb(121 160 158) !important;
+  color: #fff;
+}
+
+/* Focus Styles - Remove yellow outline */
+button:focus,
+a:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove focus outline from navigation buttons specifically */
+nav button:focus,
+nav a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Alpine.js x-cloak */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1f2937;
+    --text-primary: #f9fafb;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--ecoprism-primary);
+  }
+
+  .btn-primary {
+    border: 2px solid var(--ecoprism-primary);
+  }
+}
+
+/* Custom Utilities */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+}
+
+/* Container Max Width */
+.container {
+  max-width: 1400px !important;
+}
+
+/* Grid Improvements */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 2rem;
+  }
+}
+
+/* Flexbox Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Spacing Utilities */
+.space-y > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Shared ecoGRID CTA buttons: solid fill by default, brand gradient on hover */
+/* (Used by index, ecogrid, case studies, whitepapers — keep in sync visually.) */
+/* -------------------------------------------------------------------------- */
+
+.ecogrid-btn-primary {
+  background: #2f7f75;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(47, 119, 117, 0.28);
+}
+
+.ecogrid-btn-primary:hover {
+  background: linear-gradient(165deg, #3a7d6e 0%, #2f6f64 55%, #285a50 100%);
+  box-shadow: 0 10px 28px rgba(47, 111, 100, 0.42);
+}
+
+.ecogrid-btn-header {
+  background: #407775;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(32, 90, 84, 0.32);
+}
+
+.ecogrid-btn-header:hover {
+  background: linear-gradient(165deg, #4d8f82 0%, #407775 50%, #356963 100%);
+  box-shadow: 0 8px 22px rgba(32, 90, 84, 0.48);
+}
+
+.ecogrid-btn-cta-gold {
+  background: #f4b940;
+  color: #0b2e26;
+  box-shadow: 0 6px 18px rgba(244, 185, 64, 0.32);
+}
+
+.ecogrid-btn-cta-gold:hover {
+  background: linear-gradient(165deg, #fce089 0%, #f4b940 45%, #e0a32a 100%);
+  box-shadow: 0 12px 34px rgba(244, 185, 64, 0.5);
+}
