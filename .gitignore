@@ -1,0 +1,9 @@
+# Local temp / tooling artifacts
+.playwright-mcp/
+.tmp-docx/
+.tmp-docx-raw.xml
+.tmp-docx.zip
+
+# Local archive dumps
+eco.zip
+teams.zip
