@@ -31,7 +31,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ecoprism.com/csrd-reporting/</loc>
+  <loc>https://ecoprism.com/csrd-reporting</loc>
   <lastmod>2026-04-15T08:14:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -196,6 +196,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://ecoprism.com/resources/insights/esg-data-anomaly-detection</loc>
+  <lastmod>2026-07-10T08:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://ecoprism.com/resources/insights/ai-esg-compliance</loc>
   <lastmod>2026-04-15T08:15:01+00:00</lastmod>
   <priority>0.70</priority>
@@ -216,7 +221,7 @@
   <priority>0.70</priority>
 </url>
 <url>
-  <loc>https://ecoprism.com/resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM</loc>
+  <loc>https://ecoprism.com/resources/insights/carbon-accounting-made-easy-with-ecoprism</loc>
   <lastmod>2026-04-15T08:15:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
@@ -411,7 +416,7 @@
   <priority>0.70</priority>
 </url>
 <url>
-  <loc>https://ecoprism.com/resources/insights/SB-253-&amp;-SB-261-Compliance-Guide</loc>
+  <loc>https://ecoprism.com/resources/insights/sb-253-sb-261-compliance-guide</loc>
   <lastmod>2026-04-15T08:15:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>

@@ -547,3 +547,324 @@ nav a:focus {
   background: linear-gradient(165deg, #fce089 0%, #f4b940 45%, #e0a32a 100%);
   box-shadow: 0 12px 34px rgba(244, 185, 64, 0.5);
 }
+
+/* ==========================================================================
+   v3 landing pages — shared (teams, csrd, csrd-adoption, california)
+   ========================================================================== */
+
+/* Inter body when Tailwind font-sans is on <body> */
+body.font-sans {
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+}
+
+.teams-page,
+.csrd-page,
+.caad-page,
+.ca-page {
+  overflow-x: clip;
+}
+
+/* Section headings — teams + csrd (same scale) */
+.teams-h2,
+.csrd-h2 {
+  font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #343f52;
+}
+
+@media (min-width: 640px) {
+  .teams-h2,
+  .csrd-h2 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .teams-h2,
+  .csrd-h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+}
+
+.teams-h2--center {
+  text-align: center;
+}
+
+/* Subheadings — teams + csrd-adoption */
+.teams-h3,
+.caad-h3 {
+  font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #343f52;
+}
+
+@media (min-width: 1024px) {
+  .teams-h3,
+  .caad-h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.teams-h4,
+.caad-h4 {
+  font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #343f52;
+}
+
+@media (min-width: 1024px) {
+  .teams-h4,
+  .caad-h4 {
+    font-size: 1.125rem;
+  }
+}
+
+/* Section padding — teams + csrd-adoption */
+.teams-section-pad,
+.caad-section-pad {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .teams-section-pad,
+  .caad-section-pad {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+/* ecoGRID section backgrounds — csrd + csrd-adoption */
+.csrd-bg-white,
+.caad-bg-white {
+  background-color: #ffffff;
+}
+
+.csrd-bg-mint,
+.csrd-bg-mist,
+.caad-bg-mint {
+  background-color: #f3f8f2;
+}
+
+.csrd-bg-gold-rise,
+.csrd-bg-soft,
+.caad-bg-gold-rise {
+  background: linear-gradient(0deg, rgba(249, 212, 35, 0.4) 0%, #ffffff 100%);
+}
+
+.csrd-bg-gold-wash,
+.caad-bg-gold-wash {
+  background: linear-gradient(91deg, rgba(249, 212, 35, 0.4) -31.19%, #ffffff 68.98%);
+}
+
+/* Pretitle eyebrow pill — shared base */
+.csrd-pretitle,
+.caad-pretitle {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.csrd-pretitle--on-white,
+.caad-pretitle--on-white {
+  background-color: #f3f8f2;
+  color: #407775;
+}
+
+.csrd-pretitle--on-gold,
+.caad-pretitle--on-gold {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #105447;
+  border: 1px solid rgba(250, 180, 48, 0.25);
+}
+
+/* Hero entrance + scroll reveal (csrd, california) */
+@keyframes ecoprism-hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: ecoprism-hero-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-reveal-delay-img,
+.hero-reveal-delay-visual {
+  animation-delay: 0.05s;
+}
+
+.hero-reveal-delay-h1 {
+  animation-delay: 0.4s;
+}
+
+.hero-reveal-delay-lead {
+  animation-delay: 0.65s;
+}
+
+.hero-reveal-delay-cta {
+  animation-delay: 0.9s;
+}
+
+.hero-reveal-delay-badges {
+  animation-delay: 1.1s;
+}
+
+/* California hero uses slightly later h1/lead/cta delays */
+.ca-page .hero-reveal-delay-h1 {
+  animation-delay: 0.45s;
+}
+
+.ca-page .hero-reveal-delay-lead {
+  animation-delay: 0.7s;
+}
+
+.ca-page .hero-reveal-delay-cta {
+  animation-delay: 0.95s;
+}
+
+.js-reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.js-reveal-delay-1 {
+  transition-delay: 0.06s;
+}
+
+.js-reveal-delay-2 {
+  transition-delay: 0.12s;
+}
+
+.js-reveal-delay-3 {
+  transition-delay: 0.18s;
+}
+
+.js-reveal-delay-4 {
+  transition-delay: 0.24s;
+}
+
+.cta-bg {
+  background: linear-gradient(109deg, #0b2e26 0%, #407775 100%);
+}
+
+.ecogrid-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    filter 0.2s ease;
+}
+
+.ecogrid-btn:hover {
+  transform: translateY(-2px);
+}
+
+.ecogrid-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.ecogrid-btn:focus-visible {
+  outline: 2px solid #fab430;
+  outline-offset: 3px;
+}
+
+.ecogrid-btn-outline {
+  background: rgba(255, 255, 255, 0.65);
+  border: 2px solid #2f6f64;
+  color: #2f6f64;
+  box-shadow: 0 2px 8px rgba(47, 111, 100, 0.08);
+}
+
+.ecogrid-btn-outline:hover {
+  background: rgba(47, 111, 100, 0.1);
+  border-color: #245548;
+  color: #1a3d36;
+  box-shadow: 0 6px 18px rgba(47, 111, 100, 0.16);
+}
+
+.ecogrid-btn-outline-light {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  color: #fff !important;
+}
+
+.ecogrid-btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.ca-page .ecogrid-btn-outline-light {
+  background: #fff !important;
+}
+
+.ca-page .ecogrid-btn-outline-light:hover {
+  background: rgba(47, 111, 100, 0.08) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .js-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .ecogrid-btn:hover,
+  .ecogrid-btn:active {
+    transform: none;
+  }
+
+  .ecogrid-btn {
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+}

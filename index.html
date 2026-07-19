@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -98,25 +98,26 @@
           "Noto Sans",
           sans-serif;
       }
+
+      /* Use Poppins for all headings and titles */
+      h1, h2, h3, h4, h5, h6,
+      .hero-title,
+      .hero-heading,
+      .hero-reveal-h1,
+      .text-3xl,
+      .text-4xl,
+      .text-5xl,
+      .text-6xl {
+        font-family: Poppins, ui-sans-serif, system-ui, sans-serif !important;
+      }
+
+      /* Ensure body text stays Inter */
+      p, span, a, button, li, td, th, label, input, textarea, div:not([class*="title"]):not([class*="heading"]) {
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+
       .cta-bg {
         background: linear-gradient(109deg, #0b2e26 0%, #407775 100%);
-      }
-      header:not(.bg-white) .site-header-bar button.text-ecoprism-text {
-        color: #ffffff !important;
-      }
-      header .mobile-nav-drawer {
-        color: #111827;
-      }
-      header .mobile-nav-drawer a,
-      header .mobile-nav-drawer button {
-        color: #111827 !important;
-      }
-      header .mobile-nav-drawer a:hover,
-      header .mobile-nav-drawer button:hover {
-        color: #407775 !important;
-      }
-      header .mobile-nav-drawer svg {
-        color: #111827;
       }
 
       /* Home — same motion + buttons as ecoGRID product page */
@@ -356,214 +357,7 @@
     </script>
   </head>
   <body class="overflow-x-hidden bg-white font-sans text-ecoprism-text">
-    <!-- Header (aligned with Unisys / latest site nav) -->
-    <header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: window.scrollY > 0 }" x-init="const update = () => { isScrolled = window.scrollY > 0; }; update(); requestAnimationFrame(update); window.addEventListener('scroll', update, { passive: true });" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-cloak>
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex-shrink-0">
-            <a href="/" class="flex items-center">
-              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-9 w-auto" />
-            </a>
-          </div>
-
-          <div class="hidden lg:block">
-            <div class="ml-10 flex items-center space-x-8">
-              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
-                  About
-                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
-                  <a href="/about-us" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
-                  <a href="/our-team" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
-                  <a href="/careers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
-                  <a href="/news" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News</a>
-                  <a href="/events" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
-                </div>
-              </div>
-
-              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
-                  Products
-                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 z-50 flex w-max max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-gray-200 bg-white py-3 shadow-lg">
-                  <div class="flex shrink-0 flex-col">
-                    <a href="/esg-platform" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Platform</a>
-                    <a href="/csrd-reporting" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD Reporting</a>
-                    <a href="/ecoquote" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoQUOTE</a>
-                  </div>
-                  <div class="w-px shrink-0 self-stretch bg-gray-200" aria-hidden="true"></div>
-                  <div class="flex shrink-0 flex-col">
-                    <a href="/esg-benchmarking" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ESG Benchmarking</a>
-                    <a href="/ecobot" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">CSRD ecobot</a>
-                    <a href="/ecogrid" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text transition-colors duration-200 hover:bg-gray-50 hover:text-ecoprism-primary">ecoGRID</a>
-                  </div>
-                </div>
-              </div>
-              <a href="/ecoprism-ai" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium py-4">ecoPRISM AI</a>
-
-              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
-                  Services
-                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
-                  <a href="/services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
-                  <a href="/services/training-capacity-building" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
-                </div>
-              </div>
-
-              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
-                  Case Studies
-                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
-                  <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Sustainability in Proposals</a>
-                  <a href="/resources/case-studies/unisys-climate-risk" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Climate Risk Intelligence</a>
-                  <a href="/resources/case-studies/acumant-ecovadis" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">EcoVadis Readiness</a>
-                  <a href="/resources/case-studies/camfil-esg-training" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Capacity Building</a>
-                  <a href="/resources/case-studies/double-materiality-assessment" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Double Materiality Assessment</a>
-                </div>
-              </div>
-
-              <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
-                  Resources
-                  <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
-                  <a href="/resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
-                  <a href="/resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
-                  <a href="/resources/glossary" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
-                  <a href="/resources/csrd-adoption" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
-                  <a href="/resources/california-climate-laws-explained" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
-                  <a href="/resources/brsr-reporting" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">BRSR Reporting</a>
-                </div>
-              </div>
-
-              <a href="/contact-us" class="ecogrid-btn ecogrid-btn-header rounded-full px-6 py-2 text-sm font-semibold">Contact Us</a>
-            </div>
-          </div>
-
-          <div class="lg:hidden">
-            <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" class="rounded-md p-2 text-ecoprism-text transition hover:bg-black/5 hover:text-ecoprism-primary active:scale-95" aria-label="Toggle mobile menu" :aria-expanded="mobileMenuOpen">
-              <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 lg:hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-50" @click="mobileMenuOpen = false"></div>
-        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="mobile-nav-drawer relative flex h-full min-h-0 w-full max-w-xs flex-col bg-white shadow-xl">
-          <div class="flex shrink-0 items-center justify-between border-b p-4">
-            <div class="flex items-center">
-              <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
-            </div>
-            <button type="button" @click="mobileMenuOpen = false" class="rounded-md p-2 text-ecoprism-text hover:bg-gray-100 hover:text-ecoprism-primary">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div class="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-4">
-            <div>
-              <button type="button" @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
-                About
-                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div x-show="activeDropdown === 'about'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-                <a href="/about-us" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
-                <a href="/our-team" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
-                <a href="/careers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
-                <a href="/news" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">News</a>
-                <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
-              </div>
-            </div>
-            <div>
-              <button type="button" @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
-                Products
-                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div x-show="activeDropdown === 'products'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-                <a href="/esg-platform" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Platform</a>
-                <a href="/csrd-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Reporting</a>
-                <a href="/ecoquote" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
-                <a href="/esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
-                <a href="/ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
-                <a href="/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
-              </div>
-            </div>
-            <a href="/ecoprism-ai" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">ecoPRISM AI</a>
-            <div>
-              <button type="button" @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
-                Services
-                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div x-show="activeDropdown === 'services'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-                <a href="/services/esg-advisory" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Advisory</a>
-                <a href="/services/training-capacity-building" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Training and Capacity Building</a>
-              </div>
-            </div>
-            <div>
-              <button type="button" @click="activeDropdown = activeDropdown === 'casestudies' ? null : 'casestudies'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
-                Case Studies
-                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'casestudies' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div x-show="activeDropdown === 'casestudies'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-                <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Sustainability in Proposals</a>
-                <a href="/resources/case-studies/unisys-climate-risk" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Climate Risk Intelligence</a>
-                <a href="/resources/case-studies/acumant-ecovadis" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">EcoVadis Readiness</a>
-                <a href="/resources/case-studies/camfil-esg-training" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Capacity Building</a>
-                <a href="/resources/case-studies/double-materiality-assessment" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Double Materiality Assessment</a>
-              </div>
-            </div>
-            <div>
-              <button type="button" @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
-                Resources
-                <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-                <a href="/resources/insights/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
-                <a href="/resources/whitepapers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
-                <a href="/resources/glossary" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
-                <a href="/resources/csrd-adoption" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
-                <a href="/resources/california-climate-laws-explained" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
-                <a href="/resources/brsr-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">BRSR Reporting</a>
-              </div>
-            </div>
-            <a href="/contact-us" class="ecogrid-nav-cta block rounded-full px-3 py-2 text-base font-semibold text-ecoprism-text">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div id="header-container" data-header-container data-header-variant="dark"></div>
 
     <main>
       <!-- Hero Section -->
@@ -578,8 +372,8 @@
 
               <!-- CTA Buttons -->
               <div class="hero-reveal hero-reveal-delay-cta flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
-                <a href="/contact-us" class="ecogrid-btn ecogrid-btn-primary min-h-[44px] rounded-lg px-7 py-3 text-center text-sm font-semibold sm:text-base">Book a Demo</a>
-                <a href="/esg-platform" class="ecogrid-btn ecogrid-btn-outline min-h-[44px] rounded-lg px-7 py-3 text-center text-sm font-semibold sm:text-base">Platform Overview</a>
+                <a href="/contact-us" class="app-btn app-btn-primary min-h-[44px] rounded-lg px-7 py-3 text-center text-sm font-semibold sm:text-base">Book a Demo</a>
+                <a href="/esg-platform" class="app-btn app-btn-outline min-h-[44px] rounded-lg px-7 py-3 text-center text-sm font-semibold sm:text-base">Platform Overview</a>
               </div>
             </div>
 
@@ -709,7 +503,7 @@
                   <!-- Bottom Section with CTA and Image -->
                   <div class="flex items-end justify-between gap-4">
                     <!-- CTA Button -->
-                    <a href="/resources/california-climate-laws-explained" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
+                    <a href="/resources/california-climate-laws-explained" class="app-btn app-btn-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
 
                     <!-- Regulatory Image -->
                     <div class="flex-shrink-0">
@@ -744,7 +538,7 @@
                   <!-- Bottom Section with CTA and Image -->
                   <div class="flex items-end justify-between gap-4">
                     <!-- CTA Button -->
-                    <a href="/resources/csrd-adoption" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
+                    <a href="/resources/csrd-adoption" class="app-btn app-btn-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
 
                     <!-- Regulatory Image -->
                     <div class="flex-shrink-0">
@@ -779,7 +573,7 @@
                   <!-- Bottom Section with CTA and Image -->
                   <div class="flex items-end justify-between gap-4">
                     <!-- CTA Button -->
-                    <a href="/resources/brsr-reporting" class="ecogrid-btn ecogrid-btn-cta-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
+                    <a href="/resources/brsr-reporting" class="app-btn app-btn-gold inline-flex items-center whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold">Explore more</a>
 
                     <!-- Regulatory Image -->
                     <div class="flex-shrink-0">
@@ -1003,7 +797,7 @@
               </div>
 
               <!-- Right: CTA Button -->
-              <a :href="testimonials[currentTestimonial].link" class="shrink-0 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors duration-200 text-sm sm:text-base" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #407775"> Read Full Case Study </a>
+              <a :href="testimonials[currentTestimonial].link" class="app-btn app-btn-primary shrink-0 rounded-lg px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold"> Read Full Case Study </a>
             </div>
 
             <!-- Slide Indicators -->
@@ -1118,7 +912,7 @@
 
               <!-- CTA Button -->
               <div class="flex">
-                <a href="/contact-us" class="ecogrid-btn ecogrid-btn-outline ecogrid-btn-outline-light mb-16 inline-block min-h-[44px] rounded-lg border-2 border-ecoprism-primary px-7 py-3 text-sm font-semibold sm:text-base lg:mb-0">Book a Demo</a>
+                <a href="/contact-us" class="app-btn app-btn-outline app-btn-outline-light mb-16 inline-block min-h-[44px] rounded-lg border-2 border-ecoprism-primary px-7 py-3 text-sm font-semibold sm:text-base lg:mb-0">Book a Demo</a>
               </div>
             </div>
 
@@ -1165,7 +959,7 @@
               <h2 class="text-3xl lg:text-4xl font-bold text-ecoprism-title mb-6">Strategic ESG Guidance, Every Step of the Way</h2>
               <p class="text-lg text-ecoprism-text mb-8 leading-relaxed">Our ESG experts partner with your team to design and operationalize sustainability strategies – from materiality assessments to regulatory readiness, including CSRD, SB 253/261 and other frameworks.</p>
               <p class="text-lg text-ecoprism-text mb-8 leading-relaxed">Our goal: to transform ESG from a compliance task into a true strategic advantage.</p>
-              <a href="/contact-us" class="ecogrid-btn ecogrid-btn-primary inline-block min-h-[44px] rounded-lg px-7 py-3 font-semibold">Book a Consultation</a>
+              <a href="/contact-us" class="app-btn app-btn-primary inline-block min-h-[44px] rounded-lg px-7 py-3 font-semibold">Book a Consultation</a>
             </div>
 
             <div class="space-y-6" x-data="scrollHoverCards()">
@@ -1718,7 +1512,7 @@
           <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#f4b940]">Get Started</p>
           <h2 class="mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">Ready to Transform Your ESG Journey?</h2>
           <p class="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg md:text-xl">Join hundreds of organizations that trust ecoPRISM to guide their sustainability transformation.</p>
-          <a href="/contact-us" class="ecogrid-btn ecogrid-btn-cta-gold mt-10 inline-flex min-h-[48px] items-center gap-2 rounded-lg px-8 py-3 text-base font-semibold">Get Started Today</a>
+          <a href="/contact-us" class="app-btn app-btn-gold mt-10 inline-flex min-h-[48px] items-center gap-2 rounded-lg px-8 py-3 text-base font-semibold">Get Started Today</a>
         </div>
       </section>
     </main>
@@ -1727,7 +1521,7 @@
     <div id="footer-container"></div>
 
     <!-- Alpine.js Components - Automatically versioned by cache-buster.js -->
-    <script src="/v3/assets/js/components.js"></script>
+    <script src="/v3/assets/js/components.js?v=1.1.2"></script>
     <script src="/v3/assets/js/utils.js"></script>
 
     <!-- Scroll Hover Cards Function -->

@@ -28,6 +28,48 @@ window.loadComponentIntoElement = async function (componentName, targetElement) 
   }
 };
 
+// Strip <script> tags — innerHTML injection does not execute them
+function stripComponentScripts(html) {
+  return html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+}
+
+// Load shared site header after DOM is ready
+async function loadSiteHeader() {
+  const headerContainer = document.getElementById("header-container");
+  if (!headerContainer || headerContainer.dataset.headerLoaded === "true") return;
+
+  try {
+    let componentHTML = await loadComponent("header");
+    if (!componentHTML) return;
+
+    componentHTML = stripComponentScripts(componentHTML);
+    headerContainer.innerHTML = componentHTML;
+    headerContainer.dataset.headerLoaded = "true";
+
+    // Pre-set the correct logo src before Alpine hydrates (avoids flash).
+    // Alpine's :src binding takes full control once initTree() runs.
+    const variant = headerContainer.getAttribute("data-header-variant") || "light";
+    const logoImg = headerContainer.querySelector(".site-header-logo");
+    if (logoImg) {
+      logoImg.src = variant === "light"
+        ? "/v3/assets/img/logos/logo-light.webp"
+        : "/v3/assets/img/logos/logo-dark.webp";
+    }
+
+    if (window.Alpine) {
+      Alpine.initTree(headerContainer);
+    }
+  } catch (error) {
+    console.error("Failed to load site header:", error);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadSiteHeader);
+} else {
+  loadSiteHeader();
+}
+
 // Component Loader
 async function loadComponent(componentName) {
   console.log(`Loading component: ${componentName}`);
@@ -39,19 +81,38 @@ async function loadComponent(componentName) {
   }
 
   try {
-    const componentPath = `components/${componentName}.html?v=1.0.5`;
-    console.log(`Fetching component from: ${componentPath}`);
+    // Try multiple paths for compatibility with local and production environments
+    const paths = [
+      `/v3/components/${componentName}.html?v=1.1.1`, // Production absolute path
+      `./v3/components/${componentName}.html?v=1.1.1`, // Local relative from root
+      `../v3/components/${componentName}.html?v=1.1.1`, // Local relative (one level deep)
+      `../../v3/components/${componentName}.html?v=1.1.1`, // Local relative (two levels deep)
+    ];
 
-    const response = await fetch(componentPath);
-    if (!response.ok) {
-      throw new Error(`Failed to load component: ${response.status} - ${response.statusText}`);
+    let lastError = null;
+    
+    for (const componentPath of paths) {
+      try {
+        console.log(`Attempting to fetch from: ${componentPath}`);
+        const response = await fetch(componentPath);
+        
+        if (response.ok) {
+          const componentHTML = await response.text();
+          console.log(`Component ${componentName} loaded successfully from: ${componentPath}`);
+          
+          // Cache the component
+          componentCache.set(componentName, componentHTML);
+          return componentHTML;
+        }
+      } catch (e) {
+        lastError = e;
+        console.log(`Path failed, trying next: ${componentPath}`);
+        continue;
+      }
     }
-    const componentHTML = await response.text();
-    console.log(`Component ${componentName} loaded successfully`);
-
-    // Cache the component
-    componentCache.set(componentName, componentHTML);
-    return componentHTML;
+    
+    // If all paths failed, throw error with helpful message
+    throw new Error(`Could not load component from any path. Last error: ${lastError?.message}`);
   } catch (error) {
     console.error(`Error loading component ${componentName}:`, error);
     return `<div class="text-red-500 p-4">Error loading ${componentName} component: ${error.message}</div>`;
@@ -60,6 +121,28 @@ async function loadComponent(componentName) {
 
 // Component Loading Alpine Directive
 document.addEventListener("alpine:init", () => {
+  // Shared v3 site header (injected via loadSiteHeader)
+  Alpine.data("headerComponent", () => ({
+    mobileMenuOpen: false,
+    activeDropdown: null,
+    isScrolled: false,
+    variant: "light",
+
+    init() {
+      const container = document.getElementById("header-container");
+      if (container) {
+        this.variant = container.getAttribute("data-header-variant") || "light";
+      }
+
+      const updateScroll = () => {
+        this.isScrolled = window.scrollY > 0;
+      };
+
+      updateScroll();
+      window.addEventListener("scroll", updateScroll, { passive: true });
+    },
+  }));
+
   // Component loader directive
   Alpine.directive("component", async (el, { expression }, { Alpine }) => {
     const componentName = expression.replace(/['"]/g, "");

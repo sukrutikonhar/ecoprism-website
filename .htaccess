@@ -12,6 +12,22 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
+# Force California explained page to serve HTML (avoids wrong extensionless file on server)
+RewriteRule ^resources/california-climate-laws-explained/?$ /resources/california-climate-laws-explained.html [L]
+
+# CSRD Reporting page at site root — /csrd-reporting and /csrd-reporting/ serve csrd-reporting.html
+RewriteRule ^csrd-reporting/?$ /csrd-reporting.html [L]
+
+# CSRD marketing page at site root — /csrd and /csrd/ serve csrd.html (not whitepaper, not /csrd-reporting/)
+RewriteRule ^csrd/?$ /csrd.html [L]
+
+# CSRD Adoption intelligence page at site root
+RewriteRule ^csrd-adoption/?$ /csrd-adoption.html [L]
+
+# Our Team page at site root
+RewriteRule ^our-team/?$ /our-team.html [L]
+RewriteRule ^teams/?$ /our-team [R=301,L]
+
 # ===== Remove .html extension from all URLs site-wide =====
 # Redirect .html URLs to extensionless URLs (301 permanent redirect)
 # This rule catches requests with .html and redirects them to clean URLs
@@ -49,7 +65,8 @@ RewriteRule ^(.*)$ https://ecoprism.com%{REQUEST_URI}? [R=301,L]
 # Also exclude directory index pages (insights, whitepapers, events, careers)
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_URI} !^/v3/
-RewriteCond %{REQUEST_URI} !^/csrd-reporting
+RewriteCond %{REQUEST_URI} !^/csrd-reporting/?$
+RewriteCond %{REQUEST_URI} !^/csrd/?$
 RewriteCond %{REQUEST_URI} !^/microsoft-partners
 RewriteCond %{REQUEST_URI} !^/resources/case-studies
 # Exclude /resources/ directory (redirected separately)
@@ -71,12 +88,14 @@ RewriteRule ^(.+)/$ /$1 [R=301,L]
 # ===== End of directory index serving =====
 
 # Your existing 301 redirects
+# NOTE: /csrd.html must NOT redirect to a whitepaper — marketing page is csrd.html at site root; use https://ecoprism.com/csrd
 Redirect 301 /resources/ecobot https://ecoprism.com/ecobot
-Redirect 301 /csrd.html https://ecoprism.com/resources/whitepapers/decoding-csrd-faqs-for-sustainable-business-practices
 Redirect 301 /esg-platfrom/ https://ecoprism.com/esg-platform
 Redirect 301 /ecoprism/ https://ecoprism.com/esg-platform
 Redirect 301 /resources/california-climate-laws https://ecoprism.com/resources/california-climate-laws-explained
 Redirect 301 /resources/california-climate-laws/ https://ecoprism.com/resources/california-climate-laws-explained
+Redirect 301 /resources/california.html https://ecoprism.com/resources/california-climate-laws-explained
+Redirect 301 /resources/california https://ecoprism.com/resources/california-climate-laws-explained
 Redirect 301 /resources/whitepapers/california-climate-laws-explained/ https://ecoprism.com/resources/whitepapers/california-climate-laws-download
 Redirect 301 /ecoprism https://ecoprism.com/esg-platform
 Redirect 301 /redefining-sustainable-racing.html https://ecoprism.com/news/redefining-sustainable-racing
@@ -110,7 +129,8 @@ Redirect 301 /resources/insights/ai-esg-compliance/ https://ecoprism.com/resourc
 Redirect 301 /resources/insights/california-carb-sb253-sb261-compliance-update-2025/ https://ecoprism.com/resources/insights/california-carb-sb253-sb261-compliance-update-2025
 Redirect 301 /resources/insights/california-sb261-climate-risk-disclosure-guide/ https://ecoprism.com/resources/insights/california-sb261-climate-risk-disclosure-guide
 Redirect 301 /resources/insights/carb-draft-sb253-climate-reporting-template/ https://ecoprism.com/resources/insights/carb-draft-sb253-climate-reporting-template
-Redirect 301 /resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM/ https://ecoprism.com/resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM
+Redirect 301 /resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM https://ecoprism.com/resources/insights/carbon-accounting-made-easy-with-ecoprism
+Redirect 301 /resources/insights/Carbon-Accounting-Made-Easy-with-ecoPRISM/ https://ecoprism.com/resources/insights/carbon-accounting-made-easy-with-ecoprism
 Redirect 301 /resources/insights/cfos-finance-leaders-esg-implementation/ https://ecoprism.com/resources/insights/cfos-finance-leaders-esg-implementation
 Redirect 301 /resources/insights/cios-shaping-sustainable-future/ https://ecoprism.com/resources/insights/cios-shaping-sustainable-future
 Redirect 301 /resources/insights/climate-crisis-2023-unprecedented-records-global-catastrophes/ https://ecoprism.com/resources/insights/climate-crisis-2023-unprecedented-records-global-catastrophes
@@ -147,7 +167,10 @@ Redirect 301 /resources/insights/navigating-challenges-managing-reporting-scope-
 Redirect 301 /resources/insights/navigating-revised-esrs-draft-crucial-changes-impact/ https://ecoprism.com/resources/insights/navigating-revised-esrs-draft-crucial-changes-impact
 Redirect 301 /resources/insights/one-earth-one-voice-activating-worldwide-environmental-action/ https://ecoprism.com/resources/insights/one-earth-one-voice-activating-worldwide-environmental-action
 Redirect 301 /resources/insights/real-time-esg-data-in-sales-proposals/ https://ecoprism.com/resources/insights/real-time-esg-data-in-sales-proposals
-Redirect 301 /resources/insights/SB-253-&-SB-261-Compliance-Guide/ https://ecoprism.com/resources/insights/SB-253-&-SB-261-Compliance-Guide
+Redirect 301 /resources/insights/SB-253-&-SB-261-Compliance-Guide https://ecoprism.com/resources/insights/sb-253-sb-261-compliance-guide
+Redirect 301 /resources/insights/SB-253-&-SB-261-Compliance-Guide/ https://ecoprism.com/resources/insights/sb-253-sb-261-compliance-guide
+Redirect 301 /resources/insights/SB-253-%26-SB-261-Compliance-Guide https://ecoprism.com/resources/insights/sb-253-sb-261-compliance-guide
+Redirect 301 /resources/insights/SB-253-%26-SB-261-Compliance-Guide/ https://ecoprism.com/resources/insights/sb-253-sb-261-compliance-guide
 Redirect 301 /resources/insights/scope-3-emissions-accurate-measurement/ https://ecoprism.com/resources/insights/scope-3-emissions-accurate-measurement
 Redirect 301 /resources/insights/significance-of-biodiversity-for-business/ https://ecoprism.com/resources/insights/significance-of-biodiversity-for-business
 Redirect 301 /resources/insights/simplifying-sustainability-dashboards/ https://ecoprism.com/resources/insights/simplifying-sustainability-dashboards

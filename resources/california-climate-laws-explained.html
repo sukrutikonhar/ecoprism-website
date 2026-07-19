@@ -1,1477 +1,655 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <!-- <meta property="og:image" content="https://ecoprism.com/resources/esrs-adoption/esrsVo3.png" /> -->
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Learn how SB 253, SB 261 & SB 219 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead." />
-    <meta name="keywords" content="California climate laws, SB 253, SB 261, SB 219, California ESG compliance, CARB reporting, Scope 3 emissions, climate risk disclosures, California sustainability law, TCFD compliance, ISSB, ecoPRISM" />
+
+    <!-- Automatic Cache Buster -->
+    <script src="/v3/assets/js/cache-buster.js"></script>
+
+    <title>California Climate Laws (SB 253 &amp; 261) – Compliance Guide | ecoPRISM</title>
+    <meta name="description" content="Learn how SB 253 and SB 261 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead." />
+    <meta name="keywords" content="California climate laws, SB 253, SB 261, California ESG compliance, CARB reporting, Scope 3 emissions, climate risk disclosures, California sustainability law, TCFD compliance, ISSB, ecoPRISM" />
     <meta name="author" content="ecoPRISM" />
-    <title>California Climate Laws (SB 253, 261 & 219) – Compliance Guide</title>
-    <link rel="shortcut icon" href="../assets/img/favicon.webp" />
-    <link rel="stylesheet" href="../assets/css/plugins.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/eco.css" />
-    <link rel="stylesheet" href="../assets/css/colors/leaf.css" />
-
-    <!-- Canonical link -->
     <link rel="canonical" href="https://ecoprism.com/resources/california-climate-laws-explained" />
-
-    <!-- Alternate language links -->
     <link rel="alternate" hreflang="en" href="https://ecoprism.com/resources/california-climate-laws-explained" />
     <link rel="alternate" hreflang="x-default" href="https://ecoprism.com/resources/california-climate-laws-explained" />
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ecoprism.com/resources/california-climate-laws-explained" />
-    <meta property="og:title" content="California Climate Laws (SB 253, 261 & 219) – Compliance Guide" />
-    <meta property="og:description" content="Learn how SB 253, SB 261 & SB 219 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead." />
+    <meta property="og:title" content="California Climate Laws (SB 253 &amp; 261) – Compliance Guide" />
+    <meta property="og:description" content="Learn how SB 253 and SB 261 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead." />
     <meta property="og:image" content="https://ecoprism.com/assets/img/og-image/california-climate-laws.webp" />
     <meta property="og:site_name" content="ecoPRISM" />
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://ecoprism.com/resources/california-climate-laws-explained" />
-    <meta name="twitter:title" content="California Climate Laws (SB 253, 261 & 219) – Compliance Guide" />
-    <meta name="twitter:description" content="Learn how SB 253, SB 261 & SB 219 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead." />
+    <meta name="twitter:title" content="California Climate Laws (SB 253 &amp; 261) – Compliance Guide" />
+    <meta name="twitter:description" content="Learn how SB 253 and SB 261 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead." />
     <meta name="twitter:image" content="https://ecoprism.com/assets/img/og-image/california-climate-laws.webp" />
 
-    <!-- Inline Styles -->
+    <link rel="shortcut icon" href="/assets/img/favicon.webp" />
+
+    <!-- Google Fonts - Inter (body) & Poppins (accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <!-- Modern CSS Framework -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ecoprism: {
+                primary: "#407775",
+                secondary: "#588885",
+                accent: "#9dbdb8",
+                yellow: "#fbbf24",
+                dark: "#1f2937",
+                title: "#343f52",
+                text: "#575757",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+              poppins: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Inter", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Alpine.js x-cloak styling to prevent menu flash -->
     <style>
-      /* Global Styles */
-      .icon-svg,
-      .icon-svg.icon-svg-lg {
-        width: 4rem;
-        height: 4rem;
-      }
-
-      .esg-maturity .icon-svg.icon-svg-md {
-        width: 2.6rem;
-        height: 2.6rem;
-      }
-
-      .card.image-wrapper {
-        background-image: linear-gradient(to right top, #494949, #4e5055, #4e5861, #4a616c, #446a73, #39777a, #35847a, #419072, #5ea062, #89ad4c, #beb435, #407775) !important;
-      }
-
-      /* Background Utilities */
-      .bg-leafy {
-        background-image: linear-gradient(to right bottom, #494949, #4e5055, #4e5861, #4a616c, #446a73, #39777a, #35847a, #419072, #5ea062, #89ad4c, #beb435, #407775);
-      }
-
-      .bg-banner {
-        background-image: linear-gradient(to right top, #407775, #588885, #6f9995, #86aba6, #9dbdb8);
-      }
-
-      .bg-leafy2 {
-        background: linear-gradient(135deg, #407775 0%, #689f8a 50%, #407775 100%);
-      }
-
-      .bg-gradient-leaf {
-        background: linear-gradient(180deg, #407775, rgba(255, 255, 255, 0) 100%);
-      }
-
-      .bg-card {
-        background: linear-gradient(0deg, rgba(56, 124, 121, 1) 0%, rgba(218, 180, 50, 1) 100%);
-      }
-
-      /* Enhanced Card Styles */
-      .card {
-        transition: all 0.3s ease;
-        border-radius: 15px;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
-      }
-
-      /* Enhanced Button Styles */
-      .btn {
-        transition: all 0.3s ease;
-        border-radius: 25px;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Enhanced Badge Styles */
-      .badge {
-        transition: all 0.3s ease;
-      }
-
-      .badge:hover {
-        transform: scale(1.05);
-      }
-
-      /* Enhanced Icon Styles */
-      .icon {
-        transition: all 0.3s ease;
-      }
-
-      .icon:hover {
-        transform: scale(1.1);
-      }
-
-      /* Enhanced Table Styles */
-      .table {
-        border-radius: 15px;
-        overflow: hidden;
-      }
-
-      .table th {
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      /* Enhanced List Styles */
-      .icon-list li {
-        transition: all 0.3s ease;
-        /* padding: 8px 0; */
-      }
-
-      .icon-list li:hover {
-        transform: translateX(5px);
-      }
-
-      /* Enhanced Image Styles */
-      .card-img-top img {
-        transition: all 0.3s ease;
-      }
-
-      .card:hover .card-img-top img {
-        transform: scale(1.05);
-      }
-
-      /* Enhanced Gradient Text */
-      .text-gradient {
-        background: linear-gradient(135deg, #407775 0%, #407775 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      /* Enhanced Shadow Utilities */
-      .shadow-lg {
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
-      }
-
-      .hover-shadow-xl:hover {
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
-      }
-
-      /* Enhanced Border Radius */
-      .rounded-3 {
-        border-radius: 20px !important;
-      }
-
-      /* Enhanced Spacing */
-      .py-14 {
-        padding-top: 5rem !important;
-        padding-bottom: 5rem !important;
-      }
-
-      .py-md-16 {
-        padding-top: 6rem !important;
-        padding-bottom: 6rem !important;
-      }
-
-      /* Enhanced Typography */
-      .lead {
-        font-weight: 400;
-        line-height: 1.6;
-      }
-
-      /* Enhanced Color Utilities */
-      .text-leaf {
-        color: #407775 !important;
-      }
-
-      .text-yellow {
-        color: #407775 !important;
-      }
-
-      .bg-soft-leaf {
-        background-color: rgba(64, 119, 117, 0.1) !important;
-      }
-
-      .bg-soft-yellow {
-        background-color: rgba(250, 180, 48, 0.1) !important;
-      }
-
-      /* Enhanced Animation */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in-up {
-        animation: fadeInUp 0.6s ease-out;
-      }
-
-      /* Enhanced Responsive Design */
-      /* @media (max-width: 768px) {
-        .card-body {
-          padding: 1.5rem !important;
-        }
-      } */
-
-      /* Responsive Table Styles */
-      .table-responsive {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      @media (max-width: 768px) {
-        .table-responsive table {
-          min-width: 600px;
-        }
-
-        .table-responsive .table th,
-        .table-responsive .table td {
-          white-space: nowrap;
-          padding: 0.5rem;
-          font-size: 0.875rem;
-        }
-
-        .table-responsive .badge {
-          font-size: 0.75rem;
-          padding: 0.25rem 0.5rem;
-        }
-      }
-
-      .timeline-wrapper {
-        position: relative;
-        padding: 2rem 1rem;
-        margin: 0 auto;
-      }
-      .timeline-wrapper::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 100%;
-        background-color: rgba(64, 119, 117, 0.2);
-      }
-      .timeline-item {
-        position: relative;
-        display: flex;
-        align-items: flex-start;
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-      .timeline-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        top: 1.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 14px;
-        height: 14px;
-        background-color: #407775;
-        border: 3px solid #fff;
-        border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 2;
-      }
-
-      .item-content--left,
-      .item-content--center,
-      .item-content--right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .item-content--left,
-      .item-content--right {
-        width: 40%;
-      }
-      .item-content--center {
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        position: relative;
-      }
-      .date-box {
-        width: 143px;
-        text-align: center;
-        background: #fff;
-        padding: 0.25rem 0;
-        border: 2px solid #407775;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #2f3e55;
-        z-index: 3;
-        position: relative;
-        margin: 0 auto;
-      }
-      .item-content--center .date-box::before,
-      .item-content--center .date-box::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 2px;
-        background-color: #407775;
-        width: calc(34% + 0px);
-        z-index: 1;
-      }
-      .item-content--center .date-box::before {
-        left: -34%;
-      }
-      .item-content--center .date-box::after {
-        right: -34%;
-      }
-      .timeline-item:nth-child(even) .item-content--right,
-      .timeline-item:nth-child(odd) .item-content--left {
-        margin-top: -40px;
-      }
-
-      .timeline-item:nth-child(odd) .date-box::after {
-        display: none;
-      }
-
-      .timeline-item:nth-child(even) .date-box::before {
-        display: none;
-      }
-
-      .event-box {
-        width: 100%;
-        background: #fff;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-        position: relative;
-      }
-      .event-box h4 {
-        margin: 0 0 0.5rem;
-        font-size: 1rem;
-        color: #2f3e55;
-      }
-      .event-box p {
-        margin: 0;
-        color: #333333;
-        font-size: 0.95rem;
-        line-height: 1.4;
-      }
-
-      .timeline-item:nth-child(odd) .event-box {
-        background: linear-gradient(180deg, #b6d8d7 0%, #62a09d 100%);
-      }
-      .timeline-item:nth-child(even) .event-box {
-        background: linear-gradient(180deg, #fcde8b 0%, #407775 100%);
-      }
-
-      @media (max-width: 768px) {
-        .item-content--center {
-          order: 0;
-          margin-bottom: 0.75rem;
-        }
-        .item-content--left,
-        .item-content--right {
-          order: 1;
-        }
-        .timeline-item:nth-child(even) .item-content--right,
-        .timeline-item:nth-child(odd) .item-content--left {
-          margin-top: 0 !important;
-        }
-        .timeline-wrapper::before {
-          left: 20px;
-        }
-
-        .timeline-item {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          margin-bottom: 2rem;
-          padding-left: 2rem;
-        }
-        .timeline-item:last-child {
-          margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-          left: 10px;
-          top: 2.5rem;
-          transform: none;
-        }
-        .timeline-item:nth-child(even) .item-content--right,
-        .timeline-item:nth-child(odd) .item-content--left {
-          margin-top: 0 !important;
-        }
-        .item-content--left,
-        .item-content--center,
-        .item-content--right {
-          width: 100%;
-          padding-left: 0;
-          margin-top: 0.75rem;
-          text-align: left;
-        }
-        .item-content--center {
-          margin-bottom: 0.75rem;
-          display: flex;
-          justify-content: flex-start;
-        }
-        .item-content--center .date-box {
-          margin-left: 0;
-        }
-        .item-content--center .date-box::before,
-        .item-content--center .date-box::after {
-          display: none;
-        }
-        .event-box {
-          margin-top: 0;
-          border: 1px solid #ddd;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        .event-box h4 {
-          font-size: 1rem;
-        }
-        .event-box p {
-          font-size: 0.9rem;
-        }
-      }
-      /* Make direct child columns of the row share equal height */
-      @media (min-width: 768px) {
-        .box-1 .row,
-        .box-2 .row,
-        .box-3 .row {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: stretch;
-        }
-        .box-1 .card,
-        .box-2 .card,
-        .box-3 .card {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
-        .box-1 .card-body,
-        .box-2 .card-body,
-        .box-3 .card-body {
-          flex: 1 1 auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .image-wrapper.bg-cover {
-          min-height: 0rem;
-        }
-      }
-
-      @media only screen and (min-width: 500px) {
-        .did-you-know {
-          border-right: 2px solid #fff;
-        }
-      }
-
-      @media (min-width: 767px) {
-        .modal-content {
-          width: 70%;
-          margin: 0 auto;
-        }
-      }
-
-      @media (min-width: 992px) {
-        .process-wrapper.arrow [class*="col-"]:before {
-          top: 2rem !important;
-          opacity: 0.8;
-        }
+      [x-cloak] {
+        display: none !important;
       }
     </style>
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JTG1Q17RB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-6JTG1Q17RB");
-    </script>
+    <!-- Custom Styles - Automatically versioned by cache-buster.js -->
+    <link rel="stylesheet" href="/v3/assets/css/main.css?v=20260605" />
+    <link rel="stylesheet" href="/v3/assets/css/components.css" />
+    <link rel="stylesheet" href="/v3/assets/css/california-climate-laws.css?v=20260605" />
 
     <!-- Lead5beat Tracking Code -->
     <script type="text/javascript" src="https://secure.lead5beat.com/js/221793.js"></script>
-    <noscript><img src="https://secure.lead5beat.com/221793.png" style="display: none" / loading="lazy"></noscript>
+    <noscript><img src="https://secure.lead5beat.com/221793.png" style="display: none" loading="lazy" /></noscript>
 
-    <!-- Schema.org Markup -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "headline": "California Climate Laws (SB 253, 261 & 219) – Compliance Guide",
+        "headline": "California Climate Laws (SB 253 & 261) – Compliance Guide",
         "image": "https://ecoprism.com/assets/img/og-image/california-climate-laws.webp",
-        "author": {
-          "@type": "Person",
-          "name": "ecoPRISM"
-        },
+        "author": { "@type": "Organization", "name": "ecoPRISM" },
         "publisher": {
           "@type": "Organization",
           "name": "ecoPRISM",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://ecoprism.com/assets/img/logo-light.webp"
-          }
+          "logo": { "@type": "ImageObject", "url": "https://ecoprism.com/assets/img/logo-light.webp" }
         },
-        "description": "Learn how SB 253, SB 261 & SB 219 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead."
+        "description": "Learn how SB 253 and SB 261 reshape ESG reporting in California. Understand compliance timelines, risks, and how ecoPRISM helps you stay ahead."
       }
     </script>
   </head>
-  <body>
-    <div class="content-wrapper esg-maturity">
-      <header class="wrapper bg-soft-primary">
-        <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-dark">
-          <div class="container flex-lg-row flex-nowrap align-items-center">
-            <div class="navbar-brand w-100">
-              <a href="/">
-                <img class="logo-dark" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
-                <img class="logo-light" src="../assets/img/logo-light.webp" height="45px" alt="ecoPRISM Logo" />
-              </a>
-            </div>
-            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-              <div class="offcanvas-header d-lg-none">
-                <a href="/">
-                  <img class="logo-dark" src="../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" />
-                  <img class="logo-light" src="../assets/img/logo-light.webp" height="45px" alt="ecoPRISM Logo" />
+
+  <body class="overflow-x-hidden bg-white font-sans text-ecoprism-text">
+    <!-- Header (aligned with Unisys / latest site nav) -->
+    <div id="header-container" data-header-container data-header-variant="light"></div>
+
+    <main class="ca-page min-w-0">
+      <!-- Hero -->
+      <section class="ca-hero ca-noise relative -mt-20 overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-14 lg:pt-32 lg:pb-16">
+        <div class="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-[#3ddc97]/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-[#f4b940]/8 blur-3xl"></div>
+        <div class="container relative mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10 xl:gap-14">
+            <div class="order-2 lg:order-1 lg:col-span-6 xl:col-span-5">
+              <h1 class="hero-reveal hero-reveal-delay-h1 font-poppins text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.1]">Understand California's <span class="text-[#fab430]">Climate Laws</span></h1>
+              <p class="hero-reveal hero-reveal-delay-lead mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg lg:text-[1.125rem]">SB 253 and SB 261 are reshaping how companies disclose climate and sustainability data. Here's what these laws mean and how ecoPRISM helps you stay ahead.</p>
+              <div class="hero-reveal hero-reveal-delay-cta mt-10 flex flex-wrap items-center gap-4">
+                <a href="/resources/whitepapers/california-climate-laws-download" class="app-btn app-btn-gold inline-flex min-h-[52px] items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold sm:text-base">
+                  Explore Now
+                  <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </a>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
-              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="dropdown-item" href="/about-us">About Us</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/our-team">Our Team</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/careers">Careers</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/news">News</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/events">Events</a></li>
-                    </ul>
-                  </li>
-                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
-                    <div class="dropdown-menu dropdown-lg">
-                      <div class="dropdown-lg-content">
-                        <div>
-                          <ul class="list-unstyled">
-                            <li><a class="dropdown-item" href="/esg-platform">ESG Platform</a></li>
-                            <li><a class="dropdown-item" href="/csrd-reporting">CSRD Reporting</a></li>
-                            <li><a class="dropdown-item" href="/ecoquote">ecoQUOTE</a></li>
-                          </ul>
-                        </div>
-                        <!-- /.column -->
-                        <div>
-                          <ul class="list-unstyled">
-                            <li><a class="dropdown-item" href="/esg-benchmarking">ESG Benchmarking</a></li>
-                            <li><a class="dropdown-item" href="/ecobot">CSRD ecobot</a></li>
-                            <li><a class="dropdown-item" href="/ecogrid">ecoGRID</a></li>
-                          </ul>
-                        </div>
-                        <!-- /.column -->
-                      </div>
-                      <!-- /auto-column -->
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/ecoprism-ai">ecoPRISM AI</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="dropdown-item" href="/services/esg-advisory">ESG Advisory</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/services/training-capacity-building">Training and Capacity Building</a></li>
-                    </ul>
-                  </li>
-<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Case Studies</a>
+            </div>
+            <div class="order-1 relative lg:order-2 lg:col-span-6 xl:col-span-7">
+              <div class="hero-reveal hero-reveal-delay-img relative mx-auto max-w-lg lg:max-w-none lg:ml-auto">
+                <div class="relative overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
+                  <img src="/assets/img/banner/california-climate-laws-banner.webp" alt="California State Capitol — climate disclosure laws" class="ca-img-zoom h-auto w-full max-h-[280px] object-cover sm:max-h-[340px] lg:max-h-[400px]" width="800" height="520" decoding="async" fetchpriority="high" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0f2422]/80 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/abb-ecoquote-sustainability-reporting">Sustainability in Proposals</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/unisys-climate-risk">Climate Risk Intelligence</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/acumant-ecovadis">EcoVadis Readiness</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/camfil-esg-training">ESG Capacity Building</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/double-materiality-assessment">Double Materiality Assessment</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/insights">Insights</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/whitepapers">Whitepapers</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/glossary">ESG Glossary</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/csrd-adoption">CSRD Adoption</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/california-climate-laws-explained">California Climate Disclosure Laws</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="/resources/brsr-reporting">BRSR Reporting</a></li>
-                    </ul>
-                  </li>
+      <!-- What are SB 253 & SB 261? -->
+      <section class="ca-section-pad ca-bg-mist relative overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 ca-grid-texture opacity-60"></div>
+        <div class="container relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="ca-section-intro ca-section-intro--laws js-reveal mx-auto text-center">
+            <div class="ca-pretitle-wrap">
+              <span class="ca-pretitle">California Climate Laws</span>
+            </div>
+            <h2 class="ca-h2 mt-4">What are SB 253 &amp; SB 261?</h2>
+            <p class="ca-section-lead text-ecoprism-text">California has passed two major climate laws to increase transparency and accountability in corporate environmental impact</p>
+          </div>
 
-                  <li class="nav-item d-block d-md-none"><a class="nav-link" href="/contact-us">Contact Us</a></li>
-                </ul>
-                <!-- /.navbar-nav -->
-                <div class="offcanvas-footer d-lg-none">
+          <div class="js-reveal mx-auto mt-10 max-w-4xl">
+            <article class="ca-law-chapter grid gap-8 md:grid-cols-12 md:gap-10">
+              <div class="md:col-span-3 md:text-right">
+                <p class="ca-law-num md:pr-4">253</p>
+                <span class="mt-4 inline-flex rounded-full bg-[#d4ebe4] px-3 py-1.5 text-xs font-semibold text-ecoprism-primary">Emissions Reporting</span>
+              </div>
+              <div class="md:col-span-9">
+                <div class="flex gap-4">
+                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ecoprism-primary text-white">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                  </div>
                   <div>
-                    <a href="mailto:info@ecoprism.com" class="link-inverse"><span class="__cf_email__">info@ecoprism.com</span></a>
-                    <nav class="nav social social-white mt-4">
-                      <a href="https://www.linkedin.com/company/ecoprism/"><i class="uil uil-linkedin"></i></a>
-                      <a href="https://www.youtube.com/@Ecoprism-kz4yb"><i class="uil uil-youtube"></i></a>
-                    </nav>
-                    <!-- /.social -->
+                    <h3 class="font-poppins text-2xl font-bold text-ecoprism-primary">SB 253</h3>
+                    <p class="mt-1 text-sm font-medium text-gray-500">Climate Corporate Data Accountability Act</p>
                   </div>
                 </div>
-                <!-- /.offcanvas-footer -->
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">Requires companies with $1B+ annual revenue doing business in California to publicly report global GHG emissions (Scopes 1 &amp; 2 from 2026, Scope 3 from 2027)</p>
               </div>
-              <!-- /.offcanvas-body -->
+            </article>
+
+            <article class="ca-law-chapter grid gap-8 md:grid-cols-12 md:gap-10">
+              <div class="md:col-span-3 md:order-2 md:text-left">
+                <p class="ca-law-num md:pl-4">261</p>
+                <span class="mt-4 inline-flex rounded-full bg-[#d4ebe4] px-3 py-1.5 text-xs font-semibold text-ecoprism-primary">Risk Assessment</span>
+              </div>
+              <div class="md:col-span-9 md:order-1">
+                <div class="flex gap-4">
+                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ecoprism-primary text-white">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                  </div>
+                  <div>
+                    <h3 class="font-poppins text-2xl font-bold text-ecoprism-primary">SB 261</h3>
+                    <p class="mt-1 text-sm font-medium text-gray-500">Climate-Related Financial Risk Disclosure Act</p>
+                  </div>
+                </div>
+                <p class="mt-5 text-base leading-relaxed text-ecoprism-text">Applies to companies with $500M+ annual revenue, requiring biennial climate risk reports aligned with the TCFD framework starting in 2026.</p>
+                <p class="ca-sb261-note mt-5 text-sm leading-relaxed text-ecoprism-text sm:text-[0.9375rem]"><span class="font-semibold text-ecoprism-title">Note:</span> As of November 2025, enforcement of SB 261 has been stayed by the Ninth Circuit Court of Appeals pending resolution of an ongoing legal challenge. CARB will announce a revised reporting date once the appeal is resolved.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Covered Entities -->
+      <section class="ca-section-pad ca-bg-paper relative">
+        <div class="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:items-start">
+            <div class="js-reveal lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+              <h2 class="ca-h2 ca-section-heading-left">Covered Entities &amp; Applicability</h2>
+              <p class="ca-section-lead text-ecoprism-text">Understanding which companies are subject to California's climate disclosure requirements</p>
             </div>
-            <!-- /.navbar-collapse -->
-            <div class="navbar-other ms-lg-4">
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <li class="nav-item d-none d-md-block">
-                  <a href="/contact-us" class="btn btn-sm btn-white rounded-pill">Contact Us</a>
+            <div class="js-reveal js-reveal-delay-1 min-w-0 lg:col-span-8">
+              <div class="overflow-hidden rounded-2xl border border-[#E2E8E6] bg-white">
+                <div class="border-b border-[#E2E8E6] bg-[#f4f7f5] px-6 py-5 sm:px-8">
+                  <h3 class="text-lg font-semibold text-ecoprism-title">Compliance Requirements</h3>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="ca-table-report w-full min-w-[560px] text-left text-sm">
+                    <thead>
+                      <tr class="border-b border-[#E2E8E6] bg-white">
+                        <th class="px-6 py-4 sm:px-8">Law</th>
+                        <th class="px-6 py-4 sm:px-8">Revenue Threshold</th>
+                        <th class="px-6 py-4 sm:px-8">Business Activity</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#eef2f0]">
+                      <tr>
+                        <td class="px-6 py-5 font-semibold text-ecoprism-primary sm:px-8">SB 253</td>
+                        <td class="px-6 py-5 text-ecoprism-text sm:px-8">$1 billion+</td>
+                        <td class="px-6 py-5 text-ecoprism-text sm:px-8">Doing business in California</td>
+                      </tr>
+                      <tr>
+                        <td class="px-6 py-5 font-semibold text-ecoprism-primary sm:px-8">SB 261</td>
+                        <td class="px-6 py-5 text-ecoprism-text sm:px-8">$500 million+</td>
+                        <td class="px-6 py-5 text-ecoprism-text sm:px-8">Doing business in California</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Dates -->
+      <section class="ca-section-pad relative overflow-hidden bg-[#eef4f1]">
+        <div class="pointer-events-none absolute inset-0 ca-grid-texture"></div>
+        <div class="container relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="ca-section-intro ca-section-intro--wide js-reveal mx-auto text-center">
+            <h2 class="ca-h2">Key Dates &amp; Timeline</h2>
+            <p class="ca-section-lead text-ecoprism-text">Important deadlines and reporting requirements for California climate laws</p>
+          </div>
+          <div class="js-reveal js-reveal-delay-1 mx-auto mt-10 max-w-4xl overflow-hidden rounded-2xl border border-[#E2E8E6] bg-white">
+            <div class="border-b border-[#E2E8E6] px-6 py-4 sm:px-8">
+              <h3 class="font-poppins text-lg font-bold text-ecoprism-title">Reporting Timeline</h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="ca-table-report w-full min-w-[560px] text-left text-sm">
+                <thead>
+                  <tr class="border-b border-[#E2E8E6]">
+                    <th class="px-6 py-4 sm:px-8">Bill</th>
+                    <th class="px-6 py-4 sm:px-8">Coverage Threshold</th>
+                    <th class="px-6 py-4 sm:px-8">Reporting Starts</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#eef2f0]">
+                  <tr>
+                    <td class="px-6 py-5 font-semibold text-ecoprism-primary sm:px-8">SB 253</td>
+                    <td class="px-6 py-5 text-ecoprism-text sm:px-8">≥ $1B revenue</td>
+                    <td class="px-6 py-5 text-ecoprism-text sm:px-8">
+                      <span class="block">Scope 1 &amp; 2 (2025 data → reported 2026)</span>
+                      <span class="block text-gray-500">Scope 3 from 2027</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-5 font-semibold text-ecoprism-primary sm:px-8">SB 261</td>
+                    <td class="px-6 py-5 text-ecoprism-text sm:px-8">≥ $500M revenue</td>
+                    <td class="px-6 py-5 text-ecoprism-text sm:px-8">Currently stayed pending Ninth Circuit appeal. New deadline to be set by CARB post-ruling.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="js-reveal js-reveal-delay-2 mx-auto mt-10 max-w-4xl rounded-2xl ca-panel-dark p-6 text-white sm:p-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/15">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div>
+                <h3 class="font-poppins text-lg font-bold">Regulatory Update (as of March 2026)</h3>
+                <p class="mt-3 text-sm leading-relaxed text-white/88 sm:text-base">CARB approved its initial regulation at the February 26, 2026 Board hearing, setting the first-year SB 253 deadline: Scope 1 and 2 emissions must be reported by August 10, 2026. Applicability and program fees will be assessed on September 10, 2026. A second rulemaking covering Scope 3, assurance requirements, and post-2026 deadlines is underway.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Requirements & Risks -->
+      <section class="ca-section-pad relative overflow-hidden">
+        <div class="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="ca-section-intro ca-section-intro--requirements js-reveal mx-auto text-center">
+            <h2 class="ca-h2">Top Requirements &amp; Risks</h2>
+            <p class="ca-section-lead text-ecoprism-text">Key compliance requirements and potential risks for companies subject to California climate laws</p>
+          </div>
+          <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-0 lg:overflow-hidden lg:rounded-2xl lg:border lg:border-white/10">
+            <article class="js-reveal ca-panel-dark flex flex-col rounded-2xl p-8 sm:p-10 lg:rounded-none lg:p-12">
+              <h3 class="font-poppins text-2xl font-bold text-white">SB 253</h3>
+              <ul class="mt-8 flex-1 space-y-4 text-sm leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Scope 1 & 2 reporting deadline: August 10, 2026 (2025 fiscal year data). Scope 3 reporting from 2027, with phased options under CARB rulemaking.</span>
                 </li>
-                <li class="nav-item d-lg-none">
-                  <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Assurance: Limited assurance for Scopes 1 &amp; 2 starts 2026; Reasonable assurance for scope 1 and 2, and limited for Scope 3 by 2030</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Penalties: Up to $500K per year for non-compliance.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Entities that were not collecting emissions data as of CARB's December 2024 Enforcement Notice are not expected to submit data in 2026 but must submit a written statement to CARB confirming this.</span>
                 </li>
               </ul>
-              <!-- /.navbar-nav -->
-            </div>
-            <!-- /.navbar-other -->
-          </div>
-          <!-- /.container -->
-        </nav>
-        <!-- /.navbar -->
-      </header>
-      <!-- /header -->
-      <section class="wrapper bg-leafy2">
-        <div class="container-card">
-          <div class="card pt-2 pb-5 bg-leafy2">
-            <div class="card-body pt-16 pb-10 px-0">
-              <div class="container">
-                <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center text-center text-lg-start">
-                  <div class="col-lg-6" data-cues="slideInDown" data-group="page-title" data-delay="900">
-                    <h1 class="display-2 mb-4 me-xl-5 me-xxl-0 text-white">Understand California's <span class="text-yellow" style="color: #fab430 !important">Climate Laws</span></h1>
-                    <p class="lead fs-23 lh-sm mb-7 pe-xxl-15 text-white">SB 253, SB 261, and SB 219 are reshaping how companies disclose climate and sustainability data. Here's what these laws mean and how ecoPRISM helps you stay ahead.</p>
-                    <a href="/resources/whitepapers/california-climate-laws-download" class="btn btn-lg rounded-pill shadow-lg" style="background: linear-gradient(135deg, #fab430 0%, #fab430 100%); color: #1a3332; border: none; padding: 12px 30px; font-weight: 600; transition: all 0.3s ease"> <i class="uil uil-arrow-right me-2"></i>Explore Now </a>
-                  </div>
-                  <!--/column -->
-                  <div class="col-lg-6">
-                    <div class="position-relative">
-                      <!-- <div class="position-absolute" style="top: -20px; right: -20px; z-index: 1">
-                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center shadow-lg" style="width: 80px; height: 80px">
-                          <i class="uil uil-chart-line text-leaf" style="font-size: 2rem; color: #407775"></i>
-                        </div>
-                      </div> -->
-                      <img class="img-fluid shadow-lg rounded-3 shadow-lg" style="border: 3px solid #fab430" src="../../assets/img/banner/california-climate-laws-banner.webp" data-cue="fadeIn" data-delay="300" alt="Climate Data Visualization" style="border-radius: 20px" / loading="lazy">
-                      <!-- <div class="position-absolute" style="bottom: 20px; left: -20px; z-index: 1">
-                        <div class="bg-gradient-primary rounded-3 p-3 shadow-lg" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%)">
-                          <div class="d-flex align-items-center text-white">
-                            <i class="uil uil-globe me-2" style="font-size: 1.5rem"></i>
-                            <div>
-                              <div class="fw-bold">Global Impact</div>
-                              <small>Climate Compliance</small>
-                            </div>
-                          </div>
-                        </div>
-                      </div> -->
-                    </div>
-                  </div>
-                  <!--/column -->
-                </div>
-                <!-- /.row -->
+              <div class="mt-10 border-t border-white/15 pt-8">
+                <span class="inline-flex rounded-full bg-[#f4b940] px-4 py-2 text-xs font-semibold text-[#0b2e26]">Penalty: Up to $500K</span>
               </div>
-              <!-- /.container -->
-            </div>
-            <!--/.card-body -->
+            </article>
+            <article class="js-reveal js-reveal-delay-1 ca-panel-dark flex flex-col rounded-2xl p-8 sm:p-10 lg:rounded-none lg:border-l lg:border-white/15 lg:p-12">
+              <h3 class="font-poppins text-2xl font-bold text-white">SB 261</h3>
+              <ul class="mt-8 flex-1 space-y-4 text-sm leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Reports must follow TCFD or ISSB frameworks: governance, strategy, risk management, metrics &amp; targets.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Must be published publicly and confirmed to the California Secretary of State.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="ca-list-check" aria-hidden="true"
+                    ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg
+                  ></span>
+                  <span>Penalties: Up to $50K/year applies if and when enforcement resumes.</span>
+                </li>
+              </ul>
+              <div class="mt-10 border-t border-white/15 pt-8">
+                <span class="inline-flex rounded-full bg-[#f4b940] px-4 py-2 text-xs font-semibold text-[#0b2e26]">Penalty: Up to $50K</span>
+              </div>
+            </article>
           </div>
-          <!--/.card -->
         </div>
-        <!-- /.container-card -->
       </section>
-      <!-- /section -->
-      <section class="wrapper bg-soft-ash box-1">
-        <div class="container py-12">
-          <div class="row text-center">
-            <div class="col-md-10 offset-md-1">
-              <h3 class="display-4 mb-3 px-xl-10">What are SB 253, SB 261 & SB 219?</h3>
-              <p class="lead fs-md mb-10">California has passed three major climate laws to increase transparency and accountability in corporate environmental impact</p>
-            </div>
-            <!-- /column -->
-          </div>
-          <!-- /.row -->
-          <div class="position-relative">
-            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
-            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
-            <div class="row gx-md-5 gy-5">
-              <div class="col-md-6 col-xl-4">
-                <div class="card card-border-top border-leaf shadow-lg hover-shadow-xl transition-all" style="border-top: 4px solid #407775; transition: all 0.3s ease">
-                  <div class="card-body p-4">
-                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3 shadow-sm" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                      <i class="uil uil-shield-check text-white" style="font-size: 1.5rem"></i>
-                    </div>
-                    <h3 class="text-leaf mb-2">SB 253</h3>
-                    <p class="lead fs-md text-muted mb-3">Climate Corporate Data Accountability Act</p>
-                    <p class="mb-0">Requires companies with $1B+ annual revenue doing business in California to publicly report global GHG emissions (Scopes 1 & 2 from 2026, Scope 3 from 2027)</p>
-                    <div class="mt-3">
-                      <span class="badge bg-soft-leaf text-leaf rounded-pill">Emissions Reporting</span>
-                    </div>
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!--/column -->
-              <div class="col-md-6 col-xl-4">
-                <div class="card card-border-top border-leaf shadow-lg hover-shadow-xl transition-all" style="border-top: 4px solid #407775; transition: all 0.3s ease">
-                  <div class="card-body p-4">
-                    <div class="icon btn btn-circle btn-lg btn-yellow pe-none mb-3 shadow-sm" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                      <i class="uil uil-chart-line text-white" style="font-size: 1.5rem"></i>
-                    </div>
-                    <h3 class="text-yellow mb-2">SB 261</h3>
-                    <p class="lead fs-md text-muted mb-3">Climate-Related Financial Risk Disclosure Act</p>
-                    <p class="mb-0">Applies to companies with $500M+ annual revenue, requiring biennial climate risk reports aligned with the TCFD framework starting in 2026.</p>
-                    <div class="mt-3">
-                      <span class="badge bg-soft-leaf text-leaf rounded-pill">Risk Assessment</span>
-                    </div>
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!--/column -->
-              <div class="col-md-6 col-xl-4">
-                <div class="card card-border-top border-leaf shadow-lg hover-shadow-xl transition-all" style="border-top: 4px solid #407775; transition: all 0.3s ease">
-                  <div class="card-body p-4">
-                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3 shadow-sm" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                      <i class="uil uil-setting text-white" style="font-size: 1.5rem"></i>
-                    </div>
-                    <h3 class="text-leaf mb-2">SB 219</h3>
-                    <p class="lead fs-md text-muted mb-3">Amendments to SB 253 & SB 261</p>
-                    <p class="mb-0">Effective September 27, 2024, SB 219 updates both acts. It delays CARB's rulemaking to July 1, 2025; introduces reporting flexibility (like consolidated parent‑level filing); removes immediate filing fee requirements; and allows CARB discretion on Scope 3 timing rather than enforcing a 180‑day deadline.</p>
-                    <div class="mt-3">
-                      <span class="badge bg-soft-leaf text-leaf rounded-pill">Regulatory Updates</span>
-                    </div>
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!--/column -->
-            </div>
-            <!--/.row -->
-          </div>
-          <!-- /.position-relative -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /section -->
-      <section class="wrapper bg-light">
-        <div class="container py-12">
-          <div class="row text-center">
-            <div class="col-md-10 offset-md-1">
-              <h3 class="display-4 mb-3 px-xl-10">Covered Entities & Applicability</h3>
-              <p class="lead fs-md mb-10">Understanding which companies are subject to California's climate disclosure requirements</p>
-            </div>
-            <!-- /column -->
-          </div>
-          <!-- /.row -->
-          <div class="position-relative">
-            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
-            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
-            <div class="row gx-md-5 gy-5 d-flex justify-content-center">
-              <div class="col-md-6 col-xl-9">
-                <div class="shadow-lg rounded-3 overflow-hidden" style="border: 1px solid rgba(64, 119, 117, 0.1)">
-                  <div class="bg-gradient-primary text-white p-4" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%)">
-                    <div class="d-flex align-items-center">
-                      <h4 class="mb-0 text-white">Compliance Requirements</h4>
-                    </div>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table table-hover mb-0">
-                      <thead class="bg-soft-leaf">
-                        <tr>
-                          <th scope="col" class="border-0 text-leaf fw-bold"><i class="uil uil-file-graph me-2"></i>Law</th>
-                          <th scope="col" class="border-0 text-leaf fw-bold"><i class="uil uil-dollar-sign me-2"></i>Revenue Threshold</th>
-                          <th scope="col" class="border-0 text-leaf fw-bold"><i class="uil uil-map-marker me-2"></i>Business Activity</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="border-bottom">
-                          <td class="align-middle">
-                            <div class="d-flex align-items-center">
-                              <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                                <i class="uil uil-shield-check text-white" style="font-size: 0.8rem"></i>
-                              </div>
-                              <strong class="text-leaf">SB 253</strong>
-                            </div>
-                          </td>
-                          <td class="align-middle">
-                            <span> $1 billion+ </span>
-                          </td>
-                          <td class="align-middle">
-                            <span> Doing business in California </span>
-                          </td>
-                        </tr>
-                        <tr class="border-bottom">
-                          <td class="align-middle">
-                            <div class="d-flex align-items-center">
-                              <div class="icon btn btn-circle btn-sm btn-leaf pe-none me-3" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                                <i class="uil uil-chart-line text-white" style="font-size: 0.8rem"></i>
-                              </div>
-                              <strong class="text-leaf">SB 261</strong>
-                            </div>
-                          </td>
-                          <td class="align-middle">
-                            <span> $500 million+ </span>
-                          </td>
-                          <td class="align-middle">
-                            <span> Doing business in California </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="align-middle">
-                            <div class="d-flex align-items-center">
-                              <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                                <i class="uil uil-setting text-white" style="font-size: 0.8rem"></i>
-                              </div>
-                              <strong class="text-leaf">SB 219</strong>
-                            </div>
-                          </td>
-                          <td class="align-middle">
-                            <span><i class="uil uil-minus"></i></span>
-                          </td>
-                          <td class="align-middle">
-                            <span> Refines rules for companies subject to SB 253/261</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <!--/.card -->
-              </div>
-              <!--/column -->
-            </div>
-            <!--/.row -->
-          </div>
-          <!-- /.position-relative -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /section -->
-      <section class="wrapper bg-light">
-        <div class="container py-12">
-          <div class="row text-center">
-            <div class="col-md-10 offset-md-1">
-              <h3 class="display-4 mb-3 px-xl-10">Key Dates & Timeline</h3>
-              <p class="lead fs-md mb-10">Important deadlines and reporting requirements for California climate laws</p>
-            </div>
-            <!-- /column -->
-          </div>
-          <!-- /.row -->
-          <div class="position-relative">
-            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
-            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
-            <div class="row gx-md-5 gy-5 d-flex justify-content-center">
-              <div class="col-md-6 col-xl-9">
-                <div class="shadow-lg rounded-3 overflow-hidden" style="border: 1px solid rgba(64, 119, 117, 0.1)">
-                  <div class="bg-gradient-primary text-white p-4" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%)">
-                    <div class="d-flex align-items-center">
-                      <h4 class="mb-0 text-white">Reporting Timeline</h4>
-                    </div>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table table-hover mb-0">
-                      <thead class="bg-soft-leaf">
-                        <tr>
-                          <th scope="col" class="border-0 text-leaf fw-bold"><i class="uil uil-file-graph me-2"></i>Bill</th>
-                          <th scope="col" class="border-0 text-leaf fw-bold"><i class="uil uil-dollar-sign me-2"></i>Coverage Threshold</th>
-                          <th scope="col" class="border-0 text-leaf fw-bold"><i class="uil uil-calendar-alt me-2"></i>Reporting Starts</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="border-bottom">
-                          <td class="align-middle">
-                            <div class="d-flex align-items-center">
-                              <div class="icon btn btn-circle btn-sm btn-primary pe-none me-3" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                                <i class="uil uil-shield-check text-white" style="font-size: 0.8rem"></i>
-                              </div>
-                              <strong class="text-leaf">SB 253</strong>
-                            </div>
-                          </td>
-                          <td class="align-middle">
-                            <span> ≥ $1B revenue </span>
-                          </td>
-                          <td class="align-middle">
-                            <div class="d-flex flex-column">
-                              <span> Scope 1 & 2 (2025 data → reported 2026) </span>
-                              <span> Scope 3 from 2027 </span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="align-middle">
-                            <div class="d-flex align-items-center">
-                              <div class="icon btn btn-circle btn-sm btn-yellow pe-none me-3" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                                <i class="uil uil-chart-line text-white" style="font-size: 0.8rem"></i>
-                              </div>
-                              <strong class="text-yellow">SB 261</strong>
-                            </div>
-                          </td>
-                          <td class="align-middle">
-                            <span> ≥ $500M revenue </span>
-                          </td>
-                          <td class="align-middle">
-                            <span> Biennial reporting starts Jan 1, 2026 (bin. from 2025) </span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <!--/.card -->
-              </div>
-              <!--/column -->
-              <div class="col-xl-12 mt-5">
-                <div class="card bg-gradient-primary text-white shadow-lg" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                  <div class="card-body p-4">
-                    <div class="d-flex align-items-start">
-                      <div class="icon btn btn-circle btn-lg btn-white pe-none me-3" style="background: rgba(255, 255, 255, 0.2); border: none">
-                        <i class="uil uil-info-circle text-white" style="font-size: 1.5rem"></i>
-                      </div>
-                      <div>
-                        <h4 class="h4 text-white mb-2">Regulatory Update (as of July 2025)</h4>
-                        <p class="mb-0 text-white-100">A California Air Resources Board (CARB) public workshop was held on May 29, 2025, where CARB acknowledged rulemaking is behind schedule. They now aim to release draft regulations by the end of 2025, with final rules expected in late 2026.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--/.row -->
-          </div>
-          <!-- /.position-relative -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /section -->
 
-      <section class="wrapper bg-light box-2">
-        <div class="container py-12">
-          <div class="row text-center">
-            <div class="col-md-10 offset-md-1">
-              <h3 class="display-4 mb-3 px-xl-10">Top Requirements & Risks</h3>
-              <p class="lead fs-md mb-10">Key compliance requirements and potential risks for companies subject to California climate laws</p>
-            </div>
-            <!-- /column -->
-          </div>
-          <!-- /.row -->
-          <div class="position-relative">
-            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
-            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
-            <div class="row gx-md-5 gy-5">
-              <div class="col-md-6 col-xl-6">
-                <div class="card card-border-top border-leaf shadow-lg hover-shadow-xl transition-all" style="border-top: 4px solid #407775; transition: all 0.3s ease">
-                  <div class="card-body p-4">
-                    <div class="icon btn btn-circle btn-lg btn-primary pe-none mb-3 shadow-sm" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                      <i class="uil uil-shield-check text-white" style="font-size: 1.5rem"></i>
-                    </div>
-                    <h3 class="text-leaf mb-2">SB 253</h3>
-                    <ul class="icon-list bullet-bg bullet-soft-leaf">
-                      <li>
-                        <span><i class="uil uil-check"></i></span><span>Scopes 1-2 reporting begins in 2026; Scope 3 from 2027 based on CARB schedule. </span>
-                      </li>
-                      <li>
-                        <span><i class="uil uil-check"></i></span><span>Assurance: Limited assurance for Scopes 1 & 2 starts 2026; Reasonable assurance for scope 1 and 2, and limited for Scope 3 by 2030 </span>
-                      </li>
-                      <li>
-                        <span><i class="uil uil-check"></i></span><span>Penalties: Up to $500K per year for non-compliance. For the 2026 cycle CARB will exercise discretion toward entities making good-faith efforts, particularly for Scope 1 and 2 reporting. </span>
-                      </li>
-                    </ul>
-                    <div class="mt-3">
-                      <span class="badge bg-gradient-primary text-white rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%)"> <i class="uil uil-exclamation-triangle me-1"></i>Penalty: Up to $500K </span>
-                    </div>
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!--/.card -->
+      <!-- Compliance Tips -->
+      <section class="ca-section-pad ca-bg-mist relative">
+        <div class="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+            <div class="js-reveal lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
+              <h2 class="ca-h2 ca-section-heading-left">Compliance Tips</h2>
+              <p class="ca-section-lead text-ecoprism-text">Best practices and strategies for successful compliance with California climate laws</p>
+              <div class="ca-img-zoom-wrap mt-10 overflow-hidden rounded-2xl">
+                <img src="/assets/img/photos/new/ccl-compliance-tips.webp" alt="Compliance strategy for California climate laws" class="ca-img-zoom h-auto w-full object-cover grayscale-[15%]" loading="lazy" width="600" height="400" />
               </div>
-              <!--/column -->
-              <div class="col-md-6 col-xl-6">
-                <div class="card card-border-top border-leaf shadow-lg hover-shadow-xl transition-all" style="border-top: 4px solid #407775; transition: all 0.3s ease">
-                  <div class="card-body p-4">
-                    <div class="icon btn btn-circle btn-lg btn-yellow pe-none mb-3 shadow-sm" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-                      <i class="uil uil-chart-line text-white" style="font-size: 1.5rem"></i>
-                    </div>
-                    <h3 class="text-leaf mb-2">SB 261</h3>
-                    <ul class="icon-list bullet-bg bullet-soft-leaf">
-                      <li>
-                        <span><i class="uil uil-check"></i></span><span>Reports must follow TCFD or ISSB frameworks: governance, strategy, risk management, metrics & targets. </span>
-                      </li>
-                      <li>
-                        <span><i class="uil uil-check"></i></span><span>Must be published publicly and confirmed to the California Secretary of State. </span>
-                      </li>
-                      <li>
-                        <span><i class="uil uil-check"></i></span><span>Penalties: Up to $50K per year for missing or insufficient reports, though previous compliance actions and good faith are considered </span>
-                      </li>
-                    </ul>
-                    <div class="mt-3">
-                      <span class="badge bg-gradient-primary text-white rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%)"> <i class="uil uil-exclamation-triangle me-1"></i>Penalty: Up to $50K </span>
-                    </div>
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!--/column -->
             </div>
-            <!--/.row -->
+            <ol class="js-reveal js-reveal-delay-1 min-w-0 space-y-0 lg:col-span-7">
+              <li class="flex gap-4 border-b border-[#E2E8E6]/90 py-6 first:pt-0 sm:gap-6 sm:py-8">
+                <span class="ca-playbook-num shrink-0">01</span>
+                <p class="text-sm leading-relaxed text-ecoprism-text sm:text-base">Start establishing ESG data governance now. Designate roles, build a cross-functional data team, and centralize emissions &amp; risk data repositories</p>
+              </li>
+              <li class="flex gap-4 border-b border-[#E2E8E6]/90 py-6 sm:gap-6 sm:py-8">
+                <span class="ca-playbook-num shrink-0">02</span>
+                <p class="text-sm leading-relaxed text-ecoprism-text sm:text-base">Prepare for limited assurance of Scope 1 & 2 emissions beginning in 2027 by strengthening data controls, documentation, and audit trails.</p>
+              </li>
+              <li class="flex gap-4 border-b border-[#E2E8E6]/90 py-6 sm:gap-6 sm:py-8">
+                <span class="ca-playbook-num shrink-0">03</span>
+                <p class="text-sm leading-relaxed text-ecoprism-text sm:text-base">Plan early for Scope 3: supplier engagement, data collection, and tracing upstream/downstream emissions.</p>
+              </li>
+              <li class="flex gap-4 border-b border-[#E2E8E6]/90 py-6 sm:gap-6 sm:py-8">
+                <span class="ca-playbook-num shrink-0">04</span>
+                <p class="text-sm leading-relaxed text-ecoprism-text sm:text-base">For SB 261 compliance: map climate risks, strategies, and metrics using TCFD; align with existing reports (e.g., CDP, SASB, ISSB).</p>
+              </li>
+              <li class="flex gap-4 border-b border-[#E2E8E6]/90 py-6 sm:gap-6 sm:py-8">
+                <span class="ca-playbook-num shrink-0">05</span>
+                <p class="text-sm leading-relaxed text-ecoprism-text sm:text-base">Monitor CARB's ongoing second rulemaking covering Scope 3 requirements, assurance standards, and post-2026 deadlines. The March 2026 public workshop outlined three Scope 3 phase-in options. Track CARB's final approach.</p>
+              </li>
+              <li class="flex gap-4 py-6 sm:gap-6 sm:py-8">
+                <span class="ca-playbook-num shrink-0">06</span>
+                <p class="text-sm leading-relaxed text-ecoprism-text sm:text-base">Track litigation around SB 253. SB 261 enforcement is currently stayed. Track the Ninth Circuit's ruling, if the stay is lifted, a new compliance deadline will be set by CARB with potentially short lead time.</p>
+              </li>
+            </ol>
           </div>
-          <!-- /.position-relative -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /section -->
-      <section class="wrapper bg-light">
-        <div class="container pt-12">
-          <div class="row text-center">
-            <div class="col-md-10 offset-md-1">
-              <h3 class="display-4 mb-3 px-xl-10">Compliance Tips</h3>
-              <p class="lead fs-md mb-10">Best practices and strategies for successful compliance with California climate laws</p>
+
+      <!-- Important Resources -->
+      <section class="ca-section-pad ca-bg-paper">
+        <div class="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+            <div class="js-reveal lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+              <h2 class="ca-h2 ca-section-heading-left">Important Resources</h2>
+              <p class="ca-section-lead text-ecoprism-text">Explore our resources curated to help you understand and navigate the challenges of California Climate Laws.</p>
+              <a href="/resources/insights/" class="app-btn app-btn-outline mt-8 inline-flex rounded-lg px-6 py-3 text-sm font-semibold">View All Blogs</a>
             </div>
-            <!-- /column -->
-          </div>
-          <!-- /.row -->
-          <div class="position-relative">
-            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
-            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
-            <div class="row gx-md-5 gy-5 align-items-center">
-              <div class="col-lg-6">
-                <div class="position-relative">
-                  <img class="img-fluid shadow-lg rounded-3" src="../../assets/img/photos/new/ccl-compliance-tips.webp" alt="Compliance Strategy" style="border-radius: 20px" / loading="lazy">
-                  <!-- <div class="position-absolute" style="top: -20px; right: -20px; z-index: 1">
-                    <div class="bg-white rounded-circle d-flex align-items-center justify-content-center shadow-lg" style="width: 80px; height: 80px">
-                      <i class="uil uil-lightbulb text-leaf" style="font-size: 2rem; color: #407775"></i>
-                    </div>
-                  </div>
-                  <div class="position-absolute" style="bottom: 20px; left: -20px; z-index: 1">
-                    <div class="bg-gradient-primary rounded-3 p-3 shadow-lg" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%)">
-                      <div class="d-flex align-items-center text-white">
-                        <i class="uil uil-chart-line me-2" style="font-size: 1.5rem"></i>
-                        <div>
-                          <div class="fw-bold">Strategic Approach</div>
-                          <small>Compliance Excellence</small>
-                        </div>
+            <div class="ca-blog-slider js-reveal js-reveal-delay-1 min-w-0 lg:col-span-8" x-data="caBlogSlider()" x-init="init()" @mouseenter="pause()" @mouseleave="resume()" @focusin="pause()" @focusout="resume()">
+              <div class="overflow-hidden rounded-2xl">
+                <div class="ca-blog-slider__track flex gap-6 transition-transform duration-500 ease-out motion-reduce:transition-none" :style="trackStyle" role="region" aria-roledescription="carousel" aria-label="Related blog articles">
+                  <article class="ca-resource-card ca-hover-lift flex w-full shrink-0 flex-col overflow-hidden rounded-2xl border border-[#E2E8E6]/90 bg-white lg:w-[calc(50%-0.75rem)]">
+                    <a href="/resources/insights/california-sb261-climate-risk-disclosure-guide/" class="block">
+                      <div class="ca-resource-card__media">
+                        <img src="/assets/img/blog/blog-57.webp" alt="Preparing for California SB 261: Navigating Physical and Transition Climate Risks" loading="lazy" width="600" height="338" />
                       </div>
+                    </a>
+                    <div class="border-t border-[#E2E8E6] px-5 py-5 sm:px-6">
+                      <a href="/resources/insights/california-sb261-climate-risk-disclosure-guide/" class="text-xs font-semibold uppercase tracking-wide text-ecoprism-primary hover:underline">Regulation</a>
+                      <p class="mt-2 text-sm text-gray-500">27 Nov 2025 · <a href="https://www.linkedin.com/in/saransh328/" target="_blank" rel="noopener noreferrer" class="text-ecoprism-primary hover:underline">Saransh Srivastava</a></p>
                     </div>
-                  </div> -->
+                  </article>
+                  <article class="ca-resource-card ca-hover-lift flex w-full shrink-0 flex-col overflow-hidden rounded-2xl border border-[#E2E8E6]/90 bg-white lg:w-[calc(50%-0.75rem)]">
+                    <a href="/resources/insights/carb-draft-sb253-climate-reporting-template/" class="block">
+                      <div class="ca-resource-card__media">
+                        <img src="/assets/img/blog/blog-53.webp" alt="CARB draft SB 253 climate reporting template" loading="lazy" width="600" height="338" />
+                      </div>
+                    </a>
+                    <div class="border-t border-[#E2E8E6] px-5 py-5 sm:px-6">
+                      <a href="/resources/insights/carb-draft-sb253-climate-reporting-template/" class="text-xs font-semibold uppercase tracking-wide text-ecoprism-primary hover:underline">Regulation</a>
+                      <p class="mt-2 text-sm text-gray-500">14 Oct 2025 · <a href="https://www.linkedin.com/in/vishakha-goel-31762742/" target="_blank" rel="noopener noreferrer" class="text-ecoprism-primary hover:underline">Vishakha Goel</a></p>
+                    </div>
+                  </article>
+                  <article class="ca-resource-card ca-hover-lift flex w-full shrink-0 flex-col overflow-hidden rounded-2xl border border-[#E2E8E6]/90 bg-white lg:w-[calc(50%-0.75rem)]">
+                    <a href="/resources/insights/sb-253-sb-261-compliance-guide" class="block">
+                      <div class="ca-resource-card__media">
+                        <img src="/assets/img/blog/blog-52.webp" alt="SB 253 and SB 261 compliance guide" loading="lazy" width="600" height="338" />
+                      </div>
+                    </a>
+                    <div class="border-t border-[#E2E8E6] px-5 py-5 sm:px-6">
+                      <a href="/resources/insights/sb-253-sb-261-compliance-guide" class="text-xs font-semibold uppercase tracking-wide text-ecoprism-primary hover:underline">Compliance</a>
+                      <p class="mt-2 text-sm text-gray-500">26 Sep 2025 · <a href="https://www.linkedin.com/in/vishakha-goel-31762742/" target="_blank" rel="noopener noreferrer" class="text-ecoprism-primary hover:underline">Vishakha Goel</a></p>
+                    </div>
+                  </article>
                 </div>
               </div>
-              <!--/column -->
-              <div class="col-lg-6">
-                <ul class="icon-list bullet-bg bullet-soft-leaf">
-                  <li>
-                    <span><i class="uil uil-check"></i></span><span>Start establishing ESG data governance now - designate roles, build a cross-functional data team, and centralize emissions & risk data repositories </span>
+              <div class="mt-4 flex items-center justify-center gap-2" role="tablist" aria-label="Blog slides">
+                <template x-for="i in slideCount" :key="i">
+                  <button type="button" class="h-2.5 rounded-full transition-all duration-300" :class="active === i - 1 ? 'w-8 bg-ecoprism-primary' : 'w-2.5 bg-[#d4ebe4]'" :aria-label="'Show blog slide ' + i" :aria-selected="active === i - 1" role="tab" @click="goTo(i - 1)"></button>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ecoPRISM Partner -->
+      <section class="ca-section-pad relative overflow-hidden bg-[#eef4f1]">
+        <div class="container relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="ca-section-intro ca-section-intro--partner js-reveal mx-auto text-center">
+            <div class="ca-pretitle-wrap">
+              <span class="ca-pretitle">Partner with ecoPRISM</span>
+            </div>
+            <h2 class="ca-h2 mt-4">ecoPRISM: Your Partner in Climate Disclosure Compliance</h2>
+            <p class="ca-section-lead text-ecoprism-text">ecoPRISM helps organizations confidently meet the demands of California's climate laws with powerful software and expert guidance.</p>
+          </div>
+          <div class="mt-10 space-y-16">
+            <div class="js-reveal grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div class="relative order-2 lg:order-1">
+                <div class="overflow-hidden rounded-2xl shadow-xl">
+                  <img src="/assets/img/photos/new/ccl-saas-platform.webp" alt="ESG SaaS Platform" class="ca-img-zoom h-56 w-full object-cover sm:h-72 md:h-96" loading="lazy" />
+                </div>
+              </div>
+              <div class="order-1 lg:order-2">
+                <span class="inline-flex rounded-full bg-[#d4ebe4] px-3 py-1 text-xs font-semibold text-ecoprism-primary">SaaS Platform</span>
+                <h3 class="mt-4 font-poppins text-2xl font-bold text-ecoprism-primary">ESG SaaS Platform</h3>
+                <p class="mt-2 text-sm text-gray-500">Streamline emissions tracking and reporting</p>
+                <ul class="mt-6 space-y-3 text-sm text-ecoprism-text">
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Automate Scope 1, 2, and 3 GHG emissions tracking across your operations and supply chain
                   </li>
-                  <li>
-                    <span><i class="uil uil-check"></i></span><span>Prepare for third-party assurance by 2026 for Scopes 1 & 2.</span>
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Monitor and visualize emissions performance in real time with a centralized ESG dashboard
                   </li>
-                  <li>
-                    <span><i class="uil uil-check"></i></span><span>Plan early for Scope 3: supplier engagement, data collection, and tracing upstream/downstream emissions. </span>
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Generate audit-ready disclosures aligned with SB 253 requirements
                   </li>
-                  <li>
-                    <span><i class="uil uil-check"></i></span><span>For SB 261 compliance: map climate risks, strategies, and metrics using TCFD; align with existing reports (e.g., CDP, SASB, ISSB). </span>
-                  </li>
-                  <li>
-                    <span><i class="uil uil-check"></i></span><span>Monitor CARB’s final regulations by end of year 2025 – prepare to implement official guidance promptly </span>
-                  </li>
-                  <li>
-                    <span><i class="uil uil-check"></i></span><span>Track litigation around SB 253 and SB 261 - legal challenges could affect enforcement timing or scope </span>
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Stay ahead of Scope 3 readiness with supplier data tools, estimation models, and gap analysis
                   </li>
                 </ul>
+                <a href="/esg-platform" class="app-btn app-btn-primary mt-8 inline-flex rounded-lg px-6 py-2.5 text-sm font-semibold">Learn More</a>
               </div>
-              <!--/column -->
             </div>
-            <!--/.row -->
+            <div class="js-reveal grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <span class="inline-flex rounded-full bg-[#d4ebe4] px-3 py-1 text-xs font-semibold text-ecoprism-primary">Consulting</span>
+                <h3 class="mt-4 font-poppins text-2xl font-bold text-ecoprism-primary">SB 261 Consulting Services</h3>
+                <p class="mt-2 text-sm text-gray-500">TCFD-aligned strategy, risk assessment, and reporting</p>
+                <ul class="mt-6 space-y-3 text-sm text-ecoprism-text">
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Identify, assess, and quantify climate-related financial risks specific to your industry
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Build or refine a TCFD-aligned disclosure covering governance, risk management, strategy, and metrics
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Develop internal controls and processes to support biennial SB 261 reporting
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="ca-list-check" aria-hidden="true"
+                      ><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span
+                    >Ensure alignment with CDP, ISSB, SASB or other sustainability frameworks to maximize reporting efficiency
+                  </li>
+                </ul>
+                <a href="/services/esg-advisory" class="app-btn app-btn-primary mt-8 inline-flex rounded-lg px-6 py-2.5 text-sm font-semibold">Learn More</a>
+              </div>
+              <div class="relative">
+                <div class="overflow-hidden rounded-2xl shadow-xl">
+                  <img src="/assets/img/photos/new/ccl-consulting.webp" alt="SB 261 Consulting Services" class="ca-img-zoom h-56 w-full object-cover sm:h-72 md:h-96" loading="lazy" />
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- /.position-relative -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /section -->
-      <hr class="pt-0" />
-      <section class="wrapper bg-light">
-        <div class="container pb-12">
-          <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
-            <div class="col-lg-4 mt-lg-2">
-              <h2 class="display-4 mb-3">Important Resources</h2>
-              <p class="lead fs-md mb-6 pe-xxl-5">Explore our resources curated to help you understand and navigate the challenges of California Climate Laws.</p>
-              <a href="/resources/insights" class="btn btn-soft-primary rounded-pill">View All Blogs</a>
+
+      <!-- FAQs -->
+      <section class="ca-section-pad ca-bg-paper">
+        <div class="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+            <div class="js-reveal lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+              <h2 class="ca-h2 ca-section-heading-left">FAQs</h2>
+              <p class="ca-section-lead text-ecoprism-text">If you don't see an answer to your question, you can send us an email from our contact form.</p>
             </div>
-            <!-- /column -->
-            <div class="col-lg-8">
-              <div class="swiper-container blog grid-view mb-6" data-margin="30" data-dots="true" data-items-md="2" data-items-xs="1">
-                <div class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <article>
-                        <figure class="overlay overlay-1 hover-scale rounded mb-5">
-                          <a href="/resources/insights/carb-draft-sb253-climate-reporting-template/"> <img src="../../assets/img/blog/blog-53.webp" alt="Article illustration" / loading="lazy"></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Read More</h5>
-                          </figcaption>
-                        </figure>
-                        <div class="post-header">
-                          <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">Regulation</a>
-                          </div>
-                          <!-- /.post-category -->
-                        </div>
-                        <!-- /.post-header -->
-                        <div class="post-footer">
-                          <ul class="post-meta mb-0">
-                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span>14 Oct 2025</span></li>
-                            <li class="post-author">
-                              <a href="https://www.linkedin.com/in/vishakha-goel-31762742/" target="_blank"><i class="uil uil-user"></i><span>By Vishakha Goel</span></a>
-                            </li>
-                          </ul>
-                          <!-- /.post-meta -->
-                        </div>
-                        <!-- /.post-footer -->
-                      </article>
-                      <!-- /article -->
-                    </div>
-                    <!--/.swiper-slide -->
-                    <div class="swiper-slide">
-                      <article>
-                        <figure class="overlay overlay-1 hover-scale rounded mb-5">
-                          <a href="/resources/insights/SB-253-&-SB-261-Compliance-Guide/"> <img src="../../assets/img/blog/blog-52.webp" alt="Article illustration" / loading="lazy"></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Read More</h5>
-                          </figcaption>
-                        </figure>
-                        <div class="post-header">
-                          <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">Compliance</a>
-                          </div>
-                          <!-- /.post-category -->
-                        </div>
-                        <!-- /.post-header -->
-                        <div class="post-footer">
-                          <ul class="post-meta mb-0">
-                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span>26 Sep 2025</span></li>
-                            <li class="post-author">
-                              <a href="https://www.linkedin.com/in/vishakha-goel-31762742/" target="_blank"><i class="uil uil-user"></i><span>By Vishakha Goel</span></a>
-                            </li>
-                          </ul>
-                          <!-- /.post-meta -->
-                        </div>
-                        <!-- /.post-footer -->
-                      </article>
-                      <!-- /article -->
-                    </div>
-                    <!--/.swiper-slide -->
-                  </div>
-                  <!--/.swiper-wrapper -->
+            <div x-data="{ openFaq: null }" class="js-reveal js-reveal-delay-1 min-w-0 lg:col-span-8">
+              <div class="ca-faq-item">
+                <button type="button" @click="openFaq = openFaq === 1 ? null : 1" class="flex w-full items-start justify-between gap-4 py-6 text-left">
+                  <span class="font-poppins text-lg font-semibold leading-snug text-ecoprism-title sm:text-xl">What are the annual fees for entities covered under SB 253 and SB 261?</span>
+                  <svg class="mt-1 h-6 w-6 shrink-0 text-ecoprism-primary transition-transform duration-300" :class="{ 'rotate-180': openFaq === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="openFaq === 1" x-transition x-cloak class="pb-6">
+                  <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ecoprism-text">
+                    <li>Entities subject to SB 253 (those with &gt;US$1 billion in annual revenue doing business in California) are required to pay an annual fee of US$3,106.</li>
+                    <li>Entities subject to SB 261 (those with &gt;US$500 million in annual revenue doing business in California) are required to pay an annual fee of US$1,403.</li>
+                    <li>Reporting entities with more than $1B in revenue are subject to both fee.</li>
+                    <li>Annual fees are to be adjusted for inflation and fund deficit/surplus in future year.</li>
+                  </ul>
                 </div>
-                <!-- /.swiper -->
               </div>
-              <!-- /.swiper-container -->
+              <div class="ca-faq-item">
+                <button type="button" @click="openFaq = openFaq === 2 ? null : 2" class="flex w-full items-start justify-between gap-4 py-6 text-left">
+                  <span class="font-poppins text-lg font-semibold leading-snug text-ecoprism-title sm:text-xl">How many entities are estimated to be subject to SB 253 and SB 261?</span>
+                  <svg class="mt-1 h-6 w-6 shrink-0 text-ecoprism-primary transition-transform duration-300" :class="{ 'rotate-180': openFaq === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="openFaq === 2" x-transition x-cloak class="pb-6">
+                  <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ecoprism-text">
+                    <li>Approximately 2,596 entities are estimated to be subject to SB 253.</li>
+                    <li>Approximately 4,160 entities are estimated to be subject to SB 261.</li>
+                  </ul>
+                  <p class="mt-4 text-sm text-ecoprism-text"><strong>Note:</strong> The number of entities listed above is based on staff analysis of CA Secretary of State and Dunn &amp; Bradstreet data. CARB will be initiating a process to validate the preliminary list of covered entities.</p>
+                  <p class="mt-4 text-sm text-ecoprism-text">Final list of covered entities subject to confirmation via CARB's applicability assessment process (September 10, 2026).</p>
+                </div>
+              </div>
+              <div class="ca-faq-item">
+                <button type="button" @click="openFaq = openFaq === 3 ? null : 3" class="flex w-full items-start justify-between gap-4 py-6 text-left">
+                  <span class="font-poppins text-lg font-semibold leading-snug text-ecoprism-title sm:text-xl">How and when do entities submit their reports under SB 253 and SB 261?</span>
+                  <svg class="mt-1 h-6 w-6 shrink-0 text-ecoprism-primary transition-transform duration-300" :class="{ 'rotate-180': openFaq === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="openFaq === 3" x-transition x-cloak class="pb-6">
+                  <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ecoprism-text">
+                    <li><strong>SB 253 – Emissions Reporting:</strong> Scope 1 and 2 emissions must be reported to CARB by August 10, 2026. Entities with existing GHG reports (including voluntary program reports) may submit those in lieu of a new report. Entities not collecting data as of CARB's December 2024 Enforcement Notice must submit a written statement instead.</li>
+                    <li><strong>SB 261 – Climate-Related Financial Risk Reports:</strong> SB 261 enforcement is currently stayed. Entities are encouraged voluntarily to publish their climate-related financial risk reports and post the report link to CARB’s public docket. CARB will set a new mandatory deadline once the Ninth Circuit appeal is resolved.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ca-faq-item">
+                <button type="button" @click="openFaq = openFaq === 4 ? null : 4" class="flex w-full items-start justify-between gap-4 py-6 text-left">
+                  <span class="font-poppins text-lg font-semibold leading-snug text-ecoprism-title sm:text-xl">Should companies address the resilience of their strategy under different climate-related scenarios in their SB 261 reports?</span>
+                  <svg class="mt-1 h-6 w-6 shrink-0 text-ecoprism-primary transition-transform duration-300" :class="{ 'rotate-180': openFaq === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="openFaq === 4" x-transition x-cloak class="pb-6">
+                  <p class="text-sm leading-relaxed text-ecoprism-text">
+                    Companies may discuss the resilience of their strategy considering future climate change impacts under various climate scenarios. CARB encourages including qualitative scenario-based assessments where feasible and relevant, describing how the organization's strategy may respond to potential climate-related risks and opportunities. This discussion can focus on strategic adjustments, risk mitigation measures, and long-term planning to ensure the organization remains resilient
+                    under changing climate conditions.
+                  </p>
+                  <p class="mt-4 text-sm text-ecoprism-text"><strong>Note:</strong> SB 261 enforcement is currently paused. However, companies are advised to continue internal scenario analysis as part of broader climate risk governance and in preparation for when enforcement resumes.</p>
+                </div>
+              </div>
+              <div class="ca-faq-item">
+                <button type="button" @click="openFaq = openFaq === 5 ? null : 5" class="flex w-full items-start justify-between gap-4 py-6 text-left">
+                  <span class="font-poppins text-lg font-semibold leading-snug text-ecoprism-title sm:text-xl">Is SB 261 still in effect?</span>
+                  <svg class="mt-1 h-6 w-6 shrink-0 text-ecoprism-primary transition-transform duration-300" :class="{ 'rotate-180': openFaq === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="openFaq === 5" x-transition x-cloak class="pb-6">
+                  <p class="text-sm leading-relaxed text-ecoprism-text">
+                    SB 261 has been stayed by the Ninth Circuit Court of Appeals since November 18, 2025, pending the outcome of a legal challenge brought by the U.S. Chamber of Commerce. CARB is not currently enforcing SB 261, and the original January 1, 2026 deadline is no longer operative. However, the law has not been repealed. CARB has confirmed it will set a new reporting date once the appeal is resolved. Companies are advised to continue building their climate risk governance frameworks
+                    so they are ready to comply when enforcement resumes.
+                  </p>
+                </div>
+              </div>
             </div>
-            <!-- /column -->
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /section -->
-      <!-- /section -->
-      <hr class="pb-0" />
-      <section class="wrapper bg-light box-3">
-        <div class="container pb-14 pb-md-16">
-          <div class="row">
-            <div class="col-lg-9 col-xl-6 col-xxl-7 mx-auto text-center">
-              <h3 class="display-4 mb-3">ecoPRISM: Your Partner in Climate Disclosure Compliance</h3>
-              <p class="lead fs-md mb-10">ecoPRISM helps organizations confidently meet the demands of California's climate laws with powerful software and expert guidance.</p>
-            </div>
-            <!-- /column -->
-          </div>
-          <!-- /.row -->
-          <div class="position-relative">
-            <div class="shape rounded-circle bg-soft-primary rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; right: -2.5rem; z-index: 0"></div>
-            <div class="shape bg-dot primary rellax w-16 h-17" data-rellax-speed="1" style="top: -0.5rem; left: -2.5rem; z-index: 0"></div>
-            <div class="row gx-md-5 gy-5">
-              <div class="col-md-6 col-xl-6">
-                <div class="card shadow-lg hover-shadow-xl transition-all" style="border: 2px solid #407775; transition: all 0.3s ease">
-                  <figure class="card-img-top overlay overlay-1 hover-scale">
-                    <a> <img src="../../assets/img/photos/new/ccl-saas-platform.webp" alt="ESG SaaS Platform" style="height: 250px; object-fit: cover" / loading="lazy"> </a>
-                  </figure>
-                  <div class="card-body p-4">
-                    <div class="post-header">
-                      <div class="post-category text-line">
-                        <a rel="category">
-                          <span class="badge bg-soft-leaf text-leaf rounded-pill px-3 py-2 text-capitalize"> <i class="uil uil-cloud me-1"></i>SaaS Platform </span>
-                        </a>
-                      </div>
-                      <!-- /.post-category -->
-                      <h2 class="post-title h3 mt-3 mb-3">
-                        <span class="link-dark text-leaf"> <i class="uil uil-chart-line me-2"></i>ESG SaaS Platform </span>
-                      </h2>
-                    </div>
-                    <!-- /.post-header -->
-                    <div class="post-content">
-                      <p class="lead fs-md text-muted mb-3">Streamline emissions tracking and reporting</p>
-                      <ul class="icon-list bullet-bg bullet-soft-leaf">
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Automate Scope 1, 2, and 3 GHG emissions tracking across your operations and supply chain</span>
-                        </li>
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Monitor and visualize emissions performance in real time with a centralized ESG dashboard</span>
-                        </li>
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Generate audit-ready disclosures aligned with SB 253 requirements</span>
-                        </li>
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Stay ahead of Scope 3 readiness with supplier data tools, estimation models, and gap analysis </span>
-                        </li>
-                      </ul>
-                      <div class="mt-4">
-                        <a href="/esg-platform" class="btn btn-leaf rounded-pill">Learn More <i class="uil uil-arrow-right ms-1"></i></a>
-                      </div>
-                    </div>
-                    <!-- /.post-content -->
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!-- /.card -->
-              </div>
-              <!--/column -->
-              <div class="col-md-6 col-xl-6">
-                <div class="card shadow-lg hover-shadow-xl transition-all" style="border: 2px solid #407775; transition: all 0.3s ease">
-                  <figure class="card-img-top overlay overlay-1 hover-scale">
-                    <a> <img src="../../assets/img/photos/new/ccl-consulting.webp" alt="SB 261 Consulting Services" style="height: 250px; object-fit: cover" / loading="lazy"> </a>
-                  </figure>
-                  <div class="card-body p-4">
-                    <div class="post-header">
-                      <div class="post-category text-line">
-                        <a rel="category">
-                          <span class="badge bg-soft-leaf text-leaf rounded-pill px-3 py-2"> <i class="uil uil-users me-1"></i>Consulting </span>
-                        </a>
-                      </div>
-                      <!-- /.post-category -->
-                      <h2 class="post-title h3 mt-3 mb-3">
-                        <span class="link-dark text-yellow"> <i class="uil uil-chart-line me-2"></i>SB 261 Consulting Services </span>
-                      </h2>
-                    </div>
-                    <!-- /.post-header -->
-                    <div class="post-content">
-                      <p class="lead fs-md text-muted mb-3">TCFD-aligned strategy, risk assessment, and reporting</p>
-                      <ul class="icon-list bullet-bg bullet-soft-leaf">
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Identify, assess, and quantify climate-related financial risks specific to your industry</span>
-                        </li>
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Build or refine a TCFD-aligned disclosure covering governance, risk management, strategy, and metrics</span>
-                        </li>
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Develop internal controls and processes to support biennial SB 261 reporting</span>
-                        </li>
-                        <li>
-                          <span><i class="uil uil-check"></i></span><span>Ensure alignment with CDP, ISSB, SASB or other sustainability frameworks to maximize reporting efficiency</span>
-                        </li>
-                      </ul>
-                      <div class="mt-4">
-                        <a href="/services/esg-advisory" class="btn btn-leaf rounded-pill">Learn More <i class="uil uil-arrow-right ms-1"></i></a>
-                      </div>
-                    </div>
-                    <!-- /.post-content -->
-                  </div>
-                  <!--/.card-body -->
-                </div>
-                <!-- /.card -->
-              </div>
-              <!--/column -->
-            </div>
-            <!--/.row -->
-          </div>
-          <!-- /.position-relative -->
+
+      <!-- CTA Section -->
+      <section class="ca-cta-cinematic ca-noise relative overflow-hidden px-4 py-20 text-center sm:py-28 md:py-32 lg:py-36">
+        <div class="pointer-events-none absolute inset-0 ca-cta-glow" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(61, 220, 151, 0.18) 0%, transparent 65%)"></div>
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2001?w=1600&amp;q=60" alt="" class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.12]" loading="lazy" aria-hidden="true" />
+        <div class="js-reveal relative mx-auto max-w-4xl">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#f4b940]">Get Started</p>
+          <h2 class="mt-5 font-poppins text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">Need Help Determining Applicability?</h2>
+          <p class="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg md:text-xl">If you're unsure what "doing business in California" means under SB 253 or SB 261 or whether these laws apply to your organization we've got you covered.</p>
+          <a href="/resources/whitepapers/california-climate-laws-download" class="app-btn app-btn-gold mt-12 inline-flex min-h-[52px] items-center gap-2 rounded-lg px-10 py-3.5 text-base font-semibold">
+            Download Now
+            <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+          </a>
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /section -->
-      <section class="wrapper bg-light">
-        <div class="container pb-14 pb-md-16">
-          <h2 class="display-4 mb-3 text-center">FAQs</h2>
-          <p class="lead text-center mb-10 px-md-16 px-lg-0">If you don't see an answer to your question, you can send us an email from our contact form.</p>
-          <div class="row">
-            <div class="col-lg-10 mb-0 mx-auto">
-              <div id="accordion-1" class="accordion-wrapper">
-                <div class="card accordion-item">
-                  <div class="card-header" id="accordion-heading-1-1">
-                    <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-1" aria-expanded="false" aria-controls="accordion-collapse-1-1">What are the annual fees for entities covered under SB 253 and SB 261?</button>
-                  </div>
-                  <!-- /.card-header -->
-                  <div id="accordion-collapse-1-1" class="collapse" aria-labelledby="accordion-heading-1-1" data-bs-target="#accordion-1">
-                    <div class="card-body">
-                      <ul class="unordered-list bullet-primary">
-                        <li>Entities subject to SB 253 (those with >US$1 billion in annual revenue doing business in California) are required to pay an annual fee of US$3,106.</li>
-                        <li>Entities subject to SB 261 (those with >US$500 million in annual revenue doing business in California) are required to pay an annual fee of US$1,403.</li>
-                        <li>Reporting entities with more than $1B in revenue are subject to both fee.</li>
-                        <li>Annual fees are to be adjusted for inflation and fund deficit/surplus in future year.</li>
-                      </ul>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.collapse -->
-                </div>
-                <!-- /.card -->
-                <div class="card accordion-item">
-                  <div class="card-header" id="accordion-heading-1-2">
-                    <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-2" aria-expanded="false" aria-controls="accordion-collapse-1-2">How many entities are estimated to be subject to SB 253 and SB 261?</button>
-                  </div>
-                  <!-- /.card-header -->
-                  <div id="accordion-collapse-1-2" class="collapse" aria-labelledby="accordion-heading-1-2" data-bs-target="#accordion-1">
-                    <div class="card-body">
-                      <ul class="unordered-list bullet-primary">
-                        <li>Approximately 2,596 entities are estimated to be subject to SB 253.</li>
-                        <li>Approximately 4,160 entities are estimated to be subject to SB 261.</li>
-                      </ul>
-                      <p><strong>Note:</strong> The number of entities listed above is based on staff analysis of CA Secretary of State and Dunn & Bradstreet data. CARB will be initiating a process to validate the preliminary list of covered entities.</p>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.collapse -->
-                </div>
-                <!-- /.card -->
-                <div class="card accordion-item">
-                  <div class="card-header" id="accordion-heading-1-3">
-                    <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-3" aria-expanded="false" aria-controls="accordion-collapse-1-3">How and when do entities submit their reports under SB 253 and SB 261?</button>
-                  </div>
-                  <!-- /.card-header -->
-                  <div id="accordion-collapse-1-3" class="collapse" aria-labelledby="accordion-heading-1-3" data-bs-target="#accordion-1">
-                    <div class="card-body">
-                      <ul class="unordered-list bullet-primary">
-                        <li><strong>SB 253 – Emissions Reporting:</strong> Entities must submit their emissions reports using CARB’s templates (to be released for public feedback by September 2025) through CARB’s system and pay the required annual fee.</li>
-                        <li><strong>SB 261 – Climate-Related Financial Risk Reports:</strong> Entities must publish their climate-related financial risk reports on their website, post the report link to CARB’s public docket (opening December 1, 2025), and pay the required filing fee</li>
-                      </ul>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.collapse -->
-                </div>
-                <!-- /.card -->
-                <div class="card accordion-item">
-                  <div class="card-header" id="accordion-heading-1-4">
-                    <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-4" aria-expanded="false" aria-controls="accordion-collapse-1-4">Should companies address the resilience of their strategy under different climate-related scenarios in their SB 261 reports?</button>
-                  </div>
-                  <!-- /.card-header -->
-                  <div id="accordion-collapse-1-4" class="collapse" aria-labelledby="accordion-heading-1-4" data-bs-target="#accordion-1">
-                    <div class="card-body">
-                      <p>
-                        Companies may discuss the resilience of their strategy considering future climate change impacts under various climate scenarios. CARB encourages including qualitative scenario-based assessments where feasible and relevant, describing how the organization’s strategy may respond to potential climate-related risks and opportunities. This discussion can focus on strategic adjustments, risk mitigation measures, and long-term planning to ensure the organization remains
-                        resilient under changing climate conditions.
-                      </p>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.collapse -->
-                </div>
-                <!-- /.card -->
-              </div>
-              <!-- /.accordion-wrapper -->
-            </div>
-            <!--/column -->
-          </div>
-          <!--/.row -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /section -->
-      <section class="wrapper bg-light">
-        <div class="container pb-12">
-          <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-300 shadow-lg rounded-3 overflow-hidden" style="background: linear-gradient(135deg, #407775 0%, #5a8a87 100%); border: none">
-            <div class="card-body p-10 p-xl-12">
-              <div class="row text-center">
-                <div class="col-xl-12 col-xxl-10 mx-auto">
-                  <h3 class="display-3 mb-3 px-lg-8 text-white">Need Help Determining Applicability?</h3>
-                  <p class="lead fs-lg mb-8 text-white">If you're unsure what "doing business in California" means under SB 253 or SB 261 or whether these laws apply to your organization we've got you covered.</p>
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-              <div class="d-flex justify-content-center">
-                <a href="/resources/whitepapers/california-climate-laws-download" class="btn btn-white rounded-pill shadow-lg px-5 py-3 fw-bold" style="background: linear-gradient(135deg, #fab430 0%, #fab430 100%); color: #1a3332; border: none; transition: all 0.3s ease"> <i class="uil uil-download me-2"></i>Download Now </a>
-              </div>
-            </div>
-            <!--/.card-body -->
-          </div>
-          <!--/.card -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /section -->
-    </div>
-    <!-- /.content-wrapper -->
-    <!-- Modal -->
-    <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <!--<div class="modal-header">-->
-          <!--  <h5 class="modal-title" id="downloadModalLabel">Download Guide</h5>-->
-          <!--</div>-->
-          <div class="modal-body">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-            <script>
-              hbspt.forms.create({
-                region: "na1",
-                portalId: "40029313",
-                formId: "96201a49-4636-4a8a-8317-3d264a66a590",
-              });
-            </script>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Modal /.-->
-    <div id="footer"></div>
-    <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-    </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/theme.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- JavaScript -->
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Alpine.js Components - Automatically versioned by cache-buster.js -->
+    <script src="/v3/assets/js/components.js"></script>
+    <script src="/v3/assets/js/utils.js"></script>
+
+    <script src="/v3/assets/js/california-climate-laws.js?v=20260520"></script>
+
+    <!-- Suppress Tailwind CDN warning for development -->
     <script>
-      // Function to show the modal when the ".pdf" buttons are clicked
-      const pdfButtons = document.querySelectorAll(".pdf");
-      pdfButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-          $("#downloadModal").modal("show");
-        });
-      });
+      // Override console.warn to filter out Tailwind CDN warning
+      const originalWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && args[0].includes && args[0].includes("cdn.tailwindcss.com should not be used in production")) {
+          return; // Suppress this specific warning
+        }
+        originalWarn.apply(console, args);
+      };
     </script>
   </body>
 </html>

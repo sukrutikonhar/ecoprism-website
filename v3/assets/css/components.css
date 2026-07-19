@@ -352,3 +352,314 @@
     transform: rotate(360deg);
   }
 }
+
+/* ==========================================================================
+   v3 site header — shared (teams, csrd, csrd-adoption, california)
+   ========================================================================== */
+
+/* ── Header state classes added by Alpine ─────────────────────────────────
+   site-header--transparent-light  = over a DARK hero (csrd-adoption)
+   site-header--transparent-dark   = over a LIGHT hero (csrd, teams)
+   site-header--scrolled           = white bg, any page
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ── Desktop nav links ───────────────────────────────────────────────── */
+
+/* Over dark hero → nav items + hamburger go white */
+header.site-header--transparent-light .nav-link {
+  color: #ffffff !important;
+}
+header.site-header--transparent-light .site-header-bar .chevron-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+/* Target ONLY the hamburger toggle, NOT the mobile drawer buttons */
+header.site-header--transparent-light .mobile-toggle {
+  color: #ffffff !important;
+}
+
+/* Over light hero or scrolled → nav items + hamburger go #575757 */
+header.site-header--transparent-dark .nav-link,
+header.site-header--scrolled .nav-link {
+  color: #575757 !important;
+}
+header.site-header--transparent-dark .site-header-bar .chevron-icon,
+header.site-header--scrolled .site-header-bar .chevron-icon {
+  color: #575757;
+}
+header.site-header--transparent-dark .mobile-toggle,
+header.site-header--scrolled .mobile-toggle {
+  color: #575757 !important;
+}
+
+/* ── Mobile nav drawer ───────────────────────────────────────────────────
+   The drawer always has a white background, so text is always #575757
+   regardless of whether the header behind it is light or dark variant. */
+header .mobile-nav-drawer a:not(.site-header-cta),
+header .mobile-nav-drawer button {
+  color: #575757 !important;
+}
+header .mobile-nav-drawer a:not(.site-header-cta):hover,
+header .mobile-nav-drawer button:hover {
+  color: #407775 !important;
+}
+header .mobile-nav-drawer svg {
+  color: #575757;
+}
+/* Contact Us button in the drawer keeps white text on teal */
+header .mobile-nav-drawer .site-header-cta {
+  color: #ffffff !important;
+}
+
+/* Header container — sticky wrapper; must be transparent so the
+   inner <header>'s bg-transparent actually shows the hero behind it */
+#header-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: transparent;
+}
+
+/* Header bar — 72 px tall (h-16 = 64 px was a touch small) */
+.site-header-bar {
+  height: 4.5rem !important; /* 72 px */
+}
+
+/* Logo */
+.site-header-logo-link {
+  display: flex;
+  align-items: center;
+  min-width: 9rem;
+}
+
+.site-header-logo {
+  height: 2.5rem; /* 40 px */
+  width: auto;
+  max-width: 11rem; /* 176 px */
+  display: block;
+  object-fit: contain;
+}
+
+/* Logo src is pre-set in loadSiteHeader() before Alpine.initTree() runs.
+   Alpine's :src binding then drives all subsequent state changes. */
+
+/* Contact CTA — real CSS (CDN Tailwind does not compile classes in fetched header.html) */
+.site-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  background-color: #407775 !important;
+  color: #ffffff !important;
+  border: 1px solid #407775;
+  box-shadow: 0 4px 12px rgba(32, 90, 84, 0.28);
+}
+
+.site-header-cta:hover {
+  background-color: #588885 !important;
+  border-color: #588885;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(32, 90, 84, 0.35);
+}
+
+/* Light hero at top of page — white pill on transparent header */
+.site-header-cta--inverse {
+  background-color: #ffffff !important;
+  color: #407775 !important;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.site-header-cta--inverse:hover {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  color: #407775 !important;
+}
+
+.site-header-cta--block {
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+/* Do not let transparent-header nav rules recolor the CTA */
+header .site-header-bar .site-header-cta {
+  color: #ffffff !important;
+}
+
+header .site-header-bar .site-header-cta.site-header-cta--inverse {
+  color: #407775 !important;
+}
+
+/* Backward compatibility aliases for old ecogrid-btn class names */
+.ecogrid-btn {
+  @apply app-btn;
+}
+.ecogrid-btn-primary {
+  @apply app-btn-primary;
+}
+.ecogrid-btn-outline {
+  @apply app-btn-outline;
+}
+.ecogrid-btn-cta-gold {
+  @apply app-btn-gold;
+}
+.ecogrid-btn-cta-ghost {
+  @apply app-btn-ghost;
+}
+.ecogrid-btn-outline-light {
+  /* light variant support */
+}
+header .site-header-bar a[href]:not(.site-header-cta):not(.nav-link):not(.site-header-logo-link):hover {
+  background-color: #eaf5f1 !important;
+  color: #1f7a63 !important;
+}
+
+/* ========================================================================
+   Button Styles (unified across all pages - Global Names)
+   ======================================================================== */
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    filter 0.2s ease;
+}
+
+.app-btn:hover {
+  transform: translateY(-2px);
+}
+
+.app-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.app-btn:focus-visible {
+  outline: 2px solid #fab430;
+  outline-offset: 3px;
+}
+
+/* Primary button — Teal filled */
+.app-btn-primary {
+  background: #2f7f75;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(47, 119, 117, 0.28);
+}
+
+.app-btn-primary:hover {
+  background: linear-gradient(165deg, #3a7d6e 0%, #2f6f64 55%, #285a50 100%);
+  box-shadow: 0 10px 28px rgba(47, 111, 100, 0.42);
+}
+
+/* Outline button — Teal border, white fill */
+.app-btn-outline {
+  background: #ffffff;
+  border: 2px solid #2f7f75;
+  color: #2f7f75;
+  box-shadow: 0 2px 8px rgba(47, 127, 117, 0.1);
+  font-weight: 600;
+}
+
+.app-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #2f7f75;
+  color: #2f7f75;
+  box-shadow: 0 8px 20px rgba(47, 127, 117, 0.18);
+}
+
+/* Gold/Yellow CTA button */
+.app-btn-gold {
+  background: #f4b940;
+  color: #0b2e26;
+  box-shadow: 0 6px 18px rgba(244, 185, 64, 0.32);
+}
+
+.app-btn-gold:hover {
+  background: linear-gradient(165deg, #fce089 0%, #f4b940 45%, #e0a32a 100%);
+  box-shadow: 0 12px 34px rgba(244, 185, 64, 0.5);
+}
+
+/* Ghost button — for dark backgrounds */
+.app-btn-ghost {
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.app-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-btn:hover,
+  .app-btn:active {
+    transform: none;
+  }
+  .app-btn {
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+}
+
+/* ========================================================================
+   Pretitle / Label Styles (Global - used throughout all pages)
+   ======================================================================== */
+
+.app-pretitle {
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+}
+
+/* Pretitle on light backgrounds */
+.app-pretitle--light {
+  background: rgba(157, 189, 184, 0.15);
+  color: #1f7a63;
+}
+
+/* Pretitle on dark backgrounds */
+.app-pretitle--dark {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Pretitle with gold/yellow accent */
+.app-pretitle--gold {
+  background: rgba(244, 185, 64, 0.2);
+  color: #f4b940;
+}
+
+/* Pretitle with mint/accent */
+.app-pretitle--mint {
+  background: rgba(61, 220, 151, 0.1);
+  color: #1f7a63;
+}

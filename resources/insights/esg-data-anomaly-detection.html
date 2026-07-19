@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn why ESG anomaly detection must go beyond flagging unusual values. Explore context-aware intelligence, seasonality, site baselines, and AI-powered explanation." />
+    <meta name="keywords" content="ESG data anomaly detection, sustainability anomaly detection, ESG data quality, sustainability intelligence, AI for sustainability, energy consumption analytics, anomaly detection in ESG" />
+    <meta name="author" content="Sukruti Konhar" />
+    <meta name="date" content="2026-07-10" />
+    <title>ESG Data Anomaly Detection: Why Finding the Spike Is Not Enough | ecoPRISM</title>
+    <link rel="shortcut icon" href="../../assets/img/favicon.webp" />
+    <link rel="stylesheet" href="../../assets/css/plugins.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/colors/leaf.css" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://ecoprism.com/resources/insights/esg-data-anomaly-detection" />
+
+    <!-- Alternate language links -->
+    <link rel="alternate" hreflang="en" href="https://ecoprism.com/resources/insights/esg-data-anomaly-detection" />
+    <link rel="alternate" hreflang="x-default" href="https://ecoprism.com/resources/insights/esg-data-anomaly-detection" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ecoprism.com/resources/insights/esg-data-anomaly-detection" />
+    <meta property="og:title" content="ESG Data Anomaly Detection: Why Finding the Spike Is Not Enough | ecoPRISM" />
+    <meta property="og:description" content="Learn why ESG anomaly detection must go beyond flagging unusual values. Explore context-aware intelligence, seasonality, site baselines, and AI-powered explanation." />
+    <meta property="og:image" content="https://ecoprism.com/assets/img/blog/blog-66.webp" />
+    <meta property="og:site_name" content="ecoPRISM" />
+    <meta property="article:published_time" content="2026-07-10" />
+    <meta property="article:author" content="Sukruti Konhar" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ecoprism.com/resources/insights/esg-data-anomaly-detection" />
+    <meta name="twitter:title" content="ESG Data Anomaly Detection: Why Finding the Spike Is Not Enough | ecoPRISM" />
+    <meta name="twitter:description" content="Learn why ESG anomaly detection must go beyond flagging unusual values. Explore context-aware intelligence, seasonality, site baselines, and AI-powered explanation." />
+    <meta name="twitter:image" content="https://ecoprism.com/assets/img/blog/blog-66.webp" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JTG1Q17RB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6JTG1Q17RB");
+    </script>
+
+    <!-- Lead5beat Tracking Code -->
+    <script type="text/javascript" src="https://secure.lead5beat.com/js/221793.js"></script>
+    <noscript><img src="https://secure.lead5beat.com/221793.png" style="display: none" /></noscript>
+
+    <style>
+      .bg-cta {
+        background-image: linear-gradient(to right top, #494949, #4e5055, #4e5861, #4a616c, #446a73, #39777a, #35847a, #419072, #5ea062, #89ad4c, #beb435, #fab430) !important;
+      }
+      .blog-link {
+        color: #6f9896;
+      }
+      hr {
+        margin: 3rem 0;
+      }
+
+      .blockquote-footer a,
+      .blockquote-footer a:hover {
+        color: #aab0bc !important;
+      }
+
+      .blockquote-callout {
+        background-color: #fef8ee;
+        border-left: 0.25rem solid #fab758 !important;
+        border-radius: 0.4rem;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      .blockquote-callout p:last-child {
+        margin-bottom: 0;
+      }
+
+      .maturity-timeline {
+        margin: 1rem 0;
+        position: relative;
+      }
+
+      .maturity-timeline::before {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        bottom: 1rem;
+        width: 2px;
+        transform: translateX(-50%);
+        background-color: #d4ebe9;
+      }
+
+      .maturity-timeline-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.875rem;
+        padding-bottom: 1rem;
+      }
+
+      .maturity-timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .maturity-timeline-marker-wrap {
+        position: relative;
+        flex-shrink: 0;
+        width: 2rem;
+        z-index: 1;
+      }
+
+      .maturity-timeline-marker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        font-size: 0.7rem;
+        font-weight: 700;
+        line-height: 1;
+        background-color: #3d7a76;
+        color: #fff;
+      }
+
+      .maturity-timeline-content {
+        flex: 1;
+        padding-top: 0.35rem;
+      }
+
+      .maturity-timeline-content p {
+        margin-bottom: 0;
+      }
+
+      .metric-cards {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+      }
+
+      .metric-card {
+        background-color: #dae5e34d !important;
+      }
+
+      .metric-card .card-body {
+        padding: 1.1rem 1.15rem !important;
+      }
+
+      .metric-card-icon {
+        font-size: 1.15rem;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: #407775;
+      }
+
+      .metric-card .card-title {
+        font-size: 0.875rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .metric-card .card-text {
+        font-size: 0.75rem;
+        line-height: 1.45;
+      }
+    </style>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://ecoprism.com/#organization",
+            "name": "ecoPRISM",
+            "url": "https://ecoprism.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://ecoprism.com/assets/img/logo-light.webp"
+            },
+            "sameAs": ["https://www.linkedin.com/company/ecoprism/", "https://www.youtube.com/@Ecoprism-kz4yb"]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://ecoprism.com/author/sukruti-konhar",
+            "name": "Sukruti Konhar",
+            "url": "https://www.linkedin.com/in/sukrutikonhar/",
+            "jobTitle": "ESG Platform Developer",
+            "worksFor": {
+              "@id": "https://ecoprism.com/#organization"
+            }
+          },
+          {
+            "@type": "BlogPosting",
+            "@id": "https://ecoprism.com/resources/insights/esg-data-anomaly-detection#blog",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://ecoprism.com/resources/insights/esg-data-anomaly-detection"
+            },
+            "headline": "ESG Data Anomaly Detection: Why Finding the Spike Is Not Enough",
+            "description": "Learn why ESG anomaly detection must go beyond flagging unusual values. Explore context-aware intelligence, seasonality, site baselines, and AI-powered explanation.",
+            "image": "https://ecoprism.com/assets/img/blog/blog-66.webp",
+            "datePublished": "2026-07-10",
+            "dateModified": "2026-07-10",
+            "author": {
+              "@id": "https://ecoprism.com/author/sukruti-konhar"
+            },
+            "publisher": {
+              "@id": "https://ecoprism.com/#organization"
+            },
+            "articleSection": "Technology & Innovation",
+            "keywords": ["ESG data anomaly detection", "sustainability anomaly detection", "ESG data quality", "sustainability intelligence", "AI for sustainability", "energy consumption analytics", "anomaly detection in ESG"],
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="content-wrapper" id="blog-page">
+      <header class="wrapper bg-soft-primary">
+        <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-light">
+          <div class="container flex-lg-row flex-nowrap align-items-center">
+            <div class="navbar-brand w-100">
+              <a href="/">
+                <img class="logo-dark" src="../../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" loading="lazy" />
+                <img class="logo-light" src="../../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" loading="lazy" />
+              </a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <a href="/">
+                  <img class="logo-dark" src="../../assets/img/logo.webp" height="45px" alt="ecoPRISM Logo" loading="lazy" />
+                  <img class="logo-light" src="../../assets/img/logo-light.webp" height="45px" alt="ecoPRISM Logo" loading="lazy" />
+                </a>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/about-us">About Us</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/our-team">Our Team</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/careers">Careers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/news">News</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/events">Events</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu dropdown-lg">
+                      <div class="dropdown-lg-content">
+                        <div>
+                          <ul class="list-unstyled">
+                            <li><a class="dropdown-item" href="/esg-platform">ESG Platform</a></li>
+                            <li><a class="dropdown-item" href="/csrd-reporting">CSRD Reporting</a></li>
+                            <li><a class="dropdown-item" href="/ecoquote">ecoQUOTE</a></li>
+                          </ul>
+                        </div>
+                        <!-- /.column -->
+                        <div>
+                          <ul class="list-unstyled">
+                            <li><a class="dropdown-item" href="/esg-benchmarking">ESG Benchmarking</a></li>
+                            <li><a class="dropdown-item" href="/ecobot">CSRD ecobot</a></li>
+                            <li><a class="dropdown-item" href="/ecogrid">ecoGRID</a></li>
+                          </ul>
+                        </div>
+                        <!-- /.column -->
+                      </div>
+                      <!-- /auto-column -->
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/ecoprism-ai">ecoPRISM AI</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/services/esg-advisory">ESG Advisory</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/services/training-capacity-building">Training and Capacity Building</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Case Studies</a>
+
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/abb-ecoquote-sustainability-reporting">Sustainability in Proposals</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/unisys-climate-risk">Climate Risk Intelligence</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/acumant-ecovadis">EcoVadis Readiness</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/camfil-esg-training">ESG Capacity Building</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/case-studies/double-materiality-assessment">Double Materiality Assessment</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/insights">Insights</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/whitepapers">Whitepapers</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/glossary">ESG Glossary</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/csrd-adoption">CSRD Adoption</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/california-climate-laws-explained">California Climate Disclosure Laws</a></li>
+                      <li class="nav-item"><a class="dropdown-item" href="/resources/brsr-reporting">BRSR Reporting</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item d-block d-md-none"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+                </ul>
+                <!-- /.navbar-nav -->
+                <div class="offcanvas-footer d-lg-none">
+                  <div>
+                    <a href="mailto:info@ecoprism.com" class="link-inverse"><span class="__cf_email__">info@ecoprism.com</span></a>
+                    <nav class="nav social social-white mt-4">
+                      <a href="https://www.linkedin.com/company/ecoprism/"><i class="uil uil-linkedin"></i></a>
+                      <a href="https://www.youtube.com/@Ecoprism-kz4yb"><i class="uil uil-youtube"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                  </div>
+                </div>
+                <!-- /.offcanvas-footer -->
+              </div>
+              <!-- /.offcanvas-body -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="navbar-other ms-lg-4">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item d-none d-md-block">
+                  <a href="/contact-us" class="btn btn-sm btn-primary rounded-pill">Contact Us</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                  <button class="hamburger offcanvas-nav-btn">
+                    <span></span>
+                  </button>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </header>
+      <!-- /header -->
+      <section class="wrapper bg-light">
+        <div class="container pt-14 pt-md-16 pb-10 pb-md-12">
+          <div class="row gx-lg-8 gx-xl-12">
+            <div class="col-lg-8">
+              <div class="post-header mb-8">
+                <div class="post-category text-line">
+                  <a href="#" class="hover" rel="category">Technology & Innovation</a>
+                  <span class="mx-2">•</span>
+                  <a href="#" class="hover" rel="category">Sustainability</a>
+                </div>
+                <!-- /.post-category -->
+                <h1 class="display-4 mb-4">ESG Data Anomaly Detection: Why Finding the Spike Is Not Enough</h1>
+                <ul class="post-meta">
+                  <li class="post-date"><i class="uil uil-calendar-alt"></i><span>10 Jul 2026</span></li>
+                  <li class="post-author">
+                    <a href="https://www.linkedin.com/in/sukrutikonhar/" target="_blank"><i class="uil uil-user"></i><span>By Sukruti Konhar</span></a>
+                  </li>
+                  <li class="post-time"><i class="uil uil-clock"></i><span>12-minute read</span></li>
+                </ul>
+                <!-- /.post-meta -->
+              </div>
+              <!--/.post-header -->
+              <div class="blog single">
+                <div>
+                  <figure class="rounded mb-6">
+                    <img src="../../assets/img/blog/blog-66.webp" alt="ESG Data Anomaly Detection: Why Finding the Spike Is Not Enough" loading="lazy" />
+                  </figure>
+                  <div>
+                    <div class="classic-view">
+                      <article class="post">
+                        <div class="post-content mb-5">
+                          <p>Most sustainability teams have seen this happen.</p>
+                          <p>A dashboard fills with anomaly alerts. Some are investigated. Most are ignored. Not because people do not care, but because many alerts stop at identifying a change. They do not explain whether the change matters.</p>
+                          <p>An alert may report that electricity consumption increased by 150 percent. Another may flag unusual fuel usage. A third may highlight a sudden increase in travel emissions.</p>
+                          <p><strong>The missing piece is context.</strong></p>
+                          <p>
+                            <strong><em>The value of anomaly detection is not how many anomalies it finds. The value comes from helping people understand what happened and whether action is needed.</em></strong>
+                          </p>
+                          <blockquote class="blockquote-callout my-8">
+                            <p>At ecoPRISM, we work with sustainability teams across industries on their ESG data infrastructure. Anomaly detection comes up in almost every conversation - and the gap between what teams expect from it and what most systems actually deliver is one of the most consistent challenges we see.</p>
+                          </blockquote>
+
+                          <h2 class="h2 mt-6">Detection Is Becoming a Commodity</h2>
+                          <p>Organisations have spent years improving statistical detection methods. Thresholds, historical averages, trend analysis, and machine learning models can all identify unusual values.</p>
+                          <p>What happens after detection is where the real challenge begins.</p>
+                          <p>A sustainability manager does not need another notification saying that energy consumption increased by 47 percent. They need to know whether the increase was caused by weather, operational changes, data quality issues, facility expansion, or something that genuinely requires investigation.</p>
+
+                          <h2 class="h2 mt-6">Sustainability Data Behaves Differently</h2>
+                          <p>Sustainability metrics are influenced by physical and operational conditions.</p>
+                          <p>Electricity usage often follows weather patterns. Natural gas consumption may rise during colder months. Fleet fuel usage changes as routes expand. Refrigerant losses often appear around maintenance activities.</p>
+                          <p>These patterns are normal. Yet many anomaly detection systems evaluate numbers without understanding the conditions behind them.</p>
+                          <p><strong>Example:</strong> A large increase in electricity consumption during summer at a warehouse in Arizona may be completely expected. The same increase at another facility during mild weather deserves attention. The numbers alone do not provide enough information.</p>
+
+                          <h2 class="h2 mt-6">Every Metric Requires Its Own Logic</h2>
+                          <p>Applying the same anomaly logic to every metric usually creates more noise than value.</p>
+                          <p>Each metric has its own behaviour:</p>
+                          <div class="row metric-cards">
+                            <div class="col-md-4">
+                              <div class="card shadow-none h-100 metric-card">
+                                <div class="card-body">
+                                  <i class="uil uil-bolt-alt metric-card-icon"></i>
+                                  <h6 class="card-title">Purchased Electricity</h6>
+                                  <p class="card-text mb-0">Strong seasonal influence and weather dependency.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="card shadow-none h-100 metric-card">
+                                <div class="card-body">
+                                  <i class="uil uil-fire metric-card-icon"></i>
+                                  <h6 class="card-title">Natural Gas</h6>
+                                  <p class="card-text mb-0">Heating demand often drives winter peaks.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="card shadow-none h-100 metric-card">
+                                <div class="card-body">
+                                  <i class="uil uil-plane-departure metric-card-icon"></i>
+                                  <h6 class="card-title">Business Travel</h6>
+                                  <p class="card-text mb-0">Highly event-driven and difficult to baseline.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="card shadow-none h-100 metric-card">
+                                <div class="card-body">
+                                  <i class="uil uil-snowflake metric-card-icon"></i>
+                                  <h6 class="card-title">Refrigerants</h6>
+                                  <p class="card-text mb-0">Often linked to maintenance or leakage events.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="card shadow-none h-100 metric-card">
+                                <div class="card-body">
+                                  <i class="uil uil-trash-alt metric-card-icon"></i>
+                                  <h6 class="card-title">Waste</h6>
+                                  <p class="card-text mb-0">Projects and renovations can create large spikes.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="card shadow-none h-100 metric-card">
+                                <div class="card-body">
+                                  <i class="uil uil-truck metric-card-icon"></i>
+                                  <h6 class="card-title">Supplier Emissions</h6>
+                                  <p class="card-text mb-0">Reporting quality and timing often influence results.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h2 class="h2 mt-6">Practical Lessons from Building Sustainability Anomaly Detection</h2>
+                          <p>Implementation reveals challenges that rarely appear in product brochures or technical diagrams. These lessons often determine whether users trust the system.</p>
+                          <ol>
+                            <li>
+                              <p><strong>Site boundaries matter</strong><br />Building baselines is possible by utilising the history of individual facilities; combining data from different sites can create false confidence and misleading assumptions.</p>
+                            </li>
+                            <li>
+                              <p><strong>Seasonality is metric-specific</strong><br />The relationship between months varies significantly depending on what is being measured. Electricity, natural gas, business travel, and refrigerants each have different seasonal patterns and should not be treated the same way.</p>
+                            </li>
+                            <li>
+                              <p><strong>Data quality issues mimic real anomalies</strong><br />Duplicate uploads, incorrect units, billing period shifts, and spreadsheet errors can all appear as consumption spikes. When data quality is not addressed first, trust in the entire detection process breaks down.</p>
+                            </li>
+                            <li>
+                              <p><strong>The cold start problem is real</strong><br />The history of traditional anomaly detection is seldom upheld by new facilities, acquisitions, and first-time reporters. However, this trend remains prevalent. Validation checks and benchmarking are necessary until a solid baseline is established.</p>
+                            </li>
+                            <li>
+                              <p><strong>Robust statistics outperform perfect assumptions.</strong><br />Sustainability datasets are rarely perfect. A single meter failure or reporting error can distort averages for a long period of time. Median-based approaches and interquartile ranges are often more resilient because they are less sensitive to unusual events.</p>
+                            </li>
+                            <li>
+                              <p><strong>Explanation is an integration challenge.</strong><br />The answer to why an anomaly occurred is often found in another system entirely maintenance records, weather data, production schedules, occupancy changes, or operational events. Anomaly detection that cannot connect to these systems will always be incomplete.</p>
+                            </li>
+                          </ol>
+
+                          <h2 class="h2 mt-6">Where AI Creates Real Value</h2>
+                          <p>Most conversations about AI in sustainability focus on finding anomalies. The harder and more valuable problem is explaining them.</p>
+                          <p>AI can connect disparate information systems, generate investigative hypotheses, provide a summary of supporting evidence, and help sustainability teams move from detection to understanding as quickly as possible.</p>
+                          <p>The real opportunity for AI is not in raising more alerts. It is in helping teams investigate them faster.</p>
+
+                          <h2 class="h2 mt-6">A Maturity Model for Sustainability Intelligence</h2>
+                          <div class="maturity-timeline">
+                            <div class="maturity-timeline-item">
+                              <div class="maturity-timeline-marker-wrap">
+                                <span class="maturity-timeline-marker marker-solid">01</span>
+                              </div>
+                              <div class="maturity-timeline-content">
+                                <p class="mb-0"><strong>Stage 1.</strong> Static threshold alerts.</p>
+                              </div>
+                            </div>
+                            <div class="maturity-timeline-item">
+                              <div class="maturity-timeline-marker-wrap">
+                                <span class="maturity-timeline-marker marker-solid">02</span>
+                              </div>
+                              <div class="maturity-timeline-content">
+                                <p class="mb-0"><strong>Stage 2.</strong> Statistical anomaly detection.</p>
+                              </div>
+                            </div>
+                            <div class="maturity-timeline-item">
+                              <div class="maturity-timeline-marker-wrap">
+                                <span class="maturity-timeline-marker marker-solid">03</span>
+                              </div>
+                              <div class="maturity-timeline-content">
+                                <p class="mb-0"><strong>Stage 3.</strong> Context-aware detection with seasonality and site-level baselines.</p>
+                              </div>
+                            </div>
+                            <div class="maturity-timeline-item">
+                              <div class="maturity-timeline-marker-wrap">
+                                <span class="maturity-timeline-marker marker-solid">04</span>
+                              </div>
+                              <div class="maturity-timeline-content">
+                                <p class="mb-0"><strong>Stage 4.</strong> Explanation-driven intelligence with automated investigation support.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <p>Most organisations are currently somewhere between Stage 2 and Stage 3. <strong>The gap between Stage 3 and Stage 4 is where the most significant value exists.</strong></p>
+
+                          <h2 class="h2 mt-6">What the Future Looks Like</h2>
+                          <p>The next generation of sustainability intelligence will not be measured by how many alerts it produces.</p>
+                          <p>It will be measured by how many investigations it eliminates.</p>
+                          <p>Teams need systems that provide context, surface likely causes, and support decision-making. That is where the biggest opportunity exists today.</p>
+                          <p>
+                            <strong><em>The increase itself is rarely the problem. The real question is whether the increase was expected and what it means for the organisation.</em></strong>
+                          </p>
+
+                          <h2 class="h2 mt-6">How ecoPRISM Approaches Anomaly Detection</h2>
+                          <p>Anomaly detection is part of how we think about sustainability data quality at ecoPRISM. Our platform flags unusual values across emissions data, surfaces inconsistencies between reporting periods, and highlights patterns that warrant investigation with enough context to help teams decide whether something needs action or not.</p>
+                          <p>The next frontier automated explanation and investigation support that connects anomalies to operational context - is where we are actively building.</p>
+                          <p>If you want to see what we have today and where we are heading, we are happy to show you.</p>
+
+                          <h2 class="h2 mt-6">Final Thoughts</h2>
+                          <p>The anomaly is not the spike.</p>
+                          <p>The spike is simply evidence that something changed.</p>
+                          <p>The real challenge is understanding the story behind the change. Was it weather, growth, maintenance, operational activity, poor data quality, or a genuine issue that requires action?</p>
+                          <p>Detection identifies unusual values. Explanation creates understanding. Sustainability teams need both, but explanation is where the most value is created.</p>
+                        </div>
+                        <!-- /.post-content -->
+                      </article>
+                      <!-- /.post -->
+                    </div>
+                    <!-- /.classic-view -->
+                    <hr />
+                    <div class="card bg-soft-leaf card-border-bottom border-soft-leaf">
+                      <div class="card-body">
+                        <h3 class="h4 mb-4">How ecoPRISM can help</h3>
+                        <p>ecoPRISM helps sustainability teams move beyond raw anomaly alerts - with site-level baselines, metric-specific detection logic, and validation checks that separate real spikes from seasonal shifts, data errors, and reporting noise.</p>
+                        <p class="text-leaf">
+                          <strong><em>Spend less time chasing false alarms. Spend more time on the anomalies that actually matter.</em></strong>
+                        </p>
+                        <div class="d-flex align-items-center">
+                          <h5><span class="typer text-primary fixed" data-delay="100" data-words="Follow us on LinkedIn   "> </span><span class="cursor text-green" data-owner="typer"></span></h5>
+                          <div class="icon text-primary fs-24" style="margin-top: -10px">
+                            <a href="https://www.linkedin.com/company/ecoprism/mycompany/" target="_blank"><i class="uil uil-linkedin"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- /.blog -->
+            </div>
+            <!-- /column -->
+            <aside class="col-lg-4 sidebar sticky-sidebar mt-5 mt-lg-6">
+              <div class="widget">
+                <a href="/resources/insights/sbti-corporate-net-zero-standard-v2-changes" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0 me-1 disabled"><i class="uil uil-arrow-left"></i> Prev Post</a>
+                <a href="/resources/insights/sbti-corporate-net-zero-standard-v2-changes" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-end mb-0">Next Post <i class="uil uil-arrow-right"></i></a>
+              </div>
+              <div class="widget">
+                <div class="d-md-flex align-items-center mb-3">
+                  <h6 class="widget-title mb-3">Written by</h6>
+                  <div class="mt-3 mt-md-0 ms-auto">
+                    <a href="/resources/insights" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0"><i class="uil uil-file-alt"></i> All Posts </a>
+                  </div>
+                </div>
+                <div class="accordion accordion-wrapper author-accordian" id="accordionAuthor">
+                  <div class="card plain accordion-item">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="author-info d-flex align-items-center">
+                        <figure class="user-avatar"><img class="rounded-circle" alt="Team member" src="../../assets/img/avatars/sukruti1.webp" loading="lazy" /></figure>
+                        <div>
+                          <h6 class="mb-0"><a href="https://www.linkedin.com/in/sukrutikonhar/" target="_blank" class="link-dark">Sukruti Konhar</a></h6>
+                          <span class="post-meta fs-14">ESG Platform Developer</span>
+                        </div>
+                      </div>
+                      <div class="card-header" id="headingAuthor">
+                        <div class="icon btn btn-circle btn-sm btn-soft-primary" data-bs-toggle="collapse" data-bs-target="#collapseAuthor" aria-expanded="false" aria-controls="collapseAuthor"><i class="uil uil-angle-down"></i></div>
+                      </div>
+                      <!--/.card-header -->
+                    </div>
+                    <div id="collapseAuthor" class="accordion-collapse collapse" aria-labelledby="headingAuthor" data-bs-parent="#accordionAuthor">
+                      <div class="card-body mt-3 p-0">
+                        <p class="fs-14">Sukruti is an ESG Platform Developer at ecoPRISM, where she builds React and TypeScript interfaces for sustainability reporting, data visualisation, and platform features that help teams work with complex ESG data more effectively.</p>
+                      </div>
+                      <!--/.card-body -->
+                    </div>
+                    <!--/.accordion-collapse -->
+                  </div>
+                  <!--/.accordion-item -->
+                </div>
+                <!--/.accordion -->
+              </div>
+              <div class="widget bg-cta rounded py-5 px-8">
+                <div class="row">
+                  <div class="mx-auto">
+                    <h2 class="fs-16 fs-xl-20 text-white mb-7">Connect with our sustainability experts to learn more</h2>
+                  </div>
+                  <!-- /column -->
+                </div>
+                <!-- /.row -->
+                <div class="">
+                  <span><a href="/contact-us" class="btn btn-sm btn-white rounded">Get Started</a></span>
+                </div>
+              </div>
+              <!-- /.widget -->
+              <div class="widget">
+                <h6 class="widget-title">Share</h6>
+                <nav class="nav social">
+                  <a href="javascript:void(0);" onclick="shareOnLinkedIn()">
+                    <i class="uil uil-linkedin"></i>
+                  </a>
+                  <a href="javascript:void(0);" onclick="shareOnTwitter()">
+                    <i class="uil uil-twitter"></i>
+                  </a>
+                  <a href="javascript:void(0);" onclick="shareOnFacebook()">
+                    <i class="uil uil-facebook-f"></i>
+                  </a>
+                  <a href="javascript:void(0);" onclick="copyToClipboard()">
+                    <i class="uil uil-link text-yellow"></i>
+                  </a>
+                  <a href="javascript:void(0);" onclick="shareViaEmail()">
+                    <i class="uil uil-envelope"></i>
+                  </a>
+                </nav>
+                <!-- /.social -->
+              </div>
+              <!-- /.widget -->
+              <div class="widget mt-5">
+                <h6 class="widget-title mb-3">Tags</h6>
+                <ul class="list-unstyled tag-list">
+                  <li>
+                    <a class="btn btn-soft-ash btn-sm rounded-pill">ESGAnalytics</a>
+                  </li>
+                  <li>
+                    <a class="btn btn-soft-ash btn-sm rounded-pill">AnomalyDetection</a>
+                  </li>
+                  <li>
+                    <a class="btn btn-soft-ash btn-sm rounded-pill">SustainabilityIntelligence</a>
+                  </li>
+                  <li>
+                    <a class="btn btn-soft-ash btn-sm rounded-pill">AI</a>
+                  </li>
+                  <li>
+                    <a class="btn btn-soft-ash btn-sm rounded-pill">DataQuality</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.widget -->
+            </aside>
+            <!-- /column .sidebar -->
+          </div>
+          <!-- /.row -->
+          <div id="blog-footer"></div>
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /section -->
+    </div>
+    <!-- /.content-wrapper -->
+    <div id="footer"></div>
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../../assets/js/plugins.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/script.js?v=20251216"></script>
+  </body>
+</html>

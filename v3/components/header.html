@@ -1,10 +1,28 @@
-<header class="sticky top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false, activeDropdown: null, isScrolled: false }" x-bind:class="isScrolled ? 'bg-white shadow-sm' : 'bg-transparent shadow-none'" x-init="window.addEventListener('scroll', () => { isScrolled = window.scrollY > 0 })" x-cloak>
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
+<header
+  class="transition-all duration-300 w-full"
+  x-data="headerComponent()"
+  :class="isScrolled
+    ? 'bg-white shadow-sm site-header--scrolled'
+    : (variant === 'light'
+        ? 'bg-transparent shadow-none site-header--transparent-light'
+        : 'bg-transparent shadow-none site-header--transparent-dark')"
+>
+  <div class="container mx-auto px-4 sm:px-6">
+    <div class="site-header-bar flex items-center justify-between h-16">
+      <!-- Logo: single img, src swapped by Alpine based on variant + scroll -->
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center">
-          <img src="assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+        <a href="/" class="flex items-center site-header-logo-link" aria-label="ecoPRISM home">
+          <img
+            src="/v3/assets/img/logos/logo-dark.webp"
+            :src="(variant === 'light' && !isScrolled)
+              ? '/v3/assets/img/logos/logo-light.webp'
+              : '/v3/assets/img/logos/logo-dark.webp'"
+            alt="ecoPRISM"
+            class="site-header-logo"
+            width="176"
+            height="40"
+            decoding="async"
+          />
         </a>
       </div>
 
@@ -12,139 +30,122 @@
       <div class="hidden lg:block">
         <div class="ml-10 flex items-center space-x-8">
           <!-- About Dropdown -->
-          <div x-data="{ open: false }" class="relative group">
-            <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+          <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
               About
-              <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
-              <a href="about.html" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
-              <a href="../our-team/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
-              <a href="../careers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+            <div x-show="open" x-transition class="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
+              <a href="/about-us" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">About Us</a>
+              <a href="/our-team" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Our Team</a>
+              <a href="/careers" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Careers</a>
+              <a href="/news" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News</a>
+              <a href="/events" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
             </div>
           </div>
 
           <!-- Products Dropdown -->
-          <div x-data="{ open: false }" class="relative group">
-            <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+          <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
               Products
-              <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
-              <a href="../esg-platform/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Platform</a>
-              <a href="../csrd-reporting/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Reporting</a>
-              <a href="../ecoquote/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ecoQUOTE</a>
-              <a href="../esg-benchmarking" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Benchmarking</a>
-              <a href="../ecobot" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD ecobot</a>
+            <div x-show="open" x-transition class="absolute left-0 z-50 flex w-max max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-gray-200 bg-white py-3 shadow-lg">
+              <div class="flex shrink-0 flex-col">
+                <a href="/esg-platform" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ESG Platform</a>
+                <a href="/csrd-reporting" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">CSRD Reporting</a>
+                <a href="/ecoquote" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ecoQUOTE</a>
+              </div>
+              <div class="w-px shrink-0 self-stretch bg-gray-200"></div>
+              <div class="flex shrink-0 flex-col">
+                <a href="/esg-benchmarking" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ESG Benchmarking</a>
+                <a href="/ecobot" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">CSRD ecobot</a>
+                <a href="/ecogrid" class="block px-5 py-2.5 text-sm font-medium whitespace-nowrap text-ecoprism-text hover:bg-gray-50 hover:text-ecoprism-primary">ecoGRID</a>
+              </div>
             </div>
           </div>
+
+          <!-- ecoPRISM AI Link -->
+          <a href="/ecoprism-ai" class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium py-4">ecoPRISM AI</a>
 
           <!-- Services Dropdown -->
-          <div x-data="{ open: false }" class="relative group">
-            <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+          <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
               Services
-              <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
-              <a href="../services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
-              <a href="../services/training-capacity-building/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
+            <div x-show="open" x-transition class="absolute left-0 w-56 bg-white rounded-md shadow-lg py-1 z-50 border">
+              <a href="/services/esg-advisory" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Advisory</a>
+              <a href="/services/training-capacity-building" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Training and Capacity Building</a>
             </div>
           </div>
 
-          <!-- Newsfeed Dropdown -->
-          <div x-data="{ open: false }" class="relative group">
-            <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
-              Newsfeed
-              <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+          <!-- Case Studies Dropdown -->
+          <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
+              Case Studies
+              <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
-              <div x-data="{ newsOpen: false }" class="relative">
-                <button @mouseenter="newsOpen = true" @mouseleave="newsOpen = false" class="block w-full text-left px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50 flex items-center justify-between">
-                  News
-                  <svg class="h-3 w-3 transition-transform duration-200" :class="{ 'rotate-180': newsOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-                <div x-show="newsOpen" @mouseenter="newsOpen = true" @mouseleave="newsOpen = false" class="absolute left-full top-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 border ml-1">
-                  <a href="../news/company-news/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Company News</a>
-                  <a href="../news/news-media/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">News & Media</a>
-                </div>
-              </div>
-              <a href="../events/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Events</a>
+            <div x-show="open" x-transition class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+              <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Sustainability in Proposals</a>
+              <a href="/resources/case-studies/unisys-climate-risk" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Climate Risk Intelligence</a>
+              <a href="/resources/case-studies/acumant-ecovadis" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">EcoVadis Readiness</a>
+              <a href="/resources/case-studies/camfil-esg-training" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Capacity Building</a>
+              <a href="/resources/case-studies/double-materiality-assessment" class="block whitespace-nowrap px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Double Materiality Assessment</a>
             </div>
           </div>
 
           <!-- Resources Dropdown -->
-          <div x-data="{ open: false }" class="relative group">
-            <button @mouseenter="open = true" @mouseleave="open = false" class="text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center">
+          <div x-data="{ open: false }" class="relative group" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="nav-link text-ecoprism-text hover:text-ecoprism-primary transition-colors duration-200 font-medium flex items-center py-4">
               Resources
-              <svg class="ml-1 h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <svg class="chevron-icon ml-1 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
-              <a href="../resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
-              <a href="../resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
-              <a href="../resources/glossary/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
-              <a href="../resources/csrd-adoption/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
-              <a href="../resources/california-climate-laws/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+            <div x-show="open" x-transition class="absolute left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border">
+              <a href="/resources/insights/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Insights</a>
+              <a href="/resources/whitepapers/" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">Whitepapers</a>
+              <a href="/resources/glossary" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">ESG Glossary</a>
+              <a href="/resources/csrd-adoption" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">CSRD Adoption</a>
+              <a href="/resources/california-climate-laws-explained" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">California Climate Disclosure Laws</a>
+              <a href="/resources/brsr-reporting" class="block px-4 py-2 text-sm text-ecoprism-text hover:bg-gray-50">BRSR Reporting</a>
             </div>
           </div>
 
-          <!-- Get Started Button -->
-          <a href="..contact-us" class="text-white px-6 py-2 rounded-full font-medium transition-colors duration-200" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #407775">Get Started</a>
+          <!-- Contact Us Button -->
+          <!-- light variant: white pill on transparent bg, green pill when scrolled -->
+          <!-- dark variant: always green pill (hero is always light-colored) -->
+          <a href="/contact-us" class="site-header-cta" :class="variant === 'light' && !isScrolled ? 'site-header-cta--inverse' : ''">Contact Us</a>
         </div>
       </div>
 
-      <!-- Mobile menu button -->
+      <!-- Mobile Menu Toggle -->
       <div class="lg:hidden">
-        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-ecoprism-text p-2 rounded-md">
-          <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="mobile-toggle text-ecoprism-text p-2 rounded-md">
+          <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Mobile menu overlay -->
+  <!-- Mobile Menu -->
   <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="lg:hidden fixed inset-0 z-50">
-    <!-- Backdrop -->
     <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-    <!-- Menu panel -->
-    <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="relative bg-white h-full w-80 shadow-xl overflow-y-auto">
-      <!-- Menu header -->
-      <div class="flex items-center justify-between p-4 border-b">
-        <!-- Logo -->
+    <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="mobile-nav-drawer relative flex h-full min-h-0 w-full max-w-xs flex-col bg-white shadow-xl">
+      <div class="flex shrink-0 items-center justify-between border-b p-4">
         <div class="flex items-center">
-          <img src="assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
+          <img src="/v3/assets/img/logos/logo-dark.webp" alt="ecoPRISM" class="h-8 w-auto" />
         </div>
-
-        <!-- Close button -->
         <button @click="mobileMenuOpen = false" class="p-2 rounded-md text-ecoprism-text hover:text-ecoprism-primary hover:bg-gray-100">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-
-      <!-- Menu content -->
-      <div class="px-4 pt-4 pb-6 space-y-1">
-        <!-- About Dropdown -->
+      <div class="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-4">
+        <!-- About Mobile -->
         <div>
-          <button @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+          <button type="button" @click="activeDropdown = activeDropdown === 'about' ? null : 'about'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
             About
             <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'about' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -154,12 +155,14 @@
             <a href="/about-us" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">About Us</a>
             <a href="/our-team" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Our Team</a>
             <a href="/careers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Careers</a>
+            <a href="/news" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">News</a>
+            <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
           </div>
         </div>
 
-        <!-- Products Dropdown -->
+        <!-- Products Mobile -->
         <div>
-          <button @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+          <button type="button" @click="activeDropdown = activeDropdown === 'products' ? null : 'products'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
             Products
             <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -171,13 +174,16 @@
             <a href="/ecoquote" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoQUOTE</a>
             <a href="/esg-benchmarking" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Benchmarking</a>
             <a href="/ecobot" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD ecobot</a>
-            <a href="/products/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
+            <a href="/ecogrid" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ecoGRID</a>
           </div>
         </div>
 
-        <!-- Services Dropdown -->
+        <!-- ecoPRISM AI Mobile -->
+        <a href="/ecoprism-ai" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">ecoPRISM AI</a>
+
+        <!-- Services Mobile -->
         <div>
-          <button @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+          <button type="button" @click="activeDropdown = activeDropdown === 'services' ? null : 'services'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
             Services
             <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'services' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -189,51 +195,43 @@
           </div>
         </div>
 
-        <!-- Newsfeed Dropdown -->
+        <!-- Case Studies Mobile -->
         <div>
-          <button @click="activeDropdown = activeDropdown === 'newsfeed' ? null : 'newsfeed'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
-            Newsfeed
-            <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'newsfeed' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button type="button" @click="activeDropdown = activeDropdown === 'casestudies' ? null : 'casestudies'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+            Case Studies
+            <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'casestudies' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div x-show="activeDropdown === 'newsfeed'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-            <!-- News Sub-dropdown -->
-            <div x-data="{ newsOpen: false }">
-              <button @click="newsOpen = !newsOpen" class="flex items-center justify-between w-full px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">
-                News
-                <svg class="h-3 w-3 transition-transform duration-200" :class="{ 'rotate-180': newsOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div x-show="newsOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1">
-                <a href="/news/company-news" class="block px-3 py-2 text-xs text-ecoprism-text hover:text-ecoprism-primary">Company News</a>
-                <a href="/news/news-media" class="block px-3 py-2 text-xs text-ecoprism-text hover:text-ecoprism-primary">News & Media</a>
-              </div>
-            </div>
-            <a href="/events" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Events</a>
+          <div x-show="activeDropdown === 'casestudies'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
+            <a href="/resources/case-studies/abb-ecoquote-sustainability-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Sustainability in Proposals</a>
+            <a href="/resources/case-studies/unisys-climate-risk" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Climate Risk Intelligence</a>
+            <a href="/resources/case-studies/acumant-ecovadis" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">EcoVadis Readiness</a>
+            <a href="/resources/case-studies/camfil-esg-training" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Capacity Building</a>
+            <a href="/resources/case-studies/double-materiality-assessment" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Double Materiality Assessment</a>
           </div>
         </div>
 
-        <!-- Resources Dropdown -->
+        <!-- Resources Mobile -->
         <div>
-          <button @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
+          <button type="button" @click="activeDropdown = activeDropdown === 'resources' ? null : 'resources'" class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">
             Resources
             <svg class="h-4 w-4 transition-transform duration-200" :class="{ 'rotate-180': activeDropdown === 'resources' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div x-show="activeDropdown === 'resources'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="ml-4 space-y-1" x-cloak>
-            <a href="/resources/insights" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
-            <a href="/resources/whitepapers" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
+            <a href="/resources/insights/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Insights</a>
+            <a href="/resources/whitepapers/" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">Whitepapers</a>
             <a href="/resources/glossary" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">ESG Glossary</a>
             <a href="/resources/csrd-adoption" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">CSRD Adoption</a>
-            <a href="/resources/california-climate-laws" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+            <a href="/resources/california-climate-laws-explained" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">California Climate Disclosure Laws</a>
+            <a href="/resources/brsr-reporting" class="block px-3 py-2 text-sm text-ecoprism-text hover:text-ecoprism-primary">BRSR Reporting</a>
           </div>
         </div>
 
-        <!-- Get Started Button -->
-        <a href="/contact-us" class="block px-3 py-2 text-base font-medium text-ecoprism-text hover:text-ecoprism-primary">Get Started</a>
+        <!-- Contact Us Mobile -->
+        <a href="/contact-us" class="site-header-cta site-header-cta--block mt-4">Contact Us</a>
       </div>
     </div>
   </div>
