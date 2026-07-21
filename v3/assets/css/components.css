@@ -354,60 +354,298 @@
 }
 
 /* ==========================================================================
-   v3 site header — shared (teams, csrd, csrd-adoption, california)
+   v3 site header — visual clone of the Sandbox theme header (about-us.html)
+   Reference: assets/css/style.css (Manrope, .navbar classic) + colors/leaf.css
    ========================================================================== */
 
 /* ── Header state classes added by Alpine ─────────────────────────────────
-   site-header--transparent-light  = over a DARK hero (csrd-adoption)
-   site-header--transparent-dark   = over a LIGHT hero (csrd, teams)
-   site-header--scrolled           = white bg, any page
+   site-header--transparent-light  = over a DARK hero  (≙ theme navbar-dark transparent)
+   site-header--transparent-dark   = over a LIGHT hero (≙ theme navbar-light transparent)
+   site-header--scrolled           = white bg          (≙ theme navbar-stick)
    ──────────────────────────────────────────────────────────────────────── */
 
-/* ── Desktop nav links ───────────────────────────────────────────────── */
+/* ── Header background states (theme: transparent / navbar-stick) ──────── */
+header.site-header--transparent-light,
+header.site-header--transparent-dark {
+  background: transparent;
+  box-shadow: none;
+}
+header.site-header--scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 0 25px rgba(30, 34, 40, 0.06);
+}
 
-/* Over dark hero → nav items + hamburger go white */
+/* NOTE: the theme uses a 20px root font size, so its rem values are
+   converted here to px (1rem theme = 20px). */
+
+/* ── Container — same widths/gutters as the theme's Bootstrap .container ── */
+.site-header-container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 576px) {
+  .site-header-container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .site-header-container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .site-header-container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .site-header-container { max-width: 1140px; }
+}
+@media (min-width: 1250px) {
+  .site-header-container { max-width: 1230px; }
+}
+@media (min-width: 1300px) {
+  .site-header-container { max-width: 1280px; }
+}
+@media (min-width: 1400px) {
+  .site-header-container { max-width: 1360px; }
+}
+
+/* ── Desktop nav layout (theme: .navbar-nav) ────────────────────────────── */
+.site-header-nav {
+  display: flex;
+  align-items: stretch;
+}
+.site-header-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Nav links — theme: Manrope 0.8rem / 700 / lh 1.7, padding 1.2rem 1rem
+   (16px / padding 24px 20px at the theme's 20px root) */
+header .site-header-bar .nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 24px 20px !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.7;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+/* Kill the yellow underline animation from main.css */
+header .site-header-bar .nav-link::after {
+  display: none !important;
+}
+
+/* Theme squeezes link padding to .6rem (12px) between 992 and 1200px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header .site-header-bar .nav-link {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* Caret — theme: Unicons glyph ≈12px wide with .05rem (1px) gap */
+header .site-header-bar .chevron-icon {
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px;
+  min-height: 12px;
+  margin-left: 1px;
+  color: inherit;
+}
+header .site-header-bar .chevron-icon path {
+  stroke-width: 2.5 !important;
+}
+
+/* Over dark hero → white links, 70% white on hover (theme navbar-dark) */
 header.site-header--transparent-light .nav-link {
   color: #ffffff !important;
 }
+header.site-header--transparent-light .site-header-item:hover > .nav-link,
+header.site-header--transparent-light .nav-link:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
 header.site-header--transparent-light .site-header-bar .chevron-icon {
-  color: rgba(255, 255, 255, 0.85);
+  color: inherit;
 }
 /* Target ONLY the hamburger toggle, NOT the mobile drawer buttons */
 header.site-header--transparent-light .mobile-toggle {
   color: #ffffff !important;
 }
 
-/* Over light hero or scrolled → nav items + hamburger go #575757 */
+/* Over light hero or scrolled → #343f52 links, leaf green on hover
+   (theme navbar-light + leaf.css) */
 header.site-header--transparent-dark .nav-link,
 header.site-header--scrolled .nav-link {
-  color: #575757 !important;
+  color: #343f52 !important;
+}
+header.site-header--transparent-dark .site-header-item:hover > .nav-link,
+header.site-header--transparent-dark .nav-link:hover,
+header.site-header--scrolled .site-header-item:hover > .nav-link,
+header.site-header--scrolled .nav-link:hover {
+  color: #407775 !important;
 }
 header.site-header--transparent-dark .site-header-bar .chevron-icon,
 header.site-header--scrolled .site-header-bar .chevron-icon {
-  color: #575757;
+  color: inherit;
 }
 header.site-header--transparent-dark .mobile-toggle,
 header.site-header--scrolled .mobile-toggle {
-  color: #575757 !important;
+  color: #343f52 !important;
 }
 
-/* ── Mobile nav drawer ───────────────────────────────────────────────────
-   The drawer always has a white background, so text is always #575757
-   regardless of whether the header behind it is light or dark variant. */
-header .mobile-nav-drawer a:not(.site-header-cta),
-header .mobile-nav-drawer button {
-  color: #575757 !important;
+/* ── Dropdowns (theme: .dropdown-menu) ──────────────────────────────────── */
+.site-header-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  min-width: 200px;
+  padding: 20px 0;
+  background-color: #fff;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(30, 34, 40, 0.06);
 }
-header .mobile-nav-drawer a:not(.site-header-cta):hover,
-header .mobile-nav-drawer button:hover {
+
+/* Two-column products menu (theme: .dropdown-lg) */
+.site-header-dropdown-lg {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  padding: 32px 5px 26px 5px;
+}
+.site-header-dropdown-lg .site-header-dropdown-col + .site-header-dropdown-col {
+  border-left: 1px solid rgba(164, 174, 198, 0.2);
+}
+
+/* Dropdown items — theme: Manrope 0.75rem / 700, padding 0.2rem 1.5rem,
+   no hover background, text turns leaf green (leaf.css) */
+header .site-header-dropdown .dropdown-item {
+  display: block;
+  padding: 4px 30px;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.7;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  color: #343f52 !important;
+  background-color: transparent !important;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+header .site-header-dropdown .dropdown-item:hover,
+header .site-header-dropdown .dropdown-item:focus,
+header .site-header-dropdown .dropdown-item.active {
   color: #407775 !important;
+  background-color: transparent !important;
+}
+
+/* ── Mobile nav drawer — clone of the theme's dark .offcanvas-nav ─────────
+   Panel: 300px wide, #1e2228 bg, 30px paddings, white Manrope links. */
+.mobile-nav-drawer {
+  width: 300px;
+  max-width: 85vw;
+  background-color: #1e2228;
+}
+.mobile-nav-header {
+  padding: 30px;
+}
+.mobile-nav-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+header .mobile-nav-drawer .mobile-nav-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #ffffff !important;
+}
+.mobile-nav-body {
+  padding: 0 30px 30px 30px;
+}
+/* Top-level links — theme: Manrope 16px/700 white, padding 6px 0 */
+header .mobile-nav-drawer .mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 0;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.7;
+  letter-spacing: -0.2px;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff !important;
+  transition: color 0.2s ease-in-out;
+}
+header .mobile-nav-drawer .mobile-nav-link:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+/* Submenu links — theme: 15px/700 white, padding 6px 30px 6px 20px */
+header .mobile-nav-drawer .mobile-nav-sublink {
+  display: block;
+  padding: 6px 30px 6px 20px;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.7;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+  color: #ffffff !important;
+  transition: color 0.2s ease-in-out;
+}
+header .mobile-nav-drawer .mobile-nav-sublink:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 header .mobile-nav-drawer svg {
-  color: #575757;
+  color: inherit;
 }
-/* Contact Us button in the drawer keeps white text on teal */
-header .mobile-nav-drawer .site-header-cta {
+/* Footer — theme offcanvas-footer: email + social icons */
+.mobile-nav-footer {
+  margin-top: auto;
+  padding: 30px;
+}
+header .mobile-nav-drawer .mobile-nav-mail {
+  font-family: "Manrope", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500;
   color: #ffffff !important;
+  text-decoration: none;
+}
+header .mobile-nav-drawer .mobile-nav-mail:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.mobile-nav-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+header .mobile-nav-drawer .mobile-nav-social a {
+  color: #ffffff !important;
+}
+header .mobile-nav-drawer .mobile-nav-social a:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 /* Header container — sticky wrapper; must be transparent so the
@@ -420,22 +658,29 @@ header .mobile-nav-drawer .site-header-cta {
   background: transparent;
 }
 
-/* Header bar — 72 px tall (h-16 = 64 px was a touch small) */
+/* Header bar — theme classic navbar: links (24px padding + 16px×1.7 text)
+   give ≈75px; the 45px logo is centered inside it. */
 .site-header-bar {
-  height: 4.5rem !important; /* 72 px */
+  min-height: 75px;
+  padding: 24px 0; /* theme mobile: .navbar-brand padding 1.2rem = 24px */
+}
+@media (min-width: 992px) {
+  .site-header-bar {
+    /* theme desktop bar measures 77.9px (caret glyph expands the line box) */
+    min-height: 78px;
+    padding: 0;
+  }
 }
 
-/* Logo */
+/* Logo — theme renders both logos at height 45px */
 .site-header-logo-link {
   display: flex;
   align-items: center;
-  min-width: 9rem;
 }
 
 .site-header-logo {
-  height: 2.5rem; /* 40 px */
+  height: 45px;
   width: auto;
-  max-width: 11rem; /* 176 px */
   display: block;
   object-fit: contain;
 }
@@ -443,54 +688,58 @@ header .mobile-nav-drawer .site-header-cta {
 /* Logo src is pre-set in loadSiteHeader() before Alpine.initTree() runs.
    Alpine's :src binding then drives all subsequent state changes. */
 
-/* Contact CTA — real CSS (CDN Tailwind does not compile classes in fetched header.html) */
-.site-header-cta {
+/* Contact CTA — theme: .btn.btn-sm.rounded-pill (0.4rem 1rem, 0.7rem/700,
+   2px border, lift + shadow on hover). a.site-header-cta beats main.css's
+   a[href*="contact"] Poppins override. */
+a.site-header-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   flex-shrink: 0;
-  padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
-  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
+  margin-left: 20px; /* theme: .navbar-other.ms-lg-4 measures 20px */
+  padding: 8px 20px;
+  border-radius: 50rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 16px !important; /* theme: .navbar .btn-sm { font-size: .8rem } */
+  font-weight: 700 !important;
+  line-height: 1.7;
+  letter-spacing: -0.2px;
   text-decoration: none !important;
   white-space: nowrap;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
   background-color: #407775 !important;
   color: #ffffff !important;
-  border: 1px solid #407775;
-  box-shadow: 0 4px 12px rgba(32, 90, 84, 0.28);
+  border: 2px solid #407775;
+  box-shadow: none;
 }
 
-.site-header-cta:hover {
-  background-color: #588885 !important;
-  border-color: #588885;
+a.site-header-cta:hover {
+  transform: translateY(-3px); /* theme: -0.15rem at 20px root */
+  background-color: #407775 !important;
+  border-color: #407775;
   color: #ffffff !important;
-  box-shadow: 0 6px 16px rgba(32, 90, 84, 0.35);
+  box-shadow: 0 5px 15px rgba(30, 34, 40, 0.15);
 }
 
-/* Light hero at top of page — white pill on transparent header */
-.site-header-cta--inverse {
+/* Dark hero at top of page — theme .btn-white: white pill, #343f52 text */
+a.site-header-cta.site-header-cta--inverse {
   background-color: #ffffff !important;
-  color: #407775 !important;
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #343f52 !important;
+  border-color: #ffffff;
 }
 
-.site-header-cta--inverse:hover {
-  background-color: rgba(255, 255, 255, 0.92) !important;
-  color: #407775 !important;
+a.site-header-cta.site-header-cta--inverse:hover {
+  background-color: #ffffff !important;
+  color: #343f52 !important;
+  box-shadow: 0 5px 15px rgba(30, 34, 40, 0.15);
 }
 
 .site-header-cta--block {
   display: flex;
   width: 100%;
+  margin-left: 0;
   text-align: center;
 }
 
@@ -500,7 +749,7 @@ header .site-header-bar .site-header-cta {
 }
 
 header .site-header-bar .site-header-cta.site-header-cta--inverse {
-  color: #407775 !important;
+  color: #343f52 !important;
 }
 
 /* Backward compatibility aliases for old ecogrid-btn class names */
@@ -521,10 +770,6 @@ header .site-header-bar .site-header-cta.site-header-cta--inverse {
 }
 .ecogrid-btn-outline-light {
   /* light variant support */
-}
-header .site-header-bar a[href]:not(.site-header-cta):not(.nav-link):not(.site-header-logo-link):hover {
-  background-color: #eaf5f1 !important;
-  color: #1f7a63 !important;
 }
 
 /* ========================================================================

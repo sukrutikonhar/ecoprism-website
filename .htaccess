@@ -28,6 +28,9 @@ RewriteRule ^csrd-adoption/?$ /csrd-adoption.html [L]
 RewriteRule ^our-team/?$ /our-team.html [L]
 RewriteRule ^teams/?$ /our-team [R=301,L]
 
+# CDP 2026 Disclosure Guide blog at site root
+RewriteRule ^cdp-2026-disclosure-guide/?$ /resources/insights/cdp-2026-disclosure-guide.html [L]
+
 # ===== Remove .html extension from all URLs site-wide =====
 # Redirect .html URLs to extensionless URLs (301 permanent redirect)
 # This rule catches requests with .html and redirects them to clean URLs

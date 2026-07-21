@@ -1,5 +1,6 @@
 # Local temp / tooling artifacts
 .playwright-mcp/
+.tmp-screens/
 .tmp-docx/
 .tmp-docx-raw.xml
 .tmp-docx.zip

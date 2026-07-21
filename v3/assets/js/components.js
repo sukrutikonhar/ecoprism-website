@@ -33,10 +33,23 @@ function stripComponentScripts(html) {
   return html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
 }
 
+// Manrope is the font the Sandbox theme header (about-us) uses — make sure
+// every page that embeds the shared header loads it.
+function ensureHeaderFont() {
+  if (document.querySelector('link[data-header-font]')) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap";
+  link.setAttribute("data-header-font", "");
+  document.head.appendChild(link);
+}
+
 // Load shared site header after DOM is ready
 async function loadSiteHeader() {
   const headerContainer = document.getElementById("header-container");
   if (!headerContainer || headerContainer.dataset.headerLoaded === "true") return;
+
+  ensureHeaderFont();
 
   try {
     let componentHTML = await loadComponent("header");
@@ -52,8 +65,8 @@ async function loadSiteHeader() {
     const logoImg = headerContainer.querySelector(".site-header-logo");
     if (logoImg) {
       logoImg.src = variant === "light"
-        ? "/v3/assets/img/logos/logo-light.webp"
-        : "/v3/assets/img/logos/logo-dark.webp";
+        ? "/assets/img/logo-light.webp"
+        : "/assets/img/logo.webp";
     }
 
     if (window.Alpine) {
